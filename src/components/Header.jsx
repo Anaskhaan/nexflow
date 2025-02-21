@@ -1,3 +1,9 @@
+import Navbar from "./HeaderComponents/Navbar";
+
 export default function Header() {
-  return <div>Heade</div>;
+  return (
+    <div>
+      <Navbar />
+    </div>
+  );
 }
