@@ -9,7 +9,7 @@ const Layout = () => {
       <Header />
 
       {/* Main Content */}
-      <main>
+      <main >
         <Outlet /> {/* Render nested routes */}
       </main>
 

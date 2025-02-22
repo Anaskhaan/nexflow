@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
-  { id: 1, title: "Home", href: "#" },
-  { id: 2, title: "About", href: "#about" },
-  { id: 3, title: "Services", href: "#services" },
-  { id: 4, title: "Contact", href: "#contact" },
+  { id: 1, title: "Home", href: "/" },
+  { id: 2, title: "About", href: "/about" },
+  { id: 3, title: "Services", href: "/services" },
+  { id: 4, title: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
