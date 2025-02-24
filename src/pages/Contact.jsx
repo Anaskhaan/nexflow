@@ -113,7 +113,7 @@ const Contact = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden">
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-28">
       {/* Custom Cursor */}
       <div 
         ref={cursorRef}
@@ -168,7 +168,7 @@ const Contact = () => {
               </div>
 
               {/* Right Column - Contact Form */}
-              <div ref={formRef} className="relative">
+              <div ref={formRef} className="relative pt-20">
                 <form className="space-y-8">
                   {['Name', 'Email', 'Message'].map((label, index) => (
                     <div
