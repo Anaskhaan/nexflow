@@ -127,22 +127,16 @@ export default function FAQs() {
                 <motion.button 
                   whileHover={{ scale: 1.05, x: 5 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group px-6 py-3 bg-white text-[#3FA69B] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                  className="group px-6 py-3 text-sm w-52 bg-white text-[#3FA69B] rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
                 >
                   More Questions
-                  <motion.div
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1, repeat: Infinity }}
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </motion.div>
+               
                 </motion.button>
                 <motion.button 
                   whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.2)" }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 text-white border-2 border-white/50 rounded-full flex items-center gap-2"
+                  className="px-6 py-3 w-44 text-white border-2 border-white/50 rounded-full flex items-center gap-2"
                 >
-                  <MessageCircle className="w-4 h-4" />
                   Contact Us
                 </motion.button>
               </div>
