@@ -34,7 +34,8 @@ const Navbar = () => {
         animate={{
           width: isScrolled ? "50%" : "100%",
           left: isScrolled ? "25%" : "0%",
-          backgroundColor: isScrolled ? "#ffffff" : "#3F4D59",
+          backgroundColor: isScrolled ? "#ffffff" : "rgba(0, 0, 0, 0.6)",
+          backdropFilter: isScrolled ? "none" : "blur(10px)",
         }}
         className={`fixed top-0 py-4 px-6 md:px-20 flex justify-between items-center z-50 shadow-md ${
           isScrolled && "rounded-full top-6"
