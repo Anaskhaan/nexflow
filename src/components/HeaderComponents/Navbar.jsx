@@ -13,18 +13,21 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Toggle sidebar and prevent body scroll
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = isOpen ? "auto" : "hidden";
+  };
 
   return (
     <>
@@ -37,9 +40,9 @@ const Navbar = () => {
           backgroundColor: isScrolled ? "#ffffff" : "rgba(0, 0, 0, 0.6)",
           backdropFilter: isScrolled ? "none" : "blur(10px)",
         }}
-        className={`fixed top-0 py-4 px-6 md:px-20 flex justify-between items-center z-50 shadow-md ${
+        className={`fixed top-0 py-4 px-6 md:px-20 hidden lg:flex justify-between items-center z-50 shadow-md transition-all duration-300 ease-in-out ${
           isScrolled && "rounded-full top-6"
-        } transition-all duration-300 ease-in-out`}
+        }`}
       >
         {/* Logo */}
         <div
@@ -68,20 +71,18 @@ const Navbar = () => {
         </div>
 
         {/* Get Started Button */}
-        {!isScrolled && (
-          <button
-            className={`hidden md:block font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ${
-              isScrolled
-                ? "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
-                : "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
-            }`}
-          >
-            Get Started
-          </button>
-        )}
+        <button
+          className={`hidden md:block font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ${
+            isScrolled
+              ? "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
+              : "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
+          }`}
+        >
+          Get Started
+        </button>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden" onClick={() => setIsOpen(true)}>
+        <button className="md:hidden" onClick={toggleSidebar}>
           <Menu size={28} color={isScrolled ? "#3F4D59" : "#fff"} />
         </button>
       </motion.nav>
@@ -89,37 +90,50 @@ const Navbar = () => {
       {/* Sidebar for Mobile */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-            className="fixed top-0 right-0 w-64 h-full bg-[#3F4D59] text-white shadow-lg p-6 flex flex-col z-50"
-          >
-            {/* Close Button */}
-            <button className="self-end mb-6" onClick={() => setIsOpen(false)}>
-              <X size={28} />
-            </button>
+          <>
+            {/* Sidebar */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="fixed top-0 right-0 w-64 h-full bg-[#3F4D59] text-white shadow-lg p-6 flex flex-col z-50"
+              style={{ willChange: "transform" }}
+            >
+              {/* Close Button */}
+              <button className="self-end mb-6" onClick={toggleSidebar}>
+                <X size={28} />
+              </button>
 
-            {/* Sidebar Links */}
-            <div className="flex flex-col gap-6">
-              {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={link.href}
-                  className="text-lg hover:text-[#3FA69B] transition duration-300"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.title}
-                </a>
-              ))}
-            </div>
+              {/* Sidebar Links */}
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link) => (
+                  <a
+                    key={link.id}
+                    href={link.href}
+                    className="text-lg hover:text-[#3FA69B] transition duration-300"
+                    onClick={toggleSidebar}
+                  >
+                    {link.title}
+                  </a>
+                ))}
+              </div>
 
-            {/* Get Started Button in Sidebar */}
-            <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
-              Get Started
-            </button>
-          </motion.div>
+              {/* Get Started Button in Sidebar */}
+              <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
+                Get Started
+              </button>
+            </motion.div>
+
+            {/* Clickable Overlay to Close Sidebar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.5 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black z-40"
+              onClick={toggleSidebar}
+            />
+          </>
         )}
       </AnimatePresence>
     </>
