@@ -70,12 +70,7 @@ export default function About() {
 
   return (
     <div className="bg-black text-white pt-12 min-h-screen overflow-hidden">
-      {/* Custom cursor effect */}
-      {/* <div
-        ref={cursorRef}
-        className="fixed w-64 h-64 rounded-full pointer-events-none z-50 opacity-20 mix-blend-screen bg-gradient-to-r from-[#3FA69B] to-blue-500 blur-3xl"
-        style={{ transform: "translate(-50%, -50%)" }}
-      /> */}
+   
 
       {/* Floating design elements for background visual interest */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
