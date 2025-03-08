@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Sidebar from "./Sidebar";
 
 const navLinks = [
   { id: 1, title: "Home", href: "/" },
@@ -28,6 +29,7 @@ const Navbar = () => {
 
   return (
     <>
+      <Sidebar />
       {/* Navbar */}
       <motion.nav
         initial={{ width: "100%", left: 0 }}
@@ -39,7 +41,7 @@ const Navbar = () => {
             : "rgba(0, 0, 0, 0.6)",
           backdropFilter: isScrolled ? "blur(20px)" : "blur(10px)",
         }}
-        className={`fixed top-0 py-4 px-4 flex justify-between items-center z-50 shadow-md ${
+        className={`fixed top-0 py-4 px-4 hidden lg:flex justify-between items-center z-50 shadow-md ${
           isScrolled && " top-6"
         } transition-all duration-300 ease-in-out`}
       >

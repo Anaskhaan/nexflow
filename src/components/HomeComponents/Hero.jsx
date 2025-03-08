@@ -99,7 +99,7 @@ const Hero = () => {
           </svg>
         </motion.div>
 
-        <motion.div className="max-w-5xl w-full flex flex-col items-center text-center space-y-8">
+        <motion.div className="max-w-5xl w-full mt-12 flex flex-col items-center text-center space-y-8">
           {/* Logo animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
