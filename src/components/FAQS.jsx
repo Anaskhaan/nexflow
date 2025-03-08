@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, ChevronRight, Sparkles, MessageCircle } from "lucide-react";
+import { HelpCircle, ChevronRight } from "lucide-react";
 
 export default function FAQs() {
   const faqsData = [
@@ -27,101 +27,281 @@ export default function FAQs() {
       answer:
         "Success can be measured by tracking KPIs like website traffic, conversion rates, and ROI through analytics tools.",
     },
+    {
+      question: "What digital marketing services does Nexflow offer?",
+      answer:
+        "Nexflow offers a comprehensive suite of digital marketing services including SEO, paid advertising, social media marketing, content marketing, email campaigns, and analytics reporting to help businesses achieve their marketing goals.",
+    },
   ];
 
-  const [activeIndex, setActiveIndex] = useState(null);
-  const [ setIsHovered] = useState(null);
-  const [ setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  },);
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 10,
-      },
-    },
-  };
+  // Animated background elements
+  const BackgroundElements = () => (
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+      <motion.div
+        className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-[#3FA69B] opacity-10 filter blur-lg"
+        animate={{
+          scale: [1, 1.1, 1, 1.2, 1],
+          y: [0, -10, 0, 10, 0],
+          x: [0, 10, 0, -10, 0],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+      />
+      <motion.div
+        className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-[#3FA69B] opacity-5 filter blur-lg"
+        animate={{
+          scale: [1.2, 1, 1.3, 0.9, 1.2],
+          y: [0, 10, 0, -10, 0],
+          x: [0, -10, 0, 10, 0],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+      />
+    </div>
+  );
 
   return (
-    <div className=" p-8 bg-black ">
-      <div className=" flex items-center  justify-between">
-        <div>
-          <h2 className="text-2xl w-96 font-bold text-white  mb-6">
-            Digital Marketing FAQs
-          </h2>
-          <p className="text-gray-500 w-96  mb-6">
-            As a leading digital marketing agency, we are dedicated to providing
-            educational resources and answering frequently asked questions to
-            help our clients.
-          </p>
-          <div className="flex justify-center mt-8 space-x-4">
-            <button className="px-4 py-2 bg-white text-black border border-white rounded-3xl">
-              More Questions
-            </button>
-            <button className="px-4 py-2  text-white  underline bg-black">
-              Contact Us
-            </button>
-          </div>
+    <div className="py-20 px-6 md:px-12 lg:px-16 bg-black relative overflow-hidden">
+      <BackgroundElements />
+
+      <div className="max-w-6xl mx-auto">
+        {/* Header with accent */}
+        <div className="mb-12 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-30"
+          >
+            <span className="text-[#3FA69B] text-sm font-medium flex items-center gap-2">
+              <HelpCircle size={16} />
+              FREQUENTLY ASKED QUESTIONS
+            </span>
+          </motion.div>
+          <motion.h2
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
+          >
+            Got Questions About{" "}
+            <span className="text-[#3FA69B]">Digital Marketing</span>?
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-gray-400 max-w-2xl mx-auto"
+          >
+            We&apos;ve compiled answers to the most common questions about
+            digital marketing strategies and how they can benefit your business.
+          </motion.p>
         </div>
 
-        <div className="flex flex-wrap gap-4">
-          {faqsData.map((faq, index) => (
-            <div
-              key={index}
-              className="border-t border-black w-full md:w-1/2 lg:w-full"
-            >
-              <div
-                className="flex justify-between items-center py-4 cursor-pointer"
-                onClick={() =>
-                  setActiveIndex(activeIndex === index ? null : index)
-                }
-              >
-                <h3 className="text-lg text-white font-medium">
-                  {faq.question}
-                </h3>
-                {activeIndex === index ? (
-                  <Minus className="text-gray-600" />
-                ) : (
-                  <Plus className="text-gray-600" />
-                )}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+          {/* Left side: Questions navigation */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="lg:col-span-2 order-2 lg:order-1"
+          >
+            <div className="sticky top-8">
+              <h3 className="text-lg font-medium text-white mb-6 flex items-center gap-2">
+                <span className="w-8 h-8 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-sm font-bold">
+                  ?
+                </span>
+                Common Questions
+              </h3>
+
+              <div className="space-y-1">
+                {faqsData.map((faq, index) => (
+                  <motion.div
+                    key={index}
+                    onClick={() => setActiveIndex(index)}
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                    className="relative cursor-pointer"
+                    whileHover={{ x: 5 }}
+                  >
+                    <div
+                      className={`p-4 rounded-lg transition-all duration-300 relative z-10 flex items-center gap-3 ${
+                        activeIndex === index
+                          ? "text-white"
+                          : "text-gray-400 hover:text-white"
+                      }`}
+                    >
+                      {activeIndex === index && (
+                        <motion.div
+                          layoutId="activeBackground"
+                          className="absolute inset-0 bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-20 rounded-lg z-0"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                      <div
+                        className={`w-6 h-6 flex-shrink-0 rounded-full ${
+                          activeIndex === index ? "bg-[#3FA69B]" : "bg-gray-800"
+                        } flex items-center justify-center text-xs`}
+                      >
+                        {index + 1}
+                      </div>
+                      <p className="text-sm md:text-base font-medium relative z-10">
+                        {faq.question.length > 40
+                          ? `${faq.question.substring(0, 40)}...`
+                          : faq.question}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
 
-              <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{
-                  height: activeIndex === index ? "auto" : 0,
-                  opacity: activeIndex === index ? 1 : 0,
-                }}
-                className="overflow-hidden text-sm text-white"
-              >
-                <p className="pb-4">{faq.answer}</p>
-              </motion.div>
+              <div className="mt-10 space-y-4">
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full px-6 py-3 bg-[#3FA69B] hover:bg-[#3FA69B]/90 text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all"
+                >
+                  <span>Contact Our Team</span>
+                  <ChevronRight size={16} />
+                </motion.button>
+
+                <motion.button
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full px-6 py-3 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B]/10 font-medium rounded-lg transition-all"
+                >
+                  Ask a Question
+                </motion.button>
+              </div>
             </div>
-          ))}
+          </motion.div>
+
+          {/* Right side: Active question & answer */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="lg:col-span-3 order-1 lg:order-2"
+            ref={containerRef}
+          >
+            <div className="bg-gray-900/30 backdrop-blur-sm border border-gray-800 rounded-2xl p-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <div className="flex items-start gap-4 mb-6">
+                    <div className="w-10 h-10 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-lg font-bold flex-shrink-0 mt-1">
+                      Q
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-semibold text-white">
+                      {faqsData[activeIndex].question}
+                    </h3>
+                  </div>
+
+                  <div className="flex items-start gap-4 ml-14">
+                    <div className="border-l-2 border-[#3FA69B]/30 pl-6">
+                      <p className="text-gray-300 leading-relaxed">
+                        {faqsData[activeIndex].answer}
+                      </p>
+
+                      <div className="mt-8 flex flex-wrap gap-3">
+                        <span className="px-3 py-1 bg-[#3FA69B]/10 text-[#3FA69B] text-sm rounded-full border border-[#3FA69B]/20">
+                          #DigitalStrategy
+                        </span>
+                        <span className="px-3 py-1 bg-[#3FA69B]/10 text-[#3FA69B] text-sm rounded-full border border-[#3FA69B]/20">
+                          #MarketingInsights
+                        </span>
+                        <span className="px-3 py-1 bg-[#3FA69B]/10 text-[#3FA69B] text-sm rounded-full border border-[#3FA69B]/20">
+                          #Nexflow
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              <div className="flex justify-between mt-10 pt-6 border-t border-gray-800">
+                <button
+                  onClick={() =>
+                    setActiveIndex(
+                      (activeIndex - 1 + faqsData.length) % faqsData.length
+                    )
+                  }
+                  className="text-gray-400 hover:text-white flex items-center gap-2 text-sm"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m15 18-6-6 6-6" />
+                  </svg>
+                  Previous Question
+                </button>
+
+                <button
+                  onClick={() =>
+                    setActiveIndex((activeIndex + 1) % faqsData.length)
+                  }
+                  className="text-gray-400 hover:text-white flex items-center gap-2 text-sm"
+                >
+                  Next Question
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="m9 18 6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div className="mt-8 flex justify-center items-center gap-2">
+              {faqsData.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-2 h-2 rounded-full transition-all ${
+                    activeIndex === index
+                      ? "bg-[#3FA69B] w-4"
+                      : "bg-gray-600 hover:bg-gray-500"
+                  }`}
+                  aria-label={`Go to question ${index + 1}`}
+                />
+              ))}
+            </div>
+          </motion.div>
         </div>
-        </div>
-          </div>
+      </div>
+    </div>
   );
 }
