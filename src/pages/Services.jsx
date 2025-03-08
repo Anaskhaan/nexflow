@@ -15,6 +15,7 @@ import {
   Target,
   Zap,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -59,7 +60,7 @@ const Services = () => {
     },
     {
       id: 4,
-      title: "Analytics & Reporting",
+      title: "Branding",
       description:
         "Gain actionable insights with comprehensive performance tracking and analysis.",
       icon: <BarChart2 size={32} />,
@@ -72,7 +73,7 @@ const Services = () => {
     },
     {
       id: 5,
-      title: "Email Marketing",
+      title: "Digital Marketing",
       description:
         "Nurture leads and drive conversions with targeted email campaigns.",
       icon: <Mail size={32} />,
@@ -85,7 +86,7 @@ const Services = () => {
     },
     {
       id: 6,
-      title: "Mobile Marketing",
+      title: "UI/UX",
       description:
         "Reach customers on-the-go with mobile-first marketing strategies.",
       icon: <Smartphone size={32} />,
@@ -475,7 +476,9 @@ const Services = () => {
                     whileHover={{ x: 5 }}
                     className="inline-flex items-center text-[#3FA69B] font-medium"
                   >
-                    Learn more <ChevronRight className="ml-1 w-4 h-4" />
+                    <Link to={`/services/${service.id}`}>
+                      Learn more <ChevronRight className="ml-1 w-4 h-4" />
+                    </Link>
                   </motion.div>
                 </div>
 

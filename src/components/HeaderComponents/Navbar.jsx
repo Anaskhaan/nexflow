@@ -32,13 +32,15 @@ const Navbar = () => {
       <motion.nav
         initial={{ width: "100%", left: 0 }}
         animate={{
-          width: isScrolled ? "50%" : "100%",
-          left: isScrolled ? "25%" : "0%",
-          backgroundColor: isScrolled ? "#ffffff" : "rgba(0, 0, 0, 0.6)",
-          backdropFilter: isScrolled ? "none" : "blur(10px)",
+          width: isScrolled ? "80%" : "100%",
+          left: isScrolled ? "12%" : "0%",
+          backgroundColor: isScrolled
+            ? "rgba(0, 0, 0, 0.6)"
+            : "rgba(0, 0, 0, 0.6)",
+          backdropFilter: isScrolled ? "blur(20px)" : "blur(10px)",
         }}
-        className={`fixed top-0 py-4 px-6 md:px-20 flex justify-between items-center z-50 shadow-md ${
-          isScrolled && "rounded-full top-6"
+        className={`fixed top-0 py-4 px-4 flex justify-between items-center z-50 shadow-md ${
+          isScrolled && " top-6"
         } transition-all duration-300 ease-in-out`}
       >
         {/* Logo */}
@@ -49,28 +51,19 @@ const Navbar = () => {
         >
           Nexflow
         </div>
-
         {/* Nav Links */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden text-white md:flex gap-8">
           {navLinks.map((link) => (
-            <a
-              key={link.id}
-              href={link.href}
-              className={`text-lg transition duration-300 ${
-                isScrolled
-                  ? "text-[#3F4D59] hover:text-[#3FA69B]"
-                  : "text-white hover:text-[#3FA69B]"
-              }`}
-            >
+            <a key={link.id} href={link.href}>
               {link.title}
             </a>
           ))}
         </div>
-
         {/* Get Started Button */}
-        {!isScrolled && (
+
+        <div className=" flex items-center justify-center space-x-3">
           <button
-            className={`hidden md:block font-semibold py-2 px-6 rounded-full shadow-lg transition duration-300 ${
+            className={`hidden md:block font-semibold py-2 px-6  shadow-lg transition duration-300 ${
               isScrolled
                 ? "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
                 : "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
@@ -78,8 +71,7 @@ const Navbar = () => {
           >
             Get Started
           </button>
-        )}
-
+        </div>
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsOpen(true)}>
           <Menu size={28} color={isScrolled ? "#3F4D59" : "#fff"} />
