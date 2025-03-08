@@ -17,9 +17,23 @@ const services = [
 ];
 
 const contactDetails = [
-  { icon: <Mail size={20} />, text: "hello@nexflow.com" },
-  { icon: <Phone size={20} />, text: "+123 456 7890" },
-  { icon: <MapPin size={20} />, text: "123 Digital Ave, Tech City" },
+  {
+    icon: <Mail size={20} />,
+    text: () => <span>hello@nexflow.tech</span>,
+  },
+  {
+    icon: <Phone size={20} />,
+    text: () => <span>+0987654321</span>,
+  },
+  {
+    icon: <MapPin size={20} />,
+    text: () => (
+      <span>
+        8 The Green #6092
+        <br /> Dover, DE, 19901
+      </span>
+    ),
+  },
 ];
 
 const Footer = () => {
@@ -139,7 +153,7 @@ const Footer = () => {
               <li key={index} className="flex items-center gap-2">
                 {contact.icon}
                 <span className="hover:text-[#3FA69B] transition duration-300">
-                  {contact.text}
+                  {contact.text()}
                 </span>
               </li>
             ))}
