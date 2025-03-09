@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
 
 // Animated background element
 const AnimatedBackground = () => {
@@ -319,17 +320,19 @@ export const About = () => {
                 </motion.div>
 
                 <motion.div
-                  className="flex flex-wrap gap-4 pt-6"
+                  className="flex  gap-4 pt-6"
                   initial={{ opacity: 0, y: 20 }}
                   animate={sectionInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 1.2, duration: 0.6 }}
                 >
                   <motion.button
-                    className="px-8 py-4 bg-[#3FA69B] hover:bg-[#2D8A80] rounded-lg text-white font-medium transition-all flex items-center gap-2"
+                    className="lg:px-8 px-6 py-4 bg-[#3FA69B] hover:bg-[#2D8A80] lg:text-md text-xs  rounded-lg text-white font-medium transition-all flex items-center gap-2"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span>Our Process</span>
+                    <Link to="/about">
+                      <button>Our Process</button>
+                    </Link>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -346,13 +349,15 @@ export const About = () => {
                     </svg>
                   </motion.button>
 
-                  <motion.button
-                    className="px-8 py-4 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B] hover:bg-opacity-10 rounded-lg font-medium transition-all"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Meet the Team
-                  </motion.button>
+                  <Link to="about">
+                    <motion.button
+                      className="lg:px-8 px-6 py-4 border lg:text-md text-sm border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B] hover:bg-opacity-10 rounded-lg  transition-all"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Meet the Team
+                    </motion.button>
+                  </Link>
                 </motion.div>
               </div>
             </motion.div>

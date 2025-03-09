@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Sidebar from "./Sidebar";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { id: 1, title: "Home", href: "/" },
   { id: 2, title: "About", href: "/about" },
   { id: 3, title: "Services", href: "/services" },
-  { id: 4, title: "Contact", href: "/contact" },
+  { id: 4, title: "Portfolio", href: "/Portfolio" },
+  { id: 5, title: "Packages", href: "/Packages" },
+  { id: 6, title: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
@@ -28,6 +32,7 @@ const Navbar = () => {
 
   return (
     <>
+      <Sidebar />
       {/* Navbar */}
       <motion.nav
         initial={{ width: "100%", left: 0 }}
@@ -39,7 +44,7 @@ const Navbar = () => {
             : "rgba(0, 0, 0, 0.6)",
           backdropFilter: isScrolled ? "blur(20px)" : "blur(10px)",
         }}
-        className={`fixed top-0 py-4 px-4 flex justify-between items-center z-50 shadow-md ${
+        className={`fixed top-0 py-4 px-4 hidden lg:flex justify-between items-center z-50 shadow-md ${
           isScrolled && " top-6"
         } transition-all duration-300 ease-in-out`}
       >
@@ -62,15 +67,20 @@ const Navbar = () => {
         {/* Get Started Button */}
 
         <div className=" flex items-center justify-center space-x-3">
-          <button
-            className={`hidden md:block font-semibold py-2 px-6  shadow-lg transition duration-300 ${
-              isScrolled
-                ? "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
-                : "bg-[#3FA69B] text-white hover:bg-[#2D7A71]"
-            }`}
-          >
-            Get Started
-          </button>
+          <Link to="/contact">
+            <button
+              className={`hidden md:block font-semibold py-2 px-6  shadow-lg transition duration-300 bg-[#3FA69B] text-white hover:bg-[#2D7A71]`}
+            >
+              Get Started
+            </button>
+          </Link>
+          <Link to="/Meeting">
+            <button
+              className={`hidden bg-white text-[#2D7A71] hover:bg-black hover:text-white md:block font-semibold py-2 px-6  shadow-lg transition duration-300`}
+            >
+              Arrange Meeting
+            </button>
+          </Link>
         </div>
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsOpen(true)}>
@@ -107,10 +117,18 @@ const Navbar = () => {
               ))}
             </div>
 
-            {/* Get Started Button in Sidebar */}
-            <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
-              Get Started
-            </button>
+            <Link to="/contact">
+              <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
+                Get Started
+              </button>
+            </Link>
+            <Link to="/Meeting">
+              <button
+                className={`hidden bg-white text-[#2D7A71] hover:bg-black hover:text-white md:block font-semibold py-2 px-6  shadow-lg transition duration-300`}
+              >
+                Arrange Meeting
+              </button>
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>
