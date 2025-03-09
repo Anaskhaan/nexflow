@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { id: 1, title: "Home", href: "/" },
@@ -54,9 +55,9 @@ const Navbar = () => {
         {/* Nav Links */}
         <div className="hidden text-white md:flex gap-8">
           {navLinks.map((link) => (
-            <a key={link.id} href={link.href}>
+            <Link key={link.id} to={link.href}>
               {link.title}
-            </a>
+            </Link>
           ))}
         </div>
         {/* Get Started Button */}
