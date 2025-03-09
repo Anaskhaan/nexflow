@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HelpCircle, ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function FAQs() {
   const faqsData = [
@@ -168,22 +169,25 @@ export default function FAQs() {
               </div>
 
               <div className="mt-10 space-y-4">
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3 bg-[#3FA69B] hover:bg-[#3FA69B]/90 text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all"
-                >
-                  <span>Contact Our Team</span>
-                  <ChevronRight size={16} />
-                </motion.button>
-
-                <motion.button
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B]/10 font-medium rounded-lg transition-all"
-                >
-                  Ask a Question
-                </motion.button>
+                <Link to="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 bg-[#3FA69B] hover:bg-[#3FA69B]/90 text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all"
+                  >
+                    <span>Contact Our Team</span>
+                    <ChevronRight size={16} />
+                  </motion.button>
+                </Link>
+                <Link to="/contact">
+                  <motion.button
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-3 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B]/10 font-medium rounded-lg transition-all"
+                  >
+                    Ask a Question
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -209,14 +213,14 @@ export default function FAQs() {
                     <div className="w-10 h-10 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-lg font-bold flex-shrink-0 mt-1">
                       Q
                     </div>
-                    <h3 className="text-xl md:text-2xl font-semibold text-white">
+                    <h3 className="lg:text-xl text-sm  font-semibold text-white">
                       {faqsData[activeIndex].question}
                     </h3>
                   </div>
 
-                  <div className="flex items-start gap-4 ml-14">
-                    <div className="border-l-2 border-[#3FA69B]/30 pl-6">
-                      <p className="text-gray-300 leading-relaxed">
+                  <div className="flex items-start gap-4 lg:ml-14 ml-0">
+                    <div className="border-l-2 border-[#3FA69B]/30 lg:pl-6 pl-3">
+                      <p className="text-gray-300 leading-relaxed text-xs ">
                         {faqsData[activeIndex].answer}
                       </p>
 
@@ -243,7 +247,7 @@ export default function FAQs() {
                       (activeIndex - 1 + faqsData.length) % faqsData.length
                     )
                   }
-                  className="text-gray-400 hover:text-white flex items-center gap-2 text-sm"
+                  className="text-gray-400 hover:text-white flex items-center gap-2 lg:text-sm text-xs"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +269,7 @@ export default function FAQs() {
                   onClick={() =>
                     setActiveIndex((activeIndex + 1) % faqsData.length)
                   }
-                  className="text-gray-400 hover:text-white flex items-center gap-2 text-sm"
+                  className="text-gray-400 hover:text-white flex items-center gap-2 lg:text-sm text-xs"
                 >
                   Next Question
                   <svg

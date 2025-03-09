@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code, BarChart3, LineChart, Zap } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   const iconVariants = {
@@ -99,7 +100,7 @@ const Hero = () => {
           </svg>
         </motion.div>
 
-        <motion.div className="max-w-5xl w-full flex flex-col items-center text-center space-y-8">
+        <motion.div className="max-w-5xl w-full mt-12 flex flex-col items-center text-center space-y-8">
           {/* Logo animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
@@ -220,33 +221,35 @@ const Hero = () => {
             transition={{ delay: 1.6, duration: 0.8 }}
             className="mt-8"
           >
-            <motion.button
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0 0 15px rgba(63, 166, 155, 0.8)",
-              }}
-              whileTap={{ scale: 0.98 }}
-              className="relative overflow-hidden bg-[#3FA69B] text-white font-semibold py-4 px-8 rounded-full flex items-center gap-3 text-lg shadow-lg"
-            >
-              <motion.span
-                initial={{ x: 0 }}
-                whileHover={{ x: -5 }}
-                className="relative z-10"
+            <Link to="/Services">
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 15px rgba(63, 166, 155, 0.8)",
+                }}
+                whileTap={{ scale: 0.98 }}
+                className="relative overflow-hidden bg-[#3FA69B] text-white font-semibold py-4 px-8 rounded-full flex items-center gap-3 text-lg shadow-lg"
               >
-                Start Your Transformation
-              </motion.span>
-              <motion.div
-                whileHover={{ x: -3, scale: 1.1 }}
-                className="relative z-10"
-              >
-                <ArrowRight size={24} />
-              </motion.div>
-              <motion.div
-                className="absolute inset-0 bg-black opacity-0"
-                whileHover={{ opacity: 0.2 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
+                <motion.span
+                  initial={{ x: 0 }}
+                  whileHover={{ x: -5 }}
+                  className="relative z-10 text-sm lg:text-md"
+                >
+                  Start Your Transformation
+                </motion.span>
+                <motion.div
+                  whileHover={{ x: -3, scale: 1.1 }}
+                  className="relative z-10"
+                >
+                  <ArrowRight size={24} />
+                </motion.div>
+                <motion.div
+                  className="absolute inset-0 bg-black opacity-0"
+                  whileHover={{ opacity: 0.2 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useState } from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 const ServiceCard = ({ title, description, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [ref, inView] = useInView({
@@ -31,9 +32,11 @@ const ServiceCard = ({ title, description, index }) => {
           className="flex items-center text-[#3FA69B] font-medium"
           animate={{ x: isHovered ? 5 : 0 }}
         >
-          <button className="flex items-center">
-            Learn more <ArrowRight className="ml-2 w-4 h-4" />
-          </button>
+          <Link to="/services">
+            <button className="flex items-center">
+              Learn more <ArrowRight className="ml-2 w-4 h-4" />
+            </button>
+          </Link>
         </motion.div>
       </div>
       <motion.div
