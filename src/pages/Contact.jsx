@@ -1,124 +1,48 @@
-import  { useEffect, useRef,  } from 'react';
-import { Star, Send, ArrowRight, Phone, Mail, MapPin, ExternalLink } from 'lucide-react';
-import { gsap } from 'gsap/gsap-core';
+import { useRef } from "react";
+import {
+  Send,
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  ExternalLink,
+} from "lucide-react";
 
 const Contact = () => {
   const containerRef = useRef(null);
   const formRef = useRef(null);
   const titleRef = useRef(null);
-  const starRef = useRef(null);
   const inputRefs = useRef([]);
   const newsletterRef = useRef(null);
-  const cursorRef = useRef(null);
 
-  useEffect(() => {
-    // Custom cursor animation
-    const moveCursor = (e) => {
-      if (cursorRef.current) {
-        gsap.to(cursorRef.current, {
-          x: e.clientX,
-          y: e.clientY,
-          duration: 0.5,
-          ease: "power2.out"
-        });
-      }
-    };
-    window.addEventListener('mousemove', moveCursor);
-
-    // Initial animations
-    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-    tl.from(titleRef.current, {
-      y: 100,
-      opacity: 0,
-      duration: 1
-    })
-    .from(starRef.current, {
-      scale: 0,
-      rotation: -180,
-      opacity: 0,
-      duration: 0.8
-    }, "-=0.5")
-    .from(inputRefs.current, {
-      y: 30,
-      opacity: 0,
-      stagger: 0.2,
-      duration: 0.8
-    }, "-=0.3")
-    .from(".contact-info-item", {
-      x: -50,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6
-    }, "-=0.5");
-
-    // Parallax effect for decorative elements
-    gsap.to(".floating-element", {
-      y: -20,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "power1.inOut"
-    });
-
-    // Scroll animations
-    gsap.to(".scroll-rotate", {
-      rotation: 360,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        scrub: 1,
-        start: "top top",
-        end: "bottom bottom"
-      }
-    });
-
-    // Newsletter animation
-    gsap.from(newsletterRef.current, {
-      scrollTrigger: {
-        trigger: newsletterRef.current,
-        start: "top center+=100",
-        end: "top center-=100",
-        scrub: 1
-      },
-      y: 100,
-      opacity: 0
-    });
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('mousemove', moveCursor);
-    };
-  }, []);
-
-  // Contact info items
   const contactInfo = [
     {
       icon: <Phone size={20} />,
       title: "Phone",
       value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      link: "tel:+15551234567",
     },
     {
       icon: <Mail size={20} />,
       title: "Email",
       value: "hello@example.com",
-      link: "mailto:hello@example.com"
+      link: "mailto:hello@example.com",
     },
     {
       icon: <MapPin size={20} />,
       title: "Address",
       value: "123 Business Street, Suite 100, City, State 12345",
-      link: "https://maps.google.com"
-    }
+      link: "https://maps.google.com",
+    },
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-28">
+    <div
+      ref={containerRef}
+      className="min-h-screen bg-black text-white overflow-hidden pt-28"
+    >
       {/* Custom Cursor */}
-      <div 
-        ref={cursorRef}
-        className="fixed w-4 h-4 bg-[#3FA69B] rounded-full mix-blend-difference pointer-events-none z-50 hidden md:block"
-      />
+      <div className="fixed w-4 h-4 bg-[#3FA69B] rounded-full mix-blend-difference pointer-events-none z-50 hidden md:block" />
 
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#3FA69B] opacity-10 rounded-full blur-3xl floating-element" />
@@ -132,16 +56,17 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               {/* Left Column */}
               <div className="relative">
-                <h1 ref={titleRef} className="text-5xl font-serif mb-6 relative">
-                  Let`&apos;`s Connect
-                  <div ref={starRef} className="absolute -top-8 -left-8 scroll-rotate">
-                    <Star className="w-12 h-12 text-[#3FA69B]" fill="currentColor" />
-                  </div>
+                <h1
+                  ref={titleRef}
+                  className="text-5xl font-serif mb-6 relative"
+                >
+                  Let&apos;s Connect
                 </h1>
                 <p className="text-gray-400 mb-8">
-                  Have a project in mind? Let`&apos;`s create something extraordinary together.
+                  Have a project in mind? Let&apos;s create something
+                  extraordinary together.
                 </p>
-                
+
                 {/* Contact Info Cards */}
                 <div className="space-y-4 mt-12">
                   {contactInfo.map((item, index) => (
@@ -157,10 +82,15 @@ const Contact = () => {
                           {item.icon}
                         </div>
                         <div>
-                          <h3 className="text-sm font-medium text-gray-400">{item.title}</h3>
+                          <h3 className="text-sm font-medium text-gray-400">
+                            {item.title}
+                          </h3>
                           <p className="text-white">{item.value}</p>
                         </div>
-                        <ExternalLink size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <ExternalLink
+                          size={16}
+                          className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        />
                       </div>
                     </a>
                   ))}
@@ -170,14 +100,14 @@ const Contact = () => {
               {/* Right Column - Contact Form */}
               <div ref={formRef} className="relative pt-20">
                 <form className="space-y-8">
-                  {['Name', 'Email', 'Message'].map((label, index) => (
+                  {["Name", "Email", "Message"].map((label, index) => (
                     <div
                       key={label}
-                      ref={el => inputRefs.current[index] = el}
+                      ref={(el) => (inputRefs.current[index] = el)}
                       className="relative group"
                     >
                       <input
-                        type={label === 'Email' ? 'email' : 'text'}
+                        type={label === "Email" ? "email" : "text"}
                         className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[#3FA69B] outline-none transition-all duration-300"
                         placeholder={label}
                       />

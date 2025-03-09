@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = [
   { id: 1, title: "Home", href: "#" },
@@ -70,14 +71,16 @@ const Footer = () => {
           className="flex flex-col items-start"
         >
           <h2 className="text-2xl font-bold text-[#3FA69B]">Nexflow</h2>
-          <motion.button
-            initial={{ scale: 0, opacity: 0 }}
-            animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
-            transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
-            className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300"
-          >
-            Contact Us
-          </motion.button>
+          <Link to="/Contact">
+            <motion.button
+              initial={{ scale: 0, opacity: 0 }}
+              animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
+              transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
+              className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300"
+            >
+              Contact Us
+            </motion.button>
+          </Link>
         </motion.div>
 
         {/* Quick Links */}
