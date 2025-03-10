@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   motion,
   useAnimation,
@@ -9,11 +9,26 @@ import {
 
 import AboutHero from "../components/AboutComponents/AboutHero";
 import Discover from "../components/AboutComponents/Discover";
-import AbouServices from "../components/AboutComponents/AbouServices";
-import AboutTeam from "../components/AboutComponents/AboutTeam";
+const AbouServices = React.lazy(() =>
+  import("../components/AboutComponents/AbouServices")
+);
+const AboutTeam = React.lazy(() =>
+  import("../components/AboutComponents/AboutTeam")
+);
 import AboutCTA from "../components/AboutComponents/AboutCTA";
 
 export default function About() {
+  const [isLaptop, setIsLaptop] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => setIsLaptop(window.innerWidth >= 1024);
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   const floatingAnimation = {
     y: [0, -15, 0],
     transition: {
@@ -55,35 +70,36 @@ export default function About() {
     });
   }, [gradientControls]);
 
-  // Team section reference for animations
   const teamRef = useRef(null);
   const teamInView = useInView(teamRef, { once: false, threshold: 0.3 });
 
   return (
     <div className="bg-black text-white pt-12 min-h-screen overflow-hidden">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        {[...Array(15)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-[#3FA69B] opacity-10"
-            style={{
-              width: Math.random() * 200 + 50,
-              height: Math.random() * 200 + 50,
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              x: [0, Math.random() * 100 - 50, 0],
-              y: [0, Math.random() * 100 - 50, 0],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+      {isLaptop && (
+        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute rounded-full bg-[#3FA69B] opacity-10"
+              style={{
+                width: Math.random() * 200 + 50,
+                height: Math.random() * 200 + 50,
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                x: [0, Math.random() * 100 - 50, 0],
+                y: [0, Math.random() * 100 - 50, 0],
+              }}
+              transition={{
+                duration: Math.random() * 10 + 10,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
+          ))}
+        </div>
+      )}
 
       <AboutHero
         floatingAnimation={floatingAnimation}
