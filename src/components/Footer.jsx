@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-
+import logo from "../assets/logo.svg";
 const footerLinks = [
   { id: 1, title: "Home", href: "#" },
-  { id: 2, title: "About", href: "#about" },
-  { id: 3, title: "Services", href: "#services" },
-  { id: 4, title: "Contact", href: "#contact" },
+  { id: 2, title: "About", href: "/about" },
+  { id: 3, title: "Services", href: "/services" },
+  { id: 4, title: "Contact", href: "/contact" },
 ];
 
 const services = [
@@ -20,7 +20,7 @@ const services = [
 const contactDetails = [
   {
     icon: <Mail size={20} />,
-    text: () => <span>hello@nexflow.tech</span>,
+    text: () => <span>info@nexflow.tech</span>,
   },
   {
     icon: <Phone size={20} />,
@@ -58,7 +58,10 @@ const Footer = () => {
   }, [controls, hasScrolled]);
 
   return (
-    <footer id="footer" className="bg-black text-white py-16 px-6 md:px-20">
+    <footer
+      id="footer"
+      className="bg-black text-white py-16 px-6 md:px-20 pb-0"
+    >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         {/* Logo & Contact Button */}
         <motion.div
@@ -70,13 +73,13 @@ const Footer = () => {
           }}
           className="flex flex-col items-start"
         >
-          <h2 className="text-2xl font-bold text-[#3FA69B]">Nexflow</h2>
+          <img src={logo} alt="logo image" className="w-20 h-auto" />
           <Link to="/Contact">
             <motion.button
               initial={{ scale: 0, opacity: 0 }}
               animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
               transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
-              className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300"
+              className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
             >
               Contact Us
             </motion.button>
@@ -165,7 +168,7 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="text-center text-gray-400 mt-12">
+      <div className="text-center text-gray-400 mt-8 md:mt-12 py-4 border-t border-gray-700">
         © {new Date().getFullYear()} Nexflow. All rights reserved.
       </div>
     </footer>

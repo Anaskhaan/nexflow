@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import ServiceStats from "../components/ServiceComponent/ServiceStats";
 import ServicesSection from "../components/ServiceComponent/ServicesSection";
 import ServiceProcess from "../components/ServiceComponent/ServiceProcess";
-import ServiceHero from "../components/ServiceComponent/ServiceHero";
+const ServiceHero = React.lazy(() =>
+  import("../components/ServiceComponent/ServiceHero")
+);
 import ServiceCTA from "../components/ServiceComponent/ServiceCTA";
 import { useAnimation } from "framer-motion";
 

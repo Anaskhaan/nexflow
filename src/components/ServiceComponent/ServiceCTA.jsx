@@ -73,7 +73,7 @@ const ServiceCTA = () => {
           </motion.p>
 
           <motion.div
-            className="space-y-4  flex flex-col "
+            className="flex justify-center items-center gap-4"
             initial={{ y: 50, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
@@ -81,7 +81,7 @@ const ServiceCTA = () => {
           >
             <Link to="/Meeting">
               <motion.button
-                className="bg-[#3FA69B] text-white lg:px-10 px-3 lg:py-5 py-2 rounded-full lg:text-lg text-sm"
+                className="bg-[#3FA69B] text-white lg:px-10 px-3 lg:py-5 py-2 rounded-lg lg:text-lg text-sm"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0px 10px 25px rgba(63, 166, 155, 0.4)",
@@ -93,7 +93,7 @@ const ServiceCTA = () => {
             </Link>
             <Link to="/Portfolio">
               <motion.button
-                className="text-white border-2 border-white hover:border-[#3FA69B] hover:text-[#3FA69B] lg:px-10 px-3 lg:py-5 py-2 rounded-full lg:text-lg text-sm"
+                className="text-white border-2 border-white hover:border-[#3FA69B] hover:text-[#3FA69B] lg:px-10 px-3 lg:py-5 py-2 rounded-lg lg:text-lg text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

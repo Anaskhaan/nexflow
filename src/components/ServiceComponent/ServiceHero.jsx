@@ -86,21 +86,21 @@ const ServiceHero = () => {
             </motion.p>
 
             <motion.div
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8 }}
             >
-              <Link to="/Packages">
+              <Link to="/Contact">
                 <motion.button
-                  className="bg-[#3FA69B] text-white lg:px-8 px-4 py-4 rounded-full lg:text-lg text-sm  flex items-center group "
+                  className="bg-[#3FA69B] text-white lg:px-8 px-4 py-4 rounded-lg lg:text-lg text-sm  flex items-center group "
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0px 8px 30px rgba(63, 166, 155, 0.4)",
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Explore Our Packages
+                  Get In Touch
                   <motion.span
                     className="ml-2"
                     animate={{
@@ -115,18 +115,6 @@ const ServiceHero = () => {
                   </motion.span>
                 </motion.button>
               </Link>
-
-              <motion.button
-                className="border-2 border-white hover:border-[#3FA69B] text-white lg:px-8 px-4 py-4 rounded-full lg:text-lg text-sm"
-                whileHover={{
-                  scale: 1.05,
-                  borderColor: "#3FA69B",
-                  color: "#3FA69B",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Contact Us
-              </motion.button>
             </motion.div>
           </motion.div>
         </div>
