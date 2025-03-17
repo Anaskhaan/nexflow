@@ -169,7 +169,7 @@ export default function FAQs() {
               </div>
 
               <div className="mt-10 space-y-4">
-                <Link to="/contact">
+                {/* <Link to="/contact">
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
@@ -178,7 +178,7 @@ export default function FAQs() {
                     <span>Contact Our Team</span>
                     <ChevronRight size={16} />
                   </motion.button>
-                </Link>
+                </Link> */}
                 <Link to="/contact">
                   <motion.button
                     whileHover={{ scale: 1.03 }}
