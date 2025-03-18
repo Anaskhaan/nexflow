@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
-import ServiceStats from "../components/ServiceComponent/ServiceStats";
-import ServicesSection from "../components/ServiceComponent/ServicesSection";
+import React, { Suspense, useEffect } from "react";
+const ServiceStats = React.lazy(() =>
+  import("../components/ServiceComponent/ServiceStats")
+);
+const ServicesSection = React.lazy(() =>
+  import("../components/ServiceComponent/ServicesSection")
+);
 import ServiceProcess from "../components/ServiceComponent/ServiceProcess";
 const ServiceHero = React.lazy(() =>
   import("../components/ServiceComponent/ServiceHero")
 );
 import ServiceCTA from "../components/ServiceComponent/ServiceCTA";
 import { useAnimation } from "framer-motion";
+import NexflowLoader from "../components/Helper/NexflowLoader";
 
 const Services = () => {
   const containerVariants = {
@@ -60,15 +65,17 @@ const Services = () => {
 
   return (
     <div className="min-h-screen py-12 bg-black text-white">
-      <ServiceHero />
-      <ServiceStats
-        containerVariants={containerVariants}
-        itemVariants={itemVariants}
-      />
-      <ServicesSection
-        containerVariants={containerVariants}
-        itemVariants={itemVariants}
-      />
+      <Suspense fallback={<NexflowLoader />}>
+        <ServiceHero />
+        <ServiceStats
+          containerVariants={containerVariants}
+          itemVariants={itemVariants}
+        />
+        <ServicesSection
+          containerVariants={containerVariants}
+          itemVariants={itemVariants}
+        />
+      </Suspense>
       <ServiceProcess />
       <ServiceCTA />
     </div>
