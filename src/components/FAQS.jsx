@@ -169,16 +169,6 @@ export default function FAQs() {
               </div>
 
               <div className="mt-10 space-y-4">
-                {/* <Link to="/contact">
-                  <motion.button
-                    whileHover={{ scale: 1.03 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 bg-[#3FA69B] hover:bg-[#3FA69B]/90 text-white font-medium rounded-lg flex items-center justify-center gap-2 transition-all"
-                  >
-                    <span>Contact Our Team</span>
-                    <ChevronRight size={16} />
-                  </motion.button>
-                </Link> */}
                 <Link to="/contact">
                   <motion.button
                     whileHover={{ scale: 1.03 }}
