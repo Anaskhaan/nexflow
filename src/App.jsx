@@ -21,7 +21,7 @@ const ScrollToTop = () => {
   useLayoutEffect(() => {
     window.scroll(0, 0);
   }, [location.pathname]);
-  return null; // This component doesn't render anything
+  return null;
 };
 
 function App() {
@@ -30,17 +30,17 @@ function App() {
       <Router>
         <ScrollToTop />
         <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="Meeting" element={<MeetingForm />} />
-          <Route path="Portfolio" element={<Portfolio />} />
-          <Route path="services" element={<Services />} />
-          <Route path="Packages" element={<PackagesComponent />} />
-          <Route path="/services/:id" element={<ServicesDetail />} />
-          <Route path="contact" element={<Contact />} />
-        </Route>
-      </Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Meeting" element={<MeetingForm />} />
+            <Route path="/Portfolio" element={<Portfolio />} />
+            <Route path="/Services" element={<Services />} />
+            <Route path="/Packages" element={<PackagesComponent />} />
+            <Route path="/Services/:id" element={<ServicesDetail />} />
+            <Route path="/Contact" element={<Contact />} />
+          </Route>
+        </Routes>
       </Router>
     </>
   );

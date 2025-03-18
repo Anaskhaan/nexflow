@@ -14,10 +14,9 @@ const navLinks = [
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Toggle sidebar function
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
-    document.body.style.overflow = isOpen ? "auto" : "hidden"; // Prevent background scrolling
+    document.body.classList.toggle("overflow-hidden", !isOpen);
   };
 
   return (
@@ -36,13 +35,12 @@ const Sidebar = () => {
           <>
             {/* Sidebar Menu */}
             <motion.div
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="fixed top-0 right-0 w-64 h-full bg-white text-black shadow-lg p-6 flex flex-col z-50"
+              initial={{ translateX: "100%" }}
+              animate={{ translateX: 0 }}
+              exit={{ translateX: "100%" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="fixed top-0 right-0 w-64 h-full bg-white text-black p-6 flex flex-col z-50 shadow-md will-change-transform"
             >
-              {/* Close Button */}
               <button
                 className="self-end mb-6"
                 onClick={toggleSidebar}
@@ -51,7 +49,6 @@ const Sidebar = () => {
                 <X size={28} />
               </button>
 
-              {/* Sidebar Links */}
               <div className="flex flex-col gap-6">
                 {navLinks.map((link) => (
                   <a
@@ -65,7 +62,6 @@ const Sidebar = () => {
                 ))}
               </div>
 
-              {/* Get Started Button */}
               <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
                 Get Started
               </button>
@@ -76,8 +72,9 @@ const Sidebar = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.5 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="fixed inset-0 bg-black z-40"
-              onClick={toggleSidebar} // Close sidebar when clicking outside
+              onClick={toggleSidebar}
             />
           </>
         )}

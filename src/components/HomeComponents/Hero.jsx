@@ -228,7 +228,7 @@ const Hero = () => {
                   boxShadow: "0 0 15px rgba(63, 166, 155, 0.8)",
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative overflow-hidden bg-[#3FA69B] text-white font-semibold py-4 px-8 rounded-full flex items-center gap-3 text-lg shadow-lg"
+                className="relative overflow-hidden bg-[#3FA69B] text-white font-semibold py-4 px-8 rounded-lg flex items-center gap-3 text-lg shadow-lg"
               >
                 <motion.span
                   initial={{ x: 0 }}

@@ -150,7 +150,7 @@ export const About = () => {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-block mb-4 px-4 py-1 rounded-full bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-20"
+              className="inline-block mb-4 px-4 py-1 rounded-lg bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-20"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={sectionInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ delay: 0.3, duration: 0.6 }}
