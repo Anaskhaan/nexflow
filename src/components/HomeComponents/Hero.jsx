@@ -19,7 +19,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
+    <div className="relative w-full h-screen bg-black overflow-hidden pt-12">
       {/* Animated gradient background */}
       <motion.div
         className="absolute inset-0 opacity-40"

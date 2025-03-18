@@ -25,13 +25,13 @@ const Contact = () => {
     {
       icon: <Mail size={20} />,
       title: "Email",
-      value: "hello@example.com",
-      link: "mailto:hello@example.com",
+      value: "info@example.com",
+      link: "mailto:info@example.com",
     },
     {
       icon: <MapPin size={20} />,
       title: "Address",
-      value: "123 Business Street, Suite 100, City, State 12345",
+      value: "8 The Green #6092 Dover, DE, 19901",
       link: "https://maps.google.com",
     },
   ];
@@ -143,12 +143,11 @@ const Contact = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full p-4 pr-12 bg-transparent border-2 border-gray-800 rounded-full focus:border-[#3FA69B] outline-none transition-all duration-300"
+                  className="w-full p-4 pr-12 bg-transparent border-2 border-gray-800 rounded-lg focus:border-[#3FA69B] outline-none transition-all duration-300"
                 />
                 <button className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-[#3FA69B] hover:text-white transition-colors duration-300">
                   <ArrowRight size={20} />
                 </button>
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#3FA69B] transition-all duration-300 group-hover:w-[calc(100%-2rem)]" />
               </div>
             </div>
           </div>

@@ -75,7 +75,7 @@ export default function About() {
   const teamInView = useInView(teamRef, { once: false, threshold: 0.3 });
 
   return (
-    <div className="bg-black text-white pt-12 min-h-screen overflow-hidden">
+    <div className="bg-black text-white pt-16 min-h-screen overflow-hidden">
       {isLaptop && (
         <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
           {[...Array(15)].map((_, i) => (
