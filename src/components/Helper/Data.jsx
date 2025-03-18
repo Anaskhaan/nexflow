@@ -1,3 +1,6 @@
+import bellClinix from "../../assets/bellclinix.png";
+import swiftTakeoffs from "../../assets/swifttakeoffs.png";
+import paradisePipes from "../../assets/paradisepipe.png";
 export const ServicesData = [
   {
     id: 1,
@@ -156,5 +159,82 @@ export const ServicesData = [
     ],
     timeframe: "2-6 weeks depending on project scope",
     pricing: "Starting at $4,000 for complete UX/UI projects",
+  },
+];
+
+export const portfolioData = [
+  {
+    id: 1,
+    image: bellClinix,
+    projectName: "Bell Clinix",
+    clientName: "Bell Clinix",
+    websiteLink: "https://bellclinix.com/",
+    images: [
+      "https://source.unsplash.com/featured/?clinic,healthcare",
+      "https://source.unsplash.com/featured/?hospital,medical",
+      "https://source.unsplash.com/featured/?doctor,patient",
+    ],
+    typographyColorScheme:
+      "https://source.unsplash.com/featured/?typography,colors",
+    projectDetails:
+      "A modern healthcare website with intuitive appointment scheduling and patient portal integration.",
+    features: [
+      "Responsive patient-first design",
+      "Integrated appointment booking system",
+      "HIPAA-compliant patient portal",
+      "Service catalog with detailed descriptions",
+    ],
+    mobileResponsivenessImage:
+      "https://source.unsplash.com/featured/?mobile,healthcare",
+  },
+  {
+    image: swiftTakeoffs,
+
+    id: 2,
+    projectName: "Swift Takeoffs",
+    clientName: "Swift Takeoffs",
+    websiteLink: "https://swifttakeoffs.com/",
+    images: [
+      "https://source.unsplash.com/featured/?airplane,flight",
+      "https://source.unsplash.com/featured/?airport,travel",
+      "https://source.unsplash.com/featured/?skyline,aviation",
+    ],
+    typographyColorScheme:
+      "https://source.unsplash.com/featured/?typography,aviation",
+    projectDetails:
+      "Aviation services platform with real-time flight tracking and booking capabilities.",
+    features: [
+      "Dynamic flight scheduling system",
+      "Interactive map integration",
+      "Customer account management",
+      "Responsive booking experience",
+    ],
+    mobileResponsivenessImage:
+      "https://source.unsplash.com/featured/?mobile,aviation",
+  },
+  {
+    image: paradisePipes,
+
+    id: 3,
+    projectName: "Paradise Pipes",
+    clientName: "Paradise Pipes",
+    websiteLink: "http://paradisepipes.com/",
+    images: [
+      "https://source.unsplash.com/featured/?ecommerce,shop",
+      "https://source.unsplash.com/featured/?products,store",
+      "https://source.unsplash.com/featured/?market,commerce",
+    ],
+    typographyColorScheme:
+      "https://source.unsplash.com/featured/?typography,ecommerce",
+    projectDetails:
+      "E-commerce platform for premium smoking accessories with detailed product catalogs.",
+    features: [
+      "Custom product filtering system",
+      "Secure payment processing",
+      "Customer reviews integration",
+      "Mobile-first shopping experience",
+    ],
+    mobileResponsivenessImage:
+      "https://source.unsplash.com/featured/?mobile,ecommerce",
   },
 ];
