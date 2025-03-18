@@ -13,7 +13,6 @@ import Contact from "./pages/Contact";
 import Services from "./pages/Services";
 import ServicesDetail from "./components/ServiceComponent/ServicesDetail";
 import Portfolio from "./pages/Portfolio";
-import PackagesComponent from "./pages/Packages";
 import MeetingForm from "./pages/Meeting";
 
 const ScrollToTop = () => {
@@ -36,7 +35,6 @@ function App() {
             <Route path="/Meeting" element={<MeetingForm />} />
             <Route path="/Portfolio" element={<Portfolio />} />
             <Route path="/Services" element={<Services />} />
-            <Route path="/Packages" element={<PackagesComponent />} />
             <Route path="/Services/:id" element={<ServicesDetail />} />
             <Route path="/Contact" element={<Contact />} />
           </Route>

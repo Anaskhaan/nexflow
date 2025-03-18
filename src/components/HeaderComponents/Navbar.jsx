@@ -10,7 +10,6 @@ const navLinks = [
   { id: 2, title: "About", href: "/About" },
   { id: 3, title: "Services", href: "/Services" },
   { id: 4, title: "Portfolio", href: "/Portfolio" },
-  // { id: 5, title: "Packages", href: "/Packages" },
   { id: 6, title: "Contact", href: "/Contact" },
 ];
 
@@ -76,13 +75,6 @@ const Navbar = () => {
               Get Started
             </button>
           </Link>
-          {/* <Link to="/Meeting">
-            <button
-              className="hidden bg-white text-[#2D7A71] hover:bg-black hover:text-white md:block font-semibold py-2 px-6 shadow-lg transition duration-300"
-            >
-              Arrange Meeting
-            </button>
-          </Link> */}
         </div>
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsOpen(true)}>
@@ -124,13 +116,6 @@ const Navbar = () => {
                 Get Started
               </button>
             </Link>
-            {/* <Link to="/Meeting">
-              <button
-                className="hidden bg-white text-[#2D7A71] hover:bg-black hover:text-white md:block font-semibold py-2 px-6 shadow-lg transition duration-300"
-              >
-                Arrange Meeting
-              </button>
-            </Link> */}
           </motion.div>
         )}
       </AnimatePresence>
