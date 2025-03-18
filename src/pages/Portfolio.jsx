@@ -3,7 +3,7 @@ import { portfolioData } from "../components/Helper/Data";
 
 const Portfolio = () => {
   return (
-    <div className="w-full  bg-black text-white py-16">
+    <div className="w-full  bg-black text-white py-24">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <span className="text-sm font-bold tracking-widest text-gray-400 uppercase">
