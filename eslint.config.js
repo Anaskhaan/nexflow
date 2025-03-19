@@ -24,7 +24,7 @@ export default [
       "react-refresh": reactRefresh,
     },
     rules: {
-      "react/prop-types": "OFF",
+      "react/prop-types": "Off",
       "react/react-in-jsx-scope": "off",
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,

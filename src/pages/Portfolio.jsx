@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { portfolioData } from "../components/Helper/Data";
+import { Link } from "react-router-dom";
 
 const Portfolio = () => {
   return (
@@ -43,12 +44,15 @@ const Portfolio = () => {
                 <p className="text-gray-300 mt-2 line-clamp-2 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-75">
                   {project.description}
                 </p>
-                <div className="flex items-center mt-4 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150">
+                <Link
+                  to={`/Portfolio/${project.id}`}
+                  className="flex items-center mt-4 transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 delay-150"
+                >
                   <span className="text-sm font-medium text-teal-500">
                     View Details
                   </span>
                   <ExternalLink className="ml-1 w-4 h-4 text-teal-500" />
-                </div>
+                </Link>
               </div>
             </div>
           ))}
