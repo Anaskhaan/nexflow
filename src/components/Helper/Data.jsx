@@ -1,6 +1,9 @@
 import bellClinix from "../../assets/bellclinix.png";
 import swiftTakeoffs from "../../assets/swifttakeoffs.png";
 import paradisePipes from "../../assets/paradisepipe.png";
+import a from "../../assets/a.png";
+import b from "../../assets/b.png";
+import c from "../../assets/c.png";
 export const ServicesData = [
   {
     id: 1,
@@ -166,18 +169,17 @@ export const portfolioData = [
   {
     id: 1,
     image: bellClinix,
+    projecTYpe: "Medical Billing",
+
     projectName: "Bell Clinix",
     clientName: "Bell Clinix",
     websiteLink: "https://bellclinix.com/",
-    images: [
-      "https://source.unsplash.com/featured/?clinic,healthcare",
-      "https://source.unsplash.com/featured/?hospital,medical",
-      "https://source.unsplash.com/featured/?doctor,patient",
-    ],
+    images: [a, b, c],
     typographyColorScheme:
       "https://source.unsplash.com/featured/?typography,colors",
     projectDetails:
-      "A modern healthcare website with intuitive appointment scheduling and patient portal integration.",
+      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,  obcaecati. Incidunt vitae praesentium aspernatur commodi optio dicta tenetur. Inventore voluptates tempora sunt minima saepe neque?",
+
     features: [
       "Responsive patient-first design",
       "Integrated appointment booking system",
@@ -192,6 +194,7 @@ export const portfolioData = [
 
     id: 2,
     projectName: "Swift Takeoffs",
+    projecTYpe: "Construction agency",
     clientName: "Swift Takeoffs",
     websiteLink: "https://swifttakeoffs.com/",
     images: [
@@ -202,7 +205,7 @@ export const portfolioData = [
     typographyColorScheme:
       "https://source.unsplash.com/featured/?typography,aviation",
     projectDetails:
-      "Aviation services platform with real-time flight tracking and booking capabilities.",
+      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,  obcaecati. Incidunt vitae praesentium aspernatur commodi optio dicta tenetur. Inventore voluptates tempora sunt minima saepe neque?",
     features: [
       "Dynamic flight scheduling system",
       "Interactive map integration",
@@ -217,6 +220,8 @@ export const portfolioData = [
 
     id: 3,
     projectName: "Paradise Pipes",
+    projecTYpe: "Company Profile",
+
     clientName: "Paradise Pipes",
     websiteLink: "http://paradisepipes.com/",
     images: [
@@ -227,7 +232,8 @@ export const portfolioData = [
     typographyColorScheme:
       "https://source.unsplash.com/featured/?typography,ecommerce",
     projectDetails:
-      "E-commerce platform for premium smoking accessories with detailed product catalogs.",
+      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,  obcaecati. Incidunt vitae praesentium aspernatur commodi optio dicta tenetur. Inventore voluptates tempora sunt minima saepe neque?",
+
     features: [
       "Custom product filtering system",
       "Secure payment processing",
