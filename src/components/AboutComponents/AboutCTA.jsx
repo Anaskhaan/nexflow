@@ -66,3 +66,4 @@ const AboutCTA = ({ gradientControls }) => {
 };
 
 export default AboutCTA;
+// Show code
