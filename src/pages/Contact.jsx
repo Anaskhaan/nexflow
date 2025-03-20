@@ -25,8 +25,8 @@ const Contact = () => {
     {
       icon: <Mail size={20} />,
       title: "Email",
-      value: "info@example.com",
-      link: "mailto:info@example.com",
+      value: "info@nexflow.tech",
+      link: "mailto:info@nexflow.tech",
     },
     {
       icon: <MapPin size={20} />,
@@ -114,7 +114,7 @@ const Contact = () => {
                       <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3FA69B] transition-all duration-300 group-hover:w-full" />
                     </div>
                   ))}
-                  <button className="magnetic-button relative px-8 py-3 bg-[#3FA69B] text-white font-medium rounded-full overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3FA69B]/20">
+                  <button className="magnetic-button relative px-8 py-3 bg-[#3FA69B] text-white font-medium rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3FA69B]/20">
                     <span className="relative z-10 flex items-center gap-2">
                       Send Message
                       <Send size={18} />
