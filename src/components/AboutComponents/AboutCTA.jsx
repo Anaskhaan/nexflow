@@ -49,11 +49,11 @@ const AboutCTA = ({ gradientControls }) => {
             />
             <Link to="contact">
               <motion.button
-                className="relative bg-[#3FA69B] text-white py-4 px-10 rounded-lg text-xl font-bold group overflow-hidden z-10"
-                whileTap={{ scale: 0.95 }}
-                whileHover={{
-                  boxShadow: "0 0 30px #3FA69B",
-                }}
+                className="relative bg-[#3FA69B] text-white py-2 px-4 rounded-lg text-xl font-bold group overflow-hidden z-10"
+                // whileTap={{ scale: 0.95 }}
+                // whileHover={{
+                //   boxShadow: "0 0 30px #3FA69B",
+                // }}
               >
                 Get Started
               </motion.button>

@@ -79,7 +79,7 @@ const Footer = () => {
               initial={{ scale: 0, opacity: 0 }}
               animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
               transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
-              className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300"
+              className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300"
             >
               Contact Us
             </motion.button>
