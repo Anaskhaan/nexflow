@@ -29,10 +29,23 @@ const contactDetails = [
   {
     icon: <MapPin size={20} />,
     text: () => (
-      <span>
-        8 The Green #6092
-        <br /> Dover, DE, 19901
-      </span>
+      <div>
+        <p className="font-semibold">USA Office</p>
+        <span>8 The Green #6092</span>
+        <br />
+        <span>Dover, DE, 19901</span>
+      </div>
+    ),
+  },
+  {
+    icon: <MapPin size={20} />,
+    text: () => (
+      <div>
+        <p className="font-semibold"> Lahore Office</p>
+        <span>56-G, Gulberg III</span>
+        <br />
+        <span>Lahore, Pakistan</span>
+      </div>
     ),
   },
 ];
