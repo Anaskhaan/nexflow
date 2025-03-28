@@ -36,7 +36,6 @@ function App() {
             <Route path="/Meeting" element={<MeetingForm />} />
             <Route path="/Portfolio" element={<Portfolio />} />
             <Route path="/Portfolio/:id" element={<PortfolioDetails />} />
-
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServicesDetail />} />
             <Route path="/Contact" element={<Contact />} />
