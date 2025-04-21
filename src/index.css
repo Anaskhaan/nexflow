@@ -1,17 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Apply Open Sans as the default font for body text */
-body {
-  @apply font-sans;
-}
-
-/* Apply Roboto for h1 headings */
-h1 {
-  @apply font-display font-bold;
-}
-
-
-
-
+@import "tailwindcss";
