@@ -92,7 +92,7 @@ const Footer = () => {
               initial={{ scale: 0, opacity: 0 }}
               animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
               transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
-              className="mt-6 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300"
+              className="mt-6   btn-primary"
             >
               Contact Us
             </motion.button>
@@ -112,7 +112,7 @@ const Footer = () => {
             },
           }}
         >
-          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <h3 className="text-xl font-semibold  mb-4">Quick Links</h3>
           <ul className="space-y-3">
             {footerLinks.map((link) => (
               <li key={link.id}>
@@ -171,7 +171,7 @@ const Footer = () => {
             {contactDetails.map((contact, index) => (
               <li key={index} className="flex items-center gap-2">
                 {contact.icon}
-                <span className="hover:text-[#3FA69B] transition duration-300">
+                <span className=" hover:text-[#3FA69B] transition duration-300">
                   {contact.text()}
                 </span>
               </li>
