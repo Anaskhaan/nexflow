@@ -6,7 +6,7 @@ const page = () => {
     <div>
           <Navbar />
 
-          hi
+          {/* hi */}
     </div>
   )
 }
