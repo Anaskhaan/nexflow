@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+
+
+
+:root {
+
+  --color-primary: #3DA698;
+  --color-secondary: #3F4E58;
+
+  --font-heading: 'Poppins', sans-serif;
+  --font-subheading: 'Roboto', sans-serif;
+  --font-paragraph: 'Open Sans', sans-serif;
+
+
+  --btn-padding: 0.7rem 1.5rem;
+  --btn-border-radius: 8px;
+  --btn-font-size: 1rem;
+  --btn-border-width: 2px;
+  --btn-transition: all 0.3s ease-in-out;
+}
+
+/* Buttons */
+
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  padding: var(--btn-padding);
+  font-size: var(--btn-font-size);
+  border-radius: var(--btn-border-radius);
+  border: var(--btn-border-width) solid transparent;
+  cursor: pointer;
+  transition: var(--btn-transition);
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+
+/* .btn-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  border-color: var(--color-secondary);
+}
+ */
+/* .btn-secondary:hover {
+  background-color: white;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+} */
+
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.subheading {
+  font-family: var(--font-subheading);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.paragraph {
+  font-family: var(--font-paragraph);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-secondary);
+}
+
+
+.span-text {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  background-color: rgba(61, 166, 152, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
