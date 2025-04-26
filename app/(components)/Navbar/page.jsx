@@ -1,20 +1,8 @@
-import React from 'react';
-import Sidebar from "../Sidebar";
+import React from "react";
+import NavbarClient from "../NavbarClient";
 
 const Navbar = () => {
-  return (
-    <div>
-      {/* sidebar */}
-      <div className=" block md:hidden">
-        <Sidebar />
-      </div>
-{/* navbar */}
-      <div className=' hidden lg:block'>
-
-      <h1>Navbar</h1>
-      </div>
-    </div>
-  );
+  return <NavbarClient />;
 };
 
 export default Navbar;
