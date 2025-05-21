@@ -15,6 +15,8 @@ import ServicesDetail from "./components/ServiceComponent/ServicesDetail";
 import Portfolio from "./pages/Portfolio";
 import MeetingForm from "./pages/Meeting";
 import PortfolioDetails from "./components/PortfolioComponents/PortfolioDetails";
+import CaseStudies from "./pages/CaseStudies";
+import CaseStudyDetails from "./pages/caseStudyDetails";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -39,6 +41,8 @@ function App() {
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:id" element={<ServicesDetail />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path="/CaseStudies" element={<CaseStudies />} />
+            <Route path="/CaseStudies/:id" element={<CaseStudyDetails />} />
           </Route>
         </Routes>
       </Router>

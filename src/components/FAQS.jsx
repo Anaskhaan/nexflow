@@ -117,7 +117,7 @@ export default function FAQs() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="lg:col-span-2 order-2 lg:order-1"
           >
-            <div className="sticky top-8">
+            <div className="sticky top-8 lg:block hidden">
               <h3 className="text-lg font-medium text-white mb-6 flex items-center gap-2">
                 <span className="w-8 h-8 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-sm font-bold">
                   ?
