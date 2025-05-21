@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HelpCircle, ChevronRight } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function FAQs() {

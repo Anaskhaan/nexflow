@@ -19,7 +19,7 @@ const Contact = () => {
     {
       icon: <Phone size={20} />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+1 (929) 566 4866",
       link: "tel:+15551234567",
     },
     {

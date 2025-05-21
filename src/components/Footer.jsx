@@ -24,7 +24,7 @@ const contactDetails = [
   },
   {
     icon: <Phone size={20} />,
-    text: () => <span>+0987654321</span>,
+    text: () => <span>+1 (929) 566 4866</span>,
   },
   {
     icon: <MapPin size={20} />,

@@ -1,157 +1,181 @@
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import {
+  Code,
+  Smartphone,
+  BarChart2,
+  Search,
+  Share2,
+  Zap,
+  PenTool,
+  Cpu,
+  Layout,
+  ArrowRight,
+} from "lucide-react";
 import { useState } from "react";
-import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-const ServiceCard = ({ title, description, index }) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+
+const ServicePill = ({ title, icon, isActive, onClick }) => {
+  const icons = {
+    web: <Code className="w-4 h-4" />,
+    app: <Smartphone className="w-4 h-4" />,
+    marketing: <BarChart2 className="w-4 h-4" />,
+    seo: <Search className="w-4 h-4" />,
+    aso: <Smartphone className="w-4 h-4" />,
+    smm: <Share2 className="w-4 h-4" />,
+    ppc: <Zap className="w-4 h-4" />,
+    branding: <PenTool className="w-4 h-4" />,
+    ai: <Cpu className="w-4 h-4" />,
+    uiux: <Layout className="w-4 h-4" />,
+  };
 
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 p-1"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <button
+      onClick={onClick}
+      className={`px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all ${
+        isActive
+          ? "bg-[#3FA69B] text-black"
+          : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+      }`}
     >
-      <div className="relative z-10 p-6 h-full bg-gray-900 rounded-lg">
-        <div className="flex items-center mb-4">
-          <div className="p-2 rounded-full bg-[#3FA69B] bg-opacity-20 mr-3">
-            <CheckCircle2 className="w-5 h-5 text-[#3FA69B]" />
-          </div>
-          <h3 className="text-xl font-bold text-white">{title}</h3>
+      {icons[icon]}
+      <span>{title}</span>
+    </button>
+  );
+};
+
+const ServiceDetail = ({ service }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="bg-gray-900 rounded-xl p-6 border border-gray-800"
+    >
+      <div className="flex items-start">
+        <div className="p-3 rounded-lg bg-[#3FA69B] bg-opacity-20 mr-4">
+          {service.icon}
         </div>
-        <p className="text-gray-400 mb-4">{description}</p>
-        <motion.div
-          className="flex items-center text-[#3FA69B] font-medium"
-          animate={{ x: isHovered ? 5 : 0 }}
-        >
-          <Link to="/services">
-            <button className="flex items-center">
-              Learn more <ArrowRight className="ml-2 w-4 h-4" />
-            </button>
+        <div>
+          <h3 className="text-xl font-bold text-white mb-2">{service.title}</h3>
+          <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {service.features.map((feature, i) => (
+              <span
+                key={i}
+                className="text-xs bg-gray-800 text-gray-300 px-3 py-1 rounded-full"
+              >
+                {feature}
+              </span>
+            ))}
+          </div>
+          <Link
+            to="/services"
+            className="text-[#3FA69B] text-sm font-medium flex items-center group"
+          >
+            Learn more
+            <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
-        </motion.div>
+        </div>
       </div>
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-[#3FA69B] to-teal-500 opacity-30"
-        initial={{ x: "-100%" }}
-        animate={{ x: isHovered ? "0%" : "-100%" }}
-        transition={{ duration: 0.3 }}
-      />
     </motion.div>
   );
 };
 
-const FloatingShape = ({ size, color, top, left, right, bottom, delay }) => {
-  return (
-    <motion.div
-      className={`absolute rounded-lg bg-gradient-to-br ${color} opacity-70`}
-      style={{
-        width: size,
-        height: size,
-        top,
-        left,
-        right,
-        bottom,
-        zIndex: -1,
-      }}
-      animate={{
-        y: [0, -15, 0, 15, 0],
-        rotate: [0, 10, 0, -10, 0],
-      }}
-      transition={{
-        duration: 10,
-        delay,
-        repeat: Infinity,
-        repeatType: "reverse",
-      }}
-    />
-  );
-};
 export const Services = () => {
+  const [activeService, setActiveService] = useState(0);
+
   const services = [
     {
+      title: "Web Development",
+      icon: <Code className="w-5 h-5 text-[#3FA69B]" />,
+      description:
+        "Building high-performance, scalable websites with modern frameworks.",
+      features: ["React", "Next.js", "Node.js", "Tailwind CSS"],
+    },
+    {
+      title: "UI/UX Design",
+      icon: <Layout className="w-5 h-5 text-[#3FA69B]" />,
+      description:
+        "Creating intuitive user experiences with pixel-perfect interfaces.",
+      features: ["User Research", "Wireframing", "Prototyping", "Figma"],
+    },
+    {
+      title: "App Development",
+      icon: <Smartphone className="w-5 h-5 text-[#3FA69B]" />,
+      description: "Cross-platform mobile applications for iOS and Android.",
+      features: ["React Native", "Flutter", "Swift", "Kotlin"],
+    },
+    {
       title: "Digital Marketing",
-      description:
-        "We craft comprehensive digital strategies tailored to your business goals and target audience.",
-    },
-
-    {
-      title: "Social Media Marketing",
-      description:
-        "Strategic social media management to build community and amplify your brand voice.",
-    },
-    {
-      title: "SEO Optimization",
-      description:
-        "Data-driven SEO strategies to improve visibility and drive organic traffic to your website.",
-    },
-    {
-      title: "Website Development",
-      description:
-        "Boost your online presence with a stunnning website , it builds trust",
-    },
-    {
-      title: "Branding",
-      description:
-        "  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas natus nihil qui quia beatae unde culpa iste alias sequi repellendus?",
+      icon: <BarChart2 className="w-5 h-5 text-[#3FA69B]" />,
+      description: "Comprehensive strategies to grow your online presence.",
+      features: ["Content Strategy", "Campaign Management", "Analytics"],
     },
   ];
+
+  const allServices = [
+    { title: "Web", icon: "web" },
+    { title: "UI/UX", icon: "uiux" },
+    { title: "App", icon: "app" },
+    { title: "Marketing", icon: "marketing" },
+    { title: "SEO", icon: "seo" },
+    { title: "ASO", icon: "aso" },
+    { title: "SMM", icon: "smm" },
+    { title: "PPC", icon: "ppc" },
+    { title: "Branding", icon: "branding" },
+    { title: "AI/ML", icon: "ai" },
+  ];
+
   return (
-    <div>
-      <section className="py-20 bg-black relative">
-        <FloatingShape
-          size={100}
-          color="from-[#3FA69B] to-teal-300"
-          top="10%"
-          right="5%"
-          delay={3}
-        />
-        <FloatingShape
-          size={70}
-          color="from-purple-500 to-blue-500"
-          bottom="10%"
-          left="5%"
-          delay={1}
-        />
-
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.1 }}
-            className="text-center max-w-3xl mx-auto mb-16"
-          >
-            <h2 className="text-3xl text-white md:text-4xl font-bold mb-6">
-              Our Services
-            </h2>
-            <p className="text-gray-400">
-              We offer a comprehensive suite of digital marketing services
-              designed to elevate your brand and drive meaningful results in
-              today&apos;s competitive landscape.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                title={service.title}
-                description={service.description}
-                index={index}
-              />
-            ))}
-          </div>
+    <section className="py-16 bg-black relative">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <span className="text-sm font-medium text-[#3FA69B] tracking-wider">
+            OUR EXPERTISE
+          </span>
+          <h2 className="text-3xl font-bold text-white mt-2 mb-3">
+            Full-Spectrum{" "}
+            <span className="text-[#3FA69B]">Digital Services</span>
+          </h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-[#3FA69B] to-[#2D7E74] mx-auto mb-6"></div>
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm">
+            Comprehensive solutions from design to development and marketing.
+          </p>
         </div>
-      </section>
-    </div>
+
+        <div className="flex flex-wrap justify-center gap-3 mb-8">
+          {allServices.map((service, index) => (
+            <ServicePill
+              key={index}
+              title={service.title}
+              icon={service.icon}
+              isActive={activeService === index && index < 4}
+              onClick={() => setActiveService(index)}
+            />
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          {services.slice(0, 2).map((service, index) => (
+            <ServiceDetail key={index} service={service} />
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {services.slice(2, 4).map((service, index) => (
+            <ServiceDetail key={index + 2} service={service} />
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center px-8 py-3 bg-transparent border border-[#3FA69B] text-[#3FA69B] rounded-lg hover:bg-[#3FA69B] hover:text-black transition-colors duration-300"
+          >
+            View All Services
+            <ArrowRight className="ml-2 w-4 h-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
