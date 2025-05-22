@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { caseStudyData } from "../components/Helper/caseStudyData";
+import { caseStudy } from "../components/Helper/caseStudy";
 import { Link } from "react-router-dom";
 
 const CaseStudies = () => {
@@ -22,7 +22,7 @@ const CaseStudies = () => {
 
         {/* Case Study Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {caseStudyData.map((study) => (
+          {caseStudy.map((study) => (
             <div
               key={study.id}
               className="bg-[#1F2937] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#374151] hover:border-[#06B6D4]"
@@ -38,9 +38,6 @@ const CaseStudies = () => {
                   {study.summary}
                 </p>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm font-medium text-[#9CA3AF]">
-                    {study.date}
-                  </span>
                   <Link
                     to={`/CaseStudies/${study.id}`}
                     className="flex items-center text-[#06B6D4] hover:text-white transition-colors"

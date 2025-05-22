@@ -1,4 +1,4 @@
-import { ChevronLeft, ExternalLink } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { caseStudyData } from "../components/Helper/caseStudyData";
 import { useParams } from "react-router-dom";
@@ -12,7 +12,7 @@ const CaseStudyDetails = () => {
   }
 
   return (
-    <div className="w-full bg-[#111827] min-h-screen py-16">
+    <div className="w-full bg-[#111827] min-h-screen py-20">
       <div className="max-w-4xl mx-auto px-4">
         {/* Back Button */}
         <Link
