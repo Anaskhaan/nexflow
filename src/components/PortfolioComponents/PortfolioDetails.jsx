@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { portfolioData } from "../Helper/Data";
 import CustomCarousel from "./CustomCarousel";
+import BrandGuidelines from "./BrandGuidlines";
 
 const PortfolioDetails = () => {
   const { id } = useParams();
@@ -20,38 +21,56 @@ const PortfolioDetails = () => {
         </h2>
       </div>
 
-      {/* Project Type */}
-      <div className="flex justify-center md:justify-start">
-        <span className="px-4 py-2 hover:bg-[#3fa69b] transition duration-300 cursor-pointer rounded-md text-lg md:text-xl border border-[#3fa69b]">
-          {project.projecTYpe}
-        </span>
-      </div>
-
       {/* Carousel Section */}
       <div className="mt-5">
         <CustomCarousel images={project.images} />
       </div>
 
-      {/* Project Details Section */}
-      <div className="mt-12 flex flex-col md:flex-row w-full max-w-8xl md:justify-between gap-8">
-        <div className="space-y-6 w-full md:w-1/2">
-          <h1 className="text-xl md:text-2xl">The Project</h1>
-          <p className="text-sm md:text-base">{project.projectDetails}</p>
+      <div className="mt-20 flex flex-col md:flex-row w-full max-w-7xl mx-auto justify-between gap-20 text-white">
+        {/* Left Side - Project Description */}
+        <div className="w-full md:w-1/2 space-y-6">
+          <h2 className="text-2xl font-bold">The project</h2>
+          <p className="text-base leading-relaxed text-gray-300">
+            {project.projectDetails}
+          </p>
         </div>
 
-        <div className="flex flex-col space-y-4">
-          <h1 className="text-lg md:text-xl">Client Name</h1>
-          <span className="text-gray-300">{project.clientName}</span>
+        {/* Right Side - Client, Services, Website */}
+        <div className="w-full md:w-1/2 flex flex-col gap-10">
+          <div className="flex flex-col sm:flex-row sm:justify-between gap-8">
+            {/* Client Section */}
+            <div className="space-y-1">
+              <h3 className="text-xl font-semibold">Client</h3>
+              {project.clientName.split("\n").map((name, index) => (
+                <p key={index} className="text-gray-300">
+                  {name}
+                </p>
+              ))}
+            </div>
 
-          <span className="text-lg md:text-xl">Website</span>
-          <a
-            href={project.websiteLink}
-            className="text-gray-300 underline break-all"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.websiteLink}
-          </a>
+            {/* Services Section */}
+            <div className="space-y-1">
+              <h3 className="text-xl font-semibold">Services</h3>
+              {project.services.map((service, index) => (
+                <p key={index} className="text-gray-300">
+                  {service}
+                </p>
+              ))}
+            </div>
+          </div>
+
+          {/* Website Section */}
+          <div className="space-y-2">
+            <h3 className="text-xl font-semibold">Website</h3>
+            <a
+              href={project.websiteLink}
+              className="text-gray-300 underline break-all"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.websiteLink}
+            </a>
+          </div>
         </div>
       </div>
 
@@ -63,6 +82,7 @@ const PortfolioDetails = () => {
           <div className="bg-gray-500 h-48 md:h-64 w-full md:max-w-xl mx-auto" />
         </div>
       </div>
+      <BrandGuidelines project={project} />
     </div>
   );
 };

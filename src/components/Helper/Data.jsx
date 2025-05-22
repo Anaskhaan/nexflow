@@ -1,6 +1,6 @@
-import bellClinix from "../../assets/bellclinix.png";
-import swiftTakeoffs from "../../assets/swifttakeoffs.png";
-import paradisePipes from "../../assets/paradisepipe.png";
+import bellClinix from "../../assets/bellclinix-logo.svg";
+import swiftTakeoffs from "../../assets/swift-logo.webp";
+import paradisePipes from "../../assets/paradise-logo.svg";
 import a from "../../assets/a.png";
 import b from "../../assets/b.png";
 import c from "../../assets/c.png";
@@ -170,16 +170,32 @@ export const portfolioData = [
     id: 1,
     image: bellClinix,
     projecTYpe: "Medical Billing",
-
     projectName: "Bell Clinix",
     clientName: "Bell Clinix",
     websiteLink: "https://bellclinix.com/",
+    services: ["Brand Design", "Website Design", "Websie Development"],
     images: [a, b, c],
-    typographyColorScheme:
-      "https://source.unsplash.com/featured/?typography,colors",
+    typographyColorScheme: {
+      palette: [
+        "#000F14",
+        "#0030D0",
+        "#1C45DB",
+        "#F7F7F7",
+        "#15116B",
+        "#442098",
+        "#53CEF4",
+      ],
+      primaryFont: {
+        weight: "700",
+        label: "Plus Jakarta Sans",
+      },
+      secondaryFont: {
+        weight: "300",
+        label: "Plus Jakarta Sans",
+      },
+    },
     projectDetails:
-      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,  obcaecati. Incidunt vitae praesentium aspernatur commodi optio dicta tenetur. Inventore voluptates tempora sunt minima saepe neque?",
-
+      "We designed and developed the complete brand identity and website for BellClinix.com, delivering a modern, user-friendly experience that reflects their commitment to advanced healthcare solutions. From visual branding to responsive web design, our team ensured a seamless digital presence aligned with their vision.",
     features: [
       "Responsive patient-first design",
       "Integrated appointment booking system",
@@ -189,6 +205,7 @@ export const portfolioData = [
     mobileResponsivenessImage:
       "https://source.unsplash.com/featured/?mobile,healthcare",
   },
+
   {
     image: swiftTakeoffs,
 
@@ -244,3 +261,28 @@ export const portfolioData = [
       "https://source.unsplash.com/featured/?mobile,ecommerce",
   },
 ];
+
+// {
+//   id: 1,
+//   image: bellClinix,
+//   projecTYpe: "Medical Billing",
+
+//   projectName: "Bell Clinix",
+//   clientName: "Bell Clinix",
+//   websiteLink: "https://bellclinix.com/",
+//   services: ["Brand Design", "Website Design", "Websie Development"],
+//   images: [a, b, c],
+//   typographyColorScheme:
+//     "https://source.unsplash.com/featured/?typography,colors",
+//   projectDetails:
+//     "We designed and developed the complete brand identity and website for BellClinix.com, delivering a modern, user-friendly experience that reflects their commitment to advanced healthcare solutions. From visual branding to responsive web design, our team ensured a seamless digital presence aligned with their vision.",
+
+//   features: [
+//     "Responsive patient-first design",
+//     "Integrated appointment booking system",
+//     "HIPAA-compliant patient portal",
+//     "Service catalog with detailed descriptions",
+//   ],
+//   mobileResponsivenessImage:
+//     "https://source.unsplash.com/featured/?mobile,healthcare",
+// },
