@@ -4,10 +4,11 @@ import { Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 const footerLinks = [
-  { id: 1, title: "Home", href: "#" },
+  { id: 1, title: "Home", href: "/" },
   { id: 2, title: "About", href: "/about" },
   { id: 3, title: "Services", href: "/services" },
   { id: 4, title: "Contact", href: "/contact" },
+  { id: 5, title: "Resources", href: "/resources" },
 ];
 
 const services = [
