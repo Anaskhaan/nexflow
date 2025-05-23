@@ -12,9 +12,9 @@ import Discover from "../components/AboutComponents/Discover";
 const AbouServices = React.lazy(() =>
   import("../components/AboutComponents/AbouServices")
 );
-const AboutTeam = React.lazy(() =>
-  import("../components/AboutComponents/AboutTeam")
-);
+// const AboutTeam = React.lazy(() =>
+//   import("../components/AboutComponents/AboutTeam")
+// );
 import AboutCTA from "../components/AboutComponents/AboutCTA";
 import NexflowLoader from "../components/Helper/NexflowLoader";
 
@@ -111,7 +111,7 @@ export default function About() {
       <Discover parallaxY2={parallaxY2} />
       <Suspense fallback={<NexflowLoader />}>
         <AbouServices parallaxY3={parallaxY3} />
-        <AboutTeam teamRef={teamRef} teamInView={teamInView} />
+        {/* <AboutTeam teamRef={teamRef} teamInView={teamInView} /> */}
       </Suspense>
       <AboutCTA gradientControls={gradientControls} />
     </div>

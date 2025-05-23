@@ -43,6 +43,16 @@ const CaseStudyDetails = () => {
           />
         </div>
 
+        {study.image2 && (
+          <div className="mb-12 rounded-xl overflow-hidden border border-[#374151]">
+            <img
+              src={study.image2}
+              alt={study.title}
+              className="w-full h-auto object-cover"
+            />
+          </div>
+        )}
+
         {/* Main Content */}
         <div className="prose prose-invert max-w-none">
           {/* Overview */}

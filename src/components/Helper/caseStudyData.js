@@ -1,11 +1,13 @@
-import casestudy1 from "../../assets/casestudy1.svg";
-// import casestudy2 from "../../assets/casestudy2.svg";
-// import casestudy3 from "../../assets/casestudy3.svg";
-// import casestudy4 from "../../assets/casestudy4.svg";
-// import casestudy5 from "../../assets/casestudy5.svg";
-// import casestudy6 from "../../assets/casestudy6.svg";
-// import casestudy7 from "../../assets/casestudy7.svg";
-// import casestudy8 from "../../assets/casestudy8.svg";
+import casestudy1 from "../../assets/1.webp";
+import casestudy2 from "../../assets/1-2.webp";
+import casestudy3 from "../../assets/2.webp";
+import casestudy4 from "../../assets/3.webp";
+import casestudy5 from "../../assets/4.webp";
+import casestudy6 from "../../assets/4-1.webp";
+import casestudy7 from "../../assets/5.webp";
+import casestudy8 from "../../assets/6.webp";
+import casestudy9 from "../../assets/7.webp";
+import casestudy10 from "../../assets/8.webp";
 
 export const caseStudyData = [
   {
@@ -13,6 +15,7 @@ export const caseStudyData = [
     category: "B2B SaaS",
     title: "Event Management Platform",
     image: casestudy1,
+    image2: casestudy2,
     overview:
       "For over three years, we have been managing Google and Bing Ads for a B2B SaaS event management software company. This ongoing partnership has allowed us to navigate and adapt to significant industry changes, particularly the surge in virtual events post-COVID-19.",
     challenges: [
@@ -55,7 +58,7 @@ export const caseStudyData = [
     id: 2,
     category: "B2B SaaS",
     title: "Bing Ads and Efficiencies in Spend",
-    // image: casestudy2,
+    image: casestudy3,
     overview:
       "Initially, we allocated over $50,000 per month to Bing Ads. However, we observed that this channel was not yielding a satisfactory number of closed deals. In response, we reallocated our budget in 2023, shifting our focus to LinkedIn Ads.",
     challenges: [
@@ -84,7 +87,7 @@ export const caseStudyData = [
     id: 3,
     category: "B2B SaaS",
     title: "LinkedIn Ad Campaign Optimization",
-    // image: casestudy3,
+    image: casestudy4,
     overview:
       "We managed LinkedIn ad campaigns for the event management software industry, focusing on creative testing, audience refinement, and remarketing.",
     challenges: [
@@ -106,7 +109,8 @@ export const caseStudyData = [
     id: 4,
     category: "B2B SaaS",
     title: "Lead Aggregator Ad Scaling",
-    // image: casestudy4,
+    image: casestudy5,
+    image2: casestudy6,
     overview:
       "We scaled lead generation campaigns across various B2B SaaS products like HRM and CRM software, focusing on cost control and intent-driven targeting.",
     challenges: ["CPCs as high as $200", "Highly competitive ad environment"],
@@ -135,7 +139,7 @@ export const caseStudyData = [
     id: 5,
     category: "Commercial Services",
     title: "Commercial Roofing Lead Generation",
-    // image: casestudy5,
+    image: casestudy7,
     overview:
       "The client needed to generate commercial roofing leads via Google Ads, excluding residential projects.",
     challenges: [
@@ -157,7 +161,7 @@ export const caseStudyData = [
     id: 6,
     category: "Commercial Services",
     title: "Commercial HVAC Lead Generation",
-    // image: casestudy6,
+    image: casestudy8,
     overview:
       "We focused on lead generation for commercial HVAC services through Google Ads, excluding residential leads.",
     challenges: [
@@ -179,7 +183,7 @@ export const caseStudyData = [
     id: 7,
     category: "Commercial Services",
     title: "Commercial Solar Lead Generation",
-    // image: casestudy7,
+    image: casestudy9,
     overview:
       "We focused on increasing qualified commercial solar project leads through Google Ads.",
     challenges: ["Low lead volume", "Avoiding residential search traffic"],
@@ -198,7 +202,7 @@ export const caseStudyData = [
     id: 8,
     category: "Freight & Logistics",
     title: "Freight Forwarding Lead Gen Transformation",
-    // image: casestudy8,
+    image: casestudy10,
     overview:
       "This long-term client needed scalable lead gen across the MENA region for freight and parcel forwarding services.",
     challenges: [
