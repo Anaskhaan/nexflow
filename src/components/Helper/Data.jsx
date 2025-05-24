@@ -2,13 +2,17 @@ import bellClinix from "../../assets/bellclinix-logo.svg";
 import swiftTakeoffs from "../../assets/swift-logo.webp";
 import paradisePipes from "../../assets/paradise-logo.svg";
 import a from "../../assets/Bellclinix-mobile.webp";
-import b from "../../assets/Swifth-mobile.webp";
-import c from "../../assets/Swifth-mobile.webp";
-import d from "../../assets/belclinix-laptop-mocup.webp";
+import b from "../../assets/bellclinix-combine.webp";
+import c from "../../assets/bellclinix-laptop1.webp";
+import d from "../../assets/bellclinix-laptop.webp";
 import mobile from "../../assets/paradise-mobile.webp";
 import combine from "../../assets/paradise-combine.webp";
 import paradise1 from "../../assets/paradise-1.webp";
 import paradise2 from "../../assets/paradise-2.webp";
+import swift from "../../assets/swift-mobile.webp";
+import swift2 from "../../assets/swift-combine.webp";
+import swift3 from "../../assets/swift-laptop.webp";
+import swift4 from "../../assets/swift-laptop2.webp";
 
 export const ServicesData = [
   {
@@ -180,6 +184,7 @@ export const ServicesData = [
 export const portfolioData = [
   {
     id: 1,
+    slug: "bell-clinix",
     image: bellClinix,
     projecTYpe: "Medical Billing",
     projectName: "Bell Clinix",
@@ -220,14 +225,15 @@ export const portfolioData = [
   },
   {
     id: 2,
+    slug: "swift-takeoffs",
     image: swiftTakeoffs,
     projecTYpe: "Construction agency",
     projectName: "Swift Takeoffs",
     clientName: "Swift Takeoffs",
     websiteLink: "https://swifttakeoffs.com/",
     services: ["Brand Design", "Website Design", "Websie Development"],
-    images: [b],
-    images2: [b, b, b], // Placeholder or add actual images
+    images: [swift],
+    images2: [swift2, swift3, swift4], // Placeholder or add actual images
     typographyColorScheme: {
       palette: [
         "#1B1B1F",
@@ -260,6 +266,7 @@ export const portfolioData = [
   },
   {
     id: 3,
+    slug: "paradise-pipes",
     image: paradisePipes,
     projecTYpe: "Company Profile",
     projectName: "Paradise Pipes",

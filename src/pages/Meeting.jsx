@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 const MeetingForm = () => {
   const [formData, setFormData] = useState({
     name: "",

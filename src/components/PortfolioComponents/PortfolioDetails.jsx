@@ -4,8 +4,8 @@ import CustomCarousel from "./CustomCarousel";
 import BrandGuidelines from "./BrandGuidlines";
 
 const PortfolioDetails = () => {
-  const { id } = useParams();
-  const project = portfolioData.find((item) => item.id.toString() === id);
+  const { slug } = useParams();
+  const project = portfolioData.find((p) => p.slug === slug);
 
   if (!project) {
     return <div className="text-center text-white">Project Not Found</div>;
