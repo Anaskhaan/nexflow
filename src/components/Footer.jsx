@@ -117,12 +117,12 @@ const Footer = () => {
           <ul className="space-y-3">
             {footerLinks.map((link) => (
               <li key={link.id}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   className="hover:text-[#3FA69B] transition duration-300"
                 >
                   {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
