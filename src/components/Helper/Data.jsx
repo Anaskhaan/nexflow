@@ -1,12 +1,19 @@
 import bellClinix from "../../assets/bellclinix-logo.svg";
 import swiftTakeoffs from "../../assets/swift-logo.webp";
 import paradisePipes from "../../assets/paradise-logo.svg";
-import a from "../../assets/a.png";
-import b from "../../assets/b.png";
-import c from "../../assets/c.png";
+import a from "../../assets/Bellclinix-mobile.webp";
+import b from "../../assets/Swifth-mobile.webp";
+import c from "../../assets/Swifth-mobile.webp";
+import d from "../../assets/belclinix-laptop-mocup.webp";
+import mobile from "../../assets/paradise-mobile.webp";
+import combine from "../../assets/paradise-combine.webp";
+import paradise1 from "../../assets/paradise-1.webp";
+import paradise2 from "../../assets/paradise-2.webp";
+
 export const ServicesData = [
   {
     id: 1,
+    slug: "social-media-marketing",
     title: "Social Media Marketing",
     description:
       "Grow your brand with engaging content, audience interaction, and data-driven strategies across top social platforms",
@@ -33,6 +40,7 @@ export const ServicesData = [
   },
   {
     id: 2,
+    slug: "seo-optimization",
     title: "SEO Optimization",
     description:
       "Boost your website’s ranking with keyword optimization, technical fixes, and high-quality backlinks.",
@@ -61,6 +69,7 @@ export const ServicesData = [
   },
   {
     id: 3,
+    slug: "web-development",
     title: "Web Development",
     description:
       "Build fast, responsive, and visually appealing websites optimized for user experience and conversions.",
@@ -87,6 +96,7 @@ export const ServicesData = [
   },
   {
     id: 4,
+    slug: "digital-marketing",
     title: "Digital Marketing",
     description:
       "Drive traffic and sales with targeted SEO, social media, ads, and content marketing strategies.",
@@ -113,6 +123,7 @@ export const ServicesData = [
   },
   {
     id: 5,
+    slug: "branding",
     title: "Branding",
     description:
       "Develop a strong, memorable brand identity that builds trust and sets you apart from competitors.",
@@ -139,6 +150,7 @@ export const ServicesData = [
   },
   {
     id: 6,
+    slug: "ui-ux-designing",
     title: "UI/UX Designing",
     description:
       "Create user-friendly, attractive, and seamless digital experiences for better engagement and functionality.",
@@ -174,7 +186,8 @@ export const portfolioData = [
     clientName: "Bell Clinix",
     websiteLink: "https://bellclinix.com/",
     services: ["Brand Design", "Website Design", "Websie Development"],
-    images: [a, b, c],
+    images: [a],
+    images2: [b, c, d],
     typographyColorScheme: {
       palette: [
         "#000F14",
@@ -205,24 +218,37 @@ export const portfolioData = [
     mobileResponsivenessImage:
       "https://source.unsplash.com/featured/?mobile,healthcare",
   },
-
   {
-    image: swiftTakeoffs,
-
     id: 2,
-    projectName: "Swift Takeoffs",
+    image: swiftTakeoffs,
     projecTYpe: "Construction agency",
+    projectName: "Swift Takeoffs",
     clientName: "Swift Takeoffs",
     websiteLink: "https://swifttakeoffs.com/",
-    images: [
-      "https://source.unsplash.com/featured/?airplane,flight",
-      "https://source.unsplash.com/featured/?airport,travel",
-      "https://source.unsplash.com/featured/?skyline,aviation",
-    ],
-    typographyColorScheme:
-      "https://source.unsplash.com/featured/?typography,aviation",
+    services: ["Brand Design", "Website Design", "Websie Development"],
+    images: [b],
+    images2: [b, b, b], // Placeholder or add actual images
+    typographyColorScheme: {
+      palette: [
+        "#1B1B1F",
+        "#2F80ED",
+        "#56CCF2",
+        "#F2F2F2",
+        "#333333",
+        "#4F4F4F",
+        "#828282",
+      ],
+      primaryFont: {
+        weight: "600",
+        label: "Inter",
+      },
+      secondaryFont: {
+        weight: "400",
+        label: "Inter",
+      },
+    },
     projectDetails:
-      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,  obcaecati. Incidunt vitae praesentium aspernatur commodi optio dicta tenetur. Inventore voluptates tempora sunt minima saepe neque?",
+      "We built SwiftTakeoffs.com from the ground up, incorporating features to support fast, accurate construction takeoff services. With a dynamic interface and robust functionality, the platform enhances the project estimation process for contractors and developers alike.",
     features: [
       "Dynamic flight scheduling system",
       "Interactive map integration",
@@ -233,24 +259,36 @@ export const portfolioData = [
       "https://source.unsplash.com/featured/?mobile,aviation",
   },
   {
-    image: paradisePipes,
-
     id: 3,
-    projectName: "Paradise Pipes",
+    image: paradisePipes,
     projecTYpe: "Company Profile",
-
+    projectName: "Paradise Pipes",
     clientName: "Paradise Pipes",
     websiteLink: "http://paradisepipes.com/",
-    images: [
-      "https://source.unsplash.com/featured/?ecommerce,shop",
-      "https://source.unsplash.com/featured/?products,store",
-      "https://source.unsplash.com/featured/?market,commerce",
-    ],
-    typographyColorScheme:
-      "https://source.unsplash.com/featured/?typography,ecommerce",
+    services: ["Brand Design", "Website Design", "Websie Development"],
+    images: [mobile],
+    images2: [combine, paradise1, paradise2], // Placeholder or add actual images
+    typographyColorScheme: {
+      palette: [
+        "#202124",
+        "#FF6F00",
+        "#FFD600",
+        "#FFFFFF",
+        "#757575",
+        "#424242",
+        "#BDBDBD",
+      ],
+      primaryFont: {
+        weight: "700",
+        label: "Montserrat",
+      },
+      secondaryFont: {
+        weight: "300",
+        label: "Montserrat",
+      },
+    },
     projectDetails:
-      " Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus,  obcaecati. Incidunt vitae praesentium aspernatur commodi optio dicta tenetur. Inventore voluptates tempora sunt minima saepe neque?",
-
+      "We developed ParadisePipes.com with an emphasis on their industrial product line, showcasing their pipes and fittings catalog effectively. The brand identity and digital presence were refined to communicate trust and industry relevance.",
     features: [
       "Custom product filtering system",
       "Secure payment processing",
@@ -261,28 +299,3 @@ export const portfolioData = [
       "https://source.unsplash.com/featured/?mobile,ecommerce",
   },
 ];
-
-// {
-//   id: 1,
-//   image: bellClinix,
-//   projecTYpe: "Medical Billing",
-
-//   projectName: "Bell Clinix",
-//   clientName: "Bell Clinix",
-//   websiteLink: "https://bellclinix.com/",
-//   services: ["Brand Design", "Website Design", "Websie Development"],
-//   images: [a, b, c],
-//   typographyColorScheme:
-//     "https://source.unsplash.com/featured/?typography,colors",
-//   projectDetails:
-//     "We designed and developed the complete brand identity and website for BellClinix.com, delivering a modern, user-friendly experience that reflects their commitment to advanced healthcare solutions. From visual branding to responsive web design, our team ensured a seamless digital presence aligned with their vision.",
-
-//   features: [
-//     "Responsive patient-first design",
-//     "Integrated appointment booking system",
-//     "HIPAA-compliant patient portal",
-//     "Service catalog with detailed descriptions",
-//   ],
-//   mobileResponsivenessImage:
-//     "https://source.unsplash.com/featured/?mobile,healthcare",
-// },

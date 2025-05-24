@@ -74,14 +74,38 @@ const PortfolioDetails = () => {
         </div>
       </div>
 
-      {/* Additional Images Section */}
-      <div className="mt-12">
-        <div className="bg-gray-500 h-64 md:h-96 w-full max-w-6xl mx-auto" />
-        <div className="flex flex-col md:flex-row gap-4 py-4">
-          <div className="bg-gray-500 h-48 md:h-64 w-full md:max-w-xl mx-auto" />
-          <div className="bg-gray-500 h-48 md:h-64 w-full md:max-w-xl mx-auto" />
+      {/* Additional Images Section for this project only */}
+      {project.images2 && project.images2.length > 0 && (
+        <div className="mt-12">
+          {/* Large Image */}
+          <div className="w-full max-w-6xl mx-auto bg-gray-500 h-[500px]">
+            <img
+              src={project.images2[0]}
+              alt={project.projectName}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          {/* Small Images BELOW the Large Image */}
+          <div className="flex flex-col md:flex-row gap-4 py-6 max-w-6xl mx-auto">
+            {project.images2.slice(1, 3).map((img, index) => (
+              <div
+                key={index}
+                className="bg-gray-500 w-full md:w-1/2 h-[600px]"
+              >
+                <img
+                  src={img}
+                  alt={`${project.projectName} - ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
+
       <BrandGuidelines project={project} />
     </div>
   );
