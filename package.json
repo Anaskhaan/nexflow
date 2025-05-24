@@ -11,6 +11,7 @@
     "sideEffects": false
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fontsource/open-sans": "^5.1.1",
     "@fontsource/roboto": "^5.1.1",
     "framer-motion": "^12.0.6",
