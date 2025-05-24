@@ -9,83 +9,41 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ServicesData } from "../Helper/Data";
+
 const ServicesSection = ({ containerVariants, itemVariants }) => {
-  const services = [
-    {
-      id: 1,
-      title: "Social Media Marketing",
-      description:
-        "Elevate your brand presence across all platforms with strategic content and engagement.",
-      icon: <Megaphone size={32} />,
-      benefits: [
-        "Increased brand awareness",
-        "Higher engagement rates",
-        "Targeted audience reach",
-      ],
-      color: "#3FA69B",
-    },
-    {
-      id: 2,
-      title: "SEO Optimization",
-      description:
-        "Boost your visibility and climb search rankings with data-driven SEO strategies.",
-      icon: <TrendingUp size={32} />,
-      benefits: [
-        "Improved search rankings",
-        "Higher organic traffic",
-        "Better conversion rates",
-      ],
-      color: "#36958B",
-    },
-    {
-      id: 3,
-      title: "Web Development",
-      description:
-        "Create stunning, responsive websites that convert visitors into customers.",
-      icon: <Globe size={32} />,
-      benefits: [
-        "Mobile-optimized design",
-        "Fast loading speeds",
-        "Intuitive user experience",
-      ],
-      color: "#2D847B",
-    },
-    {
-      id: 4,
-      title: "Branding",
-      description:
-        "Gain actionable insights with comprehensive performance tracking and analysis.",
-      icon: <BarChart2 size={32} />,
-      benefits: [
-        "Real-time performance data",
-        "Custom KPI tracking",
-        "Competitive analysis",
-      ],
-      color: "#24736B",
-    },
-    {
-      id: 5,
-      title: "Digital Marketing",
-      description:
-        "Nurture leads and drive conversions with targeted email campaigns.",
-      icon: <Mail size={32} />,
-      benefits: [
-        "Personalized messaging",
-        "Automated workflows",
-        "High ROI campaigns",
-      ],
-      color: "#1B625B",
-    },
-    {
-      id: 6,
-      title: "UI/UX",
-      description:
-        "Reach customers on-the-go with mobile-first marketing strategies.",
-      icon: <Smartphone size={32} />,
-      benefits: ["App promotion", "SMS marketing", "Location-based targeting"],
-      color: "#12514B",
-    },
-  ];
+  // Map the ServicesData to include the correct icons
+  const services = ServicesData.map((service) => {
+    // Assign the correct icon component based on the service.icon string
+    let icon;
+    switch (service.icon) {
+      case "Megaphone":
+        icon = <Megaphone size={32} />;
+        break;
+      case "TrendingUp":
+        icon = <TrendingUp size={32} />;
+        break;
+      case "Globe":
+        icon = <Globe size={32} />;
+        break;
+      case "BarChart":
+        icon = <BarChart2 size={32} />;
+        break;
+      case "Mail":
+        icon = <Mail size={32} />;
+        break;
+      case "Smartphone":
+        icon = <Smartphone size={32} />;
+        break;
+      default:
+        icon = <Globe size={32} />;
+    }
+
+    return {
+      ...service,
+      icon,
+    };
+  });
 
   return (
     <div>
@@ -149,7 +107,7 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
                     whileHover={{ x: 5 }}
                     className="inline-flex items-center text-[#3FA69B] font-medium"
                   >
-                    <Link to={`/services/${service.id}`}>
+                    <Link to={`/services/${service.slug}`}>
                       <button className="flex items-center justify-center">
                         Learn more <ChevronRight className="ml-1 w-4 h-4" />
                       </button>

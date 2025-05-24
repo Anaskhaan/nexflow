@@ -24,8 +24,8 @@ const icons = {
 };
 
 const ServicesDetail = () => {
-  const { id } = useParams();
-  const service = ServicesData.find((s) => s.id.toString() === id);
+  const { slug } = useParams();
+  const service = ServicesData.find((s) => s.slug === slug);
 
   if (!service)
     return (
@@ -229,13 +229,13 @@ const ServicesDetail = () => {
             Explore Related Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {ServicesData.filter((s) => s.id !== service.id)
+            {ServicesData.filter((s) => s.slug !== service.slug)
               .slice(0, 3)
               .map((relatedService) => {
                 const RelatedIcon = icons[relatedService.icon];
                 return (
                   <div
-                    key={relatedService.id}
+                    key={relatedService.slug}
                     className="bg-black border border-gray-800 rounded-xl p-6 hover:border-gray-700 transition-all group cursor-pointer"
                   >
                     <div className="flex items-center mb-4">
@@ -254,13 +254,13 @@ const ServicesDetail = () => {
                     <p className="text-gray-300 mb-4 text-sm">
                       {relatedService.description}
                     </p>
-                    <a
-                      href={`/services/${relatedService.id}`}
+                    <Link
+                      to={`/services/${relatedService.slug}`}
                       className="flex items-center text-sm font-medium transition-all group-hover:translate-x-1"
                       style={{ color: relatedService.color }}
                     >
                       Learn more <ArrowRight size={14} className="ml-1" />
-                    </a>
+                    </Link>
                   </div>
                 );
               })}
