@@ -15,7 +15,7 @@ function LeadMagnet() {
   return (
     <div>
       <Helmet>
-        <title>Lead Magnet</title>
+        <title>NexFlow - Lead Magnet</title>
         <meta name="robots" content="noindex, nofollow" />
         <meta name="description" content="Special offer for our visitors" />
         {/* Other meta tags as needed */}
