@@ -18,6 +18,7 @@ import PortfolioDetails from "./components/PortfolioComponents/PortfolioDetails"
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetails from "./pages/caseStudyDetails";
 import Resources from "./pages/Resources";
+import LeadMagnet from "./pages/LeadMagnet";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -45,6 +46,7 @@ function App() {
             <Route path="/CaseStudies" element={<CaseStudies />} />
             <Route path="/CaseStudies/:id" element={<CaseStudyDetails />} />
             <Route path="/Resources" element={<Resources />} />
+            <Route path="/LeadMagnet" element={<LeadMagnet />} />
           </Route>
         </Routes>
       </Router>

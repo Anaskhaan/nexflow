@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /Leadmagnet
+Disallow: /leadmagnet  # (optional, for case sensitivity)
+Disallow: /#/Leadmagnet  # if using hash routing
+Sitemap: https://nexflow.tech/sitemap.xml  # optional but recommended
