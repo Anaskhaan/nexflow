@@ -71,8 +71,6 @@ export default function About() {
     });
   }, [gradientControls]);
 
-  const teamRef = useRef(null);
-  const teamInView = useInView(teamRef, { once: false, threshold: 0.3 });
 
   return (
     <div className="bg-black text-white pt-16 min-h-screen overflow-hidden">

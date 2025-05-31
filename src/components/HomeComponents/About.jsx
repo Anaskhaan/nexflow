@@ -107,6 +107,7 @@ const StatCard = ({ number, label, delay }) => {
   );
 };
 
+// Main About component
 export const About = () => {
   const [sectionRef, sectionInView] = useInView({
     triggerOnce: true,
@@ -126,7 +127,7 @@ export const About = () => {
       >
         <AnimatedBackground />
 
-        {/* Floating decorative elements */}
+        {/* Floating elements */}
         <FloatingElement
           className="absolute top-[15%] left-[10%] w-12 h-12 rounded-full bg-[#3FA69B] opacity-20 blur-sm"
           delay={1.5}
@@ -142,7 +143,7 @@ export const About = () => {
         />
 
         <div className="container mx-auto px-4">
-          {/* Main headline */}
+          {/* Section Heading */}
           <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: -30 }}
@@ -177,9 +178,11 @@ export const About = () => {
             </p>
           </motion.div>
 
+          {/* Content Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Left side: Image grid with overlapping effect */}
+            {/* Image collage */}
             <div className="relative h-[500px] md:h-[600px]">
+              {/* Image 1 */}
               <motion.div
                 className="absolute top-0 left-0 w-[70%] h-[70%] rounded-xl overflow-hidden shadow-xl shadow-black/40"
                 initial={{ opacity: 0, x: -30, y: -30 }}
@@ -203,6 +206,7 @@ export const About = () => {
                 </div>
               </motion.div>
 
+              {/* Image 2 */}
               <motion.div
                 className="absolute top-[15%] right-0 w-[60%] h-[60%] rounded-xl overflow-hidden shadow-xl shadow-black/40"
                 initial={{ opacity: 0, x: 30, y: 30 }}
@@ -226,6 +230,7 @@ export const About = () => {
                 </div>
               </motion.div>
 
+              {/* Image 3 */}
               <motion.div
                 className="absolute bottom-0 left-[10%] w-[65%] h-[50%] rounded-xl overflow-hidden shadow-xl shadow-black/40"
                 initial={{ opacity: 0, x: -20, y: 40 }}
@@ -250,7 +255,7 @@ export const About = () => {
               </motion.div>
             </div>
 
-            {/* Right side: Text content */}
+            {/* Text content */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={sectionInView ? { opacity: 1, x: 0 } : {}}
@@ -261,117 +266,34 @@ export const About = () => {
                 Leading the Digital Revolution{" "}
                 <span className="text-[#3FA69B]">Since 2015</span>
               </h3>
-
-              <div className="space-y-6">
-                <motion.p
-                  className="text-gray-300 text-lg"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.6, duration: 0.6 }}
-                >
-                  Nexflow has been at the forefront of digital marketing
-                  innovation, helping forward-thinking brands navigate the
-                  ever-evolving digital landscape with strategic insight and
-                  creative excellence.
-                </motion.p>
-
-                <motion.p
-                  className="text-gray-400"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.8, duration: 0.6 }}
-                >
-                  We believe in the power of data-driven creativity – combining
-                  analytical precision with bold, imaginative ideas to deliver
-                  campaigns that not only capture attention but drive measurable
-                  results for our clients.
-                </motion.p>
-
-                <motion.div
-                  className="pt-2 space-y-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 1, duration: 0.6 }}
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#3FA69B] flex items-center justify-center text-black">
-                      ✓
-                    </div>
-                    <span className="text-white">
-                      Strategic campaign development
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#3FA69B] flex items-center justify-center text-black">
-                      ✓
-                    </div>
-                    <span className="text-white">
-                      Data-driven performance optimization
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-[#3FA69B] flex items-center justify-center text-black">
-                      ✓
-                    </div>
-                    <span className="text-white">
-                      Award-winning creative execution
-                    </span>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  className="flex  gap-4 pt-6"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={sectionInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 1.2, duration: 0.6 }}
-                >
-                  <motion.button
-                    className="lg:px-8 px-6 py-4 bg-[#3FA69B] hover:bg-[#2D8A80] lg:text-md text-xs  rounded-lg text-white font-medium transition-all flex items-center gap-2"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Link to="/about">
-                      <button>Our Process</button>
-                    </Link>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M5 12h14"></path>
-                      <path d="m12 5 7 7-7 7"></path>
-                    </svg>
-                  </motion.button>
-
-                  <Link to="about">
-                    <motion.button
-                      className="lg:px-8 px-6 py-4 border lg:text-md text-sm border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B] hover:bg-opacity-10 rounded-lg  transition-all"
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      Meet the Team
-                    </motion.button>
-                  </Link>
-                </motion.div>
-              </div>
+              <p className="text-gray-300 text-lg">
+                Nexflow is a digital agency dedicated to empowering brands with
+                innovation, strategy, and creative technology. We deliver
+                impactful solutions tailored to business goals, whether it's
+                web, mobile, or marketing.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-block px-6 py-3 bg-[#3FA69B] text-white font-semibold rounded-lg hover:bg-opacity-90 transition"
+              >
+                Work with us
+              </Link>
             </motion.div>
           </div>
+        </div>
+      </section>
 
-          {/* Stats section */}
-          <div
-            ref={statsRef}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-24"
-          >
-            <StatCard number="120" label="Clients Worldwide" delay={0.2} />
-            <StatCard number="350" label="Projects Completed" delay={0.4} />
-            <StatCard number="15" label="Industry Awards" delay={0.6} />
-            <StatCard number="98" label="Client Satisfaction" delay={0.8} />
+      {/* Statistics Section */}
+      <section
+        ref={statsRef}
+        className="py-20 bg-black border-t border-gray-800"
+      >
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <StatCard number="100" label="Clients Served" delay={0.1} />
+            <StatCard number="250" label="Projects Delivered" delay={0.2} />
+            <StatCard number="10" label="Years of Experience" delay={0.3} />
+            <StatCard number="15" label="Team Members" delay={0.4} />
           </div>
         </div>
       </section>
