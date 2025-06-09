@@ -6,6 +6,7 @@ import ParadisePipe from "../../assets/paradise-logo.svg";
 const portfolioData = [
   {
     id: 1,
+    slug: "bell-clinix",
     title: "BellClinix",
     website: "bellclinix.com",
     category: "Healthcare",
@@ -24,6 +25,7 @@ const portfolioData = [
   },
   {
     id: 2,
+    slug: "swift-takeoffs",
     title: "SwiftTakeoffs",
     website: "swifttakeoffs.com",
     category: "Estimating Agency",
@@ -42,6 +44,7 @@ const portfolioData = [
   },
   {
     id: 3,
+    slug: "paradise-pipes",
     title: "Paradise Pipes",
     website: "paradisepipes.com",
     category: "Luxury Retail",
@@ -149,7 +152,7 @@ export default function Portfolio() {
                 {/* CTA */}
                 <div className="col-span-1 md:col-span-1 flex justify-start md:justify-end mt-2 md:mt-0">
                   <Link
-                    to={`/portfolio/${project.id}`}
+                    to={`/portfolio/${project.slug}`}
                     className="text-[#3FA69B] text-sm font-medium hover:underline flex items-center"
                   >
                     Details
