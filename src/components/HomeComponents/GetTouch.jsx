@@ -83,8 +83,8 @@ const GetInTouch = () => {
                      flex flex-col items-center justify-center
                      transition-transform duration-300 shadow-lg hover:shadow-xl"
           >
-            <Link to="/contact">
-              <button className="text-sm font-medium mb-1">Get In Touch</button>
+            <Link to="/contact" className="text-sm font-medium mb-1">
+              Get In Touch
             </Link>
             <span className="arrow-icon text-xl transform transition-transform duration-300">
               ↗
