@@ -19,6 +19,9 @@ import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetails from "./pages/caseStudyDetails";
 import Resources from "./pages/Resources";
 import LeadMagnet from "./pages/LeadMagnet";
+import { CookiesPolicy } from "./pages/CookiesPolicy";
+import { Terms } from "./pages/Terms";
+import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -47,6 +50,9 @@ function App() {
             <Route path="/CaseStudies/:id" element={<CaseStudyDetails />} />
             <Route path="/Resources" element={<Resources />} />
             <Route path="/LeadMagnet" element={<LeadMagnet />} />
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+            <Route path="/Terms" element={<Terms />} />
+            <Route path="/CookiesPolicy" element={<CookiesPolicy />} />
           </Route>
         </Routes>
       </Router>

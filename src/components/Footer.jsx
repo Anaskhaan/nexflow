@@ -77,9 +77,9 @@ const footerData = {
     },
   ],
   legalLinks: [
-    { title: "Privacy Policy", url: "#" },
-    { title: "Terms of Service", url: "#" },
-    { title: "Cookies Policy", url: "#" },
+    { title: "Privacy Policy", url: "/PrivacyPolicy" },
+    { title: "Terms of Service", url: "/Terms" },
+    { title: "Cookies Policy", url: "/CookiesPolicy" },
   ],
 };
 
@@ -270,13 +270,13 @@ const Footer = () => {
           </p>
           <div className="flex space-x-6">
             {footerData.legalLinks.map((link, index) => (
-              <a
+              <Link
                 key={index}
-                href={link.url}
+                to={link.url}
                 className="text-gray-500 hover:text-[#3FA69B] text-sm transition-colors duration-300"
               >
                 {link.title}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
