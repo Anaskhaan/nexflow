@@ -16,7 +16,7 @@ const CaseStudyDetails = () => {
       <div className="max-w-4xl mx-auto px-4">
         {/* Back Button */}
         <Link
-          to="/CaseStudies"
+          to="/Portfolio"
           className="flex items-center text-[#06B6D4] hover:text-white mb-8 transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
