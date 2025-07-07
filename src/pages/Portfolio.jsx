@@ -1,7 +1,8 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
+import {  ExternalLink } from "lucide-react";
 import { portfolioData } from "../components/Helper/Data";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import CaseStudies from "./CaseStudies";
 
 const Portfolio = () => {
   return (
@@ -87,7 +88,7 @@ const Portfolio = () => {
       </section>
 
       {/* **CTA - Clean & Impactful** */}
-      <section className="py-20 px-6 text-center bg-gradient-to-b from-black to-gray-900">
+      {/* <section className="py-20 px-6 text-center bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Elevate Your Brand?
@@ -105,7 +106,8 @@ const Portfolio = () => {
             </Link>
           </motion.div>
         </div>
-      </section>
+      </section> */}
+      <CaseStudies />
     </div>
   );
 };
