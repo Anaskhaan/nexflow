@@ -17,11 +17,12 @@ import MeetingForm from "./pages/Meeting";
 import PortfolioDetails from "./components/PortfolioComponents/PortfolioDetails";
 import CaseStudies from "./pages/CaseStudies";
 import CaseStudyDetails from "./pages/caseStudyDetails";
-import Resources from "./pages/Resources";
-import LeadMagnet from "./pages/LeadMagnet";
+import FunnelAudit from "./pages/FunnelAudit";
 import { CookiesPolicy } from "./pages/CookiesPolicy";
 import { Terms } from "./pages/Terms";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
+import SaasROI from "./pages/SaasROI";
+import { Resources } from "./pages/Resources";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -48,8 +49,9 @@ function App() {
             <Route path="/Contact" element={<Contact />} />
             <Route path="/CaseStudies" element={<CaseStudies />} />
             <Route path="/CaseStudies/:id" element={<CaseStudyDetails />} />
+            <Route path="/SaasRoi" element={<SaasROI />} />
+            <Route path="/FunnelAudit" element={<FunnelAudit />} />
             <Route path="/Resources" element={<Resources />} />
-            <Route path="/LeadMagnet" element={<LeadMagnet />} />
             <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/Terms" element={<Terms />} />
             <Route path="/CookiesPolicy" element={<CookiesPolicy />} />
