@@ -2,7 +2,7 @@ import { useState } from "react";
 import { CheckCircle, ArrowRight, BarChart2, Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
-function LeadMagnet() {
+function FunnelAudit() {
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
@@ -179,4 +179,4 @@ function LeadMagnet() {
   );
 }
 
-export default LeadMagnet;
+export default FunnelAudit;
