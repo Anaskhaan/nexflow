@@ -23,6 +23,7 @@ import { Terms } from "./pages/Terms";
 import { PrivacyPolicy } from "./pages/PrivacyPolicy";
 import SaasROI from "./pages/SaasROI";
 import { Resources } from "./pages/Resources";
+import ThankYou from "./pages/ThankYou";
 
 const ScrollToTop = () => {
   const location = useLocation();
@@ -55,6 +56,7 @@ function App() {
             <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
             <Route path="/Terms" element={<Terms />} />
             <Route path="/CookiesPolicy" element={<CookiesPolicy />} />
+            <Route path="/ThankYou" element={<ThankYou />} />
           </Route>
         </Routes>
       </Router>

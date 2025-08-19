@@ -1,12 +1,6 @@
-import { useRef } from "react";
-import {
-  Send,
-  ArrowRight,
-  Phone,
-  Mail,
-  MapPin,
-  ExternalLink,
-} from "lucide-react";
+import { useRef, useState } from "react";
+import { Send, ArrowRight, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -15,59 +9,75 @@ const Contact = () => {
   const inputRefs = useRef([]);
   const newsletterRef = useRef(null);
 
+  const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0); // For progress bar
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+
   const contactInfo = [
-    {
-      icon: <Phone size={20} />,
-      title: "Phone",
-      value: "+1 (929) 566 4866",
-      link: "tel:+15551234567",
-    },
-    {
-      icon: <Mail size={20} />,
-      title: "Email",
-      value: "info@nexflow.tech",
-      link: "mailto:info@nexflow.tech",
-    },
-    {
-      icon: <MapPin size={20} />,
-      title: "Address",
-      value: "8 The Green #6092 Dover, DE, 19901",
-      link: "https://maps.google.com",
-    },
+    { icon: <Phone size={20} />, title: "Phone", value: "+1 (678) 825 6967", link: "tel:+16788256967" },
+    { icon: <Mail size={20} />, title: "Email", value: "info@nexflow.tech", link: "mailto:info@nexflow.tech" },
+    { icon: <MapPin size={20} />, title: "Address", value: "8 The Green #6092 Dover, DE, 19901", link: "https://maps.google.com" },
   ];
 
-  return (
-    <div
-      ref={containerRef}
-      className="min-h-screen bg-black text-white overflow-hidden pt-28"
-    >
-      {/* Custom Cursor */}
-      <div className="fixed w-4 h-4 bg-[#3FA69B] rounded-full mix-blend-difference pointer-events-none z-50 hidden md:block" />
+  const handleChange = (e, field) => {
+    setFormData({ ...formData, [field]: e.target.value });
+  };
 
-      {/* Decorative Elements */}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message || loading) return;
+
+    setLoading(true);
+    setProgress(0);
+
+    // Animate progress bar
+    const interval = setInterval(() => {
+      setProgress((prev) => (prev >= 100 ? 100 : prev + 5));
+    }, 50);
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formData,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        () => {
+          clearInterval(interval);
+          setProgress(100);
+
+          // Clear inputs
+          setFormData({ name: "", email: "", message: "" });
+          setLoading(false);
+
+          // Reset progress bar after a short delay
+          setTimeout(() => setProgress(0), 800);
+        },
+        () => {
+          clearInterval(interval);
+          setLoading(false);
+          setProgress(0);
+        }
+      );
+  };
+
+  return (
+    <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-28">
+      <div className="fixed w-4 h-4 bg-[#3FA69B] rounded-full mix-blend-difference pointer-events-none z-50 hidden md:block" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#3FA69B] opacity-10 rounded-full blur-3xl floating-element" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#3FA69B] opacity-10 rounded-full blur-3xl floating-element" />
 
-      {/* Contact Section with Sidebar */}
       <div className="relative flex">
-        {/* Main Content */}
         <div className="flex-1 px-6 py-20 md:px-20">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              {/* Left Column */}
               <div className="relative">
-                <h1
-                  ref={titleRef}
-                  className="text-5xl font-serif mb-6 relative"
-                >
-                  Let&apos;s Connect
-                </h1>
+                <h1 ref={titleRef} className="text-5xl font-serif mb-6 relative">Let's Connect</h1>
                 <p className="text-gray-400 mb-8">
-                  Have a project in mind? Let&apos;s create something
-                  extraordinary together.
+                  Have a project in mind? Let's create something extraordinary together.
                 </p>
 
-                {/* Contact Info Cards */}
                 <div className="space-y-4 mt-12">
                   {contactInfo.map((item, index) => (
                     <a
@@ -82,45 +92,61 @@ const Contact = () => {
                           {item.icon}
                         </div>
                         <div>
-                          <h3 className="text-sm font-medium text-gray-400">
-                            {item.title}
-                          </h3>
+                          <h3 className="text-sm font-medium text-gray-400">{item.title}</h3>
                           <p className="text-white">{item.value}</p>
                         </div>
-                        <ExternalLink
-                          size={16}
-                          className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        />
+                        <ExternalLink size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                     </a>
                   ))}
                 </div>
               </div>
 
-              {/* Right Column - Contact Form */}
               <div ref={formRef} className="relative pt-20">
-                <form className="space-y-8">
-                  {["Name", "Email", "Message"].map((label, index) => (
-                    <div
-                      key={label}
-                      ref={(el) => (inputRefs.current[index] = el)}
-                      className="relative group"
-                    >
-                      <input
-                        type={label === "Email" ? "email" : "text"}
-                        className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[#3FA69B] outline-none transition-all duration-300"
-                        placeholder={label}
-                      />
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  {["name", "email", "message"].map((field, index) => (
+                    <div key={field} ref={(el) => (inputRefs.current[index] = el)} className="relative group">
+                      {field === "message" ? (
+                        <textarea
+                          rows="4"
+                          className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[#3FA69B] outline-none transition-all duration-300"
+                          placeholder="Message"
+                          value={formData[field]}
+                          onChange={(e) => handleChange(e, field)}
+                        />
+                      ) : (
+                        <input
+                          type={field === "email" ? "email" : "text"}
+                          className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[#3FA69B] outline-none transition-all duration-300"
+                          placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
+                          value={formData[field]}
+                          onChange={(e) => handleChange(e, field)}
+                        />
+                      )}
                       <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3FA69B] transition-all duration-300 group-hover:w-full" />
                     </div>
                   ))}
-                  <button className="magnetic-button relative px-8 py-3 bg-[#3FA69B] text-white font-medium rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3FA69B]/20">
-                    <span className="relative z-10 flex items-center gap-2">
-                      Send Message
-                      <Send size={18} />
-                    </span>
-                    <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
-                  </button>
+
+                  <div className="relative">
+                    <button
+                      type="submit"
+                      disabled={loading || !formData.name || !formData.email || !formData.message}
+                      className={`magnetic-button relative px-8 py-3 bg-[#3FA69B] text-white font-medium rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3FA69B]/20 ${
+                        loading ? "opacity-60 cursor-not-allowed" : ""
+                      }`}
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
+                        {loading ? "Sending..." : "Send Message"}
+                        <Send size={18} />
+                      </span>
+                      <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
+                    </button>
+
+                    {/* Progress bar */}
+                    {loading && (
+                      <div className="absolute bottom-0 left-0 h-1 bg-[#3FA69B] rounded transition-all duration-200" style={{ width: `${progress}%` }} />
+                    )}
+                  </div>
                 </form>
               </div>
             </div>
@@ -128,15 +154,13 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Enhanced Newsletter Section */}
+      {/* Newsletter Section */}
       <div ref={newsletterRef} className="bg-[#1A1A1A] py-16">
         <div className="max-w-6xl mx-auto px-6 md:px-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-serif mb-4">Stay Updated</h3>
-              <p className="text-gray-400">
-                Subscribe to our newsletter for the latest updates and insights.
-              </p>
+              <p className="text-gray-400">Subscribe to our newsletter for the latest updates and insights.</p>
             </div>
             <div className="md:col-span-2">
               <div className="relative group">

@@ -59,7 +59,7 @@ const footerData = {
     },
     {
       icon: <Phone size={18} className="text-[#3FA69B]" />,
-      text: "+1 (929) 566 4866",
+      text: "+1 (678) 825 6967",
     },
     {
       icon: <MapPin size={18} className="text-[#3FA69B]" />,
