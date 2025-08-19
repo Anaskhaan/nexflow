@@ -12,8 +12,9 @@ import {
   DollarSign,
   Check,
 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
-// Updated icons object to include all icons
+// Icons map
 const icons = {
   Megaphone,
   TrendingUp,
@@ -38,6 +39,28 @@ const ServicesDetail = () => {
 
   return (
     <div className="min-h-screen bg-black text-white py-24">
+      {/* ✅ Dynamic SEO Meta Tags */}
+      <Helmet>
+        <title>{service.metaTitle || `${service.title} | NexFlow`}</title>
+        <meta
+          name="description"
+          content={service.metaDescription || service.description}
+        />
+        <meta
+          property="og:title"
+          content={service.metaTitle || service.title}
+        />
+        <meta
+          property="og:description"
+          content={service.metaDescription || service.description}
+        />
+        <meta
+          property="og:url"
+          content={`https://yourdomain.com/services/${service.slug}`}
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+
       <div className="max-w-5xl mx-auto px-4">
         {/* Hero Section with Gradient Border */}
         <div
@@ -84,7 +107,7 @@ const ServicesDetail = () => {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Column - About & Timeline */}
+          {/* Left Column */}
           <div className="lg:col-span-2 space-y-10">
             {/* About Section */}
             <div className="bg-black border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
@@ -130,9 +153,9 @@ const ServicesDetail = () => {
             )}
           </div>
 
-          {/* Right Column - Sidebar Info */}
+          {/* Right Column */}
           <div className="space-y-8">
-            {/* Benefits Card */}
+            {/* Benefits */}
             <div className="bg-black border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
               <h2
                 className="text-2xl font-bold mb-6"
@@ -154,7 +177,7 @@ const ServicesDetail = () => {
               </ul>
             </div>
 
-            {/* Timeline & Pricing Card */}
+            {/* Timeline & Pricing */}
             <div className="bg-black border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
               {service.timeframe && (
                 <div className="mb-8">
@@ -195,7 +218,7 @@ const ServicesDetail = () => {
               )}
             </div>
 
-            {/* CTA Card */}
+            {/* CTA */}
             <div
               className="rounded-xl p-8 text-center"
               style={{
@@ -220,7 +243,7 @@ const ServicesDetail = () => {
           </div>
         </div>
 
-        {/* Related Services - Optional Section */}
+        {/* Related Services */}
         <div className="mt-16">
           <h2
             className="text-2xl font-bold mb-8"
