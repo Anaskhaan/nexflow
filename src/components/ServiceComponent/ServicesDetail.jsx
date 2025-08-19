@@ -56,7 +56,7 @@ const ServicesDetail = () => {
         />
         <meta
           property="og:url"
-          content={`https://yourdomain.com/services/${service.slug}`}
+          content={`https://nexflow.tech/services/${service.slug}`}
         />
         <meta property="og:type" content="website" />
       </Helmet>

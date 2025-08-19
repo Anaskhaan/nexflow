@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Send, ArrowRight, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -63,6 +64,12 @@ const Contact = () => {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Contact Us | Nexflow</title>
+      <meta name="description" content="Get in touch with Nexflow for your next project" />
+      <link rel="canonical" href="https://nexflow.tech/contact" />
+    </Helmet>
     <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-28">
       <div className="fixed w-4 h-4 bg-[#3FA69B] rounded-full mix-blend-difference pointer-events-none z-50 hidden md:block" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#3FA69B] opacity-10 rounded-full blur-3xl floating-element" />
@@ -178,6 +185,7 @@ const Contact = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Code, BarChart3, LineChart, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -23,6 +24,12 @@ const Hero = () => {
   }, []);
 
   return (
+    <>
+    <Helmet>
+      <title>Nexflow | Innovative Digital Solutions</title>
+      <meta name="description" content="Elevate Your Digital Presence with Nexflow. We turn data into strategy, strategy into design, and design into growth." />
+      <link rel="canonical" href="https://nexflow.tech/" />
+    </Helmet>
     <div className="relative w-full h-screen bg-black overflow-hidden pt-12">
       {/* Simplified static gradient background for mobile, animated for desktop */}
       {isMobile ? (
@@ -174,6 +181,7 @@ const Hero = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
