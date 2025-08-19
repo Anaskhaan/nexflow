@@ -1,5 +1,16 @@
+import { Helmet } from "react-helmet-async";
+
 export function Terms() {
   return (
+    <>
+    <Helmet>
+      <title>Terms and Conditions | Nexflow Technologies</title>
+      <meta
+        name="description"
+        content="Read the Terms and Conditions for Nexflow Technologies. By using our services, you agree to the terms outlined in this document, which governs the use of our products, services, and website."
+      />
+      <link rel="canonical" href="https://nexflow.tech/terms" />
+    </Helmet>
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
         {/* Header with decorative elements */}
@@ -661,5 +672,6 @@ export function Terms() {
         </div>
       </div>
     </div>
+    </>
   );
 }
