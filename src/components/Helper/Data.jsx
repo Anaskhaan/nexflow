@@ -13,6 +13,7 @@ import swift from "../../assets/swift-mobile.webp";
 import swift2 from "../../assets/swift-combine.webp";
 import swift3 from "../../assets/swift-laptop.webp";
 import swift4 from "../../assets/swift-laptop2.webp";
+import { meta } from "@eslint/js";
 
 // export const ServicesData = [
 //   {
@@ -316,6 +317,8 @@ export const ServicesData = [
     slug: "social-media-marketing",
     title: "Social Media Marketing",
     description: "Grow your brand with engaging content, audience interaction, and data-driven strategies across top social platforms",
+    metaTitle: "Top Social Media Marketing Agency | Boost Your Brand Online",
+    metaDescription: "Partner with a leading social media marketing agency to enhance your online presence. Get expert strategies and tailored solutions to drive engagement and grow your brand.",
     icon: "Megaphone",
     benefits: [
       "Increased brand visibility and engagement",
@@ -341,6 +344,8 @@ export const ServicesData = [
     slug: "seo-optimization",
     title: "SEO Optimization",
     description: "Boost your website's ranking with keyword optimization, technical fixes, and high-quality backlinks.",
+    metaTitle: "Trusted SEO Optimization Agency | Drive Organic Traffic & Results",
+    metaDescription: "Partner with a top SEO optimization agency for customized solutions. Boost your rankings, increase traffic, and enhance your online presence with our proven strategies.",
     icon: "TrendingUp",
     benefits: [
       "Higher search engine rankings",
@@ -366,6 +371,8 @@ export const ServicesData = [
     slug: "web-development",
     title: "Web Development",
     description: "Build fast, responsive, and visually appealing websites optimized for user experience and conversions.",
+    metaTitle: "Top Website Development Services | Build Your Online Presence",
+    metaDescription: "Unlock the potential of your business with our web development services. From custom coding to full-site builds, we create responsive, high-performing websites designed to convert.",
     icon: "Globe",
     benefits: [
       "Mobile-friendly and fully responsive design",
@@ -416,6 +423,8 @@ export const ServicesData = [
     slug: "branding",
     title: "Branding",
     description: "Develop a strong, memorable brand identity that builds trust and sets you apart from competitors.",
+    metaTitle: "Top Branding Agency | Build & Elevate Your Brand Identity",
+    metaDescription: "Partner with a leading branding agency to create a strong, unforgettable brand. Our tailored strategies help businesses grow, connect, and thrive in today’s competitive market.",
     icon: "Palette",
     benefits: [
       "Consistent and professional brand image",
@@ -441,6 +450,8 @@ export const ServicesData = [
     slug: "ui-ux-designing",
     title: "UI/UX Designing",
     description: "Create user-friendly, attractive, and seamless digital experiences for better engagement and functionality.",
+    metaTitle: "Expert UI and UX Design | Enhance User Experience & Interface",
+    metaDescription: "Transform your digital presence with our UI UX design services. We craft user-centered, visually stunning designs that drive engagement and improve user satisfaction.",
     icon: "Layout",
     benefits: [
       "Intuitive and easy-to-navigate interfaces",
@@ -466,6 +477,8 @@ export const ServicesData = [
     slug: "app-development",
     title: "App Development",
     description: "Create high-performance mobile applications with intuitive UX for iOS and Android platforms.",
+    metaTitle: "Custom Mobile App Development | Tailored iOS & Android Solutions",
+    metaDescription: "Get custom mobile app development services for iOS and Android. Our expert team builds high-performance, user-friendly apps that align with your business goals and enhance user engagement.",
     icon: "Smartphone",
     benefits: [
       "Cross-platform compatibility (iOS & Android)",
@@ -491,6 +504,8 @@ export const ServicesData = [
     slug: "ppc-campaigns",
     title: "PPC Campaigns",
     description: "Drive immediate traffic and conversions with precisely targeted pay-per-click advertising.",
+    metaTitle: "Effective PPC Campaigns | Drive Targeted Traffic & Maximize ROI",
+    metaDescription: "Boost your business with expertly managed PPC campaigns. We create targeted ads on Google, Bing, and social media to drive qualified traffic, increase conversions, and maximize your ROI.",
     icon: "MousePointerClick",
     benefits: [
       "Immediate visibility and traffic",
@@ -516,6 +531,8 @@ export const ServicesData = [
     slug: "app-store-optimization",
     title: "App Store Optimization (ASO)",
     description: "Improve your mobile app's visibility and downloads in app stores.",
+    metaTitle: "Top ASO Services | Improve App Visibility & Boost Downloads",
+    metaDescription: "Maximize your app’s potential with expert ASO services. We optimize your app for better visibility, higher rankings, and increased downloads on the App Store and Google Play.",
     icon: "Smartphone",
     benefits: [
       "Higher app store rankings",
@@ -541,6 +558,8 @@ export const ServicesData = [
     slug: "ai-image-processing",
     title: "AI Image Processing",
     description: "Implement computer vision solutions for image recognition, analysis and enhancement.",
+    metaTitle:"AI Image Processing for Model Training | Enhance NLP & AI Models",
+    metaDescription: "Boost your AI and NLP model training with advanced AI image processing services. Our solutions optimize data for faster training, better accuracy, and improved performance in machine learning applications.",
     icon: "Image",
     benefits: [
       "Automated image classification",

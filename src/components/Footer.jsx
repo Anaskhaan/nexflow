@@ -5,7 +5,6 @@ import {
   Phone,
   MapPin,
   ArrowRight,
-  Twitter,
   Linkedin,
   Facebook,
   Instagram,
@@ -13,7 +12,7 @@ import {
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 
-// Data organized in a more structured way
+// Footer Data
 const footerData = {
   company: {
     logo,
@@ -21,7 +20,6 @@ const footerData = {
     description:
       "Empowering businesses with cutting-edge digital solutions and innovative marketing strategies to drive growth and success in the digital age.",
     socialLinks: [
-      // { name: "Twitter", url: "#", icon: <Twitter size={18} /> },
       {
         name: "LinkedIn",
         url: "https://www.linkedin.com/company/nexflow-technologies/posts/?feedView=all",
@@ -53,27 +51,15 @@ const footerData = {
     "Paid Advertising",
   ],
   contact: [
+    { icon: <Mail size={18} className="text-[#3FA69B]" />, text: "info@nexflow.tech" },
+    { icon: <Phone size={18} className="text-[#3FA69B]" />, text: "+1 (678) 825 6967" },
     {
-      icon: <Mail size={18} className="text-[#3FA69B]" />,
-      text: "info@nexflow.tech",
-    },
-    {
-      icon: <Phone size={18} className="text-[#3FA69B]" />,
-      text: "+1 (929) 566 4866",
+      icon: <MapPin size={18} className="text-[#3FA69B]" />,
+      text: { title: "USA", lines: ["8 The Green #6092", "Dover, DE, 19901"] },
     },
     {
       icon: <MapPin size={18} className="text-[#3FA69B]" />,
-      text: {
-        title: "USA",
-        lines: ["8 The Green #6092", "Dover, DE, 19901"],
-      },
-    },
-    {
-      icon: <MapPin size={18} className="text-[#3FA69B]" />,
-      text: {
-        title: "Pakistan",
-        lines: ["56-G, Gulberg III", "Lahore, Pakistan"],
-      },
+      text: { title: "Pakistan", lines: ["56-G, Gulberg III", "Lahore, Pakistan"] },
     },
   ],
   legalLinks: [
@@ -83,7 +69,7 @@ const footerData = {
   ],
 };
 
-// Reusable components
+// Reusable Footer Column
 const FooterColumn = ({ title, children, delay = 0 }) => {
   const controls = useAnimation();
   const [hasScrolled, setHasScrolled] = useState(false);
@@ -99,7 +85,6 @@ const FooterColumn = ({ title, children, delay = 0 }) => {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [controls, hasScrolled]);
@@ -110,18 +95,12 @@ const FooterColumn = ({ title, children, delay = 0 }) => {
       animate={controls}
       variants={{
         hidden: { opacity: 0, y: 50 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.6, delay: delay * 0.2 },
-        },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: delay * 0.2 } },
       }}
       className="space-y-6"
     >
       {title && (
-        <h3 className="text-lg font-semibold text-white uppercase tracking-wider">
-          {title}
-        </h3>
+        <h3 className="text-lg font-semibold text-white uppercase tracking-wider">{title}</h3>
       )}
       {children}
     </motion.div>
@@ -182,31 +161,20 @@ const Footer = () => {
       className="bg-gradient-to-b from-gray-900 to-black text-white pt-20 pb-8 px-6 md:px-12 lg:px-20"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Main Footer Content */}
+        {/* Main Footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* Company Info */}
-          <FooterColumn>
+          <FooterColumn title="About Us">
             <div className="flex items-center">
-              <img
-                src={footerData.company.logo}
-                alt="Nexflow logo"
-                className="w-12 h-auto"
-              />
+              <img src={footerData.company.logo} alt="Nexflow logo" className="w-12 h-auto" />
               <span className="ml-3 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3FA69B] to-teal-300">
                 {footerData.company.name}
               </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {footerData.company.description}
-            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">{footerData.company.description}</p>
             <div className="flex space-x-2">
               {footerData.company.socialLinks.map((social, index) => (
-                <SocialIcon
-                  key={index}
-                  url={social.url}
-                  icon={social.icon}
-                  name={social.name}
-                />
+                <SocialIcon key={index} url={social.url} icon={social.icon} name={social.name} />
               ))}
             </div>
           </FooterColumn>
@@ -235,13 +203,13 @@ const Footer = () => {
           <FooterColumn title="Contact Us" delay={3}>
             <ul className="space-y-4">
               {footerData.contact.map((contact, index) => (
-                <ContactItem
-                  key={index}
-                  icon={contact.icon}
-                  text={contact.text}
-                />
+                <ContactItem key={index} icon={contact.icon} text={contact.text} />
               ))}
             </ul>
+
+            {/* Semantic heading for screen readers */}
+            <h3 className="sr-only">Contact Call to Action</h3>
+
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
@@ -262,11 +230,10 @@ const Footer = () => {
         {/* Divider */}
         <div className="border-t border-gray-800 my-8"></div>
 
-        {/* Copyright and Bottom Links */}
+        {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} {footerData.company.name} Technologies.
-            All rights reserved.
+            © {new Date().getFullYear()} {footerData.company.name} Technologies. All rights reserved.
           </p>
           <div className="flex space-x-6">
             {footerData.legalLinks.map((link, index) => (

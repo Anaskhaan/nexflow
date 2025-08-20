@@ -72,7 +72,7 @@ const ServiceDetail = ({ service }) => {
             to="/services"
             className="text-[#3FA69B] text-sm font-medium flex items-center group"
           >
-            Learn more
+            Learn more about {service.title}
             <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -80,6 +80,7 @@ const ServiceDetail = ({ service }) => {
     </motion.div>
   );
 };
+
 
 export const Services = () => {
   const [activeService, setActiveService] = useState(0);

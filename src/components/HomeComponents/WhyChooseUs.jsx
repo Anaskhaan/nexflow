@@ -54,7 +54,8 @@ const FeatureCard = ({ icon: Icon, title, description, color, index }) => (
     >
       <Icon className="text-white w-5 h-5" />
     </div>
-    <h4 className="text-lg font-semibold text-white mb-1">{title}</h4>
+    {/* Fixed heading: h3 instead of h4 */}
+    <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
     <p className="text-sm text-gray-400">{description}</p>
   </motion.div>
 );
@@ -69,6 +70,7 @@ export default function WhyChooseUs() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,8 +82,7 @@ export default function WhyChooseUs() {
             WHY NEXFLOW
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Smart <span className="text-[#3FA69B]">Growth Engines</span> for
-            Bold Brands
+            Smart <span className="text-[#3FA69B]">Growth Engines</span> for Bold Brands
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-base">
             We redefine digital performance with proven systems that scale.
@@ -106,6 +107,7 @@ export default function WhyChooseUs() {
           <div className="absolute -inset-1 bg-gradient-to-r from-[#3FA69B] to-purple-500 rounded-2xl blur-lg opacity-40"></div>
           <div className="relative bg-gray-900 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between">
             <div className="mb-4 md:mb-0 md:mr-6">
+              {/* CTA Heading: h3 */}
               <h3 className="text-2xl md:text-3xl font-bold text-white">
                 Ready to <span className="text-[#3FA69B]">Accelerate?</span>
               </h3>

@@ -29,7 +29,9 @@ export default function Testimonials() {
   return (
     <section className="py-16 bg-black relative">
       {/* Subtle grid background */}
-      <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMCAwdjIwTTAgMTBoMjAiIHN0cm9rZT0iIzNGQTY5QiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=')]"></div>
+      <div
+        className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTTAgMGgyMHYyMEgweiIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0xMCAwdjIwTTAgMTBoMjAiIHN0cm9rZT0iIzNGQTY5QiIgc3Ryb2tlLXdpZHRoPSIwLjUiLz48L3N2Zz4=')]"
+      ></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
@@ -51,7 +53,7 @@ export default function Testimonials() {
               key={testimonial.id}
               className="relative bg-gray-900/80 p-5 rounded-lg border border-gray-800 hover:border-[#3FA69B]/30 transition-all duration-200 group"
             >
-              {/* Quote icon integrated into card top */}
+              {/* Quote icon */}
               <svg
                 className="w-5 h-5 text-[#3FA69B] mb-3 opacity-70 group-hover:opacity-100 transition-opacity"
                 fill="currentColor"
@@ -69,9 +71,9 @@ export default function Testimonials() {
                   {testimonial.name.charAt(0)}
                 </div>
                 <div className="min-w-0">
-                  <h4 className="text-white font-medium text-sm truncate">
+                  <h3 className="text-white font-medium text-sm truncate">
                     {testimonial.name}
-                  </h4>
+                  </h3>
                   <div className="flex flex-wrap items-baseline">
                     <span className="text-[#3FA69B] text-xs font-medium mr-2">
                       {testimonial.role}

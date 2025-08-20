@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export default function FAQs() {
   const faqsData = [
@@ -36,10 +37,8 @@ export default function FAQs() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const containerRef = useRef(null);
 
-  // Animated background elements
   const BackgroundElements = () => (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       <motion.div
@@ -73,9 +72,21 @@ export default function FAQs() {
 
   return (
     <div className="py-20 px-6 md:px-12 lg:px-16 bg-black relative overflow-hidden">
+      <Helmet>
+        <title>Nexflow | FAQs on Digital Marketing</title>
+        <meta
+          name="description"
+          content="Get answers to the most common questions about digital marketing, SEO, paid advertising, and more with Nexflow."
+        />
+        <link rel="canonical" href="https://nexflow.tech/faqs" />
+      </Helmet>
+
       <BackgroundElements />
 
       <div className="max-w-6xl mx-auto">
+        {/* Main H1 for SEO */}
+        <h1 className="sr-only">FAQs - Digital Marketing Questions by Nexflow</h1>
+
         {/* Header with accent */}
         <div className="mb-12 text-center">
           <motion.div
@@ -89,6 +100,7 @@ export default function FAQs() {
               FREQUENTLY ASKED QUESTIONS
             </span>
           </motion.div>
+
           <motion.h2
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -102,7 +114,7 @@ export default function FAQs() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-gray-400 max-w-2xl mx-auto"
+            className="text-gray-300 max-w-2xl mx-auto"
           >
             We&apos;ve compiled answers to the most common questions about
             digital marketing strategies and how they can benefit your business.
@@ -130,8 +142,6 @@ export default function FAQs() {
                   <motion.div
                     key={index}
                     onClick={() => setActiveIndex(index)}
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
                     className="relative cursor-pointer"
                     whileHover={{ x: 5 }}
                   >
@@ -139,7 +149,7 @@ export default function FAQs() {
                       className={`p-4 rounded-lg transition-all duration-300 relative z-10 flex items-center gap-3 ${
                         activeIndex === index
                           ? "text-white"
-                          : "text-gray-400 hover:text-white"
+                          : "text-gray-300 hover:text-white"
                       }`}
                     >
                       {activeIndex === index && (
@@ -152,9 +162,9 @@ export default function FAQs() {
                         />
                       )}
                       <div
-                        className={`w-6 h-6 flex-shrink-0 rounded-full ${
-                          activeIndex === index ? "bg-[#3FA69B]" : "bg-gray-800"
-                        } flex items-center justify-center text-xs`}
+                        className={`w-10 h-10 flex-shrink-0 rounded-full ${
+                          activeIndex === index ? "bg-[#3FA69B]" : "bg-gray-700"
+                        } flex items-center justify-center text-base font-bold`}
                       >
                         {index + 1}
                       </div>
@@ -173,7 +183,7 @@ export default function FAQs() {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-3 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B]/10 font-medium rounded-lg transition-all"
+                    className="w-full px-6 py-4 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B]/10 font-medium rounded-lg transition-all"
                   >
                     Ask a Question
                   </motion.button>
@@ -203,14 +213,14 @@ export default function FAQs() {
                     <div className="w-10 h-10 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-lg font-bold flex-shrink-0 mt-1">
                       Q
                     </div>
-                    <h3 className="lg:text-xl text-sm  font-semibold text-white">
+                    <h2 className="lg:text-xl text-sm font-semibold text-white">
                       {faqsData[activeIndex].question}
-                    </h3>
+                    </h2>
                   </div>
 
                   <div className="flex items-start gap-4 lg:ml-14 ml-0">
                     <div className="border-l-2 border-[#3FA69B]/30 lg:pl-6 pl-3">
-                      <p className="text-gray-300 leading-relaxed text-xs ">
+                      <p className="text-gray-300 leading-relaxed text-sm">
                         {faqsData[activeIndex].answer}
                       </p>
 
@@ -230,6 +240,7 @@ export default function FAQs() {
                 </motion.div>
               </AnimatePresence>
 
+              {/* Previous / Next buttons */}
               <div className="flex justify-between mt-10 pt-6 border-t border-gray-800">
                 <button
                   onClick={() =>
@@ -237,58 +248,34 @@ export default function FAQs() {
                       (activeIndex - 1 + faqsData.length) % faqsData.length
                     )
                   }
-                  className="text-gray-400 hover:text-white flex items-center gap-2 lg:text-sm text-xs"
+                  className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3FA69B]"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m15 18-6-6 6-6" />
-                  </svg>
-                  Previous Question
+                  &larr; Previous Question
                 </button>
 
                 <button
                   onClick={() =>
                     setActiveIndex((activeIndex + 1) % faqsData.length)
                   }
-                  className="text-gray-400 hover:text-white flex items-center gap-2 lg:text-sm text-xs"
+                  className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3FA69B]"
                 >
-                  Next Question
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m9 18 6-6-6-6" />
-                  </svg>
+                  Next Question &rarr;
                 </button>
               </div>
             </div>
 
+            {/* Navigation dots for mobile */}
             <div className="mt-8 flex justify-center items-center gap-2">
               {faqsData.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-all ${
+                  className={`rounded-full transition-all ${
                     activeIndex === index
-                      ? "bg-[#3FA69B] w-4"
+                      ? "bg-[#3FA69B]"
                       : "bg-gray-600 hover:bg-gray-500"
                   }`}
+                  style={{ width: "44px", height: "44px" }} // ✅ Touch-friendly size
                   aria-label={`Go to question ${index + 1}`}
                 />
               ))}
