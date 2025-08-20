@@ -3,13 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
- "scripts": {
-  "dev": "vite --host",
-  "build": "vite build && node generate-sitemap.js",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "sideEffects": false
-},
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build && node generate-sitemap.js",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "sideEffects": false
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@fontsource/open-sans": "^5.1.1",
