@@ -147,13 +147,6 @@ const Hero = () => {
                   </div>
                 </motion.button>
               </Link>
-
-              {/* Optional secondary CTA */}
-              <Link to="/contact" className="mt-4 inline-block">
-                <span className="text-[#3FA69B] font-medium hover:text-[#1F9C87]">
-                  Get In Touch ↗
-                </span>
-              </Link>
             </div>
           </div>
         </div>

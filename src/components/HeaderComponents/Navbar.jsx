@@ -13,26 +13,28 @@ const navLinks = [
     title: "Services",
     href: "/Services",
     submenu: [
-  { id: "s1", title: "Web Development", href: "/services/web-development" },
-  { id: "s2", title: "App Development", href: "/services/app-development" },
-  { id: "s3", title: "UI/UX Design", href: "/services/ui-ux-designing" },
-  { id: "s4", title: "Branding", href: "/services/branding" },
-  { id: "s5", title: "SEO Optimization", href: "/services/seo-optimization" },
-  { id: "s6", title: "ASO Optimization", href: "/services/app-store-optimization" },
-  { id: "s7", title: "Social Media Marketing", href: "/services/social-media-marketing" },
-  { id: "s8", title: "PPC Campaigns", href: "/services/ppc-campaigns" },
-  { id: "s9", title: "AI Image Processing", href: "/services/ai-image-processing" },
-],
-
+      { id: "s1", title: "Web Development", href: "/services/web-development" },
+      { id: "s2", title: "App Development", href: "/services/app-development" },
+      { id: "s3", title: "UI/UX Design", href: "/services/ui-ux-designing" },
+      { id: "s4", title: "Branding", href: "/services/branding" },
+      { id: "s5", title: "SEO Optimization", href: "/services/seo-optimization" },
+      { id: "s6", title: "ASO Optimization", href: "/services/app-store-optimization" },
+      { id: "s7", title: "Social Media Marketing", href: "/services/social-media-marketing" },
+      { id: "s8", title: "PPC Campaigns", href: "/services/ppc-campaigns" },
+      { id: "s9", title: "AI Image Processing", href: "/services/ai-image-processing" },
+    ],
   },
   { id: 4, title: "Portfolio", href: "/Portfolio" },
-  { id: 5, title: "Resources", href: "/Resources", submenu: [
-      { id: "c1", title: "Calulate ROI", href: "/SaasRoi" },
+  {
+    id: 5,
+    title: "Resources",
+    href: "/Resources",
+    submenu: [
+      { id: "c1", title: "Calculate ROI", href: "/SaasRoi" },
       { id: "c2", title: "Analyze Funnel", href: "/FunnelAudit" },
-    ],},
-  { id: 6, title: "Contact", href: "/Contact",
-    
-   },
+    ],
+  },
+  { id: 6, title: "Contact", href: "/Contact" },
 ];
 
 const Navbar = () => {
@@ -64,12 +66,12 @@ const Navbar = () => {
         } transition-all duration-300 ease-in-out`}
       >
         {/* Logo */}
-        <div
-          className={`text-2xl font-bold ${
-            isScrolled ? "text-[#3F4D59]" : "text-[#3FA69B]"
-          }`}
-        >
-          <img src={logo} alt="logo image" className="p-0 m-0 w-14 h-auto" />
+        <div className="text-2xl font-bold">
+          <img
+            src={logo}
+            alt="logo image"
+            className="p-0 m-0 w-14 h-auto"
+          />
         </div>
 
         {/* Nav Links */}
@@ -83,11 +85,13 @@ const Navbar = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
-                  className={`flex items-center gap-1 text-lg transition duration-300 ${
+                  aria-haspopup="true"
+                  aria-expanded={openDropdown === link.id}
+                  className={`flex items-center gap-1 text-lg font-medium transition duration-300 ${
                     isScrolled
-                      ? "text-black hover:text-[#3FA69B]"
-                      : "text-white hover:text-[#3FA69B]"
-                  }`}
+                      ? "text-gray-900 hover:text-teal-600 focus:text-teal-600"
+                      : "text-white hover:text-teal-400 focus:text-teal-400"
+                  } focus:outline-none`}
                 >
                   {link.title}
                   <ChevronDown size={16} />
@@ -107,7 +111,7 @@ const Navbar = () => {
                         <Link
                           key={sub.id}
                           to={sub.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          className="block px-4 py-2 text-sm text-gray-900 hover:bg-gray-100 hover:text-teal-600 focus:bg-gray-100 focus:text-teal-600 transition duration-200"
                           onClick={() => setOpenDropdown(null)}
                         >
                           {sub.title}
@@ -121,11 +125,11 @@ const Navbar = () => {
               <Link
                 key={link.id}
                 to={link.href}
-                className={`text-lg transition duration-300 ${
+                className={`text-lg font-medium transition duration-300 ${
                   isScrolled
-                    ? "text-black hover:text-[#3FA69B]"
-                    : "text-white hover:text-[#3FA69B]"
-                }`}
+                    ? "text-gray-900 hover:text-teal-600 focus:text-teal-600"
+                    : "text-white hover:text-teal-400 focus:text-teal-400"
+                } focus:outline-none`}
                 onClick={() => setIsOpen(false)}
               >
                 {link.title}
@@ -137,7 +141,7 @@ const Navbar = () => {
         {/* Get Started Button */}
         <div className="flex items-center justify-center space-x-3">
           <Link to="/Contact">
-            <button className="hidden md:block font-semibold py-2 px-6 shadow-lg rounded-lg transition duration-300 bg-[#3FA69B] text-white hover:bg-[#2D7A71]">
+            <button className="hidden md:block font-semibold py-2 px-6 shadow-lg rounded-lg transition duration-300 bg-teal-600 text-white hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:outline-none">
               Get Started
             </button>
           </Link>
@@ -160,7 +164,10 @@ const Navbar = () => {
             className="fixed top-0 right-0 w-64 h-full bg-[#3F4D59] text-white shadow-lg p-6 flex flex-col z-50"
           >
             {/* Close Button */}
-            <button className="self-end mb-6" onClick={() => setIsOpen(false)}>
+            <button
+              className="self-end mb-6 focus:outline-none focus:ring-2 focus:ring-teal-400"
+              onClick={() => setIsOpen(false)}
+            >
               <X size={28} />
             </button>
 
@@ -170,10 +177,12 @@ const Navbar = () => {
                 link.submenu ? (
                   <div key={link.id}>
                     <button
-                      className="flex justify-between items-center w-full text-lg hover:text-[#3FA69B] transition duration-300"
+                      className="flex justify-between items-center w-full text-lg font-medium hover:text-teal-400 transition duration-300 focus:text-teal-400 focus:outline-none"
                       onClick={() =>
                         setOpenDropdown(openDropdown === link.id ? null : link.id)
                       }
+                      aria-haspopup="true"
+                      aria-expanded={openDropdown === link.id}
                     >
                       {link.title}
                       <ChevronDown
@@ -195,7 +204,7 @@ const Navbar = () => {
                             <Link
                               key={sub.id}
                               to={sub.href}
-                              className="text-sm hover:text-[#3FA69B]"
+                              className="text-sm hover:text-teal-400 focus:text-teal-400 transition duration-200"
                               onClick={() => setIsOpen(false)}
                             >
                               {sub.title}
@@ -209,7 +218,7 @@ const Navbar = () => {
                   <Link
                     key={link.id}
                     to={link.href}
-                    className="text-lg hover:text-[#3FA69B] transition duration-300"
+                    className="text-lg hover:text-teal-400 focus:text-teal-400 transition duration-300"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.title}
@@ -219,7 +228,7 @@ const Navbar = () => {
             </div>
 
             <Link to="/Contact">
-              <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300">
+              <button className="mt-8 bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-300 focus:ring-2 focus:ring-teal-400 focus:outline-none">
                 Get Started
               </button>
             </Link>

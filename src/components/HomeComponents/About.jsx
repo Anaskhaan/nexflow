@@ -88,12 +88,13 @@ export const About = () => {
       <section ref={sectionRef} className="py-24 md:py-32 bg-black relative overflow-hidden">
         <AnimatedBackground />
 
+        {/* Floating Elements */}
         <FloatingElement className="absolute top-[15%] left-[10%] w-12 h-12 rounded-full bg-[#3FA69B] opacity-20 blur-sm" delay={1.5} />
         <FloatingElement className="absolute bottom-[20%] right-[10%] w-24 h-24 rounded-md bg-[#3FA69B] opacity-10 blur-sm rotate-45" delay={2.5} />
         <FloatingElement className="absolute top-[60%] left-[8%] w-16 h-16 rounded-lg bg-white opacity-5 blur-sm rotate-12" delay={3.5} duration={10} />
 
         <div className="container mx-auto px-4">
-          {/* Heading */}
+          {/* Section Heading */}
           <motion.div className="text-center mb-16" initial={{ opacity: 0, y: -30 }} animate={sectionInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
             <motion.div className="inline-block mb-4 px-4 py-1 rounded-lg bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-20" initial={{ opacity: 0, scale: 0.8 }} animate={sectionInView ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 0.3, duration: 0.6 }}>
               <span className="text-[#3FA69B] text-sm font-medium">ABOUT NEXFLOW</span>
@@ -120,8 +121,6 @@ export const About = () => {
               <motion.div className="absolute top-0 left-0 w-[70%] h-[70%] rounded-xl overflow-hidden shadow-xl shadow-black/40" initial={{ opacity: 0, x: -30, y: -30 }} animate={sectionInView ? { opacity: 1, x: 0, y: 0 } : {}} transition={{ delay: 0.2, duration: 0.8 }} whileHover={{ scale: 1.03 }}>
                 <img
                   src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&w=600&h=420&fit=crop&q=80"
-                  srcSet="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&w=300&h=210&fit=crop&q=80 300w, https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&w=600&h=420&fit=crop&q=80 600w, https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&w=900&h=630&fit=crop&q=80 900w"
-                  sizes="(max-width: 768px) 100vw, 600px"
                   alt="Creative workspace"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -137,8 +136,6 @@ export const About = () => {
               <motion.div className="absolute top-[15%] right-0 w-[60%] h-[60%] rounded-xl overflow-hidden shadow-xl shadow-black/40" initial={{ opacity: 0, x: 30, y: 30 }} animate={sectionInView ? { opacity: 1, x: 0, y: 0 } : {}} transition={{ delay: 0.4, duration: 0.8 }} whileHover={{ scale: 1.03 }}>
                 <img
                   src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&w=600&h=400&fit=crop&q=80"
-                  srcSet="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&w=300&h=200&fit=crop&q=80 300w, https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&w=600&h=400&fit=crop&q=80 600w, https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&w=900&h=600&fit=crop&q=80 900w"
-                  sizes="(max-width: 768px) 100vw, 600px"
                   alt="Digital marketing team"
                   className="w-full h-full object-cover"
                   loading="lazy"
@@ -154,8 +151,6 @@ export const About = () => {
               <motion.div className="absolute bottom-0 left-[10%] w-[65%] h-[50%] rounded-xl overflow-hidden shadow-xl shadow-black/40" initial={{ opacity: 0, x: -20, y: 40 }} animate={sectionInView ? { opacity: 1, x: 0, y: 0 } : {}} transition={{ delay: 0.6, duration: 0.8 }} whileHover={{ scale: 1.03 }}>
                 <img
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&w=600&h=400&fit=crop&q=80"
-                  srcSet="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&w=300&h=200&fit=crop&q=80 300w, https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&w=600&h=400&fit=crop&q=80 600w, https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&w=900&h=600&fit=crop&q=80 900w"
-                  sizes="(max-width: 768px) 100vw, 600px"
                   alt="Team brainstorming"
                   className="w-full h-full object-cover"
                   loading="lazy"
