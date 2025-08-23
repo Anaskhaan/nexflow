@@ -4,7 +4,6 @@ import {
   useAnimation,
   useScroll,
   useTransform,
-  useInView,
 } from "framer-motion";
 
 import AboutHero from "../components/AboutComponents/AboutHero";
@@ -79,7 +78,7 @@ export default function About() {
           {[...Array(15)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute rounded-full bg-[#3FA69B] opacity-10"
+              className="absolute rounded-full bg-[var(--main-theme-color)] opacity-10"
               style={{
                 width: Math.random() * 200 + 50,
                 height: Math.random() * 200 + 50,

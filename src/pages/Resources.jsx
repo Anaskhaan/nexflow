@@ -1,49 +1,13 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Calculator, BarChart2, Zap } from "lucide-react";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+import { Icons } from "../assets/Icons";
+import { resources } from "../components/Helper/Data";
 
 export function Resources() {
   const containerRef = useRef(null);
 
-  useGSAP(() => {
-    // Card hover animations
-    gsap.utils.toArray(".resource-card").forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card.querySelector(".card-highlight"), {
-          opacity: 1,
-          duration: 0.3,
-        });
-      });
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card.querySelector(".card-highlight"), {
-          opacity: 0,
-          duration: 0.3,
-        });
-      });
-    });
-  }, { scope: containerRef });
 
-  const resources = [
-    {
-      title: "SaaS ROI Calculator",
-      description: "Measure your software investment returns with precision",
-      icon: <Calculator className="text-[#3ea69b]" size={32} />,
-      cta: "Calculate ROI",
-      href: "/SaasRoi",
-      accent: "from-[#3ea69b]/10 to-[#3ea69b]/5",
-    },
-    {
-      title: "Funnel Audit",
-      description: "Discover leaks in your conversion pipeline",
-      icon: <BarChart2 className="text-[#3f4e58]" size={32} />,
-      cta: "Analyze Funnel",
-      href: "/FunnelAudit",
-      accent: "from-[#3f4e58]/10 to-[#3f4e58]/5",
-    },
-  ];
 
   return (
     <div
@@ -83,9 +47,9 @@ export function Resources() {
               whileHover={{ y: -5 }}
               className="resource-card relative group h-full"
             >
-              {/* Card highlight effect (shown on hover) */}
+              {/* Card highlight effect (handled with Tailwind + group-hover) */}
               <div
-                className={`card-highlight absolute inset-0 bg-gradient-to-br ${resource.accent} rounded-xl opacity-0 transition-opacity duration-300`}
+                className={`card-highlight absolute inset-0 bg-gradient-to-br ${resource.accent} rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
               />
 
               <div className="relative h-full bg-gray-900/50 border border-gray-800 rounded-xl p-8 backdrop-blur-sm overflow-hidden">
@@ -110,7 +74,7 @@ export function Resources() {
                       className="inline-flex items-center gap-2 text-[#3ea69b] font-medium group-hover:text-[#3ea69b]/90 transition-colors"
                     >
                       {resource.cta}
-                      <ArrowRight
+                      <Icons.ArrowRight
                         size={18}
                         className="group-hover:translate-x-1 transition-transform"
                       />
@@ -130,7 +94,7 @@ export function Resources() {
           className="text-center mt-20"
         >
           <p className="text-[#e5e7eb]/60 mb-4 flex items-center justify-center gap-2">
-            <Zap className="text-[#3ea69b]" size={18} />
+            <Icons.Zap className="text-[#3ea69b]" size={18} />
             More resources coming soon
           </p>
         </motion.div>

@@ -87,11 +87,11 @@ const NexflowLoader = () => {
               },
             }}
           >
-            Nex<span className="text-[#3fa69b]">flow</span>
+            Nex<span className="text-[var(--main-theme-color)]">flow</span>
           </motion.h1>
 
           <motion.div
-            className="h-1 bg-[#3fa69b] mt-2"
+            className="h-1 bg-[var(--main-theme-color)] mt-2"
             initial={{ width: 0 }}
             animate={{
               width: "100%",

@@ -1,28 +1,6 @@
 import { motion } from "framer-motion";
-
+import { process } from "../Helper/Data";
 const ServiceProcess = () => {
-  const process = [
-    {
-      id: 1,
-      title: "Discovery",
-      description: "We analyze your business goals and market position",
-    },
-    {
-      id: 2,
-      title: "Strategy",
-      description: "We create a tailored plan to achieve your objectives",
-    },
-    {
-      id: 3,
-      title: "Execution",
-      description: "We implement campaigns across your chosen channels",
-    },
-    {
-      id: 4,
-      title: "Optimization",
-      description: "We continuously refine for maximum performance",
-    },
-  ];
 
   return (
     <div>
@@ -52,13 +30,13 @@ const ServiceProcess = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-[#3FA69B] bg-opacity-20 text-[#3FA69B] text-sm font-medium mb-4">
+            <span className="inline-block py-1 px-3 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 text-[var(--main-theme-color)] text-sm font-medium mb-4">
               OUR PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How We <span className="text-[#3FA69B]">Work</span>
+              How We <span className="text-[var(--main-theme-color)]">Work</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#3FA69B] to-teal-700 mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-700 mx-auto mb-8"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-300">
               Our proven framework ensures consistent results across all
               projects
@@ -67,7 +45,7 @@ const ServiceProcess = () => {
 
           <div className="relative">
             {/* Process steps */}
-            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#3FA69B] to-teal-900 transform -translate-x-1/2"></div>
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--main-theme-color)] to-teal-900 transform -translate-x-1/2"></div>
 
             <div className="space-y-16 md:space-y-0 relative">
               {process.map((step, index) => (
@@ -96,7 +74,7 @@ const ServiceProcess = () => {
                       }}
                     >
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-full bg-[#3FA69B] bg-opacity-20 flex items-center justify-center text-[#3FA69B] mr-4">
+                        <div className="w-12 h-12 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center text-[var(--main-theme-color)] mr-4">
                           <span className="text-xl font-bold">{step.id}</span>
                         </div>
                         <h3 className="text-2xl font-bold">{step.title}</h3>
@@ -107,7 +85,7 @@ const ServiceProcess = () => {
 
                   {/* Timeline node */}
                   <motion.div
-                    className={`absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-[#3FA69B] z-10 hidden md:block ${
+                    className={`absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-[var(--main-theme-color)] z-10 hidden md:block ${
                       index % 2 === 0
                         ? "left-1/2 -translate-x-1/2 -ml-6"
                         : "left-1/2 -translate-x-1/2 "

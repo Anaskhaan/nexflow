@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Award, Clock, Globe, Zap } from "lucide-react";
+import { Icons } from "../../assets/Icons";
 const Discover = ({ parallaxY2 }) => {
   return (
     <div>
@@ -67,11 +67,11 @@ const Discover = ({ parallaxY2 }) => {
                     transition={{ duration: 0.8, delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    <span className="text-[#3FA69B] font-bold tracking-wider uppercase text-sm">
+                    <span className="text-[var(--main-theme-color)] font-bold tracking-wider uppercase text-sm">
                       Established 2018
                     </span>
                     <h2 className="text-4xl font-bold mt-2">Our Journey</h2>
-                    <div className="w-16 h-1 bg-[#3FA69B] mt-4" />
+                    <div className="w-16 h-1 bg-[var(--main-theme-color)] mt-4" />
                   </motion.div>
                 </div>
               </motion.div>
@@ -92,7 +92,7 @@ const Discover = ({ parallaxY2 }) => {
                 viewport={{ once: true }}
               >
                 Born from a vision to{" "}
-                <span className="text-[#3FA69B] font-semibold">
+                <span className="text-[var(--main-theme-color)] font-semibold">
                   revolutionize
                 </span>{" "}
                 how brands connect digitally.
@@ -129,8 +129,8 @@ const Discover = ({ parallaxY2 }) => {
                     show: { y: 0, opacity: 1 },
                   }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[#3FA69B]">
-                    <Clock className="h-6 w-6" />
+                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[var(--main-theme-color)]">
+                    <Icons.Clock className="h-6 w-6" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold">7+</span>
@@ -145,8 +145,8 @@ const Discover = ({ parallaxY2 }) => {
                     show: { y: 0, opacity: 1 },
                   }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[#3FA69B]">
-                    <Globe className="h-6 w-6" />
+                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[var(--main-theme-color)]">
+                    <Icons.Globe className="h-6 w-6" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold">200+</span>
@@ -161,8 +161,8 @@ const Discover = ({ parallaxY2 }) => {
                     show: { y: 0, opacity: 1 },
                   }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[#3FA69B]">
-                    <Zap className="h-6 w-6" />
+                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[var(--main-theme-color)]">
+                    <Icons.Zap className="h-6 w-6" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold">97%</span>
@@ -177,8 +177,8 @@ const Discover = ({ parallaxY2 }) => {
                     show: { y: 0, opacity: 1 },
                   }}
                 >
-                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[#3FA69B]">
-                    <Award className="h-6 w-6" />
+                  <div className="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center text-[var(--main-theme-color)]">
+                    <Icons.Award className="h-6 w-6" />
                   </div>
                   <div>
                     <span className="text-2xl font-bold">15+</span>

@@ -1,27 +1,6 @@
 import { motion } from "framer-motion";
-import { Award, Clock, TrendingUp, Users } from "lucide-react";
+import { Icons } from "../../assets/Icons";
 const ServiceStats = ({ itemVariants, containerVariants }) => {
-  const stats = [
-    {
-      id: 1,
-      value: "93%",
-      label: "Client Retention",
-      icon: <Users size={24} />,
-    },
-    {
-      id: 2,
-      value: "287%",
-      label: "Average ROI",
-      icon: <TrendingUp size={24} />,
-    },
-    { id: 3, value: "24/7", label: "Support", icon: <Clock size={24} /> },
-    {
-      id: 4,
-      value: "500+",
-      label: "Projects Completed",
-      icon: <Award size={24} />,
-    },
-  ];
 
   return (
     <div>
@@ -41,7 +20,7 @@ const ServiceStats = ({ itemVariants, containerVariants }) => {
                 variants={itemVariants}
               >
                 <motion.div
-                  className="w-16 h-16 rounded-full bg-[#3FA69B] bg-opacity-20 flex items-center justify-center mx-auto mb-4"
+                  className="w-16 h-16 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center mx-auto mb-4"
                   whileHover={{
                     scale: 1.1,
                     backgroundColor: "rgba(63, 166, 155, 0.3)",
@@ -50,7 +29,7 @@ const ServiceStats = ({ itemVariants, containerVariants }) => {
                   {stat.icon}
                 </motion.div>
                 <motion.h3
-                  className="lg:text-4xl text-xl font-bold mb-2 text-[#3FA69B]"
+                  className="lg:text-4xl text-xl font-bold mb-2 text-[var(--main-theme-color)]"
                   initial={{ opacity: 0, scale: 0.5 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}

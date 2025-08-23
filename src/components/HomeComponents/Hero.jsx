@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Code, BarChart3, LineChart, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { Icons } from "../../assets/Icons";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -104,7 +104,7 @@ const Hero = () => {
               <div className="relative font-black text-xl tracking-widest flex items-center justify-center">
                 <span className="inline-block h-1 bg-white absolute -top-2 w-full" />
                 <span className="text-white">NEX</span>
-                <span className="text-[#3FA69B]">FLOW</span>
+                <span className="text-[var(--main-theme-color)]">FLOW</span>
                 <span className="inline-block h-1 bg-white absolute -bottom-2 w-full" />
               </div>
             </div>
@@ -112,7 +112,7 @@ const Hero = () => {
             <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
               <span className="text-white">Elevate Your Digital</span>
               <br />
-              <span className="text-[#3FA69B]">Presence</span>
+              <span className="text-[var(--main-theme-color)]">Presence</span>
             </h1>
 
             <p className="text-lg md:text-xl max-w-2xl leading-relaxed text-white">
@@ -121,10 +121,10 @@ const Hero = () => {
             </p>
 
             <div className="flex space-x-6 mt-4">
-              {[<Zap key="zap" />, <BarChart3 key="bar" />, <LineChart key="line" />, <Code key="code" />].map((icon, i) => (
+              {[<Icons.Zap key="zap" />, <Icons.BarChart3 key="bar" />, <Icons.LineChart key="line" />, <Icons.Code key="code" />].map((icon, i) => (
                 <div
                   key={i}
-                  className="bg-black bg-opacity-50 p-3 rounded-full border border-[#3FA69B] text-[#3FA69B]"
+                  className="bg-black bg-opacity-50 p-3 rounded-full border border-[var(--main-theme-color)] text-[var(--main-theme-color)]"
                 >
                   {React.cloneElement(icon, { size: 24 })}
                 </div>
@@ -143,7 +143,7 @@ const Hero = () => {
                     Start Your Transformation
                   </span>
                   <div className="relative z-10">
-                    <ArrowRight size={24} />
+                    <Icons.ArrowRight size={24} />
                   </div>
                 </motion.button>
               </Link>

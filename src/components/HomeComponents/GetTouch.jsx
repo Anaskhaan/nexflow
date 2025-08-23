@@ -79,7 +79,7 @@ const GetInTouch = () => {
           <button
             ref={buttonRef}
             className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
-                     bg-[#3FA69B] text-white rounded-full w-32 h-32
+                     bg-[var(--main-theme-color)] text-white rounded-full w-32 h-32
                      flex flex-col items-center justify-center
                      transition-transform duration-300 shadow-lg hover:shadow-xl"
           >

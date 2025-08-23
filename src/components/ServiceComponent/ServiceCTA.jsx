@@ -1,6 +1,6 @@
-import { Target } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { Icons } from "../../assets/Icons";
 const ServiceCTA = () => {
   return (
     <div>
@@ -16,7 +16,7 @@ const ServiceCTA = () => {
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute rounded-full bg-[#3FA69B] opacity-10 filter blur-3xl"
+              className="absolute rounded-full bg-[var(--main-theme-color)] opacity-10 filter blur-3xl"
               style={{
                 width: `${Math.random() * 300 + 100}px`,
                 height: `${Math.random() * 300 + 100}px`,
@@ -45,8 +45,8 @@ const ServiceCTA = () => {
             transition={{ duration: 0.5 }}
             className="inline-block mb-6"
           >
-            <div className="w-20 h-20 bg-[#3FA69B] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-              <Target size={36} className="text-[#3FA69B]" />
+            <div className="w-20 h-20 bg-[var(--main-theme-color)] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
+              <Icons.Target size={36} className="text-[var(--main-theme-color)]" />
             </div>
           </motion.div>
 
@@ -57,7 +57,7 @@ const ServiceCTA = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Ready to <span className="text-[#3FA69B]">Transform</span>
+            Ready to <span className="text-[var(--main-theme-color)]">Transform</span>
             <br className="hidden md:block" /> Your Digital Presence?
           </motion.h2>
 
@@ -81,7 +81,7 @@ const ServiceCTA = () => {
           >
             <Link to="/Meeting">
               <motion.button
-                className="bg-[#3FA69B] text-white lg:px-10 px-3 lg:py-5 py-2 rounded-lg lg:text-lg text-sm"
+                className="bg-[var(--main-theme-color)] text-white lg:px-10 px-3 lg:py-5 py-2 rounded-lg lg:text-lg text-sm"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0px 10px 25px rgba(63, 166, 155, 0.4)",
@@ -93,7 +93,7 @@ const ServiceCTA = () => {
             </Link>
             <Link to="/Portfolio">
               <motion.button
-                className="text-white border-2 border-white hover:border-[#3FA69B] hover:text-[#3FA69B] lg:px-10 px-3 lg:py-5 py-2 rounded-lg lg:text-lg text-sm"
+                className="text-white border-2 border-white hover:border-[var(--main-theme-color)] hover:text-[var(--main-theme-color)] lg:px-10 px-3 lg:py-5 py-2 rounded-lg lg:text-lg text-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
