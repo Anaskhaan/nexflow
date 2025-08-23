@@ -1,7 +1,8 @@
 import { useRef, useState } from "react";
-import { Send, ArrowRight, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { Helmet } from "react-helmet-async";
+import { Icons } from "../assets/Icons";
+import { contactInfo } from "../components/Helper/Data";
 
 const Contact = () => {
   const containerRef = useRef(null);
@@ -14,11 +15,6 @@ const Contact = () => {
   const [progress, setProgress] = useState(0); // For progress bar
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const contactInfo = [
-    { icon: <Phone size={20} />, title: "Phone", value: "+1 (678) 825 6967", link: "tel:+16788256967" },
-    { icon: <Mail size={20} />, title: "Email", value: "info@nexflow.tech", link: "mailto:info@nexflow.tech" },
-    { icon: <MapPin size={20} />, title: "Address", value: "8 The Green #6092 Dover, DE, 19901", link: "https://maps.google.com" },
-  ];
 
   const handleChange = (e, field) => {
     setFormData({ ...formData, [field]: e.target.value });
@@ -71,9 +67,6 @@ const Contact = () => {
       <link rel="canonical" href="https://nexflow.tech/contact" />
     </Helmet>
     <div ref={containerRef} className="min-h-screen bg-black text-white overflow-hidden pt-28">
-      <div className="fixed w-4 h-4 bg-[#3FA69B] rounded-full mix-blend-difference pointer-events-none z-50 hidden md:block" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#3FA69B] opacity-10 rounded-full blur-3xl floating-element" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#3FA69B] opacity-10 rounded-full blur-3xl floating-element" />
 
       <div className="relative flex">
         <div className="flex-1 px-6 py-20 md:px-20">
@@ -95,14 +88,14 @@ const Contact = () => {
                       className="contact-info-item group block p-4 bg-gray-900/50 rounded-lg backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="p-2 bg-[#3FA69B]/20 rounded-lg text-[#3FA69B] group-hover:bg-[#3FA69B] group-hover:text-white transition-all duration-300">
+                        <div className="p-2 bg-[var(--main-theme-color)]/20 rounded-lg text-[var(--main-theme-color)] group-hover:bg-[var(--main-theme-color)] group-hover:text-white transition-all duration-300">
                           {item.icon}
                         </div>
                         <div>
                           <h3 className="text-sm font-medium text-gray-400">{item.title}</h3>
                           <p className="text-white">{item.value}</p>
                         </div>
-                        <ExternalLink size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <Icons.ExternalLink size={16} className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>
                     </a>
                   ))}
@@ -116,7 +109,7 @@ const Contact = () => {
                       {field === "message" ? (
                         <textarea
                           rows="4"
-                          className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[#3FA69B] outline-none transition-all duration-300"
+                          className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[var(--main-theme-color)] outline-none transition-all duration-300"
                           placeholder="Message"
                           value={formData[field]}
                           onChange={(e) => handleChange(e, field)}
@@ -124,13 +117,13 @@ const Contact = () => {
                       ) : (
                         <input
                           type={field === "email" ? "email" : "text"}
-                          className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[#3FA69B] outline-none transition-all duration-300"
+                          className="w-full p-4 bg-transparent border-b-2 border-gray-700 focus:border-[var(--main-theme-color)] outline-none transition-all duration-300"
                           placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
                           value={formData[field]}
                           onChange={(e) => handleChange(e, field)}
                         />
                       )}
-                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#3FA69B] transition-all duration-300 group-hover:w-full" />
+                      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-[var(--main-theme-color)] transition-all duration-300 group-hover:w-full" />
                     </div>
                   ))}
 
@@ -138,20 +131,20 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={loading || !formData.name || !formData.email || !formData.message}
-                      className={`magnetic-button relative px-8 py-3 bg-[#3FA69B] text-white font-medium rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[#3FA69B]/20 ${
+                      className={`magnetic-button relative px-8 py-3 bg-[var(--main-theme-color)] text-white font-medium rounded-lg overflow-hidden group transition-all duration-300 hover:shadow-lg hover:shadow-[var(--main-theme-color)]/20 ${
                         loading ? "opacity-60 cursor-not-allowed" : ""
                       }`}
                     >
                       <span className="relative z-10 flex items-center gap-2">
                         {loading ? "Sending..." : "Send Message"}
-                        <Send size={18} />
+                        <Icons.Send size={18} />
                       </span>
                       <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                     </button>
 
                     {/* Progress bar */}
                     {loading && (
-                      <div className="absolute bottom-0 left-0 h-1 bg-[#3FA69B] rounded transition-all duration-200" style={{ width: `${progress}%` }} />
+                      <div className="absolute bottom-0 left-0 h-1 bg-[var(--main-theme-color)] rounded transition-all duration-200" style={{ width: `${progress}%` }} />
                     )}
                   </div>
                 </form>
@@ -174,10 +167,10 @@ const Contact = () => {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full p-4 pr-12 bg-transparent border-2 border-gray-800 rounded-lg focus:border-[#3FA69B] outline-none transition-all duration-300"
+                  className="w-full p-4 pr-12 bg-transparent border-2 border-gray-800 rounded-lg focus:border-[var(--main-theme-color)] outline-none transition-all duration-300"
                 />
-                <button className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-[#3FA69B] hover:text-white transition-colors duration-300">
-                  <ArrowRight size={20} />
+                <button className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-[var(--main-theme-color)] hover:text-white transition-colors duration-300">
+                  <Icons.ArrowRight size={20} />
                 </button>
               </div>
             </div>

@@ -1,40 +1,12 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HelpCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
+import { Icons } from "../assets/Icons";
+import { faqsData } from "./Helper/Data";
 
 export default function FAQs() {
-  const faqsData = [
-    {
-      question: "Why is digital marketing important for my business?",
-      answer:
-        "Digital marketing allows businesses to reach and engage with a wider audience, generate leads, drive website traffic, and increase brand visibility. It provides measurable results and enables businesses to adapt strategies based on insights.",
-    },
-    {
-      question:
-        "How can digital marketing help improve my website's visibility?",
-      answer:
-        "Digital marketing strategies such as SEO and paid advertising can help your website rank higher on search engines and attract more visitors.",
-    },
-    {
-      question:
-        "How long does it take to see results from digital marketing efforts?",
-      answer:
-        "The timeline varies depending on the strategy, but SEO may take months while paid advertising yields faster results.",
-    },
-    {
-      question:
-        "How do you measure the success of digital marketing campaigns?",
-      answer:
-        "Success can be measured by tracking KPIs like website traffic, conversion rates, and ROI through analytics tools.",
-    },
-    {
-      question: "What digital marketing services does Nexflow offer?",
-      answer:
-        "Nexflow offers a comprehensive suite of digital marketing services including SEO, paid advertising, social media marketing, content marketing, email campaigns, and analytics reporting to help businesses achieve their marketing goals.",
-    },
-  ];
+
 
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
@@ -42,7 +14,7 @@ export default function FAQs() {
   const BackgroundElements = () => (
     <div className="absolute inset-0 -z-10 overflow-hidden">
       <motion.div
-        className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-[#3FA69B] opacity-10 filter blur-lg"
+        className="absolute -top-32 -right-32 w-64 h-64 rounded-full bg-[var(--main-theme-color)] opacity-10 filter blur-lg"
         animate={{
           scale: [1, 1.1, 1, 1.2, 1],
           y: [0, -10, 0, 10, 0],
@@ -55,7 +27,7 @@ export default function FAQs() {
         }}
       />
       <motion.div
-        className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-[#3FA69B] opacity-5 filter blur-lg"
+        className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-[var(--main-theme-color)] opacity-5 filter blur-lg"
         animate={{
           scale: [1.2, 1, 1.3, 0.9, 1.2],
           y: [0, 10, 0, -10, 0],
@@ -93,10 +65,10 @@ export default function FAQs() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block mb-4 px-4 py-1 rounded-full bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-30"
+            className="inline-block mb-4 px-4 py-1 rounded-full bg-[var(--main-theme-color)] bg-opacity-10 border border-[var(--main-theme-color)] border-opacity-30"
           >
-            <span className="text-[#3FA69B] text-sm font-medium flex items-center gap-2">
-              <HelpCircle size={16} />
+            <span className="text-[var(--main-theme-color)] text-sm font-medium flex items-center gap-2">
+              <Icons.HelpCircle size={16} />
               FREQUENTLY ASKED QUESTIONS
             </span>
           </motion.div>
@@ -108,7 +80,7 @@ export default function FAQs() {
             className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
             Got Questions About{" "}
-            <span className="text-[#3FA69B]">Digital Marketing</span>?
+            <span className="text-[var(--main-theme-color)]">Digital Marketing</span>?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -10 }}
@@ -131,7 +103,7 @@ export default function FAQs() {
           >
             <div className="sticky top-8 lg:block hidden">
               <h3 className="text-lg font-medium text-white mb-6 flex items-center gap-2">
-                <span className="w-8 h-8 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-sm font-bold">
+                <span className="w-8 h-8 rounded-full bg-[var(--main-theme-color)] text-black flex items-center justify-center text-sm font-bold">
                   ?
                 </span>
                 Common Questions
@@ -155,7 +127,7 @@ export default function FAQs() {
                       {activeIndex === index && (
                         <motion.div
                           layoutId="activeBackground"
-                          className="absolute inset-0 bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-20 rounded-lg z-0"
+                          className="absolute inset-0 bg-[var(--main-theme-color)] bg-opacity-10 border border-[var(--main-theme-color)] border-opacity-20 rounded-lg z-0"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.3 }}
@@ -163,7 +135,7 @@ export default function FAQs() {
                       )}
                       <div
                         className={`w-10 h-10 flex-shrink-0 rounded-full ${
-                          activeIndex === index ? "bg-[#3FA69B]" : "bg-gray-700"
+                          activeIndex === index ? "bg-[var(--main-theme-color)]" : "bg-gray-700"
                         } flex items-center justify-center text-base font-bold`}
                       >
                         {index + 1}
@@ -183,7 +155,7 @@ export default function FAQs() {
                   <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full px-6 py-4 border border-[#3FA69B] text-[#3FA69B] hover:bg-[#3FA69B]/10 font-medium rounded-lg transition-all"
+                    className="w-full px-6 py-4 border border-[var(--main-theme-color)] text-[var(--main-theme-color)] hover:bg-[var(--main-theme-color)]/10 font-medium rounded-lg transition-all"
                   >
                     Ask a Question
                   </motion.button>
@@ -210,7 +182,7 @@ export default function FAQs() {
                   transition={{ duration: 0.4 }}
                 >
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="w-10 h-10 rounded-full bg-[#3FA69B] text-black flex items-center justify-center text-lg font-bold flex-shrink-0 mt-1">
+                    <div className="w-10 h-10 rounded-full bg-[var(--main-theme-color)] text-black flex items-center justify-center text-lg font-bold flex-shrink-0 mt-1">
                       Q
                     </div>
                     <h2 className="lg:text-xl text-sm font-semibold text-white">
@@ -219,19 +191,19 @@ export default function FAQs() {
                   </div>
 
                   <div className="flex items-start gap-4 lg:ml-14 ml-0">
-                    <div className="border-l-2 border-[#3FA69B]/30 lg:pl-6 pl-3">
+                    <div className="border-l-2 border-[var(--main-theme-color)]/30 lg:pl-6 pl-3">
                       <p className="text-gray-300 leading-relaxed text-sm">
                         {faqsData[activeIndex].answer}
                       </p>
 
                       <div className="mt-8 flex flex-wrap gap-3">
-                        <span className="px-3 py-1 bg-[#3FA69B]/10 text-[#3FA69B] text-sm rounded-full border border-[#3FA69B]/20">
+                        <span className="px-3 py-1 bg-[var(--main-theme-color)]/10 text-[var(--main-theme-color)] text-sm rounded-full border border-[var(--main-theme-color)]/20">
                           #DigitalStrategy
                         </span>
-                        <span className="px-3 py-1 bg-[#3FA69B]/10 text-[#3FA69B] text-sm rounded-full border border-[#3FA69B]/20">
+                        <span className="px-3 py-1 bg-[var(--main-theme-color)]/10 text-[var(--main-theme-color)] text-sm rounded-full border border-[var(--main-theme-color)]/20">
                           #MarketingInsights
                         </span>
-                        <span className="px-3 py-1 bg-[#3FA69B]/10 text-[#3FA69B] text-sm rounded-full border border-[#3FA69B]/20">
+                        <span className="px-3 py-1 bg-[var(--main-theme-color)]/10 text-[var(--main-theme-color)] text-sm rounded-full border border-[var(--main-theme-color)]/20">
                           #Nexflow
                         </span>
                       </div>
@@ -248,7 +220,7 @@ export default function FAQs() {
                       (activeIndex - 1 + faqsData.length) % faqsData.length
                     )
                   }
-                  className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3FA69B]"
+                  className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--main-theme-color)]"
                 >
                   &larr; Previous Question
                 </button>
@@ -257,7 +229,7 @@ export default function FAQs() {
                   onClick={() =>
                     setActiveIndex((activeIndex + 1) % faqsData.length)
                   }
-                  className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3FA69B]"
+                  className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--main-theme-color)]"
                 >
                   Next Question &rarr;
                 </button>
@@ -272,7 +244,7 @@ export default function FAQs() {
                   onClick={() => setActiveIndex(index)}
                   className={`rounded-full transition-all ${
                     activeIndex === index
-                      ? "bg-[#3FA69B]"
+                      ? "bg-[var(--main-theme-color)]"
                       : "bg-gray-600 hover:bg-gray-500"
                   }`}
                   style={{ width: "44px", height: "44px" }} // ✅ Touch-friendly size

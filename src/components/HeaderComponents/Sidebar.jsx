@@ -2,15 +2,9 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/logo.svg"; // Adjust the path to your logo image
+import { Icons } from "../../assets/Icons";
+import { navLinks } from "../Helper/Data";
 
-const navLinks = [
-  { id: 1, title: "Home", href: "/" },
-  { id: 2, title: "About", href: "/about" },
-  { id: 3, title: "Services", href: "/services" },
-  { id: 4, title: "Portfolio", href: "/Portfolio" },
-   { id: 5, title: "Resources", href: "/Resources" },
-  { id: 6, title: "Contact", href: "/contact" },
-];
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +23,7 @@ const Sidebar = () => {
           <img src={logo} alt="logo" className="w-10 h-auto p-0 m-0" />
         </div>
         <button onClick={toggleSidebar} aria-label="Open Menu">
-          <Menu size={28} className="text-black" />
+          <Icons.Menu size={28} className="text-black" />
         </button>
       </div>
 
@@ -50,7 +44,7 @@ const Sidebar = () => {
                 onClick={toggleSidebar}
                 aria-label="Close Menu"
               >
-                <X size={28} />
+                <Icons.X size={28} />
               </button>
 
               <div className="flex flex-col gap-6">
@@ -58,7 +52,7 @@ const Sidebar = () => {
                   <a
                     key={link.id}
                     href={link.href}
-                    className="text-lg hover:text-[#3FA69B] transition duration-300"
+                    className="text-lg hover:text-[var(--main-theme-color)] transition duration-300"
                     onClick={toggleSidebar}
                   >
                     {link.title}
@@ -66,7 +60,7 @@ const Sidebar = () => {
                 ))}
               </div>
 
-              <button className="mt-8 bg-[#3FA69B] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
+              <button className="mt-8 bg-[var(--main-theme-color)] hover:bg-[#2D7A71] text-white font-semibold py-3 px-6 rounded-full shadow-lg transition duration-300">
                 Get Started
               </button>
             </motion.div>

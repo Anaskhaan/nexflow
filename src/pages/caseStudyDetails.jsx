@@ -1,7 +1,7 @@
-import { ChevronLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { caseStudyData } from "../components/Helper/caseStudyData";
 import { useParams } from "react-router-dom";
+import { Icons } from "../assets/Icons";
 
 const CaseStudyDetails = () => {
   const { id } = useParams();
@@ -19,7 +19,7 @@ const CaseStudyDetails = () => {
           to="/Portfolio"
           className="flex items-center text-[#06B6D4] hover:text-white mb-8 transition-colors"
         >
-          <ChevronLeft className="w-5 h-5" />
+          <Icons.ChevronLeft className="w-5 h-5" />
           <span className="ml-1 font-medium">Back to Case Studies</span>
         </Link>
 

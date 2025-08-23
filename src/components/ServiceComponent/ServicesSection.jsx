@@ -1,15 +1,8 @@
 import { motion } from "framer-motion";
-import {
-  BarChart2,
-  ChevronRight,
-  Globe,
-  Mail,
-  Megaphone,
-  Smartphone,
-  TrendingUp,
-} from "lucide-react";
+
 import { Link } from "react-router-dom";
 import { ServicesData } from "../Helper/Data";
+import { Icons } from "../../assets/Icons";
 
 const ServicesSection = ({ containerVariants, itemVariants }) => {
   // Map the ServicesData to include the correct icons
@@ -18,25 +11,25 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
     let icon;
     switch (service.icon) {
       case "Megaphone":
-        icon = <Megaphone size={32} />;
+        icon = <Icons.Megaphone size={32} />;
         break;
       case "TrendingUp":
-        icon = <TrendingUp size={32} />;
+        icon = <Icons.TrendingUp size={32} />;
         break;
       case "Globe":
-        icon = <Globe size={32} />;
+        icon = <Icons.Globe size={32} />;
         break;
       case "BarChart":
-        icon = <BarChart2 size={32} />;
+        icon = <Icons.BarChart2 size={32} />;
         break;
       case "Mail":
-        icon = <Mail size={32} />;
+        icon = <Icons.Mail size={32} />;
         break;
       case "Smartphone":
-        icon = <Smartphone size={32} />;
+        icon = <Icons.Smartphone size={32} />;
         break;
       default:
-        icon = <Globe size={32} />;
+        icon = <Icons.Globe size={32} />;
     }
 
     return {
@@ -56,13 +49,13 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-[#3FA69B] bg-opacity-20 text-[#3FA69B] text-sm font-medium mb-4">
+            <span className="inline-block py-1 px-3 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 text-[var(--main-theme-color)] text-sm font-medium mb-4">
               OUR SERVICES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What We <span className="text-[#3FA69B]">Offer</span>
+              What We <span className="text-[var(--main-theme-color)]">Offer</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#3FA69B] to-teal-700 mx-auto mb-8"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-700 mx-auto mb-8"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-300">
               Comprehensive digital marketing solutions tailored to your unique
               business needs and goals
@@ -85,7 +78,7 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
               >
                 <div className="p-8 relative z-10">
                   <motion.div
-                    className="w-16 h-16 bg-[#3FA69B] bg-opacity-20 flex items-center justify-center rounded-xl mb-6 text-[#3FA69B]"
+                    className="w-16 h-16 bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center rounded-xl mb-6 text-[var(--main-theme-color)]"
                     whileHover={{ rotate: 360, backgroundColor: service.color }}
                     transition={{ duration: 0.5 }}
                   >
@@ -97,7 +90,7 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
                   <div className="space-y-3 mb-8">
                     {service.benefits.map((benefit, idx) => (
                       <div key={idx} className="flex items-center">
-                        <div className="w-2 h-2 rounded-full bg-[#3FA69B] mr-3"></div>
+                        <div className="w-2 h-2 rounded-full bg-[var(--main-theme-color)] mr-3"></div>
                         <span className="text-gray-300">{benefit}</span>
                       </div>
                     ))}
@@ -105,11 +98,11 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
 
                   <motion.div
                     whileHover={{ x: 5 }}
-                    className="inline-flex items-center text-[#3FA69B] font-medium"
+                    className="inline-flex items-center text-[var(--main-theme-color)] font-medium"
                   >
                     <Link to={`/services/${service.slug}`}>
                       <button className="flex items-center justify-center">
-                        Learn more <ChevronRight className="ml-1 w-4 h-4" />
+                        Learn more <Icons.ChevronRight className="ml-1 w-4 h-4" />
                       </button>
                     </Link>
                   </motion.div>

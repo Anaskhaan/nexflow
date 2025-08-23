@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { CheckCircle, ArrowRight, BarChart2, Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import emailjs from "@emailjs/browser";
 import Funnel from "/resources/Audit-Funnel.pdf";
+import { Icons } from "../assets/Icons";
 
 function FunnelAudit() {
   const [email, setEmail] = useState("");
@@ -72,24 +72,18 @@ function FunnelAudit() {
       </Helmet>
 
       <div className="relative min-h-screen bg-gray-950 text-[#e5e7eb] overflow-hidden flex items-center justify-center px-4 py-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-950 to-[#1a222e]">
-          <div className="absolute top-1/4 left-1/4 w-48 h-48 rounded-full bg-[#3ea69b]/10 blur-[60px] animate-float" />
-          <div className="absolute bottom-1/3 right-1/4 w-64 h-64 rounded-full bg-[#3f4e58]/15 blur-[80px] animate-float-delay" />
-          <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#3ea69b11_1px,transparent_1px),linear-gradient(to_bottom,#3f4e5811_1px,transparent_1px)] bg-[size:40px_40px] animate-grid-pulse" />
-        </div>
+       
 
         <div className="relative z-10 w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-[#3ea69b]/30 shadow-2xl shadow-[#3ea69b]/10">
           {/* Left Side */}
           <div className="w-full lg:w-3/5 p-8 md:p-12 bg-gradient-to-br from-gray-900/95 to-gray-800/95 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#3ea69b]/10 rounded-bl-full blur-[60px]" />
 
             <div className="flex items-center gap-4 mb-8 relative z-10">
               <div className="p-3 rounded-lg bg-gradient-to-br from-[#3f4e58] to-[#3ea69b] group">
-                <BarChart2
+                <Icons.BarChart2
                   className="text-[#e5e7eb] group-hover:scale-110 transition-transform"
                   size={24}
                 />
-                <div className="absolute -bottom-1 -right-1 w-2 h-2 bg-[#3ea69b] rounded-full animate-pulse" />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-[#e5e7eb]">
                 Free{" "}
@@ -107,7 +101,7 @@ function FunnelAudit() {
 
             <div className="mb-8 relative z-10">
               <h2 className="text-xl font-semibold text-[#e5e7eb] mb-6 pb-2 border-b border-[#3ea69b]/30 flex items-center">
-                <Zap className="text-[#3ea69b] mr-2" size={18} />
+                <Icons.Zap className="text-[#3ea69b] mr-2" size={18} />
                 What You'll Get:
               </h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -118,7 +112,7 @@ function FunnelAudit() {
                   "Immediate identification of weak points",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start group">
-                    <CheckCircle
+                    <Icons.CheckCircle
                       className="text-[#3ea69b] mt-0.5 mr-3 flex-shrink-0 group-hover:scale-125 transition-transform"
                       size={20}
                     />
@@ -130,12 +124,10 @@ function FunnelAudit() {
               </ul>
             </div>
 
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#3ea69b] to-transparent opacity-40" />
           </div>
 
           {/* Right Side */}
           <div className="w-full lg:w-2/5 p-8 md:p-12 bg-gradient-to-b from-[#2a3640] to-[#1f2937] border-t lg:border-t-0 lg:border-l border-[#3ea69b]/30 relative">
-            <div className="absolute inset-0 bg-[#3ea69b]/5 rounded-tr-2xl" />
             <div className="relative z-10 h-full flex flex-col">
               <h3 className="text-2xl font-bold text-[#e5e7eb] mb-6">
                 Start Your <span className="text-[#3ea69b]">Free</span> Audit
@@ -152,7 +144,6 @@ function FunnelAudit() {
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-5 py-4 rounded-lg bg-gray-800/70 text-[#e5e7eb] border border-[#3ea69b]/50 focus:outline-none focus:ring-2 focus:ring-[#3ea69b]/50 placeholder-[#e5e7eb]/50 backdrop-blur-sm"
                   />
-                  <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3ea69b] to-transparent" />
                 </div>
 
                 {/* Loading bar */}
@@ -173,7 +164,7 @@ function FunnelAudit() {
                   }`}
                 >
                   <span>{loading ? "Sending..." : "Get Free Audit"}</span>
-                  <ArrowRight
+                  <Icons.ArrowRight
                     className="group-hover:translate-x-1 transition-transform"
                     size={18}
                   />

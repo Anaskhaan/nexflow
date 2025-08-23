@@ -1,8 +1,8 @@
-import {  ExternalLink } from "lucide-react";
 import { portfolioData } from "../components/Helper/Data";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import CaseStudies from "./CaseStudies";
+import { Icons } from "../assets/Icons";
 
 const Portfolio = () => {
   return (
@@ -74,7 +74,7 @@ const Portfolio = () => {
                       to={`/Portfolio/${project.slug}`}
                       className="flex items-center text-sm text-white hover:text-teal-500 transition-colors"
                     >
-                      View Project <ExternalLink className="ml-1 w-4 h-4" />
+                      View Project <Icons.ExternalLink className="ml-1 w-4 h-4" />
                     </Link>
                   </div>
                 </motion.div>

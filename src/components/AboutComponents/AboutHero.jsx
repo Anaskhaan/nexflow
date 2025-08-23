@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { Icons } from "../../assets/Icons";
 const AboutHero = ({ gradientControls, parallaxY1, floatingAnimation }) => {
   return (
     <div>
@@ -23,8 +23,8 @@ const AboutHero = ({ gradientControls, parallaxY1, floatingAnimation }) => {
           className="absolute opacity-20 w-full h-full"
           style={{ y: parallaxY1 }}
         >
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-[#3FA69B] blur-3xl opacity-20" />
-          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-[#3FA69B] blur-3xl opacity-30" />
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-[var(--main-theme-color)] blur-3xl opacity-20" />
+          <div className="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-[var(--main-theme-color)] blur-3xl opacity-30" />
         </motion.div>
 
         <div className="container mx-auto px-4 z-10 text-center relative">
@@ -97,7 +97,7 @@ const AboutHero = ({ gradientControls, parallaxY1, floatingAnimation }) => {
                 Nex
               </motion.span>
               <motion.span
-                className="text-[#3FA69B]"
+                className="text-[var(--main-theme-color)]"
                 animate={floatingAnimation}
               >
                 flow
@@ -105,7 +105,7 @@ const AboutHero = ({ gradientControls, parallaxY1, floatingAnimation }) => {
             </motion.h1>
 
             <motion.div
-              className="w-full h-1 bg-gradient-to-r from-transparent via-[#3FA69B] to-transparent mx-auto my-8"
+              className="w-full h-1 bg-gradient-to-r from-transparent via-[var(--main-theme-color)] to-transparent mx-auto my-8"
               initial={{ width: 0, opacity: 0 }}
               animate={{ width: "100%", opacity: 1 }}
               transition={{ duration: 1.5, delay: 2.5 }}
@@ -118,7 +118,7 @@ const AboutHero = ({ gradientControls, parallaxY1, floatingAnimation }) => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 2.8 }}
               >
-                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#3FA69B]">
+                <span className="font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--main-theme-color)]">
                   Where vision meets digital reality
                 </span>
               </motion.p>
@@ -138,15 +138,15 @@ const AboutHero = ({ gradientControls, parallaxY1, floatingAnimation }) => {
               className="inline-block group"
             >
               <div className="flex flex-col items-center">
-                <span className="text-[#3FA69B] group-hover:text-white transition-colors duration-300 text-lg mb-3">
+                <span className="text-[var(--main-theme-color)] group-hover:text-white transition-colors duration-300 text-lg mb-3">
                   Discover Our Story
                 </span>
                 <motion.div
-                  className="w-12 h-12 rounded-full border-2 border-[#3FA69B] flex items-center justify-center"
+                  className="w-12 h-12 rounded-full border-2 border-[var(--main-theme-color)] flex items-center justify-center"
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 >
-                  <ChevronRight className="h-6 w-6 text-[#3FA69B]" />
+                  <Icons.ChevronRight className="h-6 w-6 text-[var(--main-theme-color)]" />
                 </motion.div>
               </div>
             </motion.a>

@@ -1,31 +1,21 @@
 import { motion } from "framer-motion";
-import {
-  Code,
-  Smartphone,
-  BarChart2,
-  Search,
-  Share2,
-  Zap,
-  PenTool,
-  Cpu,
-  Layout,
-  ArrowRight,
-} from "lucide-react";
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Icons } from "../../assets/Icons";
 
 const ServicePill = ({ title, icon, isActive, onClick }) => {
   const icons = {
-    web: <Code className="w-4 h-4" />,
-    app: <Smartphone className="w-4 h-4" />,
-    marketing: <BarChart2 className="w-4 h-4" />,
-    seo: <Search className="w-4 h-4" />,
-    aso: <Smartphone className="w-4 h-4" />,
-    smm: <Share2 className="w-4 h-4" />,
-    ppc: <Zap className="w-4 h-4" />,
-    branding: <PenTool className="w-4 h-4" />,
-    ai: <Cpu className="w-4 h-4" />,
-    uiux: <Layout className="w-4 h-4" />,
+    web: <Icons.Code className="w-4 h-4" />,
+    app: <Icons.Smartphone className="w-4 h-4" />,
+    marketing: <Icons.BarChart2 className="w-4 h-4" />,
+    seo: <Icons.Search className="w-4 h-4" />,
+    aso: <Icons.Smartphone className="w-4 h-4" />,
+    smm: <Icons.Share2 className="w-4 h-4" />,
+    ppc: <Icons.Zap className="w-4 h-4" />,
+    branding: <Icons.PenTool className="w-4 h-4" />,
+    ai: <Icons.Cpu className="w-4 h-4" />,
+    uiux: <Icons.Layout className="w-4 h-4" />,
   };
 
   return (
@@ -33,7 +23,7 @@ const ServicePill = ({ title, icon, isActive, onClick }) => {
       onClick={onClick}
       className={`px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all ${
         isActive
-          ? "bg-[#3FA69B] text-black"
+          ? "bg-[var(--main-theme-color)] text-black"
           : "bg-gray-800 text-gray-300 hover:bg-gray-700"
       }`}
     >
@@ -52,7 +42,7 @@ const ServiceDetail = ({ service }) => {
       className="bg-gray-900 rounded-xl p-6 border border-gray-800"
     >
       <div className="flex items-start">
-        <div className="p-3 rounded-lg bg-[#3FA69B] bg-opacity-20 mr-4">
+        <div className="p-3 rounded-lg bg-[var(--main-theme-color)] bg-opacity-20 mr-4">
           {service.icon}
         </div>
         <div>
@@ -70,10 +60,10 @@ const ServiceDetail = ({ service }) => {
           </div>
           <Link
             to="/services"
-            className="text-[#3FA69B] text-sm font-medium flex items-center group"
+            className="text-[var(--main-theme-color)] text-sm font-medium flex items-center group"
           >
             Learn more about {service.title}
-            <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Icons.ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
       </div>
@@ -88,27 +78,27 @@ export const Services = () => {
   const services = [
     {
       title: "Web Development",
-      icon: <Code className="w-5 h-5 text-[#3FA69B]" />,
+      icon: <Icons.Code className="w-5 h-5 text-[var(--main-theme-color)]" />,
       description:
         "Building high-performance, scalable websites with modern frameworks.",
       features: ["React", "Next.js", "Node.js", "Tailwind CSS"],
     },
     {
       title: "UI/UX Design",
-      icon: <Layout className="w-5 h-5 text-[#3FA69B]" />,
+      icon: <Icons.Layout className="w-5 h-5 text-[var(--main-theme-color)]" />,
       description:
         "Creating intuitive user experiences with pixel-perfect interfaces.",
       features: ["User Research", "Wireframing", "Prototyping", "Figma"],
     },
     {
       title: "App Development",
-      icon: <Smartphone className="w-5 h-5 text-[#3FA69B]" />,
+      icon: <Icons.Smartphone className="w-5 h-5 text-[var(--main-theme-color)]" />,
       description: "Cross-platform mobile applications for iOS and Android.",
       features: ["React Native", "Flutter", "Swift", "Kotlin"],
     },
     {
       title: "Digital Marketing",
-      icon: <BarChart2 className="w-5 h-5 text-[#3FA69B]" />,
+      icon: <Icons.BarChart2 className="w-5 h-5 text-[var(--main-theme-color)]" />,
       description: "Comprehensive strategies to grow your online presence.",
       features: ["Content Strategy", "Campaign Management", "Analytics"],
     },
@@ -131,14 +121,14 @@ export const Services = () => {
     <section className="py-16 bg-black relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-sm font-medium text-[#3FA69B] tracking-wider">
+          <span className="text-sm font-medium text-[var(--main-theme-color)] tracking-wider">
             OUR EXPERTISE
           </span>
           <h2 className="text-3xl font-bold text-white mt-2 mb-3">
             Full-Spectrum{" "}
-            <span className="text-[#3FA69B]">Digital Services</span>
+            <span className="text-[var(--main-theme-color)]">Digital Services</span>
           </h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-[#3FA69B] to-[#2D7E74] mx-auto mb-6"></div>
+          <div className="w-16 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-[#2D7E74] mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm">
             Comprehensive solutions from design to development and marketing.
           </p>
@@ -170,10 +160,10 @@ export const Services = () => {
         <div className="mt-12 text-center">
           <Link
             to="/services"
-            className="inline-flex items-center px-8 py-3 bg-transparent border border-[#3FA69B] text-[#3FA69B] rounded-lg hover:bg-[#3FA69B] hover:text-black transition-colors duration-300"
+            className="inline-flex items-center px-8 py-3 bg-transparent border border-[var(--main-theme-color)] text-[var(--main-theme-color)] rounded-lg hover:bg-[var(--main-theme-color)] hover:text-black transition-colors duration-300"
           >
             View All Services
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <Icons.ArrowRight className="ml-2 w-4 h-4" />
           </Link>
         </div>
       </div>

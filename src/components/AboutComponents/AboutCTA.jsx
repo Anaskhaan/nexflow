@@ -22,7 +22,7 @@ const AboutCTA = ({ gradientControls }) => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Ready to <span className="text-[#3FA69B]">Transform</span> Your
+            Ready to <span className="text-[var(--main-theme-color)]">Transform</span> Your
             Digital Presence?
           </motion.h2>
 
@@ -38,7 +38,7 @@ const AboutCTA = ({ gradientControls }) => {
 
           <motion.div className="relative inline-block" whileHover="hover">
             <motion.div
-              className="absolute -inset-4 rounded-full bg-gradient-to-r from-[#3FA69B] to-teal-300 opacity-70 blur-lg"
+              className="absolute -inset-4 rounded-full bg-gradient-to-r from-[var(--main-theme-color)] to-teal-300 opacity-70 blur-lg"
               variants={{
                 hover: {
                   scale: 1.2,
@@ -49,7 +49,7 @@ const AboutCTA = ({ gradientControls }) => {
             />
             <Link to="/contact">
               <motion.button
-                className="relative bg-[#3FA69B] text-white py-2 px-4 rounded-lg text-xl font-bold group overflow-hidden z-10"
+                className="relative bg-[var(--main-theme-color)] text-white py-2 px-4 rounded-lg text-xl font-bold group overflow-hidden z-10"
               >
                 Get Started
               </motion.button>

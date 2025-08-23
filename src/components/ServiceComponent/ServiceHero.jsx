@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { Icons } from "../../assets/Icons";
 const ServiceHero = () => {
   return (
     <div>
@@ -25,7 +25,7 @@ const ServiceHero = () => {
           {[...Array(20)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-[#3FA69B] rounded-full"
+              className="absolute w-1 h-1 bg-[var(--main-theme-color)] rounded-full"
               style={{
                 top: `${Math.random() * 100}%`,
                 left: `${Math.random() * 100}%`,
@@ -57,15 +57,15 @@ const ServiceHero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mb-8 inline-block"
             >
-              <div className="w-24 h-24 bg-[#3FA69B] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-                <Zap size={42} className="text-[#3FA69B]" />
+              <div className="w-24 h-24 bg-[var(--main-theme-color)] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
+                <Icons.Zap size={42} className="text-[var(--main-theme-color)]" />
               </div>
             </motion.div>
 
             <h1 className="lg:text-5xl text-2xl  font-bold mb-6">
               Elevate Your{" "}
               <motion.span
-                className="text-[#3FA69B] inline-block"
+                className="text-[var(--main-theme-color)] inline-block"
                 animate={{
                   y: [0, -15, 0],
                   scale: [1, 1.1, 1],
@@ -99,7 +99,7 @@ const ServiceHero = () => {
             >
               <Link to="/Contact">
                 <motion.button
-                  className="bg-[#3FA69B] text-white lg:px-8 px-4 py-4 rounded-lg lg:text-lg text-sm  flex items-center group "
+                  className="bg-[var(--main-theme-color)] text-white lg:px-8 px-4 py-4 rounded-lg lg:text-lg text-sm  flex items-center group "
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0px 8px 30px rgba(63, 166, 155, 0.4)",
@@ -117,7 +117,7 @@ const ServiceHero = () => {
                       repeat: Infinity,
                     }}
                   >
-                    <ArrowRight className="w-5 h-5" />
+                    <Icons.ArrowRight className="w-5 h-5" />
                   </motion.span>
                 </motion.button>
               </Link>
@@ -127,7 +127,7 @@ const ServiceHero = () => {
 
         {/* Animated gradient orbs */}
         <motion.div
-          className="absolute bottom-20  left-20 w-64 h-64 rounded-full bg-[#3FA69B] opacity-10 filter blur-3xl"
+          className="absolute bottom-20  left-20 w-64 h-64 rounded-full bg-[var(--main-theme-color)] opacity-10 filter blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             x: [0, 50, 0],
@@ -141,7 +141,7 @@ const ServiceHero = () => {
         />
 
         <motion.div
-          className="absolute top-40 right-20 w-96 h-96 rounded-full bg-[#3FA69B] opacity-5 filter blur-3xl"
+          className="absolute top-40 right-20 w-96 h-96 rounded-full bg-[var(--main-theme-color)] opacity-5 filter blur-3xl"
           animate={{
             scale: [1.2, 0.8, 1.2],
             x: [0, -70, 0],

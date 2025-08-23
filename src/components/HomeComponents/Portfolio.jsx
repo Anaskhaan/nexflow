@@ -1,67 +1,6 @@
 import { Link } from "react-router-dom";
-import BellClinix from "../../assets/bellclinix-logo.svg";
-import SwiftTakeoffs from "../../assets/swift-logo.webp";
-import ParadisePipe from "../../assets/paradise-logo.svg";
+import { mainportfolioData, portfolioData } from "../Helper/Data";
 
-const portfolioData = [
-  {
-    id: 1,
-    slug: "bell-clinix",
-    title: "BellClinix",
-    website: "bellclinix.com",
-    category: "Healthcare",
-    image: BellClinix,
-    services: ["Web Dev", "SEO", "PPC"],
-    results: [
-      { label: "Traffic", value: "3.2x" },
-      { label: "Leads", value: "210%" },
-      { label: "ROI", value: "5.1x" },
-    ],
-    highlights: [
-      "Elevated with HIPAA-compliant responsive design",
-      "Ranked #1 for 15+ medical keywords",
-      "Optimized lead gen with 28% PPC conversion",
-    ],
-  },
-  {
-    id: 2,
-    slug: "swift-takeoffs",
-    title: "SwiftTakeoffs",
-    website: "swifttakeoffs.com",
-    category: "Estimating Agency",
-    image: SwiftTakeoffs,
-    services: ["Web Dev", "SEO", "PPC"],
-    results: [
-      { label: "Revenue", value: "320%" },
-      { label: "Traffic", value: "4.8x" },
-      { label: "ROAS", value: "6.3x" },
-    ],
-    highlights: [
-      "Elevated e-commerce platform with 42% lower abandonment",
-      "Ranked top 3 for aviation equipment keywords",
-      "Optimized $50k/month PPC with 650% return",
-    ],
-  },
-  {
-    id: 3,
-    slug: "paradise-pipes",
-    title: "Paradise Pipes",
-    website: "paradisepipes.com",
-    category: "Luxury Retail",
-    image: ParadisePipe,
-    services: ["Web Dev", "SEO", "PPC"],
-    results: [
-      { label: "Leads", value: "180%" },
-      { label: "Traffic", value: "2.7x" },
-      { label: "ROI", value: "4.5x" },
-    ],
-    highlights: [
-      "Elevated with award-winning luxury web design",
-      "Ranked for 120+ plumbing keywords nationally",
-      "Optimized PPC with 22% CTR luxury audience",
-    ],
-  },
-];
 
 export default function Portfolio() {
   return (
@@ -69,9 +8,9 @@ export default function Portfolio() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            Digital Growth <span className="text-[#3FA69B]">Case Studies</span>
+            Digital Growth <span className="text-[var(--main-theme-color)]">Case Studies</span>
           </h2>
-          <div className="w-16 h-0.5 bg-[#3FA69B] mx-auto mb-4"></div>
+          <div className="w-16 h-0.5 bg-[var(--main-theme-color)] mx-auto mb-4"></div>
           <p className="text-gray-300 text-sm max-w-2xl mx-auto">
             How we elevated, ranked, and optimized for industry leaders
           </p>
@@ -81,7 +20,7 @@ export default function Portfolio() {
           {portfolioData.map((project) => (
             <div
               key={project.id}
-              className="group bg-gray-900/50 rounded-lg border border-gray-800 hover:border-[#3FA69B]/50 transition-all overflow-hidden"
+              className="group bg-gray-900/50 rounded-lg border border-gray-800 hover:border-[var(--main-theme-color)]/50 transition-all overflow-hidden"
             >
               <div className="grid grid-cols-1 md:grid-cols-12 gap-4 p-4 items-start md:items-center">
                 {/* Client Logo */}
@@ -101,13 +40,13 @@ export default function Portfolio() {
                   <div className="flex flex-wrap items-center text-xs text-gray-400 mt-1">
                     <span>{project.website}</span>
                     <span className="mx-2 hidden md:inline">•</span>
-                    <span className="text-[#3FA69B]">{project.category}</span>
+                    <span className="text-[var(--main-theme-color)]">{project.category}</span>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     {project.services.map((service, i) => (
                       <span
                         key={i}
-                        className="text-xs bg-[#3FA69B]/10 text-[#3FA69B] px-2 py-0.5 rounded"
+                        className="text-xs bg-[var(--main-theme-color)]/10 text-[var(--main-theme-color)] px-2 py-0.5 rounded"
                       >
                         {service}
                       </span>
@@ -123,7 +62,7 @@ export default function Portfolio() {
                         key={i}
                         className="bg-gray-800/50 rounded p-2 group-hover:bg-gray-800 transition-colors"
                       >
-                        <div className="text-[#3FA69B] font-bold">
+                        <div className="text-[var(--main-theme-color)] font-bold">
                           {result.value}
                         </div>
                         <div className="text-xs text-gray-400">
@@ -142,7 +81,7 @@ export default function Portfolio() {
                         key={i}
                         className="flex items-start text-xs text-gray-300"
                       >
-                        <span className="text-[#3FA69B] mr-1.5 mt-0.5">•</span>
+                        <span className="text-[var(--main-theme-color)] mr-1.5 mt-0.5">•</span>
                         <span>{highlight}</span>
                       </li>
                     ))}
@@ -153,7 +92,7 @@ export default function Portfolio() {
                 <div className="col-span-1 md:col-span-1 flex justify-start md:justify-end mt-2 md:mt-0">
                   <Link
                     to={`/portfolio/${project.slug}`}
-                    className="text-[#3FA69B] text-sm font-medium hover:underline flex items-center"
+                    className="text-[var(--main-theme-color)] text-sm font-medium hover:underline flex items-center"
                   >
                     Details
                     <svg
@@ -180,7 +119,7 @@ export default function Portfolio() {
         <div className="text-center mt-10">
           <Link
             to="/portfolio"
-            className="inline-flex items-center px-6 py-2 border border-[#3FA69B] rounded-lg text-[#3FA69B] text-sm font-medium hover:bg-[#3FA69B]/10 transition-colors"
+            className="inline-flex items-center px-6 py-2 border border-[var(--main-theme-color)] rounded-lg text-[var(--main-theme-color)] text-sm font-medium hover:bg-[var(--main-theme-color)]/10 transition-colors"
           >
             View Full Portfolio
             <svg

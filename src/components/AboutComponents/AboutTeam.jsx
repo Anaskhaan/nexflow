@@ -100,7 +100,7 @@ const AboutTeam = ({ teamRef, teamInView }) => {
           </motion.h2>
 
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-[#3FA69B] to-teal-300 mx-auto"
+            className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-300 mx-auto"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -137,7 +137,7 @@ const AboutTeam = ({ teamRef, teamInView }) => {
                   <h3 className="text-2xl font-bold text-white">
                     {member.name}
                   </h3>
-                  <p className="text-[#3FA69B]">{member.role}</p>
+                  <p className="text-[var(--main-theme-color)]">{member.role}</p>
                   <motion.div
                     className="w-0 h-0.5 bg-white mt-4"
                     animate={{ width: teamInView ? "40%" : 0 }}
@@ -146,7 +146,7 @@ const AboutTeam = ({ teamRef, teamInView }) => {
                 </div>
 
                 <motion.div
-                  className="absolute inset-0 border-2 border-[#3FA69B] rounded-xl z-0 opacity-0 group-hover:opacity-100"
+                  className="absolute inset-0 border-2 border-[var(--main-theme-color)] rounded-xl z-0 opacity-0 group-hover:opacity-100"
                   initial={{ scale: 0.8 }}
                   whileHover={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.3 }}

@@ -69,9 +69,10 @@
 
 
 
-import { ArrowRight, ChevronRight } from "lucide-react";
+import {  ChevronRight } from "lucide-react";
 import { caseStudy } from "../components/Helper/caseStudy";
 import { Link } from "react-router-dom";
+import { Icons } from "../assets/Icons";
 
 const CaseStudies = () => {
   return (
@@ -141,7 +142,7 @@ const CaseStudies = () => {
                       className="flex items-center group-hover:text-[#06B6D4] text-white transition-colors"
                     >
                       <span className="font-medium">Read Full Story</span>
-                      <ChevronRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                      <Icons.ChevronRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                     
                     <div className="hidden md:flex space-x-2">
@@ -165,7 +166,7 @@ const CaseStudies = () => {
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#06B6D4] to-[#0E7490] text-white rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:shadow-[#06B6D4]/40 hover:scale-105"
           >
             Want similar results for your business?
-            <ArrowRight className="ml-3 w-5 h-5 animate-pulse" />
+            <Icons.ArrowRight className="ml-3 w-5 h-5 animate-pulse" />
           </Link>
         </div>
       </div>

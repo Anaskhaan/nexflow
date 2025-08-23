@@ -1,41 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { Icons } from "../../assets/Icons";
+import { navLinks } from "../Helper/Data";
 
-const navLinks = [
-  { id: 1, title: "Home", href: "/" },
-  { id: 2, title: "About", href: "/About" },
-  {
-    id: 3,
-    title: "Services",
-    href: "/Services",
-    submenu: [
-      { id: "s1", title: "Web Development", href: "/services/web-development" },
-      { id: "s2", title: "App Development", href: "/services/app-development" },
-      { id: "s3", title: "UI/UX Design", href: "/services/ui-ux-designing" },
-      { id: "s4", title: "Branding", href: "/services/branding" },
-      { id: "s5", title: "SEO Optimization", href: "/services/seo-optimization" },
-      { id: "s6", title: "ASO Optimization", href: "/services/app-store-optimization" },
-      { id: "s7", title: "Social Media Marketing", href: "/services/social-media-marketing" },
-      { id: "s8", title: "PPC Campaigns", href: "/services/ppc-campaigns" },
-      { id: "s9", title: "AI Image Processing", href: "/services/ai-image-processing" },
-    ],
-  },
-  { id: 4, title: "Portfolio", href: "/Portfolio" },
-  {
-    id: 5,
-    title: "Resources",
-    href: "/Resources",
-    submenu: [
-      { id: "c1", title: "Calculate ROI", href: "/SaasRoi" },
-      { id: "c2", title: "Analyze Funnel", href: "/FunnelAudit" },
-    ],
-  },
-  { id: 6, title: "Contact", href: "/Contact" },
-];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +64,7 @@ const Navbar = () => {
                   } focus:outline-none`}
                 >
                   {link.title}
-                  <ChevronDown size={16} />
+                  <Icons.ChevronDown size={16} />
                 </button>
 
                 {/* Dropdown Menu */}
@@ -149,7 +119,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setIsOpen(true)}>
-          <Menu size={28} color={isScrolled ? "#3F4D59" : "#fff"} />
+          <Icons.Menu size={28} color={isScrolled ? "#3F4D59" : "#fff"} />
         </button>
       </motion.nav>
 
@@ -168,7 +138,7 @@ const Navbar = () => {
               className="self-end mb-6 focus:outline-none focus:ring-2 focus:ring-teal-400"
               onClick={() => setIsOpen(false)}
             >
-              <X size={28} />
+              <Icons.X size={28} />
             </button>
 
             {/* Sidebar Links */}
@@ -185,7 +155,7 @@ const Navbar = () => {
                       aria-expanded={openDropdown === link.id}
                     >
                       {link.title}
-                      <ChevronDown
+                      <Icons.ChevronDown
                         size={18}
                         className={`transform transition ${
                           openDropdown === link.id ? "rotate-180" : ""

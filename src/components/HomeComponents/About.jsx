@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const AnimatedBackground = () => (
   <div className="absolute inset-0 -z-10 overflow-hidden">
     <motion.div
-      className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full bg-[#3FA69B] opacity-10 filter blur-[120px]"
+      className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full bg-[var(--main-theme-color)] opacity-10 filter blur-[120px]"
       animate={{
         scale: [1, 1.2, 1.1, 1.3, 1],
         x: [0, 50, -50, 30, 0],
@@ -70,7 +70,7 @@ const StatCard = ({ number, label, delay }) => {
         transition={{ delay: delay + 0.2, duration: 0.5 }}
       >
         {number}
-        <span className="text-[#3FA69B]">+</span>
+        <span className="text-[var(--main-theme-color)]">+</span>
       </motion.h3>
       <p className="text-gray-400 text-center">{label}</p>
     </motion.div>
@@ -89,22 +89,22 @@ export const About = () => {
         <AnimatedBackground />
 
         {/* Floating Elements */}
-        <FloatingElement className="absolute top-[15%] left-[10%] w-12 h-12 rounded-full bg-[#3FA69B] opacity-20 blur-sm" delay={1.5} />
-        <FloatingElement className="absolute bottom-[20%] right-[10%] w-24 h-24 rounded-md bg-[#3FA69B] opacity-10 blur-sm rotate-45" delay={2.5} />
+        <FloatingElement className="absolute top-[15%] left-[10%] w-12 h-12 rounded-full bg-[var(--main-theme-color)] opacity-20 blur-sm" delay={1.5} />
+        <FloatingElement className="absolute bottom-[20%] right-[10%] w-24 h-24 rounded-md bg-[var(--main-theme-color)] opacity-10 blur-sm rotate-45" delay={2.5} />
         <FloatingElement className="absolute top-[60%] left-[8%] w-16 h-16 rounded-lg bg-white opacity-5 blur-sm rotate-12" delay={3.5} duration={10} />
 
         <div className="container mx-auto px-4">
           {/* Section Heading */}
           <motion.div className="text-center mb-16" initial={{ opacity: 0, y: -30 }} animate={sectionInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }}>
-            <motion.div className="inline-block mb-4 px-4 py-1 rounded-lg bg-[#3FA69B] bg-opacity-10 border border-[#3FA69B] border-opacity-20" initial={{ opacity: 0, scale: 0.8 }} animate={sectionInView ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 0.3, duration: 0.6 }}>
-              <span className="text-[#3FA69B] text-sm font-medium">ABOUT NEXFLOW</span>
+            <motion.div className="inline-block mb-4 px-4 py-1 rounded-lg bg-[var(--main-theme-color)] bg-opacity-10 border border-[var(--main-theme-color)] border-opacity-20" initial={{ opacity: 0, scale: 0.8 }} animate={sectionInView ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 0.3, duration: 0.6 }}>
+              <span className="text-white text-sm font-medium">ABOUT NEXFLOW</span>
             </motion.div>
 
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-white font-bold mb-6 leading-tight max-w-4xl mx-auto">
               Digital Excellence,
               <span className="relative">
-                <span className="relative z-10 text-[#3FA69B]"> Delivered</span>
-                <motion.span className="absolute -bottom-2 left-0 right-0 h-3 bg-[#3FA69B] opacity-20 rounded-full z-0" initial={{ width: 0 }} animate={sectionInView ? { width: "100%" } : {}} transition={{ delay: 0.8, duration: 0.6 }} />
+                <span className="relative z-10 text-[var(--main-theme-color)]"> Delivered</span>
+                <motion.span className="absolute -bottom-2 left-0 right-0 h-3 bg-[var(--main-theme-color)] opacity-20 rounded-full z-0" initial={{ width: 0 }} animate={sectionInView ? { width: "100%" } : {}} transition={{ delay: 0.8, duration: 0.6 }} />
               </span>
             </h2>
 
@@ -127,7 +127,7 @@ export const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 bg-[#3FA69B] text-white text-xs rounded-full mb-2">INNOVATIVE</span>
+                  <span className="inline-block px-3 py-1 bg-[var(--main-theme-color)] text-white text-xs rounded-full mb-2">INNOVATIVE</span>
                   <h4 className="text-white text-lg font-medium">Creative Process</h4>
                 </div>
               </motion.div>
@@ -142,7 +142,7 @@ export const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 bg-[#3FA69B] text-white text-xs rounded-full mb-2">COLLABORATIVE</span>
+                  <span className="inline-block px-3 py-1 bg-[var(--main-theme-color)] text-white text-xs rounded-full mb-2">COLLABORATIVE</span>
                   <h4 className="text-white text-lg font-medium">Team Excellence</h4>
                 </div>
               </motion.div>
@@ -157,7 +157,7 @@ export const About = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <span className="inline-block px-3 py-1 bg-[#3FA69B] text-white text-xs rounded-full mb-2">STRATEGIC</span>
+                  <span className="inline-block px-3 py-1 bg-[var(--main-theme-color)] text-white text-xs rounded-full mb-2">STRATEGIC</span>
                   <h4 className="text-white text-lg font-medium">Results-Driven</h4>
                 </div>
               </motion.div>
@@ -165,11 +165,11 @@ export const About = () => {
 
             {/* Text Content */}
             <motion.div initial={{ opacity: 0, x: 50 }} animate={sectionInView ? { opacity: 1, x: 0 } : {}} transition={{ delay: 0.4, duration: 0.8 }} className="space-y-8">
-              <h3 className="text-3xl md:text-4xl text-white font-bold">Leading the Digital Revolution <span className="text-[#3FA69B]">Since 2015</span></h3>
+              <h3 className="text-3xl md:text-4xl text-white font-bold">Leading the Digital Revolution <span className="text-[var(--main-theme-color)]">Since 2015</span></h3>
               <p className="text-gray-300 text-lg">
                 Nexflow is a digital agency dedicated to empowering brands with innovation, strategy, and creative technology. We deliver impactful solutions tailored to business goals, whether it's web, mobile, or marketing.
               </p>
-              <Link to="/contact" className="inline-block px-6 py-3 bg-[#3FA69B] text-white font-semibold rounded-lg hover:bg-opacity-90 transition">
+              <Link to="/contact" className="inline-block px-6 py-3 bg-[var(--main-theme-color)] text-white font-semibold rounded-lg hover:bg-opacity-90 transition">
                 Work with us
               </Link>
             </motion.div>

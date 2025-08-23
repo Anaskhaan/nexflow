@@ -119,8 +119,8 @@ export default function SaasCalculator() {
       <div className="max-w-5xl mx-auto">
         {/* Glowing Header */}
         <div className="relative mb-10">
-          <div className="absolute -inset-3 bg-gradient-to-r from-[#3FA69B] to-[#2a7a72] rounded-xl blur opacity-75"></div>
-          <div className="relative bg-gradient-to-r from-[#2a7a72] to-[#3FA69B] rounded-xl p-6 shadow-lg">
+          <div className="absolute -inset-3 bg-gradient-to-r from-[var(--main-theme-color)] to-[#2a7a72] rounded-xl blur opacity-75"></div>
+          <div className="relative bg-gradient-to-r from-[#2a7a72] to-[var(--main-theme-color)] rounded-xl p-6 shadow-lg">
             <div className="text-center">
               <h1 className="text-4xl font-bold text-white mb-2">
                 SaaS ROI Calculator
@@ -145,7 +145,7 @@ export default function SaasCalculator() {
                 onClick={() => setModel("PLG")}
                 className={`py-3 px-6 text-sm font-medium transition-all duration-300 flex items-center ${
                   model === "PLG"
-                    ? "bg-gradient-to-r from-[#3FA69B] to-[#2a7a72] text-white shadow-md"
+                    ? "bg-gradient-to-r from-[var(--main-theme-color)] to-[#2a7a72] text-white shadow-md"
                     : "text-gray-300 hover:bg-gray-700/50"
                 }`}
               >
@@ -171,7 +171,7 @@ export default function SaasCalculator() {
                 onClick={() => setModel("SUB")}
                 className={`py-3 px-6 text-sm font-medium transition-all duration-300 flex items-center ${
                   model === "SUB"
-                    ? "bg-gradient-to-r from-[#3FA69B] to-[#2a7a72] text-white shadow-md"
+                    ? "bg-gradient-to-r from-[var(--main-theme-color)] to-[#2a7a72] text-white shadow-md"
                     : "text-gray-300 hover:bg-gray-700/50"
                 }`}
               >
@@ -202,7 +202,7 @@ export default function SaasCalculator() {
               <div className="space-y-3">
                 <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider flex items-center">
                   <svg
-                    className="w-4 h-4 mr-2 text-[#3FA69B]"
+                    className="w-4 h-4 mr-2 text-[var(--main-theme-color)]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -227,7 +227,7 @@ export default function SaasCalculator() {
                     value={formData.price}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] placeholder-gray-500 transition-all duration-200"
+                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] placeholder-gray-500 transition-all duration-200"
                     placeholder="0.00"
                   />
                 </div>
@@ -235,7 +235,7 @@ export default function SaasCalculator() {
               <div className="space-y-3">
                 <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider flex items-center">
                   <svg
-                    className="w-4 h-4 mr-2 text-[#3FA69B]"
+                    className="w-4 h-4 mr-2 text-[var(--main-theme-color)]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -256,7 +256,7 @@ export default function SaasCalculator() {
                     step="0.1"
                     value={formData.margin}
                     onChange={handleInputChange}
-                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] placeholder-gray-500 transition-all duration-200"
+                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] placeholder-gray-500 transition-all duration-200"
                     placeholder="80"
                   />
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
@@ -267,7 +267,7 @@ export default function SaasCalculator() {
               <div className="space-y-3">
                 <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider flex items-center">
                   <svg
-                    className="w-4 h-4 mr-2 text-[#3FA69B]"
+                    className="w-4 h-4 mr-2 text-[var(--main-theme-color)]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -289,7 +289,7 @@ export default function SaasCalculator() {
                     value={formData.churn}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] placeholder-gray-500 transition-all duration-200"
+                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] placeholder-gray-500 transition-all duration-200"
                     placeholder="0.00"
                   />
                   <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
@@ -304,7 +304,7 @@ export default function SaasCalculator() {
               <div className="space-y-3">
                 <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider flex items-center">
                   <svg
-                    className="w-4 h-4 mr-2 text-[#3FA69B]"
+                    className="w-4 h-4 mr-2 text-[var(--main-theme-color)]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -329,7 +329,7 @@ export default function SaasCalculator() {
                     value={formData.mktSpend}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] placeholder-gray-500 transition-all duration-200"
+                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] placeholder-gray-500 transition-all duration-200"
                     placeholder="0.00"
                   />
                 </div>
@@ -337,7 +337,7 @@ export default function SaasCalculator() {
               <div className="space-y-3">
                 <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider flex items-center">
                   <svg
-                    className="w-4 h-4 mr-2 text-[#3FA69B]"
+                    className="w-4 h-4 mr-2 text-[var(--main-theme-color)]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -368,7 +368,7 @@ export default function SaasCalculator() {
                     value={formData.adSpend}
                     onChange={handleInputChange}
                     required
-                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] placeholder-gray-500 transition-all duration-200"
+                    className="w-full pl-9 pr-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] placeholder-gray-500 transition-all duration-200"
                     placeholder="0.00"
                   />
                 </div>
@@ -376,7 +376,7 @@ export default function SaasCalculator() {
               <div className="space-y-3">
                 <label className="block text-sm font-medium text-gray-300 uppercase tracking-wider flex items-center">
                   <svg
-                    className="w-4 h-4 mr-2 text-[#3FA69B]"
+                    className="w-4 h-4 mr-2 text-[var(--main-theme-color)]"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -396,7 +396,7 @@ export default function SaasCalculator() {
                   value={formData.newCust}
                   onChange={handleInputChange}
                   required
-                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] placeholder-gray-500 transition-all duration-200"
+                  className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] placeholder-gray-500 transition-all duration-200"
                   placeholder="0"
                 />
               </div>
@@ -405,7 +405,7 @@ export default function SaasCalculator() {
             {/* Model-Specific Fields */}
             {model === "PLG" ? (
               <div className="p-6 bg-gray-700/30 rounded-xl border border-gray-600/30 mb-8 backdrop-blur-sm">
-                <h3 className="text-lg font-medium text-[#3FA69B] mb-5 flex items-center">
+                <h3 className="text-lg font-medium text-[var(--main-theme-color)] mb-5 flex items-center">
                   <svg
                     className="w-6 h-6 mr-2"
                     fill="none"
@@ -436,7 +436,7 @@ export default function SaasCalculator() {
                         step="0.01"
                         value={formData.activationCost}
                         onChange={handleInputChange}
-                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] transition-all duration-200"
+                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -451,7 +451,7 @@ export default function SaasCalculator() {
                         step="0.1"
                         value={formData.convRate}
                         onChange={handleInputChange}
-                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] transition-all duration-200"
+                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] transition-all duration-200"
                       />
                       <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                         %
@@ -462,7 +462,7 @@ export default function SaasCalculator() {
               </div>
             ) : (
               <div className="p-6 bg-gray-700/30 rounded-xl border border-gray-600/30 mb-8 backdrop-blur-sm">
-                <h3 className="text-lg font-medium text-[#3FA69B] mb-5 flex items-center">
+                <h3 className="text-lg font-medium text-[var(--main-theme-color)] mb-5 flex items-center">
                   <svg
                     className="w-6 h-6 mr-2"
                     fill="none"
@@ -488,7 +488,7 @@ export default function SaasCalculator() {
                       type="number"
                       value={formData.numReps}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] transition-all duration-200"
+                      className="w-full px-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] transition-all duration-200"
                     />
                   </div>
                   <div className="space-y-3">
@@ -505,7 +505,7 @@ export default function SaasCalculator() {
                         step="0.01"
                         value={formData.salary}
                         onChange={handleInputChange}
-                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] transition-all duration-200"
+                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] transition-all duration-200"
                       />
                     </div>
                   </div>
@@ -520,7 +520,7 @@ export default function SaasCalculator() {
                         step="0.1"
                         value={formData.commission}
                         onChange={handleInputChange}
-                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B] transition-all duration-200"
+                        className="w-full pl-9 pr-4 py-3 bg-gray-700/70 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)] transition-all duration-200"
                       />
                       <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-gray-400">
                         %
@@ -534,10 +534,10 @@ export default function SaasCalculator() {
 
             <button
               type="submit"
-              className="w-full py-4 px-6 bg-gradient-to-r from-[#3FA69B] to-[#2a7a72] hover:from-[#359186] hover:to-[#1f645c] text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group"
+              className="w-full py-4 px-6 bg-gradient-to-r from-[var(--main-theme-color)] to-[#2a7a72] hover:from-[#359186] hover:to-[#1f645c] text-white font-medium rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center group"
             >
               <span className="relative">
-                <span className="absolute -inset-0.5 bg-[#3FA69B] rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></span>
+                <span className="absolute -inset-0.5 bg-[var(--main-theme-color)] rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></span>
                 <span className="relative z-10 flex items-center">
                   <svg
                     className="w-6 h-6 mr-3 animate-pulse"
@@ -563,7 +563,7 @@ export default function SaasCalculator() {
             <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4">
               <div className="bg-gray-800 rounded-xl max-w-md w-full border border-gray-700/50 shadow-2xl overflow-hidden">
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#3FA69B] mb-4">
+                  <h3 className="text-2xl font-bold text-[var(--main-theme-color)] mb-4">
                     Get Your Custom Report
                   </h3>
                   <p className="text-gray-400 mb-6">
@@ -582,7 +582,7 @@ export default function SaasCalculator() {
                           setUserInfo({ ...userInfo, name: e.target.value })
                         }
                         required
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B]"
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)]"
                       />
                     </div>
 
@@ -597,7 +597,7 @@ export default function SaasCalculator() {
                           setUserInfo({ ...userInfo, email: e.target.value })
                         }
                         required
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B]"
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)]"
                       />
                     </div>
 
@@ -611,7 +611,7 @@ export default function SaasCalculator() {
                         onChange={(e) =>
                           setUserInfo({ ...userInfo, phone: e.target.value })
                         }
-                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[#3FA69B] focus:border-[#3FA69B]"
+                        className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600/50 rounded-lg focus:ring-2 focus:ring-[var(--main-theme-color)] focus:border-[var(--main-theme-color)]"
                       />
                     </div>
 
@@ -626,7 +626,7 @@ export default function SaasCalculator() {
                       </button>
                       <button
                         type="submit"
-                        className="px-6 py-3 bg-gradient-to-r from-[#3FA69B] to-[#2a7a72] text-white rounded-lg hover:from-[#359186] hover:to-[#1f645c] transition-colors flex items-center justify-center min-w-32"
+                        className="px-6 py-3 bg-gradient-to-r from-[var(--main-theme-color)] to-[#2a7a72] text-white rounded-lg hover:from-[#359186] hover:to-[#1f645c] transition-colors flex items-center justify-center min-w-32"
                         disabled={isSending}
                       >
                         {isSending ? (
@@ -672,11 +672,11 @@ export default function SaasCalculator() {
               {results && (
                 <div className="px-8 pb-8">
                   <div className="relative">
-                    <div className="absolute -inset-3 bg-gradient-to-r from-[#3FA69B] to-[#2a7a72] rounded-2xl blur opacity-25"></div>
+                    <div className="absolute -inset-3 bg-gradient-to-r from-[var(--main-theme-color)] to-[#2a7a72] rounded-2xl blur opacity-25"></div>
                     <div className="relative bg-gray-800/80 backdrop-blur-sm rounded-xl p-8 shadow-2xl border border-gray-700/50">
                       <h2 className="text-3xl font-bold text-white mb-6 flex items-center">
                         <svg
-                          className="w-8 h-8 mr-3 text-[#3FA69B]"
+                          className="w-8 h-8 mr-3 text-[var(--main-theme-color)]"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -695,9 +695,9 @@ export default function SaasCalculator() {
                         {/* Customer Metrics */}
                         <div className="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
                           <div className="flex items-center mb-5">
-                            <div className="p-2 rounded-lg bg-[#3FA69B]/10 mr-4">
+                            <div className="p-2 rounded-lg bg-[var(--main-theme-color)]/10 mr-4">
                               <svg
-                                className="w-6 h-6 text-[#3FA69B]"
+                                className="w-6 h-6 text-[var(--main-theme-color)]"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -724,7 +724,7 @@ export default function SaasCalculator() {
                                   Total spend per new customer
                                 </p>
                               </div>
-                              <span className="font-bold text-2xl text-white bg-[#3FA69B]/10 px-3 py-1 rounded-lg">
+                              <span className="font-bold text-2xl text-white bg-[var(--main-theme-color)]/10 px-3 py-1 rounded-lg">
                                 {results.cac}
                               </span>
                             </div>
@@ -735,7 +735,7 @@ export default function SaasCalculator() {
                                   Revenue per customer
                                 </p>
                               </div>
-                              <span className="font-bold text-2xl text-white bg-[#3FA69B]/10 px-3 py-1 rounded-lg">
+                              <span className="font-bold text-2xl text-white bg-[var(--main-theme-color)]/10 px-3 py-1 rounded-lg">
                                 {results.ltv}
                               </span>
                             </div>
@@ -764,9 +764,9 @@ export default function SaasCalculator() {
                         {/* Financial Metrics */}
                         <div className="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
                           <div className="flex items-center mb-5">
-                            <div className="p-2 rounded-lg bg-[#3FA69B]/10 mr-4">
+                            <div className="p-2 rounded-lg bg-[var(--main-theme-color)]/10 mr-4">
                               <svg
-                                className="w-6 h-6 text-[#3FA69B]"
+                                className="w-6 h-6 text-[var(--main-theme-color)]"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -812,7 +812,7 @@ export default function SaasCalculator() {
                                   Months to recover CAC
                                 </p>
                               </div>
-                              <span className="font-bold text-2xl text-white bg-[#3FA69B]/10 px-3 py-1 rounded-lg">
+                              <span className="font-bold text-2xl text-white bg-[var(--main-theme-color)]/10 px-3 py-1 rounded-lg">
                                 {results.payback}
                               </span>
                             </div>
@@ -823,7 +823,7 @@ export default function SaasCalculator() {
                                   Profit percentage
                                 </p>
                               </div>
-                              <span className="font-bold text-2xl text-white bg-[#3FA69B]/10 px-3 py-1 rounded-lg">
+                              <span className="font-bold text-2xl text-white bg-[var(--main-theme-color)]/10 px-3 py-1 rounded-lg">
                                 {results.margin}%
                               </span>
                             </div>
@@ -834,9 +834,9 @@ export default function SaasCalculator() {
                       {/* Calculation Details */}
                       <div className="bg-gray-900/50 p-6 rounded-xl border border-gray-700/50">
                         <div className="flex items-center mb-4">
-                          <div className="p-2 rounded-lg bg-[#3FA69B]/10 mr-4">
+                          <div className="p-2 rounded-lg bg-[var(--main-theme-color)]/10 mr-4">
                             <svg
-                              className="w-6 h-6 text-[#3FA69B]"
+                              className="w-6 h-6 text-[var(--main-theme-color)]"
                               fill="none"
                               viewBox="0 0 24 24"
                               stroke="currentColor"
@@ -855,7 +855,7 @@ export default function SaasCalculator() {
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                           <div className="bg-gray-800/50 p-4 rounded-lg">
-                            <p className="text-[#3FA69B] font-medium mb-2">
+                            <p className="text-[var(--main-theme-color)] font-medium mb-2">
                               CAC Formula
                             </p>
                             <p className="text-gray-300 text-sm">
@@ -868,7 +868,7 @@ export default function SaasCalculator() {
                             </p>
                           </div>
                           <div className="bg-gray-800/50 p-4 rounded-lg">
-                            <p className="text-[#3FA69B] font-medium mb-2">
+                            <p className="text-[var(--main-theme-color)] font-medium mb-2">
                               LTV Formula
                             </p>
                             <p className="text-gray-300 text-sm">
@@ -876,7 +876,7 @@ export default function SaasCalculator() {
                             </p>
                           </div>
                           <div className="bg-gray-800/50 p-4 rounded-lg">
-                            <p className="text-[#3FA69B] font-medium mb-2">
+                            <p className="text-[var(--main-theme-color)] font-medium mb-2">
                               ROI Formula
                             </p>
                             <p className="text-gray-300 text-sm">
@@ -884,7 +884,7 @@ export default function SaasCalculator() {
                             </p>
                           </div>
                           <div className="bg-gray-800/50 p-4 rounded-lg">
-                            <p className="text-[#3FA69B] font-medium mb-2">
+                            <p className="text-[var(--main-theme-color)] font-medium mb-2">
                               Payback Period
                             </p>
                             <p className="text-gray-300 text-sm">

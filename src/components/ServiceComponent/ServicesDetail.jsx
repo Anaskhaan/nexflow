@@ -1,28 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { ServicesData } from "../Helper/Data";
-import {
-  Megaphone,
-  TrendingUp,
-  Globe,
-  BarChart,
-  Palette,
-  Layout,
-  ArrowRight,
-  Clock,
-  DollarSign,
-  Check,
-} from "lucide-react";
 import { Helmet } from "react-helmet-async";
-
-// Icons map
-const icons = {
-  Megaphone,
-  TrendingUp,
-  Globe,
-  BarChart,
-  Palette,
-  Layout,
-};
+import TechStack from "./TechStack";
+import DomainDiversity from "./DomainDiversity";
+import { Icons } from "../../assets/Icons";
 
 const ServicesDetail = () => {
   const { slug } = useParams();
@@ -35,7 +16,7 @@ const ServicesDetail = () => {
       </div>
     );
 
-  const IconComponent = icons[service.icon];
+  const IconComponent = Icons[service.icon];
 
   return (
     <div className="min-h-screen bg-black text-white py-24">
@@ -98,7 +79,7 @@ const ServicesDetail = () => {
                   style={{ backgroundColor: service.color }}
                 >
                   <Link to="/contact">Get Started</Link>
-                  <ArrowRight className="ml-2" size={18} />
+                  <Icons.ArrowRight className="ml-2" size={18} />
                 </button>
               </div>
             </div>
@@ -166,7 +147,7 @@ const ServicesDetail = () => {
               <ul className="space-y-4">
                 {service.benefits.map((benefit, index) => (
                   <li key={index} className="flex">
-                    <Check
+                    <Icons.Check
                       size={20}
                       style={{ color: service.color }}
                       className="mr-3 flex-shrink-0 mt-1"
@@ -182,7 +163,7 @@ const ServicesDetail = () => {
               {service.timeframe && (
                 <div className="mb-8">
                   <div className="flex items-center mb-3">
-                    <Clock
+                    <Icons.Clock
                       size={20}
                       style={{ color: service.color }}
                       className="mr-2"
@@ -201,7 +182,7 @@ const ServicesDetail = () => {
               {service.pricing && (
                 <div>
                   <div className="flex items-center mb-3">
-                    <DollarSign
+                    <Icons.DollarSign
                       size={20}
                       style={{ color: service.color }}
                       className="mr-2"
@@ -243,6 +224,17 @@ const ServicesDetail = () => {
           </div>
         </div>
 
+        {service.slug === "web-development" && (
+          <>
+            <div className="mt-16 mb-16">
+              <TechStack service={service} />
+            </div>
+            <div className="mt-16 mb-16">
+              <DomainDiversity />
+            </div>
+          </>
+        )}
+
         {/* Related Services */}
         <div className="mt-16">
           <h2
@@ -255,7 +247,7 @@ const ServicesDetail = () => {
             {ServicesData.filter((s) => s.slug !== service.slug)
               .slice(0, 3)
               .map((relatedService) => {
-                const RelatedIcon = icons[relatedService.icon];
+                const RelatedIcon = Icons[relatedService.icon];
                 return (
                   <div
                     key={relatedService.slug}
@@ -282,7 +274,7 @@ const ServicesDetail = () => {
                       className="flex items-center text-sm font-medium transition-all group-hover:translate-x-1"
                       style={{ color: relatedService.color }}
                     >
-                      Learn more <ArrowRight size={14} className="ml-1" />
+                      Learn more <Icons.ArrowRight size={14} className="ml-1" />
                     </Link>
                   </div>
                 );

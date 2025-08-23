@@ -1,73 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  ArrowRight,
-  Linkedin,
-  Facebook,
-  Instagram,
-} from "lucide-react";
-import { Link } from "react-router-dom";
-import logo from "../assets/logo.svg";
 
-// Footer Data
-const footerData = {
-  company: {
-    logo,
-    name: "Nexflow",
-    description:
-      "Empowering businesses with cutting-edge digital solutions and innovative marketing strategies to drive growth and success in the digital age.",
-    socialLinks: [
-      {
-        name: "LinkedIn",
-        url: "https://www.linkedin.com/company/nexflow-technologies/posts/?feedView=all",
-        icon: <Linkedin size={18} />,
-      },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/profile.php?id=61567677611133",
-        icon: <Facebook size={18} />,
-      },
-      {
-        name: "Instagram",
-        url: "https://www.instagram.com/nexflowtechnologies/",
-        icon: <Instagram size={18} />,
-      },
-    ],
-  },
-  links: [
-    { id: 1, title: "Home", href: "/" },
-    { id: 2, title: "About", href: "/about" },
-    { id: 3, title: "Services", href: "/services" },
-    { id: 4, title: "Contact", href: "/contact" },
-    { id: 5, title: "Resources", href: "/resources" },
-  ],
-  services: [
-    "SEO Optimization",
-    "Social Media Marketing",
-    "Content Creation",
-    "Paid Advertising",
-  ],
-  contact: [
-    { icon: <Mail size={18} className="text-[#3FA69B]" />, text: "info@nexflow.tech" },
-    { icon: <Phone size={18} className="text-[#3FA69B]" />, text: "+1 (678) 825 6967" },
-    {
-      icon: <MapPin size={18} className="text-[#3FA69B]" />,
-      text: { title: "USA", lines: ["8 The Green #6092", "Dover, DE, 19901"] },
-    },
-    {
-      icon: <MapPin size={18} className="text-[#3FA69B]" />,
-      text: { title: "Pakistan", lines: ["56-G, Gulberg III", "Lahore, Pakistan"] },
-    },
-  ],
-  legalLinks: [
-    { title: "Privacy Policy", url: "/PrivacyPolicy" },
-    { title: "Terms of Service", url: "/Terms" },
-    { title: "Cookies Policy", url: "/CookiesPolicy" },
-  ],
-};
+import { Link } from "react-router-dom";
+import { Icons } from "../assets/Icons";
+import { footerData } from "./Helper/Data";
+
+
 
 // Reusable Footer Column
 const FooterColumn = ({ title, children, delay = 0 }) => {
@@ -111,11 +49,11 @@ const FooterLinkItem = ({ children }) => (
   <motion.li
     whileHover={{ x: 5 }}
     transition={{ type: "spring", stiffness: 300 }}
-    className="flex items-center text-gray-400 hover:text-[#3FA69B] transition-colors duration-300 group"
+    className="flex items-center text-gray-400 hover:text-[var(--main-theme-color)] transition-colors duration-300 group"
   >
-    <ArrowRight
+    <Icons.ArrowRight
       size={14}
-      className="mr-2 text-[#3FA69B] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+      className="mr-2 text-[var(--main-theme-color)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
     />
     {children}
   </motion.li>
@@ -146,7 +84,7 @@ const SocialIcon = ({ url, icon, name }) => (
     rel="noopener noreferrer"
     aria-label={name}
     whileHover={{ y: -3, scale: 1.1 }}
-    className="text-gray-400 hover:text-[#3FA69B] transition-colors duration-300 p-2 rounded-full hover:bg-gray-800"
+    className="text-gray-400 hover:text-[var(--main-theme-color)] transition-colors duration-300 p-2 rounded-full hover:bg-gray-800"
   >
     {icon}
   </motion.a>
@@ -166,8 +104,8 @@ const Footer = () => {
           {/* Company Info */}
           <FooterColumn title="About Us">
             <div className="flex items-center">
-              <img src={footerData.company.logo} alt="Nexflow logo" className="w-12 h-auto" />
-              <span className="ml-3 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#3FA69B] to-teal-300">
+              {/* <img src={footerData.company.logo} alt="Nexflow logo" className="w-12 h-auto" /> */}
+              <span className="ml-3 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--main-theme-color)] to-teal-300">
                 {footerData.company.name}
               </span>
             </div>
@@ -218,10 +156,10 @@ const Footer = () => {
             >
               <Link
                 to="/Contact"
-                className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-[#3FA69B] to-teal-400 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90"
+                className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-400 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90"
               >
                 Get in Touch
-                <ArrowRight size={16} className="ml-2" />
+                <Icons.ArrowRight size={16} className="ml-2" />
               </Link>
             </motion.div>
           </FooterColumn>
@@ -240,7 +178,7 @@ const Footer = () => {
               <Link
                 key={index}
                 to={link.url}
-                className="text-gray-500 hover:text-[#3FA69B] text-sm transition-colors duration-300"
+                className="text-gray-500 hover:text-[var(--main-theme-color)] text-sm transition-colors duration-300"
               >
                 {link.title}
               </Link>
