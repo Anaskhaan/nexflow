@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
-import { portfolioData } from "../Helper/Data";
+import { mainportfolioData } from "../Helper/Data";
 import CustomCarousel from "./CustomCarousel";
 import BrandGuidelines from "./BrandGuidlines";
 
 const PortfolioDetails = () => {
   const { slug } = useParams();
-  const project = portfolioData.find((p) => p.slug === slug);
+  const project = mainportfolioData.find((p) => p.slug === slug);
 
   if (!project) {
     return <div className="text-center text-white">Project Not Found</div>;
@@ -39,24 +39,23 @@ const PortfolioDetails = () => {
         <div className="w-full md:w-1/2 flex flex-col gap-10">
           <div className="flex flex-col sm:flex-row sm:justify-between gap-8">
             {/* Client Section */}
-            <div className="space-y-1">
-              <h3 className="text-xl font-semibold">Client</h3>
-              {project.clientName.split("\n").map((name, index) => (
-                <p key={index} className="text-gray-300">
-                  {name}
-                </p>
-              ))}
-            </div>
+        <div className="space-y-1">
+  <h3 className="text-xl font-semibold">Client</h3>
+  {project.clientName.split("\n").map((name, index) => (
+    <p key={index} className="text-gray-300">
+      {name}
+    </p>
+  ))}
+</div>
 
-            {/* Services Section */}
-            <div className="space-y-1">
-              <h3 className="text-xl font-semibold">Services</h3>
-              {project.services.map((service, index) => (
-                <p key={index} className="text-gray-300">
-                  {service}
-                </p>
-              ))}
-            </div>
+      <div className="space-y-1">
+  <h3 className="text-xl font-semibold">Services</h3>
+  {project.services.map((service, index) => (
+    <p key={index} className="text-gray-300">
+      {service}
+    </p>
+  ))}
+</div>
           </div>
 
           {/* Website Section */}
