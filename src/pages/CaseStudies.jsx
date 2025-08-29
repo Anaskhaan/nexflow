@@ -67,9 +67,7 @@
 
 // export default CaseStudies;
 
-
-
-import {  ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { caseStudy } from "../components/Helper/caseStudy";
 import { Link } from "react-router-dom";
 import { Icons } from "../assets/Icons";
@@ -82,7 +80,7 @@ const CaseStudies = () => {
         <div className="absolute top-20 -left-20 w-64 h-64 rounded-full bg-[#06B6D4] blur-3xl"></div>
         <div className="absolute bottom-10 -right-10 w-80 h-80 rounded-full bg-[#06B6D4] blur-3xl"></div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <span className="text-sm font-bold tracking-widest text-[#9CA3AF] uppercase">
@@ -101,22 +99,28 @@ const CaseStudies = () => {
         {/* Alternate Card Layout - Horizontal Timeline Style */}
         <div className="space-y-12">
           {caseStudy.map((study, index) => (
-            <div 
+            <div
               key={study.id}
-              className={`relative group ${index % 2 === 0 ? 'pl-0 md:pl-16' : 'pr-0 md:pr-16'}`}
+              className={`relative group ${index % 2 === 0 ? "pl-0 md:pl-16" : "pr-0 md:pr-16"}`}
             >
               {/* Timeline dot */}
-              <div className={`hidden md:block absolute top-8 ${index % 2 === 0 ? '-left-2' : '-right-2'}`}>
+              <div
+                className={`hidden md:block absolute top-8 ${index % 2 === 0 ? "-left-2" : "-right-2"}`}
+              >
                 <div className="w-6 h-6 rounded-full bg-[#06B6D4] border-4 border-[#111827]"></div>
               </div>
-              
+
               {/* Card content */}
-              <div className={`bg-[#1F2937] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border-l-4 ${index % 2 === 0 ? 'border-l-[#06B6D4]' : 'border-r-[#06B6D4] border-r-4 border-l-0'} hover:shadow-[#06B6D4]/30 flex flex-col md:flex-row`}>
+              <div
+                className={`bg-[#1F2937] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border-l-4 ${index % 2 === 0 ? "border-l-[#06B6D4]" : "border-r-[#06B6D4] border-r-4 border-l-0"} hover:shadow-[#06B6D4]/30 flex flex-col md:flex-row`}
+              >
                 {/* Image placeholder - would be replaced with actual study.image */}
                 <div className="md:w-2/5 bg-gradient-to-br from-[#06B6D4] to-[#111827] p-8 flex items-center justify-center">
-                  <div className="text-5xl font-bold text-white/20">{index + 1}</div>
+                  <div className="text-5xl font-bold text-white/20">
+                    {index + 1}
+                  </div>
                 </div>
-                
+
                 <div className="p-8 md:w-3/5">
                   <div className="flex justify-between items-start">
                     <div>
@@ -131,11 +135,11 @@ const CaseStudies = () => {
                       Case #{study.id}
                     </div>
                   </div>
-                  
+
                   <p className="text-[#D1D5DB] mb-6 line-clamp-3">
                     {study.summary}
                   </p>
-                  
+
                   <div className="flex justify-between items-center">
                     <Link
                       to={`/CaseStudies/${study.id}`}
@@ -144,10 +148,13 @@ const CaseStudies = () => {
                       <span className="font-medium">Read Full Story</span>
                       <Icons.ChevronRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </Link>
-                    
+
                     <div className="hidden md:flex space-x-2">
                       {study.tags?.map((tag, i) => (
-                        <span key={i} className="text-xs bg-[#111827] text-[#9CA3AF] px-2 py-1 rounded">
+                        <span
+                          key={i}
+                          className="text-xs bg-[#111827] text-[#9CA3AF] px-2 py-1 rounded"
+                        >
                           {tag}
                         </span>
                       ))}

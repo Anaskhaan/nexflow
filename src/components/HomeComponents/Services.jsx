@@ -71,7 +71,6 @@ const ServiceDetail = ({ service }) => {
   );
 };
 
-
 export const Services = () => {
   const [activeService, setActiveService] = useState(0);
 
@@ -92,13 +91,17 @@ export const Services = () => {
     },
     {
       title: "App Development",
-      icon: <Icons.Smartphone className="w-5 h-5 text-[var(--main-theme-color)]" />,
+      icon: (
+        <Icons.Smartphone className="w-5 h-5 text-[var(--main-theme-color)]" />
+      ),
       description: "Cross-platform mobile applications for iOS and Android.",
       features: ["React Native", "Flutter", "Swift", "Kotlin"],
     },
     {
       title: "Digital Marketing",
-      icon: <Icons.BarChart2 className="w-5 h-5 text-[var(--main-theme-color)]" />,
+      icon: (
+        <Icons.BarChart2 className="w-5 h-5 text-[var(--main-theme-color)]" />
+      ),
       description: "Comprehensive strategies to grow your online presence.",
       features: ["Content Strategy", "Campaign Management", "Analytics"],
     },
@@ -126,7 +129,9 @@ export const Services = () => {
           </span>
           <h2 className="text-3xl font-bold text-white mt-2 mb-3">
             Full-Spectrum{" "}
-            <span className="text-[var(--main-theme-color)]">Digital Services</span>
+            <span className="text-[var(--main-theme-color)]">
+              Digital Services
+            </span>
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-[#2D7E74] mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-2xl mx-auto text-sm">

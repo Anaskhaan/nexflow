@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 import { Icons } from "../assets/Icons";
 import { footerData } from "./Helper/Data";
 
-
-
 // Reusable Footer Column
 const FooterColumn = ({ title, children, delay = 0 }) => {
   const controls = useAnimation();
@@ -33,12 +31,18 @@ const FooterColumn = ({ title, children, delay = 0 }) => {
       animate={controls}
       variants={{
         hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: delay * 0.2 } },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, delay: delay * 0.2 },
+        },
       }}
       className="space-y-6"
     >
       {title && (
-        <h3 className="text-lg font-semibold text-white uppercase tracking-wider">{title}</h3>
+        <h3 className="text-lg font-semibold text-white uppercase tracking-wider">
+          {title}
+        </h3>
       )}
       {children}
     </motion.div>
@@ -109,10 +113,17 @@ const Footer = () => {
                 {footerData.company.name}
               </span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">{footerData.company.description}</p>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              {footerData.company.description}
+            </p>
             <div className="flex space-x-2">
               {footerData.company.socialLinks.map((social, index) => (
-                <SocialIcon key={index} url={social.url} icon={social.icon} name={social.name} />
+                <SocialIcon
+                  key={index}
+                  url={social.url}
+                  icon={social.icon}
+                  name={social.name}
+                />
               ))}
             </div>
           </FooterColumn>
@@ -141,7 +152,11 @@ const Footer = () => {
           <FooterColumn title="Contact Us" delay={3}>
             <ul className="space-y-4">
               {footerData.contact.map((contact, index) => (
-                <ContactItem key={index} icon={contact.icon} text={contact.text} />
+                <ContactItem
+                  key={index}
+                  icon={contact.icon}
+                  text={contact.text}
+                />
               ))}
             </ul>
 
@@ -171,7 +186,8 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} {footerData.company.name} Technologies. All rights reserved.
+            © {new Date().getFullYear()} {footerData.company.name}{" "}
+            Technologies. All rights reserved.
           </p>
           <div className="flex space-x-6">
             {footerData.legalLinks.map((link, index) => (

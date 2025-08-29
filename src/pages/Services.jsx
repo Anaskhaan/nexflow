@@ -1,13 +1,13 @@
 import React, { Suspense, useEffect } from "react";
-const ServiceStats = React.lazy(() =>
-  import("../components/ServiceComponent/ServiceStats")
+const ServiceStats = React.lazy(
+  () => import("../components/ServiceComponent/ServiceStats"),
 );
-const ServicesSection = React.lazy(() =>
-  import("../components/ServiceComponent/ServicesSection")
+const ServicesSection = React.lazy(
+  () => import("../components/ServiceComponent/ServicesSection"),
 );
 import ServiceProcess from "../components/ServiceComponent/ServiceProcess";
-const ServiceHero = React.lazy(() =>
-  import("../components/ServiceComponent/ServiceHero")
+const ServiceHero = React.lazy(
+  () => import("../components/ServiceComponent/ServiceHero"),
 );
 import ServiceCTA from "../components/ServiceComponent/ServiceCTA";
 import { useAnimation } from "framer-motion";

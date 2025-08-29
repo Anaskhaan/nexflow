@@ -7,8 +7,8 @@ import NexflowLoader from "../components/Helper/NexflowLoader";
 import Portfolio from "../components/HomeComponents/Portfolio";
 import Testimonials from "../components/HomeComponents/Testimonials";
 import WhyChooseUs from "../components/HomeComponents/WhyChooseUs";
-const GetTouch = React.lazy(() =>
-  import("../components/HomeComponents/GetTouch")
+const GetTouch = React.lazy(
+  () => import("../components/HomeComponents/GetTouch"),
 );
 export default function Home() {
   return (

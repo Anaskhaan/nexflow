@@ -6,8 +6,6 @@ import { Icons } from "../assets/Icons";
 import { faqsData } from "./Helper/Data";
 
 export default function FAQs() {
-
-
   const [activeIndex, setActiveIndex] = useState(0);
   const containerRef = useRef(null);
 
@@ -57,7 +55,9 @@ export default function FAQs() {
 
       <div className="max-w-6xl mx-auto">
         {/* Main H1 for SEO */}
-        <h1 className="sr-only">FAQs - Digital Marketing Questions by Nexflow</h1>
+        <h1 className="sr-only">
+          FAQs - Digital Marketing Questions by Nexflow
+        </h1>
 
         {/* Header with accent */}
         <div className="mb-12 text-center">
@@ -80,7 +80,10 @@ export default function FAQs() {
             className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
             Got Questions About{" "}
-            <span className="text-[var(--main-theme-color)]">Digital Marketing</span>?
+            <span className="text-[var(--main-theme-color)]">
+              Digital Marketing
+            </span>
+            ?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: -10 }}
@@ -135,7 +138,9 @@ export default function FAQs() {
                       )}
                       <div
                         className={`w-10 h-10 flex-shrink-0 rounded-full ${
-                          activeIndex === index ? "bg-[var(--main-theme-color)]" : "bg-gray-700"
+                          activeIndex === index
+                            ? "bg-[var(--main-theme-color)]"
+                            : "bg-gray-700"
                         } flex items-center justify-center text-base font-bold`}
                       >
                         {index + 1}
@@ -217,7 +222,7 @@ export default function FAQs() {
                 <button
                   onClick={() =>
                     setActiveIndex(
-                      (activeIndex - 1 + faqsData.length) % faqsData.length
+                      (activeIndex - 1 + faqsData.length) % faqsData.length,
                     )
                   }
                   className="text-gray-300 hover:text-white flex items-center gap-2 text-sm py-2 px-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--main-theme-color)]"

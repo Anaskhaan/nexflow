@@ -31,7 +31,7 @@ function FunnelAudit() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         (response) => {
@@ -59,7 +59,7 @@ function FunnelAudit() {
           setProgress(0);
           console.error("FAILED...", err);
           alert("Oops! Something went wrong. Please try again.");
-        }
+        },
       );
   };
 
@@ -72,12 +72,9 @@ function FunnelAudit() {
       </Helmet>
 
       <div className="relative min-h-screen bg-gray-950 text-[#e5e7eb] overflow-hidden flex items-center justify-center px-4 py-20">
-       
-
         <div className="relative z-10 w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-[#3ea69b]/30 shadow-2xl shadow-[#3ea69b]/10">
           {/* Left Side */}
           <div className="w-full lg:w-3/5 p-8 md:p-12 bg-gradient-to-br from-gray-900/95 to-gray-800/95 relative overflow-hidden">
-
             <div className="flex items-center gap-4 mb-8 relative z-10">
               <div className="p-3 rounded-lg bg-gradient-to-br from-[#3f4e58] to-[#3ea69b] group">
                 <Icons.BarChart2
@@ -123,7 +120,6 @@ function FunnelAudit() {
                 ))}
               </ul>
             </div>
-
           </div>
 
           {/* Right Side */}
@@ -193,16 +189,32 @@ function FunnelAudit() {
 
         <style jsx>{`
           @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%,
+            100% {
+              transform: translateY(0);
+            }
+            50% {
+              transform: translateY(-20px);
+            }
           }
           @keyframes grid-pulse {
-            0%, 100% { opacity: 0.1; }
-            50% { opacity: 0.15; }
+            0%,
+            100% {
+              opacity: 0.1;
+            }
+            50% {
+              opacity: 0.15;
+            }
           }
-          .animate-float { animation: float 8s ease-in-out infinite; }
-          .animate-float-delay { animation: float 10s ease-in-out infinite 2s; }
-          .animate-grid-pulse { animation: grid-pulse 12s ease-in-out infinite; }
+          .animate-float {
+            animation: float 8s ease-in-out infinite;
+          }
+          .animate-float-delay {
+            animation: float 10s ease-in-out infinite 2s;
+          }
+          .animate-grid-pulse {
+            animation: grid-pulse 12s ease-in-out infinite;
+          }
         `}</style>
       </div>
     </div>

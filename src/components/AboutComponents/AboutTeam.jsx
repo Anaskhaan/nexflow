@@ -137,7 +137,9 @@ const AboutTeam = ({ teamRef, teamInView }) => {
                   <h3 className="text-2xl font-bold text-white">
                     {member.name}
                   </h3>
-                  <p className="text-[var(--main-theme-color)]">{member.role}</p>
+                  <p className="text-[var(--main-theme-color)]">
+                    {member.role}
+                  </p>
                   <motion.div
                     className="w-0 h-0.5 bg-white mt-4"
                     animate={{ width: teamInView ? "40%" : 0 }}
