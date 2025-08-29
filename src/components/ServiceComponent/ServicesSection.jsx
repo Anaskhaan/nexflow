@@ -53,7 +53,8 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
               OUR SERVICES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What We <span className="text-[var(--main-theme-color)]">Offer</span>
+              What We{" "}
+              <span className="text-[var(--main-theme-color)]">Offer</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-700 mx-auto mb-8"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-300">
@@ -102,7 +103,8 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
                   >
                     <Link to={`/services/${service.slug}`}>
                       <button className="flex items-center justify-center">
-                        Learn more <Icons.ChevronRight className="ml-1 w-4 h-4" />
+                        Learn more{" "}
+                        <Icons.ChevronRight className="ml-1 w-4 h-4" />
                       </button>
                     </Link>
                   </motion.div>

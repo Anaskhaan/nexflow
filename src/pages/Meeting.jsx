@@ -25,7 +25,7 @@ const MeetingForm = () => {
     // Here you would typically send the data to your backend
     console.log("Form submitted:", formData);
     alert(
-      "Meeting request submitted successfully! We will contact you shortly to confirm."
+      "Meeting request submitted successfully! We will contact you shortly to confirm.",
     );
     // Reset form
     setFormData({

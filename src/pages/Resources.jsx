@@ -7,8 +7,6 @@ import { resources } from "../components/Helper/Data";
 export function Resources() {
   const containerRef = useRef(null);
 
-
-
   return (
     <div
       ref={containerRef}

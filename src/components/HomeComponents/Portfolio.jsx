@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import { mainportfolioData, portfolioData } from "../Helper/Data";
 
-
 export default function Portfolio() {
   return (
     <section className="py-12 bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            Digital Growth <span className="text-[var(--main-theme-color)]">Case Studies</span>
+            Digital Growth{" "}
+            <span className="text-[var(--main-theme-color)]">Case Studies</span>
           </h2>
           <div className="w-16 h-0.5 bg-[var(--main-theme-color)] mx-auto mb-4"></div>
           <p className="text-gray-300 text-sm max-w-2xl mx-auto">
@@ -40,7 +40,9 @@ export default function Portfolio() {
                   <div className="flex flex-wrap items-center text-xs text-gray-400 mt-1">
                     <span>{project.website}</span>
                     <span className="mx-2 hidden md:inline">•</span>
-                    <span className="text-[var(--main-theme-color)]">{project.category}</span>
+                    <span className="text-[var(--main-theme-color)]">
+                      {project.category}
+                    </span>
                   </div>
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     {project.services.map((service, i) => (
@@ -81,7 +83,9 @@ export default function Portfolio() {
                         key={i}
                         className="flex items-start text-xs text-gray-300"
                       >
-                        <span className="text-[var(--main-theme-color)] mr-1.5 mt-0.5">•</span>
+                        <span className="text-[var(--main-theme-color)] mr-1.5 mt-0.5">
+                          •
+                        </span>
                         <span>{highlight}</span>
                       </li>
                     ))}

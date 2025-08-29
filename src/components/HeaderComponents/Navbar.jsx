@@ -6,7 +6,6 @@ import logo from "../../assets/logo.svg";
 import { Icons } from "../../assets/Icons";
 import { navLinks } from "../Helper/Data";
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,11 +36,7 @@ const Navbar = () => {
       >
         {/* Logo */}
         <div className="text-2xl font-bold">
-          <img
-            src={logo}
-            alt="logo image"
-            className="p-0 m-0 w-14 h-auto"
-          />
+          <img src={logo} alt="logo image" className="p-0 m-0 w-14 h-auto" />
         </div>
 
         {/* Nav Links */}
@@ -104,7 +99,7 @@ const Navbar = () => {
               >
                 {link.title}
               </Link>
-            )
+            ),
           )}
         </div>
 
@@ -149,7 +144,9 @@ const Navbar = () => {
                     <button
                       className="flex justify-between items-center w-full text-lg font-medium hover:text-teal-400 transition duration-300 focus:text-teal-400 focus:outline-none"
                       onClick={() =>
-                        setOpenDropdown(openDropdown === link.id ? null : link.id)
+                        setOpenDropdown(
+                          openDropdown === link.id ? null : link.id,
+                        )
                       }
                       aria-haspopup="true"
                       aria-expanded={openDropdown === link.id}
@@ -193,7 +190,7 @@ const Navbar = () => {
                   >
                     {link.title}
                   </Link>
-                )
+                ),
               )}
             </div>
 

@@ -121,7 +121,12 @@ const Hero = () => {
             </p>
 
             <div className="flex space-x-6 mt-4">
-              {[<Icons.Zap key="zap" />, <Icons.BarChart3 key="bar" />, <Icons.LineChart key="line" />, <Icons.Code key="code" />].map((icon, i) => (
+              {[
+                <Icons.Zap key="zap" />,
+                <Icons.BarChart3 key="bar" />,
+                <Icons.LineChart key="line" />,
+                <Icons.Code key="code" />,
+              ].map((icon, i) => (
                 <div
                   key={i}
                   className="bg-black bg-opacity-50 p-3 rounded-full border border-[var(--main-theme-color)] text-[var(--main-theme-color)]"
