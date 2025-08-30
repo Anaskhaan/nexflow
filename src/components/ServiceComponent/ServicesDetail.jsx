@@ -46,7 +46,7 @@ const ServicesDetail = () => {
         {/* Hero Section with Gradient Border */}
         <div
           className="relative p-0.5 bg-[var(--main-theme-color)] rounded-2xl overflow-hidden mb-12"
-       
+
         >
           <div className="bg-black rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row md:items-center">
@@ -60,7 +60,7 @@ const ServicesDetail = () => {
                 )}
                 <h1
                   className="text-4xl md:text-5xl font-bold bg-[var(--main-theme-color)]  mb-4 bg-clip-text text-transparent"
-    
+
                 >
                   {service.title}
                 </h1>
@@ -208,11 +208,14 @@ const ServicesDetail = () => {
           </div>
         </div>
 
+        {service.techStack && (
+
+          <div className="mt-16 mb-16">
+            <TechStack service={service} />
+          </div>
+        )}
         {service.slug === "web-development" && (
           <>
-            <div className="mt-16 mb-16">
-              <TechStack service={service} />
-            </div>
             <div className="mt-16 mb-16">
               <DomainDiversity />
             </div>

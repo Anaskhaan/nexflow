@@ -17,6 +17,7 @@ import BellClinix from "../../assets/bellclinix-logo.svg";
 import SwiftTakeoffs from "../../assets/swift-logo.webp";
 import ParadisePipe from "../../assets/paradise-logo.svg";
 import { Icons } from "../../assets/Icons";
+import { IMAGES } from "../../assets/Images";
 // import logo from "../assets/logo.svg";
 
 export const navLinks = [
@@ -52,31 +53,31 @@ export const navLinks = [
 ];
 
 
-export   const contactInfo = [
-    { icon: <Icons.Phone size={20} />, title: "Phone", value: "+1 (678) 825 6967", link: "tel:+16788256967" },
-    { icon: <Icons.Mail size={20} />, title: "Email", value: "info@nexflow.tech", link: "mailto:info@nexflow.tech" },
-    { icon: <Icons.MapPin size={20} />, title: "Address", value: "8 The Green #6092 Dover, DE, 19901", link: "https://maps.google.com" },
-  ];
+export const contactInfo = [
+  { icon: <Icons.Phone size={20} />, title: "Phone", value: "+1 (678) 825 6967", link: "tel:+16788256967" },
+  { icon: <Icons.Mail size={20} />, title: "Email", value: "info@nexflow.tech", link: "mailto:info@nexflow.tech" },
+  { icon: <Icons.MapPin size={20} />, title: "Address", value: "8 The Green #6092 Dover, DE, 19901", link: "https://maps.google.com" },
+];
 
 
-  export   const resources = [
-    {
-      title: "SaaS ROI Calculator",
-      description: "Measure your software investment returns with precision",
-      icon: <Icons.Calculator className="text-[#3ea69b]" size={32} />,
-      cta: "Calculate ROI",
-      href: "/SaasRoi",
-      accent: "from-[#3ea69b]/10 to-[#3ea69b]/5",
-    },
-    {
-      title: "Funnel Audit",
-      description: "Discover leaks in your conversion pipeline",
-      icon: <Icons.BarChart2 className="text-[#3f4e58]" size={32} />,
-      cta: "Analyze Funnel",
-      href: "/FunnelAudit",
-      accent: "from-[#3f4e58]/10 to-[#3f4e58]/5",
-    },
-  ];
+export const resources = [
+  {
+    title: "SaaS ROI Calculator",
+    description: "Measure your software investment returns with precision",
+    icon: <Icons.Calculator className="text-[#3ea69b]" size={32} />,
+    cta: "Calculate ROI",
+    href: "/SaasRoi",
+    accent: "from-[#3ea69b]/10 to-[#3ea69b]/5",
+  },
+  {
+    title: "Funnel Audit",
+    description: "Discover leaks in your conversion pipeline",
+    icon: <Icons.BarChart2 className="text-[#3f4e58]" size={32} />,
+    cta: "Analyze Funnel",
+    href: "/FunnelAudit",
+    accent: "from-[#3f4e58]/10 to-[#3f4e58]/5",
+  },
+];
 
 export const testimonialData = [
   {
@@ -106,27 +107,27 @@ export const testimonialData = [
 ];
 
 
-export   const stats = [
-    {
-      id: 1,
-      value: "93%",
-      label: "Client Retention",
-      icon: <Icons.Users size={24} />,
-    },
-    {
-      id: 2,
-      value: "287%",
-      label: "Average ROI",
-      icon: <Icons.TrendingUp size={24} />,
-    },
-    { id: 3, value: "24/7", label: "Support", icon: <Icons.Clock size={24} /> },
-    {
-      id: 4,
-      value: "500+",
-      label: "Projects Completed",
-      icon: <Icons.Award size={24} />,
-    },
-  ];
+export const stats = [
+  {
+    id: 1,
+    value: "93%",
+    label: "Client Retention",
+    icon: <Icons.Users size={24} />,
+  },
+  {
+    id: 2,
+    value: "287%",
+    label: "Average ROI",
+    icon: <Icons.TrendingUp size={24} />,
+  },
+  { id: 3, value: "24/7", label: "Support", icon: <Icons.Clock size={24} /> },
+  {
+    id: 4,
+    value: "500+",
+    label: "Projects Completed",
+    icon: <Icons.Award size={24} />,
+  },
+];
 
 
 export const domains = [
@@ -207,8 +208,6 @@ export const domains = [
   }
 ];
 
-
-
 export const portfolioData = [
   {
     id: 1,
@@ -269,7 +268,6 @@ export const portfolioData = [
   },
 ];
 
-
 export const features = [
   {
     icon: Icons.Award,
@@ -308,7 +306,6 @@ export const features = [
     color: "from-violet-500 to-purple-600",
   },
 ];
-
 
 export const mainportfolioData = [
   {
@@ -435,40 +432,38 @@ export const mainportfolioData = [
       "https://source.unsplash.com/featured/?mobile,ecommerce",
   },
 ];
-export   const faqsData = [
-    {
-      question: "Why is digital marketing important for my business?",
-      answer:
-        "Digital marketing allows businesses to reach and engage with a wider audience, generate leads, drive website traffic, and increase brand visibility. It provides measurable results and enables businesses to adapt strategies based on insights.",
-    },
-    {
-      question:
-        "How can digital marketing help improve my website's visibility?",
-      answer:
-        "Digital marketing strategies such as SEO and paid advertising can help your website rank higher on search engines and attract more visitors.",
-    },
-    {
-      question:
-        "How long does it take to see results from digital marketing efforts?",
-      answer:
-        "The timeline varies depending on the strategy, but SEO may take months while paid advertising yields faster results.",
-    },
-    {
-      question:
-        "How do you measure the success of digital marketing campaigns?",
-      answer:
-        "Success can be measured by tracking KPIs like website traffic, conversion rates, and ROI through analytics tools.",
-    },
-    {
-      question: "What digital marketing services does Nexflow offer?",
-      answer:
-        "Nexflow offers a comprehensive suite of digital marketing services including SEO, paid advertising, social media marketing, content marketing, email campaigns, and analytics reporting to help businesses achieve their marketing goals.",
-    },
-  ];
+export const faqsData = [
+  {
+    question: "Why is digital marketing important for my business?",
+    answer:
+      "Digital marketing allows businesses to reach and engage with a wider audience, generate leads, drive website traffic, and increase brand visibility. It provides measurable results and enables businesses to adapt strategies based on insights.",
+  },
+  {
+    question:
+      "How can digital marketing help improve my website's visibility?",
+    answer:
+      "Digital marketing strategies such as SEO and paid advertising can help your website rank higher on search engines and attract more visitors.",
+  },
+  {
+    question:
+      "How long does it take to see results from digital marketing efforts?",
+    answer:
+      "The timeline varies depending on the strategy, but SEO may take months while paid advertising yields faster results.",
+  },
+  {
+    question:
+      "How do you measure the success of digital marketing campaigns?",
+    answer:
+      "Success can be measured by tracking KPIs like website traffic, conversion rates, and ROI through analytics tools.",
+  },
+  {
+    question: "What digital marketing services does Nexflow offer?",
+    answer:
+      "Nexflow offers a comprehensive suite of digital marketing services including SEO, paid advertising, social media marketing, content marketing, email campaigns, and analytics reporting to help businesses achieve their marketing goals.",
+  },
+];
 
-
-  export // Footer Data
-const footerData = {
+export const footerData = {
   company: {
     // logo,
     name: "Nexflow",
@@ -524,32 +519,9 @@ const footerData = {
   ],
 };
 
-export   const process = [
-    {
-      id: 1,
-      title: "Discovery",
-      description: "We analyze your business goals and market position",
-    },
-    {
-      id: 2,
-      title: "Strategy",
-      description: "We create a tailored plan to achieve your objectives",
-    },
-    {
-      id: 3,
-      title: "Execution",
-      description: "We implement campaigns across your chosen channels",
-    },
-    {
-      id: 4,
-      title: "Optimization",
-      description: "We continuously refine for maximum performance",
-    },
-  ];
 
 
-
-
+// ORIGINAL
 export const ServicesData = [
   {
     id: 1,
@@ -612,136 +584,27 @@ export const ServicesData = [
     // Add this to your ServicesData array - specifically in the web-development object
 
     techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
+      categories: ["Marketing"],
       technologies: {
-        Frontend: [
+        Marketing: [
           {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            name: "Meta Business Suite",
+            icon: IMAGES.METABUSINESSSUITE,
             description: "Markup language for web pages"
           },
           {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            name: "Buffer",
+            icon: IMAGES.BUFFER,
             description: "Styling and layout"
           },
           {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            name: "LinkedIn Ads",
+            icon: IMAGES.LINKEDINADS,
             description: "Interactive functionality"
-          },
-          {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            description: "Modern UI library"
-          },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
-        ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
+          },]
+
+
+
       }
     }
   },
@@ -813,136 +676,30 @@ export const ServicesData = [
     // Add this to your ServicesData array - specifically in the web-development object
 
     techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
+      categories: ["SEO"],
       technologies: {
-        Frontend: [
+        SEO: [
           {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            name: "AHREFS",
+            icon: IMAGES.AHREFS,
             description: "Markup language for web pages"
           },
           {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            name: "Semrush",
+            icon: IMAGES.SEMRUSH,
             description: "Styling and layout"
           },
           {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            name: "Google  Search Console",
+            icon: IMAGES.GOOGLESEARCHCONSOLE,
             description: "Interactive functionality"
           },
           {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            name: "Screaming Frog",
+            icon: IMAGES.SCREAMINGFROG,
             description: "Modern UI library"
           },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
         ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
       }
     }
   },
@@ -1215,139 +972,7 @@ export const ServicesData = [
     pricing: "Starting at $3,500 for brand identity packages",
     // Add this to your ServicesData array - specifically in the web-development object
 
-    techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
-      technologies: {
-        Frontend: [
-          {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-            description: "Markup language for web pages"
-          },
-          {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-            description: "Styling and layout"
-          },
-          {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-            description: "Interactive functionality"
-          },
-          {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            description: "Modern UI library"
-          },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
-        ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
-      }
-    }
+    
   },
   {
     id: 6,
@@ -1357,7 +982,6 @@ export const ServicesData = [
     metaTitle: "Expert UI and UX Design | Enhance User Experience & Interface",
     metaDescription: "Transform your digital presence with our UI UX design services. We craft user-centered, visually stunning designs that drive engagement and improve user satisfaction.",
     icon: "Layout",
-    // Add this inside your web-development service object (after techStack)
     domainExpertise: [
       {
         name: "eCommerce",
@@ -1417,136 +1041,20 @@ export const ServicesData = [
     // Add this to your ServicesData array - specifically in the web-development object
 
     techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
+      categories: ["Designing"],
       technologies: {
-        Frontend: [
+        Designing: [
           {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            name: "Figma",
+            icon: IMAGES.FIGMA,
             description: "Markup language for web pages"
           },
           {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            name: "Adobe XD",
+            icon: IMAGES.ADOBEXD,
             description: "Styling and layout"
           },
-          {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-            description: "Interactive functionality"
-          },
-          {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            description: "Modern UI library"
-          },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
         ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
       }
     }
   },
@@ -1622,72 +1130,68 @@ export const ServicesData = [
       technologies: {
         Frontend: [
           {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-            description: "Markup language for web pages"
+            name: "JAVA",
+            icon: IMAGES.JAVA,
+            description: "random "
           },
           {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            name: "KOTLIN",
+            icon: IMAGES.KOTLIN,
             description: "Styling and layout"
           },
           {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            name: "SWIFT",
+            icon: IMAGES.SWIFT,
             description: "Interactive functionality"
           },
           {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            name: "SWIFTUI",
+            icon: IMAGES.SWIFTUI,
             description: "Modern UI library"
           },
           {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
+            name: "React Native",
+            icon: IMAGES.REACTJS,
             description: "Progressive framework"
           },
           {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
+            name: "Flutter",
+            icon: IMAGES.FLUTTER,
             description: "Full-featured framework"
           }
         ],
         Backend: [
           {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+            name: "Node JS",
+            icon: IMAGES.NODEJS,
             description: "JavaScript runtime"
           },
           {
             name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+            icon: IMAGES.PYTHON,
             description: "Versatile programming language"
           },
           {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
+            name: "Express JS",
+            icon: IMAGES.EXPRESS,
             description: "Server-side scripting"
           },
           {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+            name: "Nest JS",
+            icon: IMAGES.NESTJS,
             description: "Enterprise applications"
           },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
+
           {
             name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+            icon: IMAGES.DJANGO,
             description: "Python web framework"
           }
         ],
         Database: [
           {
             name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+            icon: IMAGES.MONGODB,
             description: "NoSQL database"
           },
           {
@@ -1697,40 +1201,32 @@ export const ServicesData = [
           },
           {
             name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+            icon: IMAGES.POSTGRESQL,
             description: "Advanced SQL database"
           },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
+
           {
             name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+            icon: IMAGES.FIREBASE,
             description: "Real-time database"
           },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
+
         ],
         Cloud: [
           {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+            name: "AWS Amplify",
+            icon: IMAGES.AWS,
             description: "Cloud computing platform"
           },
           {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
+            name: "Supabase",
+            icon: IMAGES.SUPABASE,
+            description: "Real-time database"
           },
           {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
+            name: "Firebase",
+            icon: IMAGES.FIREBASE,
+            description: "Real-time database"
           },
           {
             name: "Docker",
@@ -1818,139 +1314,7 @@ export const ServicesData = [
     pricing: "Starting at $1,000/month + ad spend",
     // Add this to your ServicesData array - specifically in the web-development object
 
-    techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
-      technologies: {
-        Frontend: [
-          {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-            description: "Markup language for web pages"
-          },
-          {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-            description: "Styling and layout"
-          },
-          {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-            description: "Interactive functionality"
-          },
-          {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            description: "Modern UI library"
-          },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
-        ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
-      }
-    }
+ 
   },
   {
     id: 9,
@@ -2020,136 +1384,25 @@ export const ServicesData = [
     // Add this to your ServicesData array - specifically in the web-development object
 
     techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
+      categories: ["ASO"],
       technologies: {
-        Frontend: [
+        ASO: [
           {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+            name: "App Radar",
+            icon: IMAGES.APPRADAR,
             description: "Markup language for web pages"
           },
           {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+            name: "App Follow",
+            icon: IMAGES.APPFOLLOW,
             description: "Styling and layout"
           },
           {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+            name: "Sensor Tower",
+            icon: IMAGES.SENSORTOWER,
             description: "Interactive functionality"
           },
-          {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            description: "Modern UI library"
-          },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
         ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
       }
     }
   },
@@ -2220,138 +1473,5 @@ export const ServicesData = [
     pricing: "Starting at $25,000 for custom solutions",
     // Add this to your ServicesData array - specifically in the web-development object
 
-    techStack: {
-      categories: ["Frontend", "Backend", "Database", "Cloud"],
-      technologies: {
-        Frontend: [
-          {
-            name: "HTML",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-            description: "Markup language for web pages"
-          },
-          {
-            name: "CSS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-            description: "Styling and layout"
-          },
-          {
-            name: "JavaScript",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-            description: "Interactive functionality"
-          },
-          {
-            name: "React.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            description: "Modern UI library"
-          },
-          {
-            name: "Vue.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
-            description: "Progressive framework"
-          },
-          {
-            name: "Angular",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg",
-            description: "Full-featured framework"
-          }
-        ],
-        Backend: [
-          {
-            name: "Node.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-            description: "JavaScript runtime"
-          },
-          {
-            name: "Python",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-            description: "Versatile programming language"
-          },
-          {
-            name: "PHP",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg",
-            description: "Server-side scripting"
-          },
-          {
-            name: "Java",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-            description: "Enterprise applications"
-          },
-          {
-            name: "Express.js",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-            description: "Web framework"
-          },
-          {
-            name: "Django",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
-            description: "Python web framework"
-          }
-        ],
-        Database: [
-          {
-            name: "MongoDB",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-            description: "NoSQL database"
-          },
-          {
-            name: "MySQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-            description: "Relational database"
-          },
-          {
-            name: "PostgreSQL",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-            description: "Advanced SQL database"
-          },
-          {
-            name: "Redis",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-            description: "In-memory data store"
-          },
-          {
-            name: "Firebase",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
-            description: "Real-time database"
-          },
-          {
-            name: "SQLite",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-            description: "Lightweight database"
-          }
-        ],
-        Cloud: [
-          {
-            name: "AWS",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-            description: "Cloud computing platform"
-          },
-          {
-            name: "Google Cloud",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg",
-            description: "Google's cloud services"
-          },
-          {
-            name: "Azure",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-            description: "Microsoft cloud platform"
-          },
-          {
-            name: "Docker",
-            icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-            description: "Containerization"
-          },
-          {
-            name: "Netlify",
-            icon: "https://www.vectorlogo.zone/logos/netlify/netlify-icon.svg",
-            description: "Static site hosting"
-          },
-          {
-            name: "Vercel",
-            icon: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
-            description: "Frontend deployment"
-          }
-        ]
-      }
-    }
   }
 ];
