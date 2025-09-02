@@ -43,10 +43,10 @@ export default function WhyChooseUs() {
             WHY NEXFLOW
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Smart{" "}
+            Smart
             <span className="text-[var(--main-theme-color)]">
               Growth Engines
-            </span>{" "}
+            </span>
             for Bold Brands
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-base">
@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
             <div className="mb-4 md:mb-0 md:mr-6">
               {/* CTA Heading: h3 */}
               <h3 className="text-2xl md:text-3xl font-bold text-white">
-                Ready to{" "}
+                Ready to
                 <span className="text-[var(--main-theme-color)]">
                   Accelerate?
                 </span>

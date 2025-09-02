@@ -74,7 +74,7 @@ const Portfolio = () => {
                       to={`/Portfolio/${project.slug}`}
                       className="flex items-center text-sm text-white hover:text-teal-500 transition-colors"
                     >
-                      View Project{" "}
+                      View Project
                       <Icons.ExternalLink className="ml-1 w-4 h-4" />
                     </Link>
                   </div>

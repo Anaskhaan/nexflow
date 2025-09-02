@@ -79,7 +79,7 @@ export default function FAQs() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
-            Got Questions About{" "}
+            Got Questions About
             <span className="text-[var(--main-theme-color)]">
               Digital Marketing
             </span>
@@ -247,9 +247,9 @@ export default function FAQs() {
                 <button
                   key={index}
                   onClick={() => setActiveIndex(index)}
-                  className={`rounded-full transition-all ${
+                  className={`rounded-full transition-all  ${
                     activeIndex === index
-                      ? "bg-[var(--main-theme-color)]"
+                      ? "bg-[var(--main-theme-color)] "
                       : "bg-gray-600 hover:bg-gray-500"
                   }`}
                   style={{ width: "44px", height: "44px" }} // ✅ Touch-friendly size

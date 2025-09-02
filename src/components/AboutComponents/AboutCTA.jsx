@@ -1,18 +1,10 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-const AboutCTA = ({ gradientControls }) => {
+const AboutCTA = () => {
   return (
     <div>
       <section className="py-32 relative overflow-hidden">
-        <motion.div
-          className="absolute inset-0 bg-[#111111]"
-          animate={gradientControls}
-          style={{
-            background:
-              "radial-gradient(circle at center, #0a2a27 0%, #000000 70%)",
-            backgroundSize: "150% 150%",
-          }}
-        />
+  
 
         <div className="container mx-auto px-4 relative z-10 text-center">
           <motion.h2
@@ -22,8 +14,8 @@ const AboutCTA = ({ gradientControls }) => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Ready to{" "}
-            <span className="text-[var(--main-theme-color)]">Transform</span>{" "}
+            Ready to
+            <span className="text-[var(--white)]">Transform</span>
             Your Digital Presence?
           </motion.h2>
 

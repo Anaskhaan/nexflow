@@ -91,10 +91,10 @@ const Discover = ({ parallaxY2 }) => {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                Born from a vision to{" "}
+                Born from a vision to
                 <span className="text-[var(--main-theme-color)] font-semibold">
                   revolutionize
-                </span>{" "}
+                </span>
                 how brands connect digitally.
               </motion.p>
 

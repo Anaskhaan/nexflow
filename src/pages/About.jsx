@@ -102,9 +102,8 @@ export default function About() {
       <Discover parallaxY2={parallaxY2} />
       <Suspense fallback={<NexflowLoader />}>
         <AbouServices parallaxY3={parallaxY3} />
-        {/* <AboutTeam teamRef={teamRef} teamInView={teamInView} /> */}
       </Suspense>
-      <AboutCTA gradientControls={gradientControls} />
+      <AboutCTA />
     </div>
   );
 }

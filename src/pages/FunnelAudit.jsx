@@ -83,10 +83,10 @@ function FunnelAudit() {
                 />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-[#e5e7eb]">
-                Free{" "}
+                Free
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3ea69b] to-[#3f4e58]">
                   SaaS Funnel
-                </span>{" "}
+                </span>
                 Audit
               </h1>
             </div>

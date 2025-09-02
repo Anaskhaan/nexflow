@@ -5,6 +5,7 @@
 :root {
   --gray-service-bg: #314251;
   --main-theme-color: #3fa69b;
+  --white: #ffffff;
 }
 /* Apply Open Sans as the default font for body text */
 body {

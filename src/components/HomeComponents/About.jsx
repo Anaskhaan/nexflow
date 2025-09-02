@@ -146,7 +146,7 @@ export const About = () => {
               Digital Excellence,
               <span className="relative">
                 <span className="relative z-10 text-[var(--main-theme-color)]">
-                  {" "}
+                  
                   Delivered
                 </span>
                 <motion.span
@@ -252,7 +252,7 @@ export const About = () => {
               className="space-y-8"
             >
               <h3 className="text-3xl md:text-4xl text-white font-bold">
-                Leading the Digital Revolution{" "}
+                Leading the Digital Revolution
                 <span className="text-[var(--main-theme-color)]">
                   Since 2015
                 </span>

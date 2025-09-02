@@ -77,14 +77,14 @@ export const Services = () => {
   const services = [
     {
       title: "Web Development",
-      icon: <Icons.Code className="w-5 h-5 text-[var(--main-theme-color)]" />,
+      icon: <Icons.Code className="w-5 h-5 text-[var(--white)]" />,
       description:
         "Building high-performance, scalable websites with modern frameworks.",
       features: ["React", "Next.js", "Node.js", "Tailwind CSS"],
     },
     {
       title: "UI/UX Design",
-      icon: <Icons.Layout className="w-5 h-5 text-[var(--main-theme-color)]" />,
+      icon: <Icons.Layout className="w-5 h-5 text-[var(--white)]" />,
       description:
         "Creating intuitive user experiences with pixel-perfect interfaces.",
       features: ["User Research", "Wireframing", "Prototyping", "Figma"],
@@ -92,7 +92,7 @@ export const Services = () => {
     {
       title: "App Development",
       icon: (
-        <Icons.Smartphone className="w-5 h-5 text-[var(--main-theme-color)]" />
+        <Icons.Smartphone className="w-5 h-5 text-[var(--white)]" />
       ),
       description: "Cross-platform mobile applications for iOS and Android.",
       features: ["React Native", "Flutter", "Swift", "Kotlin"],
@@ -100,7 +100,7 @@ export const Services = () => {
     {
       title: "Digital Marketing",
       icon: (
-        <Icons.BarChart2 className="w-5 h-5 text-[var(--main-theme-color)]" />
+        <Icons.BarChart2 className="w-5 h-5 text-[var(--white)]" />
       ),
       description: "Comprehensive strategies to grow your online presence.",
       features: ["Content Strategy", "Campaign Management", "Analytics"],
@@ -128,8 +128,8 @@ export const Services = () => {
             OUR EXPERTISE
           </span>
           <h2 className="text-3xl font-bold text-white mt-2 mb-3">
-            Full-Spectrum{" "}
-            <span className="text-[var(--main-theme-color)]">
+            Full-Spectrum
+            <span className=" ml-2 text-[var(--main-theme-color)]">
               Digital Services
             </span>
           </h2>

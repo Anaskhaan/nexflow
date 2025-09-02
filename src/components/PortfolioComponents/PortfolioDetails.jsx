@@ -16,7 +16,7 @@ const PortfolioDetails = () => {
       {/* First Section */}
       <div className="h-[50vh] md:h-[60vh] flex flex-col justify-center items-center text-center font-semibold">
         <h2 className="text-4xl md:text-7xl">
-          {project.projectName}{" "}
+          {project.projectName}
           <span className="text-[var(--main-theme-color)] -ml-1 md:-ml-2">
             .
           </span>

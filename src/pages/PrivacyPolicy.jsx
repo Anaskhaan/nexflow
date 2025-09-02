@@ -503,7 +503,7 @@ export function PrivacyPolicy() {
 
                   <div className="bg-gray-700/50 rounded-lg p-4 border-l-4 border-red-500">
                     <p className="text-red-200">
-                      To exercise these rights, please contact us at{" "}
+                      To exercise these rights, please contact us at
                       <span className="font-mono bg-gray-800/50 px-2 py-1 rounded">
                         privacy@nexflow.tech
                       </span>

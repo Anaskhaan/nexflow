@@ -48,7 +48,7 @@ const ServiceCTA = () => {
             <div className="w-20 h-20 bg-[var(--main-theme-color)] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
               <Icons.Target
                 size={36}
-                className="text-[var(--main-theme-color)]"
+                className="text-[var(--white)]"
               />
             </div>
           </motion.div>
@@ -60,7 +60,7 @@ const ServiceCTA = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Ready to{" "}
+            Ready to
             <span className="text-[var(--main-theme-color)]">Transform</span>
             <br className="hidden md:block" /> Your Digital Presence?
           </motion.h2>

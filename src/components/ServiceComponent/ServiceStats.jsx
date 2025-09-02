@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Icons } from "../../assets/Icons";
+import { stats } from "../Helper/Data";
 const ServiceStats = ({ itemVariants, containerVariants }) => {
   return (
     <div>
