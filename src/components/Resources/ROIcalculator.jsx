@@ -61,7 +61,7 @@ export default function SaasCalculator() {
       const com = parseFloat(formData.commission) / 100;
       extra = reps * sal + com * price * newC;
       note = `Sales Cost = (${reps} × $${sal}) + ${(com * 100).toFixed(
-        1
+        1,
       )}% commission`;
     }
 
@@ -102,7 +102,7 @@ export default function SaasCalculator() {
           ...results,
           date: new Date().toLocaleString(),
         },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       );
 
       setShowModal(false);
@@ -751,8 +751,8 @@ export default function SaasCalculator() {
                                   parseFloat(results.ratio) > 3
                                     ? "text-green-400 bg-green-900/20"
                                     : parseFloat(results.ratio) > 1
-                                    ? "text-yellow-400 bg-yellow-900/20"
-                                    : "text-red-400 bg-red-900/20"
+                                      ? "text-yellow-400 bg-yellow-900/20"
+                                      : "text-red-400 bg-red-900/20"
                                 }`}
                               >
                                 {results.ratio}
@@ -798,8 +798,8 @@ export default function SaasCalculator() {
                                   parseFloat(results.roi) > 100
                                     ? "text-green-400 bg-green-900/20"
                                     : parseFloat(results.roi) > 0
-                                    ? "text-yellow-400 bg-yellow-900/20"
-                                    : "text-red-400 bg-red-900/20"
+                                      ? "text-yellow-400 bg-yellow-900/20"
+                                      : "text-red-400 bg-red-900/20"
                                 }`}
                               >
                                 {results.roi}

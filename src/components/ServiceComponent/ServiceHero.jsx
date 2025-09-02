@@ -5,11 +5,14 @@ import { Icons } from "../../assets/Icons";
 const ServiceHero = () => {
   return (
     <div>
-    <Helmet>
-      <title>Nexflow - Services</title>
-      <meta name="description" content="NexFlow Technologies delivers full-spectrum digital solutions including Web Development, App Development, UI/UX Design, Digital Marketing, SEO, and Branding. Innovative, scalable, and tailored to grow your business online." />
-      <link rel="canonical" href="https://nexflow.tech/services" />
-    </Helmet>
+      <Helmet>
+        <title>Nexflow - Services</title>
+        <meta
+          name="description"
+          content="NexFlow Technologies delivers full-spectrum digital solutions including Web Development, App Development, UI/UX Design, Digital Marketing, SEO, and Branding. Innovative, scalable, and tailored to grow your business online."
+        />
+        <link rel="canonical" href="https://nexflow.tech/services" />
+      </Helmet>
       <motion.div
         className="relative h-screen flex items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
@@ -58,7 +61,10 @@ const ServiceHero = () => {
               className="mb-8 inline-block"
             >
               <div className="w-24 h-24 bg-[var(--main-theme-color)] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
-                <Icons.Zap size={42} className="text-[var(--main-theme-color)]" />
+                <Icons.Zap
+                  size={42}
+                  className="text-[var(--main-theme-color)]"
+                />
               </div>
             </motion.div>
 

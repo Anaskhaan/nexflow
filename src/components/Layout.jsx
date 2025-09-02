@@ -2,6 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useEffect } from "react";
+import { CalendlyFloatingButton } from "./CalendlyFloatingButton";
 
 const Layout = () => {
   const location = useLocation();
@@ -19,6 +20,7 @@ const Layout = () => {
       </main>
 
       <Footer />
+      <CalendlyFloatingButton side="right" />
     </div>
   );
 };

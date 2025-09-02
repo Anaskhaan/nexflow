@@ -5,7 +5,6 @@ import logo from "../../assets/logo.svg"; // Adjust the path to your logo image
 import { Icons } from "../../assets/Icons";
 import { navLinks } from "../Helper/Data";
 
-
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 

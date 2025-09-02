@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Icons } from "../../assets/Icons";
 const ServiceStats = ({ itemVariants, containerVariants }) => {
-
   return (
     <div>
       <div className="py-16 px-4 bg-gray-900">

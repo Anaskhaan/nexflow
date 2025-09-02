@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { features } from "../Helper/Data";
 
-
 const FeatureCard = ({ icon: Icon, title, description, color, index }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
@@ -44,7 +43,11 @@ export default function WhyChooseUs() {
             WHY NEXFLOW
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Smart <span className="text-[var(--main-theme-color)]">Growth Engines</span> for Bold Brands
+            Smart{" "}
+            <span className="text-[var(--main-theme-color)]">
+              Growth Engines
+            </span>{" "}
+            for Bold Brands
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-base">
             We redefine digital performance with proven systems that scale.
@@ -71,7 +74,10 @@ export default function WhyChooseUs() {
             <div className="mb-4 md:mb-0 md:mr-6">
               {/* CTA Heading: h3 */}
               <h3 className="text-2xl md:text-3xl font-bold text-white">
-                Ready to <span className="text-[var(--main-theme-color)]">Accelerate?</span>
+                Ready to{" "}
+                <span className="text-[var(--main-theme-color)]">
+                  Accelerate?
+                </span>
               </h3>
               <p className="text-gray-400 mt-1">
                 Let’s triple your marketing ROI—starting now.

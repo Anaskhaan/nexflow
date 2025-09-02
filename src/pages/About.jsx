@@ -1,15 +1,10 @@
 import React, { Suspense, useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useAnimation,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useAnimation, useScroll, useTransform } from "framer-motion";
 
 import AboutHero from "../components/AboutComponents/AboutHero";
 import Discover from "../components/AboutComponents/Discover";
-const AbouServices = React.lazy(() =>
-  import("../components/AboutComponents/AbouServices")
+const AbouServices = React.lazy(
+  () => import("../components/AboutComponents/AbouServices"),
 );
 // const AboutTeam = React.lazy(() =>
 //   import("../components/AboutComponents/AboutTeam")
@@ -69,7 +64,6 @@ export default function About() {
       },
     });
   }, [gradientControls]);
-
 
   return (
     <div className="bg-black text-white pt-16 min-h-screen overflow-hidden">

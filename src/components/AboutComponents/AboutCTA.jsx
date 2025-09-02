@@ -22,8 +22,9 @@ const AboutCTA = ({ gradientControls }) => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            Ready to <span className="text-[var(--main-theme-color)]">Transform</span> Your
-            Digital Presence?
+            Ready to{" "}
+            <span className="text-[var(--main-theme-color)]">Transform</span>{" "}
+            Your Digital Presence?
           </motion.h2>
 
           <motion.p
@@ -48,9 +49,7 @@ const AboutCTA = ({ gradientControls }) => {
               }}
             />
             <Link to="/contact">
-              <motion.button
-                className="relative bg-[var(--main-theme-color)] text-white py-2 px-4 rounded-lg text-xl font-bold group overflow-hidden z-10"
-              >
+              <motion.button className="relative bg-[var(--main-theme-color)] text-white py-2 px-4 rounded-lg text-xl font-bold group overflow-hidden z-10">
                 Get Started
               </motion.button>
             </Link>

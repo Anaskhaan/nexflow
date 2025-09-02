@@ -17,7 +17,9 @@ const PortfolioDetails = () => {
       <div className="h-[50vh] md:h-[60vh] flex flex-col justify-center items-center text-center font-semibold">
         <h2 className="text-4xl md:text-7xl">
           {project.projectName}{" "}
-          <span className="text-[var(--main-theme-color)] -ml-1 md:-ml-2">.</span>
+          <span className="text-[var(--main-theme-color)] -ml-1 md:-ml-2">
+            .
+          </span>
         </h2>
       </div>
 
@@ -112,8 +114,6 @@ const PortfolioDetails = () => {
 
 export default PortfolioDetails;
 
-
-
 // import { useParams } from "react-router-dom";
 // import { useEffect, useRef, useState } from "react";
 // import { portfolioData } from "../Helper/Data";
@@ -127,7 +127,7 @@ export default PortfolioDetails;
 //   const containerRef = useRef(null);
 //   const [activeSection, setActiveSection] = useState(0);
 //   const [isHolographic, setIsHolographic] = useState(false);
-  
+
 //   const { scrollYProgress } = useScroll({
 //     target: containerRef,
 //     offset: ["start start", "end end"]
@@ -147,7 +147,7 @@ export default PortfolioDetails;
 
 //   if (!project) {
 //     return (
-//       <motion.div 
+//       <motion.div
 //         initial={{ opacity: 0 }}
 //         animate={{ opacity: 1 }}
 //         className="h-screen flex items-center justify-center bg-black text-white"
@@ -173,7 +173,7 @@ export default PortfolioDetails;
 //   const colors = generateColorVibes(project.slug);
 
 //   return (
-//     <div 
+//     <div
 //       ref={containerRef}
 //       className={`relative w-full min-h-screen bg-black text-white overflow-hidden ${isHolographic ? 'holographic-effect' : ''}`}
 //       style={{
@@ -213,8 +213,8 @@ export default PortfolioDetails;
 //               style={{
 //                 x: Math.cos(i * (Math.PI * 2 / 5)) * 24,
 //                 y: Math.sin(i * (Math.PI * 2 / 5)) * 24,
-//                 scale: useTransform(scrollYProgress, 
-//                   [i * 0.2, i * 0.2 + 0.1], 
+//                 scale: useTransform(scrollYProgress,
+//                   [i * 0.2, i * 0.2 + 0.1],
 //                   [1, 1.5])
 //               }}
 //               onClick={() => {
@@ -231,22 +231,22 @@ export default PortfolioDetails;
 //       <div className="relative z-10">
 //         {/* Hero section with parallax layers */}
 //         <section id="section-0" className="relative h-screen flex items-center justify-center overflow-hidden">
-//           <motion.div 
+//           <motion.div
 //             className="absolute inset-0"
 //             style={{
 //               background: `linear-gradient(135deg, ${colors.primary} 0%, ${colors.secondary} 100%)`,
 //               opacity: useTransform(scrollYProgress, [0, 0.5], [0.2, 0])
 //             }}
 //           />
-          
-//           <motion.div 
+
+//           <motion.div
 //             className="text-center px-4"
 //             style={{
 //               scale: titleScale,
 //               opacity: titleOpacity
 //             }}
 //           >
-//             <motion.h2 
+//             <motion.h2
 //               className="text-6xl md:text-9xl font-bold mb-4"
 //               initial={{ y: 50, opacity: 0 }}
 //               animate={{ y: 0, opacity: 1 }}
@@ -254,14 +254,14 @@ export default PortfolioDetails;
 //             >
 //               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
 //                 {project.projectName.split('').map((letter, i) => (
-//                   <motion.span 
+//                   <motion.span
 //                     key={i}
 //                     style={{ display: 'inline-block' }}
-//                     animate={{ 
+//                     animate={{
 //                       y: [0, -10, 0],
 //                       rotate: [0, 5, 0]
 //                     }}
-//                     transition={{ 
+//                     transition={{
 //                       delay: i * 0.05,
 //                       repeat: Infinity,
 //                       repeatDelay: 5,
@@ -272,13 +272,13 @@ export default PortfolioDetails;
 //                   </motion.span>
 //                 ))}
 //               </span>
-//               <motion.span 
+//               <motion.span
 //                 className="ml-2"
-//                 animate={{ 
+//                 animate={{
 //                   opacity: [0.6, 1, 0.6],
 //                   scale: [0.9, 1.1, 0.9]
 //                 }}
-//                 transition={{ 
+//                 transition={{
 //                   duration: 2,
 //                   repeat: Infinity
 //                 }}
@@ -287,8 +287,8 @@ export default PortfolioDetails;
 //                 .
 //               </motion.span>
 //             </motion.h2>
-            
-//             <motion.p 
+
+//             <motion.p
 //               className="text-xl md:text-2xl max-w-2xl mx-auto"
 //               initial={{ opacity: 0 }}
 //               animate={{ opacity: 1 }}
@@ -296,7 +296,7 @@ export default PortfolioDetails;
 //             >
 //               {project.tagline || "Innovative digital experience"}
 //             </motion.p>
-            
+
 //             <motion.div
 //               className="mt-12"
 //               initial={{ opacity: 0, y: 20 }}
@@ -305,7 +305,7 @@ export default PortfolioDetails;
 //             >
 //               <div className="relative inline-block">
 //                 <div className="absolute inset-0 rounded-full bg-white blur-md opacity-30 animate-pulse" />
-//                 <button 
+//                 <button
 //                   className="relative px-8 py-3 rounded-full bg-transparent border-2 border-white text-white hover:bg-white hover:text-black transition-all duration-300"
 //                   onClick={() => {
 //                     document.getElementById('section-1')?.scrollIntoView({ behavior: 'smooth' });
@@ -316,8 +316,8 @@ export default PortfolioDetails;
 //               </div>
 //             </motion.div>
 //           </motion.div>
-          
-//           <motion.div 
+
+//           <motion.div
 //             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
 //             animate={{ y: [0, 10, 0] }}
 //             transition={{ duration: 2, repeat: Infinity }}
@@ -331,7 +331,7 @@ export default PortfolioDetails;
 //         {/* Gallery section with immersive effect */}
 //         <section id="section-1" className="relative py-20">
 //           <div className="sticky top-0 h-screen flex items-center justify-center">
-//             <motion.div 
+//             <motion.div
 //               className="w-full max-w-6xl mx-auto"
 //               initial={{ opacity: 0 }}
 //               whileInView={{ opacity: 1 }}
@@ -342,19 +342,19 @@ export default PortfolioDetails;
 //                   Visual Journey
 //                 </span>
 //               </h3>
-//               <CustomCarousel 
-//                 images={project.images} 
+//               <CustomCarousel
+//                 images={project.images}
 //                 colors={colors}
 //               />
 //             </motion.div>
 //           </div>
-          
+
 //           {/* Floating info cards that appear during scroll */}
 //           <div className="relative h-[200vh]">
 //             <div className="sticky top-0 h-screen flex items-center">
 //               <div className="container mx-auto px-4">
 //                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-//                   <motion.div 
+//                   <motion.div
 //                     className="p-8 rounded-3xl border border-white/10 bg-black/50 backdrop-blur-lg"
 //                     initial={{ x: -100, opacity: 0 }}
 //                     whileInView={{ x: 0, opacity: 1 }}
@@ -366,8 +366,8 @@ export default PortfolioDetails;
 //                       {project.projectDetails}
 //                     </p>
 //                   </motion.div>
-                  
-//                   <motion.div 
+
+//                   <motion.div
 //                     className="p-8 rounded-3xl border border-white/10 bg-black/50 backdrop-blur-lg"
 //                     initial={{ x: 100, opacity: 0 }}
 //                     whileInView={{ x: 0, opacity: 1 }}
@@ -392,7 +392,7 @@ export default PortfolioDetails;
 //                         ))}
 //                       </div>
 //                     </div>
-                    
+
 //                     <div className="mt-8">
 //                       <h4 className="text-xl font-semibold mb-3">Website</h4>
 //                       <a
@@ -419,7 +419,7 @@ export default PortfolioDetails;
 //         {/* Additional images with dynamic layout */}
 //         {project.images2 && project.images2.length > 0 && (
 //           <section id="section-2" className="py-20">
-//             <motion.div 
+//             <motion.div
 //               className="container mx-auto px-4"
 //               initial={{ opacity: 0 }}
 //               whileInView={{ opacity: 1 }}
@@ -430,9 +430,9 @@ export default PortfolioDetails;
 //                   Deep Dive
 //                 </span>
 //               </h3>
-              
+
 //               <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-//                 <motion.div 
+//                 <motion.div
 //                   className="md:col-span-8 rounded-3xl overflow-hidden aspect-video"
 //                   initial={{ scale: 0.9, opacity: 0 }}
 //                   whileInView={{ scale: 1, opacity: 1 }}
@@ -446,7 +446,7 @@ export default PortfolioDetails;
 //                     loading="lazy"
 //                   />
 //                 </motion.div>
-                
+
 //                 <div className="md:col-span-4 grid grid-rows-2 gap-6">
 //                   {project.images2.slice(1, 3).map((img, index) => (
 //                     <motion.div
@@ -512,9 +512,9 @@ export default PortfolioDetails;
 //               />
 //             ))}
 //           </div>
-          
+
 //           <div className="relative z-10 text-center px-4">
-//             <motion.h2 
+//             <motion.h2
 //               className="text-4xl md:text-6xl font-bold mb-8"
 //               initial={{ opacity: 0, y: 20 }}
 //               whileInView={{ opacity: 1, y: 0 }}
@@ -523,7 +523,7 @@ export default PortfolioDetails;
 //             >
 //               Ready to create something <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-teal-400">extraordinary</span>?
 //             </motion.h2>
-            
+
 //             <motion.div
 //               initial={{ opacity: 0, y: 20 }}
 //               whileInView={{ opacity: 1, y: 0 }}

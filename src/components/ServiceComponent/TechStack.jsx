@@ -14,8 +14,9 @@ const TechStack = ({ service }) => {
         Tech Stack That Powers Our Web Development Services
       </h2>
       <p className="text-gray-300 text-center mb-8 max-w-4xl mx-auto">
-        At NexFlow our web developers use the latest technologies to help businesses stay ahead of the curve. 
-        Our robust tech stack ensures high-quality web development services, delivering innovative solutions 
+        At NexFlow our web developers use the latest technologies to help
+        businesses stay ahead of the curve. Our robust tech stack ensures
+        high-quality web development services, delivering innovative solutions
         tailored to meet diverse business needs.
       </p>
 
@@ -30,7 +31,8 @@ const TechStack = ({ service }) => {
                 : "text-gray-400 hover:text-gray-300"
             }`}
             style={{
-              borderBottomColor: activeTab === category ? service.color : "transparent"
+              borderBottomColor:
+                activeTab === category ? service.color : "transparent",
             }}
           >
             {category}
@@ -64,8 +66,9 @@ const TechStack = ({ service }) => {
 
       <div className="mt-8 text-center">
         <p className="text-gray-300 text-sm">
-          Our expert developers are proficient in all these technologies and more, 
-          ensuring we choose the right stack for your specific project needs.
+          Our expert developers are proficient in all these technologies and
+          more, ensuring we choose the right stack for your specific project
+          needs.
         </p>
       </div>
     </div>

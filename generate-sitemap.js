@@ -8,8 +8,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Determine if building for production
-const isBuild = process.env.NODE_ENV === "production" || process.argv.includes("--prod");
-const outputDir = isBuild ? path.join(__dirname, "dist") : path.join(__dirname, "public");
+const isBuild =
+  process.env.NODE_ENV === "production" || process.argv.includes("--prod");
+const outputDir = isBuild
+  ? path.join(__dirname, "dist")
+  : path.join(__dirname, "public");
 if (!existsSync(outputDir)) mkdirSync(outputDir, { recursive: true });
 
 const outputPath = path.join(outputDir, "sitemap.xml");

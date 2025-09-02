@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { process } from "../Helper/Data";
 const ServiceProcess = () => {
-
   return (
     <div>
       <div className="py-24 px-4 bg-gray-900 relative overflow-hidden">
@@ -34,7 +33,8 @@ const ServiceProcess = () => {
               OUR PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How We <span className="text-[var(--main-theme-color)]">Work</span>
+              How We{" "}
+              <span className="text-[var(--main-theme-color)]">Work</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-700 mx-auto mb-8"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-300">
