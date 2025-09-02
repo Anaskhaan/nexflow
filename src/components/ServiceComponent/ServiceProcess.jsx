@@ -47,7 +47,7 @@ const ServiceProcess = () => {
             {/* Process steps */}
             <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--main-theme-color)] to-teal-900 transform -translate-x-1/2"></div>
 
-            <div className="space-y-16 md:space-y-0 relative">
+            {/* <div className="space-y-16 md:space-y-0 relative">
               {process.map((step, index) => (
                 <motion.div
                   key={step.id}
@@ -83,7 +83,6 @@ const ServiceProcess = () => {
                     </motion.div>
                   </div>
 
-                  {/* Timeline node */}
                   <motion.div
                     className={`absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-[var(--main-theme-color)] z-10 hidden md:block ${
                       index % 2 === 0
@@ -99,7 +98,7 @@ const ServiceProcess = () => {
                   <div className="w-full md:w-1/2"></div>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
