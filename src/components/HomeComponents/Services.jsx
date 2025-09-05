@@ -1,37 +1,8 @@
 import { motion } from "framer-motion";
-
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Icons } from "../../assets/Icons";
 
-const ServicePill = ({ title, icon, isActive, onClick }) => {
-  const icons = {
-    web: <Icons.Code className="w-4 h-4" />,
-    app: <Icons.Smartphone className="w-4 h-4" />,
-    marketing: <Icons.BarChart2 className="w-4 h-4" />,
-    seo: <Icons.Search className="w-4 h-4" />,
-    aso: <Icons.Smartphone className="w-4 h-4" />,
-    smm: <Icons.Share2 className="w-4 h-4" />,
-    ppc: <Icons.Zap className="w-4 h-4" />,
-    branding: <Icons.PenTool className="w-4 h-4" />,
-    ai: <Icons.Cpu className="w-4 h-4" />,
-    uiux: <Icons.Layout className="w-4 h-4" />,
-  };
 
-  return (
-    <button
-      onClick={onClick}
-      className={`px-4 py-2 rounded-full text-sm font-medium flex items-center space-x-2 transition-all ${
-        isActive
-          ? "bg-[var(--main-theme-color)] text-black"
-          : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-      }`}
-    >
-      {icons[icon]}
-      <span>{title}</span>
-    </button>
-  );
-};
 
 const ServiceDetail = ({ service }) => {
   return (
@@ -72,7 +43,6 @@ const ServiceDetail = ({ service }) => {
 };
 
 export const Services = () => {
-  const [activeService, setActiveService] = useState(0);
 
   const services = [
     {
@@ -107,18 +77,7 @@ export const Services = () => {
     },
   ];
 
-  const allServices = [
-    { title: "Web", icon: "web" },
-    { title: "UI/UX", icon: "uiux" },
-    { title: "App", icon: "app" },
-    { title: "Marketing", icon: "marketing" },
-    { title: "SEO", icon: "seo" },
-    { title: "ASO", icon: "aso" },
-    { title: "SMM", icon: "smm" },
-    { title: "PPC", icon: "ppc" },
-    { title: "Branding", icon: "branding" },
-    { title: "AI/ML", icon: "ai" },
-  ];
+
 
   return (
     <section className="py-16 bg-black relative">
@@ -139,17 +98,6 @@ export const Services = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-8">
-          {allServices.map((service, index) => (
-            <ServicePill
-              key={index}
-              title={service.title}
-              icon={service.icon}
-              isActive={activeService === index && index < 4}
-              onClick={() => setActiveService(index)}
-            />
-          ))}
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           {services.slice(0, 2).map((service, index) => (
