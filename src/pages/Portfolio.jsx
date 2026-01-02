@@ -6,7 +6,7 @@ import { Icons } from "../assets/Icons";
 
 const Portfolio = () => {
   return (
-    <div className='w-full bg-black text-white'>
+    <div className='w-full md:pt-0 pt-12 bg-black text-white'>
       {/* **Hero Section - Minimal & Bold** */}
       <section className='relative py-24 px-6 overflow-hidden'>
         <div className='max-w-6xl mx-auto text-center'>

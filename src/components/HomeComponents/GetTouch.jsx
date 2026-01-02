@@ -13,12 +13,10 @@ const GetInTouch = () => {
         const x = event.clientX - rect.left - rect.width / 2;
         const y = event.clientY - rect.top - rect.height / 2;
 
-        button.style.transform = `translate(-50%, -50%) translate(${x / 5}px, ${
-          y / 5
-        }px)`;
-        button.querySelector(".arrow-icon").style.transform = `translate(${
-          x / 20
-        }px, ${y / 20}px)`;
+        button.style.transform = `translate(-50%, -50%) translate(${x / 5}px, ${y / 5
+          }px)`;
+        button.querySelector(".arrow-icon").style.transform = `translate(${x / 20
+          }px, ${y / 20}px)`;
       }
 
       if (sphereRef.current) {
@@ -44,7 +42,7 @@ const GetInTouch = () => {
   }, []);
 
   return (
-    <div className='relative h-screen w-full bg-black overflow-hidden'>
+    <div className='relative md:h-screen h-[80vh] w-full bg-black overflow-hidden'>
       {/* Add gradient overlay */}
       <div className='absolute inset-0 bg-gradient-to-br from-black to-black/80 z-0' />
 
@@ -61,13 +59,13 @@ const GetInTouch = () => {
 
       {/* Top text */}
       <div className='absolute top-8 w-full text-center z-10'>
-        <h2 className='top-text text-white text-2xl font-medium tracking-wide'>
+        <h2 className=' text-white text-2xl font-medium tracking-wide'>
           LET&lsquo;S COLLABORATE
         </h2>
       </div>
 
       {/* Main text */}
-      <div className='absolute top-1/2 -translate-y-1/2 w-full z-10'>
+      <div className='absolute top-1/2 -translate-y-1/2 w-full z-10 flex flex-col items-center justify-center text-center px-4'>
         <h1 className='hero-text text-white text-[12vw] leading-none font-bold mb-0 tracking-tight'>
           LET&lsquo;S WORK
         </h1>
@@ -76,20 +74,7 @@ const GetInTouch = () => {
             TOGETHER
           </h1>
 
-          {/* <button
-            ref={buttonRef}
-            className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2
-                     bg-[var(--main-theme-color)] text-white rounded-full w-32 h-32
-                     flex flex-col items-center justify-center
-                     transition-transform duration-300 shadow-lg hover:shadow-xl"
-          >
-            <Link to="/contact" className="text-sm font-medium mb-1">
-              Get In Touch
-            </Link>
-            <span className="arrow-icon text-xl transform transition-transform duration-300">
-              ↗
-            </span>
-          </button> */}
+
         </div>
       </div>
       <div

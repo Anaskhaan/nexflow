@@ -80,7 +80,7 @@ export const Services = () => {
 
 
   return (
-    <section className="py-16 bg-black relative">
+    <section className="md:py-16 py-6 bg-black relative">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <span className="text-sm font-medium text-[var(--main-theme-color)] tracking-wider">

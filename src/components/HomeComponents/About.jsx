@@ -4,7 +4,7 @@ export default function About() {
   return (
     <div>
       {/* About Section */}
-      <section className="py-24 md:py-32 bg-black relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-black relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute top-1/4 left-1/4 w-[800px] h-[800px] rounded-full bg-[var(--main-theme-color)] opacity-10 blur-[120px]" />

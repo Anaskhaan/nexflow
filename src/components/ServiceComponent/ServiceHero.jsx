@@ -14,7 +14,7 @@ const ServiceHero = () => {
         <link rel="canonical" href="https://nexflow.tech/services" />
       </Helmet>
       <motion.div
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-[80vh] md:h-screen flex items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}

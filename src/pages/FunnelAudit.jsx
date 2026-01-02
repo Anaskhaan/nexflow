@@ -72,9 +72,9 @@ function FunnelAudit() {
       </Helmet>
 
       <div className="relative min-h-screen bg-gray-950 text-[#e5e7eb] overflow-hidden flex items-center justify-center px-4 py-20">
-        <div className="relative z-10 w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl overflow-hidden border border-[#3ea69b]/30 shadow-2xl shadow-[#3ea69b]/10">
+        <div className="relative z-10 w-full max-w-6xl flex flex-col lg:flex-row rounded-3xl overflow-hidden border border-gray-800 shadow-2xl bg-gray-900">
           {/* Left Side */}
-          <div className="w-full lg:w-3/5 p-8 md:p-12 bg-gradient-to-br from-gray-900/95 to-gray-800/95 relative overflow-hidden">
+          <div className="w-full lg:w-3/5 p-8 md:p-12 bg-gray-900 relative overflow-hidden">
             <div className="flex items-center gap-4 mb-8 relative z-10">
               <div className="p-3 rounded-lg bg-gradient-to-br from-[#3f4e58] to-[#3ea69b] group">
                 <Icons.BarChart2
@@ -83,18 +83,15 @@ function FunnelAudit() {
                 />
               </div>
               <h1 className="text-3xl md:text-4xl font-bold text-[#e5e7eb]">
-                Free
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#3ea69b] to-[#3f4e58]">
-                  SaaS Funnel
+                Unlock Your
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--main-theme-color)] to-[#2dd4bf] ml-2">
+                  Sales Potential
                 </span>
-                Audit
               </h1>
             </div>
 
-            <p className="text-lg text-[#e5e7eb]/80 mb-8 max-w-2xl relative z-10">
-              Discover the gaps in your customer acquisition funnel and get
-              personalized recommendations to boost conversions.
-            </p>
+            Find out exactly where I would improve your customer journey to increase sales.
+            No jargon, just a clear roadmap to more revenue.
 
             <div className="mb-8 relative z-10">
               <h2 className="text-xl font-semibold text-[#e5e7eb] mb-6 pb-2 border-b border-[#3ea69b]/30 flex items-center">
@@ -103,10 +100,10 @@ function FunnelAudit() {
               </h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  "30-point comprehensive funnel analysis",
-                  "Stage-by-stage performance scoring",
-                  "Personalized PDF report with actionable insights",
-                  "Immediate identification of weak points",
+                  "Full website sales checkup",
+                  "Customer buying journey review",
+                  "Actionable steps to double your leads",
+                  "Hidden revenue opportunities identified",
                 ].map((item, index) => (
                   <li key={index} className="flex items-start group">
                     <Icons.CheckCircle
@@ -155,11 +152,10 @@ function FunnelAudit() {
                 <button
                   type="submit"
                   disabled={loading || !email}
-                  className={`w-full bg-gradient-to-r from-[#3ea69b] to-[#3f4e58] hover:from-[#3ea69b]/90 hover:to-[#3f4e58]/90 text-[#e5e7eb] py-4 rounded-lg font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-[#3ea69b]/40 group ${
-                    loading ? "opacity-60 cursor-not-allowed" : ""
-                  }`}
+                  className={`w-full bg-gradient-to-r from-[#3ea69b] to-[#3f4e58] hover:from-[#3ea69b]/90 hover:to-[#3f4e58]/90 text-[#e5e7eb] py-4 rounded-lg font-bold transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-[#3ea69b]/40 group ${loading ? "opacity-60 cursor-not-allowed" : ""
+                    }`}
                 >
-                  <span>{loading ? "Sending..." : "Get Free Audit"}</span>
+                  <span>{loading ? "Analyzing..." : "Get My Free Audit"}</span>
                   <Icons.ArrowRight
                     className="group-hover:translate-x-1 transition-transform"
                     size={18}
