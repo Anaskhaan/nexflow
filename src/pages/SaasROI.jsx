@@ -13,27 +13,23 @@ export default function SaasROI() {
     <div>
       <section className="relative bg-[#1A2C34] text-white py-24 overflow-hidden">
         {/* Abstract floating shapes */}
-        <div className="absolute top-10 left-10 w-32 h-32 bg-[#3DA69B] opacity-10 rounded-full blur-2xl animate-pulse" />
-        <div className="absolute bottom-10 right-10 w-48 h-48 bg-yellow-300 opacity-10 rounded-full blur-3xl animate-pulse" />
 
         <div className="relative max-w-7xl mx-auto px-6 z-10">
           <div className="grid md:grid-cols-3 items-center gap-10">
             {/* Floating ROI Card */}
-            <div className="md:col-span-2 bg-white/5 backdrop-blur-xl p-10 rounded-3xl shadow-xl border border-white/10 transform hover:scale-[1.01] transition duration-300">
-              <h2 className="text-5xl font-extrabold mb-6 tracking-tight leading-tight">
-                Nexflow ROI <br />
-                <span className="text-[#3DA69B]">Intelligence Tool</span>
+            <div className="md:col-span-2 bg-[#1F2937]/50 backdrop-blur-md p-10 rounded-2xl border border-gray-700 shadow-xl">
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 tracking-tight leading-tight text-white">
+                Forecast Your <br />
+                <span className="text-[var(--main-theme-color)]">Revenue Growth</span>
               </h2>
-              <p className="text-md text-gray-300 mb-6 max-w-xl">
-                Not your ordinary calculator. Nexflow's AI-powered ROI
-                Intelligence analyzes real campaign data to reveal where your
-                next revenue peak lies.
+              <p className="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed">
+                See exactly how much revenue your business is missing out on. We focus on profitable growth and predictable sales systems, not just vanity metrics.
               </p>
               <button
                 onClick={scrollToCalculator}
                 className="bg-[#3DA69B] hover:bg-[#2e8b82] px-6 py-2 rounded-md text-white text-sm font-semibold shadow-md transition"
               >
-                Forecast My ROI →
+                Calculate My Growth Potential →
               </button>
             </div>
 
@@ -47,7 +43,7 @@ export default function SaasROI() {
                 />
               </div>
               <div className="bg-white/10 p-4 rounded-xl text-sm text-gray-300 backdrop-blur-sm border border-white/10 shadow-inner">
-                💡 Pro Tip: ROI doesn’t lie. Use data, not guesses.
+                Fact: Numbers tell the story. Build a predictable sales machine.
               </div>
             </div>
           </div>

@@ -8,7 +8,7 @@ const DomainDiversity = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Our Domain{" "}
+            Our Domain
             <span className="text-[var(--main-theme-color)]">Diversity</span>
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">

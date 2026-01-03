@@ -11,7 +11,7 @@ export const SEO_DATA = {
     noindex: false,
   },
   leadMagnet: {
-    title: "AI Automation | NexFlow Tech",
+    title: "[Free Guide] AI Automation | NexFlow Tech",
     noindex: true, // Will auto-inject noindex meta tag
   },
   // Add all other pages...

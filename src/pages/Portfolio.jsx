@@ -6,7 +6,7 @@ import { Icons } from "../assets/Icons";
 
 const Portfolio = () => {
   return (
-    <div className='w-full bg-black text-white'>
+    <div className='w-full md:pt-0 pt-12 bg-black text-white'>
       {/* **Hero Section - Minimal & Bold** */}
       <section className='relative py-24 px-6 overflow-hidden'>
         <div className='max-w-6xl mx-auto text-center'>
@@ -69,9 +69,10 @@ const Portfolio = () => {
                     </span>
                     <Link
                       to={`/Portfolio/${project.slug}`}
-                      className='flex items-center text-sm text-white hover:text-teal-500 transition-colors'>
+                      className="flex items-center text-sm text-white hover:text-teal-500 transition-colors"
+                    >
                       View Project{" "}
-                      <Icons.ExternalLink className='ml-1 w-4 h-4' />
+                      <Icons.ExternalLink className="ml-1 w-4 h-4" />
                     </Link>
                   </div>
                 </motion.div>

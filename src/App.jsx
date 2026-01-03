@@ -48,7 +48,6 @@ function App() {
             <Route path="/Services" element={<Services />} />
             <Route path="/Services/:slug" element={<ServicesDetail />} />
             <Route path="/Contact" element={<Contact />} />
-            <Route path="/CaseStudies" element={<CaseStudies />} />
             <Route path="/CaseStudies/:id" element={<CaseStudyDetails />} />
             <Route path="/SaasRoi" element={<SaasROI />} />
             <Route path="/FunnelAudit" element={<FunnelAudit />} />

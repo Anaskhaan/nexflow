@@ -14,7 +14,7 @@ const ServiceHero = () => {
         <link rel="canonical" href="https://nexflow.tech/services" />
       </Helmet>
       <motion.div
-        className="relative h-screen flex items-center justify-center overflow-hidden"
+        className="relative h-[80vh] md:h-screen flex items-center justify-center overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
@@ -63,27 +63,19 @@ const ServiceHero = () => {
               <div className="w-24 h-24 bg-[var(--main-theme-color)] bg-opacity-20 rounded-full flex items-center justify-center mx-auto">
                 <Icons.Zap
                   size={42}
-                  className="text-[var(--main-theme-color)]"
+                  className="text-[var(--white)]"
                 />
               </div>
             </motion.div>
 
             <h1 className="lg:text-5xl text-2xl  font-bold mb-6">
-              Elevate Your{" "}
+              Elevate Your
               <motion.span
-                className="text-[var(--main-theme-color)] inline-block"
-                animate={{
-                  y: [0, -15, 0],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
+                className="text-[var(--main-theme-color)] mx-2"
+
               >
                 Digital
-              </motion.span>{" "}
+              </motion.span>
               Presence
             </h1>
 
@@ -131,20 +123,7 @@ const ServiceHero = () => {
           </motion.div>
         </div>
 
-        {/* Animated gradient orbs */}
-        <motion.div
-          className="absolute bottom-20  left-20 w-64 h-64 rounded-full bg-[var(--main-theme-color)] opacity-10 filter blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        />
+
 
         <motion.div
           className="absolute top-40 right-20 w-96 h-96 rounded-full bg-[var(--main-theme-color)] opacity-5 filter blur-3xl"
@@ -161,30 +140,7 @@ const ServiceHero = () => {
         />
 
         {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-10 lg:left-1/2 left-40 transform -translate-x-1/2"
-          animate={{
-            y: [0, 10, 0],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-          }}
-        >
-          <div className="w-10 h-16  border-2 border-white rounded-full flex justify-center">
-            <motion.div
-              className="w-2 h-2 bg-white rounded-full mt-2"
-              animate={{
-                y: [0, 10, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                delay: 0.3,
-              }}
-            />
-          </div>
-        </motion.div>
+
       </motion.div>
     </div>
   );

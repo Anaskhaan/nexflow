@@ -1,164 +1,125 @@
-// import { ArrowRight } from "lucide-react";
-// import { caseStudy } from "../components/Helper/caseStudy";
-// import { Link } from "react-router-dom";
-
-// const CaseStudies = () => {
-//   return (
-//     <div className="w-full bg-[#111827] py-10">
-//       <div className="max-w-6xl mx-auto px-4">
-//         <div className="text-center mb-16">
-//           <span className="text-sm font-bold tracking-widest text-[#9CA3AF] uppercase">
-//             Our Success Stories
-//           </span>
-//           <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-white">
-//             Case Studies
-//           </h2>
-//           <div className="w-16 h-1 mx-auto bg-[#06B6D4]"></div>
-//           <p className="mt-6 text-lg text-[#D1D5DB] max-w-2xl mx-auto">
-//             Explore our real-world solutions and the measurable impact we've
-//             delivered for our clients through innovative approaches.
-//           </p>
-//         </div>
-
-//         {/* Case Study Cards */}
-//         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//           {caseStudy.map((study) => (
-//             <div
-//               key={study.id}
-//               className="bg-[#1F2937] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border border-[#374151] hover:border-[#06B6D4]"
-//             >
-//               <div className="p-8">
-//                 <div className="uppercase tracking-wide text-sm text-[#06B6D4] font-semibold mb-1">
-//                   {study.category}
-//                 </div>
-//                 <h3 className="text-2xl font-bold text-white mb-3">
-//                   {study.title}
-//                 </h3>
-//                 <p className="text-[#D1D5DB] mb-6 line-clamp-3">
-//                   {study.summary}
-//                 </p>
-//                 <div className="flex justify-between items-center">
-//                   <Link
-//                     to={`/CaseStudies/${study.id}`}
-//                     className="flex items-center text-[#06B6D4] hover:text-white transition-colors"
-//                   >
-//                     <span className="font-medium">Read Case Study</span>
-//                     <ArrowRight className="ml-2 w-4 h-4" />
-//                   </Link>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* CTA Section */}
-//         <div className="text-center mt-16">
-//           <Link
-//             to="/contact"
-//             className="inline-flex items-center px-6 py-3 bg-[#06B6D4] text-[#111827] rounded-md text-base font-medium hover:bg-white transition-colors shadow-sm hover:shadow-[#06B6D4]"
-//           >
-//             Want similar results for your business?
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default CaseStudies;
-
-import { ChevronRight } from "lucide-react";
-import { caseStudy } from "../components/Helper/caseStudy";
+import React, { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
+import { ChevronRight, ArrowRight, BarChart3 } from "lucide-react";
+import { caseStudyData } from "../components/Helper/caseStudyData";
 import { Icons } from "../assets/Icons";
 
 const CaseStudies = () => {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const categories = useMemo(() => {
+    const cats = ["All", ...new Set(caseStudyData.map((study) => study.category))];
+    return cats;
+  }, []);
+
+  const filteredStudies = useMemo(() => {
+    if (activeCategory === "All") return caseStudyData;
+    return caseStudyData.filter((study) => study.category === activeCategory);
+  }, [activeCategory]);
+
   return (
-    <div className="w-full bg-[#111827] py-16 relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <div className="absolute top-20 -left-20 w-64 h-64 rounded-full bg-[#06B6D4] blur-3xl"></div>
-        <div className="absolute bottom-10 -right-10 w-80 h-80 rounded-full bg-[#06B6D4] blur-3xl"></div>
+    <div className="w-full bg-black min-h-screen text-white pt-32 pb-20 relative overflow-hidden">
+      {/* Abstract Background Elements */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-[var(--main-theme-color)] blur-[120px] opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-teal-900 blur-[120px] opacity-10"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <span className="text-sm font-bold tracking-widest text-[#9CA3AF] uppercase">
-            Our Success Stories
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-2 mb-4 text-white">
-            Case <span className="text-[#06B6D4]">Studies</span>
-          </h2>
-          <div className="w-16 h-1 mx-auto bg-[#06B6D4] transform skew-x-12"></div>
-          <p className="mt-6 text-lg text-[#D1D5DB] max-w-2xl mx-auto">
-            Explore our real-world solutions and the measurable impact we've
-            delivered for our clients through innovative approaches.
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header Section */}
+        <div className="mb-20 text-center md:text-left">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[var(--main-theme-color)]/10 border border-[var(--main-theme-color)]/20 text-[var(--main-theme-color)] text-xs font-bold uppercase tracking-widest mb-6 mx-auto md:mx-0">
+            <BarChart3 size={14} />
+            <span>Proven Results</span>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-8 tracking-tighter">
+            Our Success <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--main-theme-color)] to-teal-300">
+              Stories
+            </span>
+          </h1>
+
+          <p className="text-xl text-gray-400 max-w-2xl leading-relaxed mx-auto md:mx-0">
+            We don't just deliver services; we drive measurable growth. Explore how our
+            strategic interventions have transformed businesses across domains.
           </p>
         </div>
 
-        {/* Alternate Card Layout - Horizontal Timeline Style */}
-        <div className="space-y-12">
-          {caseStudy.map((study, index) => (
+        {/* Filter Navigation */}
+        <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-16 border-b border-gray-800 pb-8">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeCategory === category
+                  ? "bg-[var(--main-theme-color)] text-white shadow-[0_0_20px_rgba(63,166,155,0.4)] border-transparent"
+                  : "bg-gray-900 text-gray-400 hover:bg-gray-800 hover:text-white border border-gray-800"
+                }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Case Studies Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {filteredStudies.map((study) => (
             <div
               key={study.id}
-              className={`relative group ${index % 2 === 0 ? "pl-0 md:pl-16" : "pr-0 md:pr-16"}`}
+              className="group relative bg-gray-900/40 backdrop-blur-sm border border-gray-800 rounded-3xl overflow-hidden hover:border-[var(--main-theme-color)]/50 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col"
             >
-              {/* Timeline dot */}
-              <div
-                className={`hidden md:block absolute top-8 ${index % 2 === 0 ? "-left-2" : "-right-2"}`}
-              >
-                <div className="w-6 h-6 rounded-full bg-[#06B6D4] border-4 border-[#111827]"></div>
+              {/* Image Section */}
+              <div className="relative h-64 overflow-hidden">
+                <img
+                  src={study.image}
+                  alt={study.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+
+                <div className="absolute bottom-6 left-6">
+                  <span className="px-3 py-1 rounded-full bg-black/60 border border-white/10 text-[10px] font-bold backdrop-blur-md text-[var(--main-theme-color)] uppercase tracking-wider">
+                    {study.category}
+                  </span>
+                </div>
               </div>
 
-              {/* Card content */}
-              <div
-                className={`bg-[#1F2937] rounded-xl overflow-hidden hover:shadow-lg transition-all duration-300 border-l-4 ${index % 2 === 0 ? "border-l-[#06B6D4]" : "border-r-[#06B6D4] border-r-4 border-l-0"} hover:shadow-[#06B6D4]/30 flex flex-col md:flex-row`}
-              >
-                {/* Image placeholder - would be replaced with actual study.image */}
-                <div className="md:w-2/5 bg-gradient-to-br from-[#06B6D4] to-[#111827] p-8 flex items-center justify-center">
-                  <div className="text-5xl font-bold text-white/20">
-                    {index + 1}
-                  </div>
+              {/* Content Section */}
+              <div className="p-8 flex-grow flex flex-col">
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[var(--main-theme-color)] transition-colors line-clamp-2">
+                  {study.title}
+                </h3>
+
+                <p className="text-gray-400 mb-8 line-clamp-3 leading-relaxed flex-grow">
+                  {study.overview}
+                </p>
+
+                {/* Metrics Hub */}
+                <div className="grid grid-cols-2 gap-4">
+                  {study.metrics?.slice(0, 2).map((metric, idx) => (
+                    <div key={idx} className="bg-gray-800/50 p-4 rounded-2xl border border-gray-700/50">
+                      <div className="text-2xl font-black text-[var(--main-theme-color)]">{metric.value}</div>
+                      <div className="text-[10px] uppercase text-gray-400 font-bold tracking-widest mt-1">
+                        {metric.label}
+                      </div>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="p-8 md:w-3/5">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <div className="uppercase tracking-wide text-sm text-[#06B6D4] font-semibold mb-1">
-                        {study.category}
-                      </div>
-                      <h3 className="text-2xl font-bold text-white mb-3">
-                        {study.title}
-                      </h3>
+                <div className="mt-8 pt-6 border-t border-gray-800 flex items-center justify-between">
+                  <Link
+                    to={`/CaseStudies/${study.id}`}
+                    className="group/btn flex items-center space-x-2 text-white font-bold hover:text-[var(--main-theme-color)] transition-all"
+                  >
+                    <span className="text-sm">Explore Details</span>
+                    <div className="p-2 rounded-full bg-gray-800 group-hover/btn:bg-[var(--main-theme-color)] transition-all">
+                      <ChevronRight size={16} />
                     </div>
-                    <div className="text-xs font-mono text-[#9CA3AF] bg-[#111827] px-2 py-1 rounded">
-                      Case #{study.id}
-                    </div>
-                  </div>
+                  </Link>
 
-                  <p className="text-[#D1D5DB] mb-6 line-clamp-3">
-                    {study.summary}
-                  </p>
-
-                  <div className="flex justify-between items-center">
-                    <Link
-                      to={`/CaseStudies/${study.id}`}
-                      className="flex items-center group-hover:text-[#06B6D4] text-white transition-colors"
-                    >
-                      <span className="font-medium">Read Full Story</span>
-                      <Icons.ChevronRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Link>
-
-                    <div className="hidden md:flex space-x-2">
-                      {study.tags?.map((tag, i) => (
-                        <span
-                          key={i}
-                          className="text-xs bg-[#111827] text-[#9CA3AF] px-2 py-1 rounded"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  <div className="text-[10px] font-mono text-gray-600">
+                    NX_STUDY_REF_{study.id}
                   </div>
                 </div>
               </div>
@@ -166,15 +127,31 @@ const CaseStudies = () => {
           ))}
         </div>
 
-        {/* Animated CTA Section */}
-        <div className="text-center mt-20">
-          <Link
-            to="/contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#06B6D4] to-[#0E7490] text-white rounded-lg text-lg font-semibold hover:shadow-lg transition-all duration-300 hover:shadow-[#06B6D4]/40 hover:scale-105"
-          >
-            Want similar results for your business?
-            <Icons.ArrowRight className="ml-3 w-5 h-5 animate-pulse" />
-          </Link>
+        {/* Dynamic CTA */}
+        <div className="mt-32 relative">
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--main-theme-color)]/20 to-teal-400/20 blur-[100px] pointer-events-none"></div>
+          <div className="bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-[3rem] p-12 md:p-20 text-center relative z-10 overflow-hidden shadow-2xl">
+            {/* Background decoration */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--main-theme-color)]/10 rounded-full blur-[80px] -mr-32 -mt-32" />
+
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tighter">
+              Ready to write your <br />
+              <span className="text-[var(--main-theme-color)]">success story?</span>
+            </h2>
+
+            <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12">
+              Join 200+ brands that have scaled their digital presence with Nexflow's
+              proprietary data-driven frameworks.
+            </p>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center md:px-10 px-5 md:py-5 py-3 bg-[var(--main-theme-color)] text-white rounded-full md:text-lg text-sm font-black transition-all duration-300 hover:shadow-[0_0_30px_rgba(63,166,155,0.6)] hover:scale-105 active:scale-95 group"
+            >
+              Start Your Transformation
+              <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" />
+            </Link>
+          </div>
         </div>
       </div>
     </div>

@@ -49,11 +49,11 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 text-[var(--main-theme-color)] text-sm font-medium mb-4">
+            <span className="inline-block py-1 px-3 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 text-[var(--white)] text-sm font-medium mb-4">
               OUR SERVICES
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What We{" "}
+              What We
               <span className="text-[var(--main-theme-color)]">Offer</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-700 mx-auto mb-8"></div>
@@ -79,7 +79,7 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
               >
                 <div className="p-8 relative z-10">
                   <motion.div
-                    className="w-16 h-16 bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center rounded-xl mb-6 text-[var(--main-theme-color)]"
+                    className="w-16 h-16 bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center rounded-xl mb-6 text-[var(--white)]"
                     whileHover={{ rotate: 360, backgroundColor: service.color }}
                     transition={{ duration: 0.5 }}
                   >
@@ -103,7 +103,7 @@ const ServicesSection = ({ containerVariants, itemVariants }) => {
                   >
                     <Link to={`/services/${service.slug}`}>
                       <button className="flex items-center justify-center">
-                        Learn more{" "}
+                        Learn more
                         <Icons.ChevronRight className="ml-1 w-4 h-4" />
                       </button>
                     </Link>

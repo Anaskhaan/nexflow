@@ -45,27 +45,22 @@ const ServicesDetail = () => {
       <div className="max-w-5xl mx-auto px-4">
         {/* Hero Section with Gradient Border */}
         <div
-          className="relative p-0.5 rounded-2xl overflow-hidden mb-12"
-          style={{
-            background: `linear-gradient(45deg, ${service.color}, #2D847B, ${service.color})`,
-          }}
+          className="relative p-0.5 bg-[var(--main-theme-color)] rounded-2xl overflow-hidden mb-12"
+
         >
           <div className="bg-black rounded-2xl p-8 md:p-12">
             <div className="flex flex-col md:flex-row md:items-center">
               <div className="mb-6 md:mb-0 md:mr-8">
                 {IconComponent && (
                   <div
-                    className="w-20 h-20 rounded-full flex items-center justify-center mb-6"
-                    style={{ backgroundColor: service.color }}
+                    className="w-20 h-20 rounded-full bg-[var(--main-theme-color)] flex items-center justify-center mb-6"
                   >
                     <IconComponent size={40} color="white" />
                   </div>
                 )}
                 <h1
-                  className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent"
-                  style={{
-                    backgroundImage: `linear-gradient(90deg, white, ${service.color})`,
-                  }}
+                  className="text-4xl md:text-5xl font-bold bg-[var(--main-theme-color)]  mb-4 bg-clip-text text-transparent"
+
                 >
                   {service.title}
                 </h1>
@@ -75,8 +70,7 @@ const ServicesDetail = () => {
               </div>
               <div className="flex-shrink-0 ml-auto">
                 <button
-                  className="px-8 py-4 rounded-full font-bold transition-all hover:shadow-lg flex items-center"
-                  style={{ backgroundColor: service.color }}
+                  className="px-8 py-4 rounded-full bg-[var(--main-theme-color)]    font-bold transition-all hover:shadow-lg flex items-center"
                 >
                   <Link to="/contact">Get Started</Link>
                   <Icons.ArrowRight className="ml-2" size={18} />
@@ -91,10 +85,9 @@ const ServicesDetail = () => {
           {/* Left Column */}
           <div className="lg:col-span-2 space-y-10">
             {/* About Section */}
-            <div className="bg-black border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
+            <div className="bg-black text-[var(--main-theme-color)]   border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
               <h2
                 className="text-2xl font-bold mb-6"
-                style={{ color: service.color }}
               >
                 About This Service
               </h2>
@@ -103,10 +96,9 @@ const ServicesDetail = () => {
 
             {/* Process Section */}
             {service.process && (
-              <div className="bg-black border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
+              <div className="bg-black border text-[var(--main-theme-color)]   border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
                 <h2
                   className="text-2xl font-bold mb-6"
-                  style={{ color: service.color }}
                 >
                   Our Process
                 </h2>
@@ -115,8 +107,7 @@ const ServicesDetail = () => {
                     <div key={index} className="flex">
                       <div className="mr-4 flex-shrink-0">
                         <div
-                          className="flex items-center justify-center w-10 h-10 rounded-full text-white font-bold"
-                          style={{ backgroundColor: service.color }}
+                          className="flex items-center bg-[var(--main-theme-color)]   justify-center w-10 h-10 rounded-full text-white font-bold"
                         >
                           {index + 1}
                         </div>
@@ -139,8 +130,7 @@ const ServicesDetail = () => {
             {/* Benefits */}
             <div className="bg-black border border-gray-800 rounded-xl p-8 hover:border-gray-700 transition-all">
               <h2
-                className="text-2xl font-bold mb-6"
-                style={{ color: service.color }}
+                className="text-2xl text-[var(--main-theme-color)]   font-bold mb-6"
               >
                 Key Benefits
               </h2>
@@ -149,8 +139,7 @@ const ServicesDetail = () => {
                   <li key={index} className="flex">
                     <Icons.Check
                       size={20}
-                      style={{ color: service.color }}
-                      className="mr-3 flex-shrink-0 mt-1"
+                      className="mr-3 flex-shrink-0 text-[var(--main-theme-color)]   mt-1"
                     />
                     <span className="text-gray-300">{benefit}</span>
                   </li>
@@ -165,12 +154,10 @@ const ServicesDetail = () => {
                   <div className="flex items-center mb-3">
                     <Icons.Clock
                       size={20}
-                      style={{ color: service.color }}
-                      className="mr-2"
+                      className="mr-2 text-[var(--main-theme-color)]  "
                     />
                     <h3
-                      className="text-xl font-bold"
-                      style={{ color: service.color }}
+                      className="text-xl text-[var(--main-theme-color)]   font-bold"
                     >
                       Timeline
                     </h3>
@@ -184,12 +171,10 @@ const ServicesDetail = () => {
                   <div className="flex items-center mb-3">
                     <Icons.DollarSign
                       size={20}
-                      style={{ color: service.color }}
-                      className="mr-2"
+                      className="mr-2 text-[var(--main-theme-color)]  "
                     />
                     <h3
-                      className="text-xl font-bold"
-                      style={{ color: service.color }}
+                      className="text-xl text-[var(--main-theme-color)] font-bold"
                     >
                       Investment
                     </h3>
@@ -214,8 +199,7 @@ const ServicesDetail = () => {
               </p>
               <Link to="/contact">
                 <button
-                  className="w-full px-6 py-4 rounded-full font-bold text-white transition-all hover:shadow-lg"
-                  style={{ backgroundColor: service.color }}
+                  className="w-full bg-[var(--main-theme-color)] px-6 py-4 rounded-full font-bold text-white transition-all hover:shadow-lg"
                 >
                   Schedule Consultation
                 </button>
@@ -224,11 +208,14 @@ const ServicesDetail = () => {
           </div>
         </div>
 
+        {service.techStack && (
+
+          <div className="mt-16 mb-16">
+            <TechStack service={service} />
+          </div>
+        )}
         {service.slug === "web-development" && (
           <>
-            <div className="mt-16 mb-16">
-              <TechStack service={service} />
-            </div>
             <div className="mt-16 mb-16">
               <DomainDiversity />
             </div>
@@ -238,8 +225,7 @@ const ServicesDetail = () => {
         {/* Related Services */}
         <div className="mt-16">
           <h2
-            className="text-2xl font-bold mb-8"
-            style={{ color: service.color }}
+            className="text-2xl text-[var(--main-theme-color)] font-bold mb-8"
           >
             Explore Related Services
           </h2>
@@ -256,8 +242,7 @@ const ServicesDetail = () => {
                     <div className="flex items-center mb-4">
                       {RelatedIcon && (
                         <div
-                          className="w-10 h-10 rounded-full flex items-center justify-center mr-3"
-                          style={{ backgroundColor: relatedService.color }}
+                          className="w-10 h-10 bg-[var(--main-theme-color)] rounded-full flex items-center justify-center mr-3"
                         >
                           <RelatedIcon size={20} color="white" />
                         </div>
@@ -271,8 +256,7 @@ const ServicesDetail = () => {
                     </p>
                     <Link
                       to={`/services/${relatedService.slug}`}
-                      className="flex items-center text-sm font-medium transition-all group-hover:translate-x-1"
-                      style={{ color: relatedService.color }}
+                      className="flex items-center text-[var(--main-theme-color)] text-sm font-medium transition-all group-hover:translate-x-1"
                     >
                       Learn more <Icons.ArrowRight size={14} className="ml-1" />
                     </Link>

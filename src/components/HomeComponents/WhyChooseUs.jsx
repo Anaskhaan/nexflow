@@ -43,10 +43,10 @@ export default function WhyChooseUs() {
             WHY NEXFLOW
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
-            Smart{" "}
+            Smart
             <span className="text-[var(--main-theme-color)]">
               Growth Engines
-            </span>{" "}
+            </span>
             for Bold Brands
           </h2>
           <p className="mt-4 text-gray-400 max-w-xl mx-auto text-base">
@@ -61,39 +61,7 @@ export default function WhyChooseUs() {
           ))}
         </div>
 
-        {/* CTA Block */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-20 relative"
-        >
-          <div className="absolute -inset-1 bg-gradient-to-r from-[var(--main-theme-color)] to-purple-500 rounded-2xl blur-lg opacity-40"></div>
-          <div className="relative bg-gray-900 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between">
-            <div className="mb-4 md:mb-0 md:mr-6">
-              {/* CTA Heading: h3 */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white">
-                Ready to{" "}
-                <span className="text-[var(--main-theme-color)]">
-                  Accelerate?
-                </span>
-              </h3>
-              <p className="text-gray-400 mt-1">
-                Let’s triple your marketing ROI—starting now.
-              </p>
-            </div>
-            <Link to="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[var(--main-theme-color)] hover:bg-[var(--main-theme-color)]/90 text-black font-semibold px-6 py-3 rounded-md"
-              >
-                Get Started
-              </motion.button>
-            </Link>
-          </div>
-        </motion.div>
+    
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ export const CookiesPolicy = () => {
             Cookies Policy
           </h1>
           <p className="text-sm opacity-80 mt-2" style={{ color: "#3f4e58" }}>
-            Last Updated:{" "}
+            Last Updated:
             {new Date().toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
@@ -36,15 +36,15 @@ export const CookiesPolicy = () => {
             title=""
             content={
               <p className="leading-relaxed">
-                At{" "}
+                At
                 <span
                   className="font-semibold hover:text-[#3ea69b] transition-colors duration-200"
                   style={{ color: "#3ea69b" }}
                 >
                   NexFlow Technologies
-                </span>{" "}
+                </span>
                 ("we," "us," or "our"), we use cookies to enhance your
-                experience on{" "}
+                experience on
                 <a
                   href="https://nexflow.tech"
                   className="hover:underline transition-all duration-200"

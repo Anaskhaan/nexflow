@@ -859,7 +859,7 @@ export default function SaasCalculator() {
                               CAC Formula
                             </p>
                             <p className="text-gray-300 text-sm">
-                              (Marketing + Ads +{" "}
+                              (Marketing + Ads +
                               {model === "PLG" ? "Activation" : "Sales"} Costs)
                               ÷ New Customers
                             </p>

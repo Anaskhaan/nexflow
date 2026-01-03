@@ -7,7 +7,7 @@ export default function Portfolio() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            Digital Growth{" "}
+            Digital Growth
             <span className="text-[var(--main-theme-color)]">Case Studies</span>
           </h2>
           <div className="w-16 h-0.5 bg-[var(--main-theme-color)] mx-auto mb-4"></div>

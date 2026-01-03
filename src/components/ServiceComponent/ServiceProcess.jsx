@@ -29,12 +29,12 @@ const ServiceProcess = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block py-1 px-3 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 text-[var(--main-theme-color)] text-sm font-medium mb-4">
+            <span className="inline-block py-1 px-3 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 text-[var(--white)] text-sm font-medium mb-4">
               OUR PROCESS
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How We{" "}
-              <span className="text-[var(--main-theme-color)]">Work</span>
+              How We
+              <span className="text-[var(--main-theme-color)] ml-2">Work</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-700 mx-auto mb-8"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-300">
@@ -74,7 +74,7 @@ const ServiceProcess = () => {
                       }}
                     >
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center text-[var(--main-theme-color)] mr-4">
+                        <div className="w-12 h-12 rounded-full bg-[var(--main-theme-color)] bg-opacity-20 flex items-center justify-center text-[var(--white)] mr-4">
                           <span className="text-xl font-bold">{step.id}</span>
                         </div>
                         <h3 className="text-2xl font-bold">{step.title}</h3>
@@ -83,7 +83,6 @@ const ServiceProcess = () => {
                     </motion.div>
                   </div>
 
-                  {/* Timeline node */}
                   <motion.div
                     className={`absolute top-1/2 transform -translate-y-1/2 w-6 h-6 rounded-full bg-[var(--main-theme-color)] z-10 hidden md:block ${
                       index % 2 === 0

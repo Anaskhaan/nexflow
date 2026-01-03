@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const TechStack = ({ service }) => {
-  const [activeTab, setActiveTab] = useState("Frontend");
+  const [activeTab, setActiveTab] = useState(service.techStack?.categories[0]);
 
   if (!service.techStack) return null;
 
