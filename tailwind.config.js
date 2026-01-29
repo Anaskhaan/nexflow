@@ -24,6 +24,15 @@ export default {
       colors: {
         brand: "#3FA69B", // Optional named color for easier reuse
       },
+      keyframes: {
+        "slow-pan": {
+          "0%": { transform: "scale(1.05)" },
+          "100%": { transform: "scale(1.15)" },
+        },
+      },
+      animation: {
+        "slow-pan": "slow-pan 20s linear infinite alternate",
+      },
     },
   },
   safelist: [
