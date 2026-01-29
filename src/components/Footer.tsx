@@ -1,228 +1,168 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { footerData } from "@/lib/data";
-
-interface FooterColumnProps {
-  title?: string;
-  children: React.ReactNode;
-  delay?: number;
-}
-
-const FooterColumn = ({ title, children, delay = 0 }: FooterColumnProps) => {
-  const controls = useAnimation();
-  const [hasScrolled, setHasScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const footer = document.getElementById("footer");
-      if (footer) {
-        const rect = footer.getBoundingClientRect();
-        if (rect.top < (typeof window !== "undefined" ? window.innerHeight : 800) - 100 && !hasScrolled) {
-          setHasScrolled(true);
-          controls.start("visible");
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [controls, hasScrolled]);
-
-  return (
-    <motion.div
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-          opacity: 1,
-          y: 0,
-          transition: { duration: 0.6, delay: delay * 0.2 },
-        },
-      }}
-      className="space-y-6"
-    >
-      {title && (
-        <h3 className="text-lg font-semibold text-slate-900 uppercase tracking-wider">
-          {title}
-        </h3>
-      )}
-      {children}
-    </motion.div>
-  );
-};
-
-const FooterLinkItem = ({ children }: { children: React.ReactNode }) => (
-  <motion.li
-    whileHover={{ x: 5 }}
-    transition={{ type: "spring", stiffness: 300 }}
-    className="flex items-center text-slate-600 hover:text-brand transition-colors duration-300 group"
-  >
-    <ArrowRight
-      size={14}
-      className="mr-2 text-[var(--main-theme-color)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-    />
-    {children}
-  </motion.li>
-);
-
-interface ContactItemProps {
-  icon: React.ReactNode;
-  text: string | { title: string; lines: string[] };
-}
-
-const ContactItem = ({ icon, text }: ContactItemProps) => (
-  <li className="flex items-start gap-3">
-    {typeof text === "string" ? (
-      <span className="text-slate-600">{text}</span>
-    ) : (
-      <div className="text-slate-600">
-        <p className="font-medium">{text.title}</p>
-        {text.lines.map((line, i) => (
-          <span key={i} className="block text-slate-500">
-            {line}
-          </span>
-        ))}
-      </div>
-    )}
-  </li>
-);
-
-interface SocialIconProps {
-  url: string;
-  icon: React.ReactNode;
-  name: string;
-}
-
-const SocialIcon = ({ url, icon, name }: SocialIconProps) => (
-  <motion.a
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label={name}
-    whileHover={{ y: -3, scale: 1.1 }}
-    className="text-slate-500 hover:text-brand transition-colors duration-300 p-2 rounded-full hover:bg-slate-100"
-  >
-    {icon}
-  </motion.a>
-);
+import { 
+  ArrowRight, 
+  Linkedin, 
+  Facebook, 
+  Instagram, 
+  Mail, 
+  Phone, 
+  MapPin,
+  CheckCircle2,
+  ExternalLink
+} from "lucide-react";
+import { footerData, navLinks } from "@/lib/data";
 
 const Footer = () => {
-  const [hasScrolled, setHasScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const footer = document.getElementById("footer");
-      if (footer) {
-        const rect = footer.getBoundingClientRect();
-        if (rect.top < window.innerHeight) {
-          setHasScrolled(true);
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer
-      id="footer"
-      className="bg-slate-50 border-t border-slate-200 text-slate-900 pt-20 pb-8 px-6 md:px-12 lg:px-20"
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Main Footer */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
-          {/* Company Info */}
-          <FooterColumn title="About Us">
-            <div className="flex items-center">
-              <span className="ml-3 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[var(--main-theme-color)] to-teal-300">
-                {footerData.company.name}
-              </span>
-            </div>
-            <p className="text-slate-600 text-sm leading-relaxed">
-              {footerData.company.description}
+    <footer className="bg-slate-50 text-slate-900 pt-32 pb-12 px-6 md:px-12 lg:px-20 relative overflow-hidden border-t border-slate-200">
+      {/* Background Atmosphere - Subtle and Soft */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-brand/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-teal-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Top Section: High Impact CTA */}
+        <div className="mb-24 p-12 md:p-16 rounded-[3rem] bg-white border border-slate-200 shadow-xl shadow-slate-100 flex flex-col md:flex-row items-center justify-between gap-12 group">
+          <div className="relative z-10 space-y-4 text-center md:text-left">
+            <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none text-slate-950">
+              Ready to <br />
+              <span className="text-brand">Evolve?</span>
+            </h2>
+            <p className="text-slate-500 text-lg font-medium max-w-md">
+              Your digital transformation begins with a single conversation. Let's engineer your dominance.
             </p>
-            <div className="flex space-x-2">
-              {footerData.company.socialLinks.map((social, index) => (
-                <SocialIcon
-                  key={index}
-                  url={social.url}
-                  icon={social.icon}
-                  name={social.name}
-                />
-              ))}
-            </div>
-          </FooterColumn>
-
-          {/* Quick Links */}
-          <FooterColumn title="Quick Links" delay={1}>
-            <ul className="space-y-3">
-              {footerData.links.map((link) => (
-                <FooterLinkItem key={link.id}>
-                  <Link href={link.href}>{link.title}</Link>
-                </FooterLinkItem>
-              ))}
-            </ul>
-          </FooterColumn>
-
-          {/* Services */}
-          <FooterColumn title="Our Services" delay={2}>
-            <ul className="space-y-3">
-              {footerData.services.map((service, index) => (
-                <FooterLinkItem key={index}>{service}</FooterLinkItem>
-              ))}
-            </ul>
-          </FooterColumn>
-
-          {/* Contact */}
-          <FooterColumn title="Contact Us" delay={3}>
-            <ul className="space-y-4">
-              {footerData.contact.map((contact, index) => (
-                <ContactItem
-                  key={index}
-                  icon={contact.icon}
-                  text={contact.text}
-                />
-              ))}
-            </ul>
-
-            <h3 className="sr-only">Contact Call to Action</h3>
-
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={hasScrolled ? { scale: 1, opacity: 1 } : {}}
-              transition={{ delay: 1.6, duration: 0.4, ease: "easeOut" }}
-              className="pt-2"
-            >
-              <Link
-                href="/Contact"
-                className="inline-flex items-center justify-center px-6 py-2.5 bg-gradient-to-r from-[var(--main-theme-color)] to-teal-400 text-white font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:opacity-90"
-              >
-                Get in Touch
-                <ArrowRight size={16} className="ml-2" />
-              </Link>
-            </motion.div>
-          </FooterColumn>
+          </div>
+          <Link href="/contact" className="relative z-10">
+            <button className="bg-slate-950 text-white px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-brand transition-all duration-300 shadow-2xl flex items-center gap-3 group/btn">
+              GET IN TOUCH
+              <ArrowRight className="group-hover/btn:translate-x-1 transition-transform" />
+            </button>
+          </Link>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-slate-200 my-8"></div>
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24 text-left">
+          
+          {/* Column 1: Brand Lore */}
+          <div className="space-y-8">
+            <Link href="/" className="inline-block">
+              <div className="flex items-center gap-1 font-black text-2xl tracking-tighter uppercase text-slate-950">
+                <span>Nexflow</span>
+                <span className="text-brand">Tech</span>
+                <div className="w-2 h-2 rounded-full bg-brand animate-pulse ml-1" />
+              </div>
+            </Link>
+            <p className="text-slate-600 font-medium leading-relaxed italic">
+              Empowering elite brands with high-performance digital ecosystems. From ROI-driven marketing to precision engineering.
+            </p>
+            <div className="flex gap-4">
+              {[
+                { icon: Linkedin, url: "https://linkedin.com" },
+                { icon: Instagram, url: "https://instagram.com" },
+                { icon: Facebook, url: "https://facebook.com" }
+              ].map((social, i) => (
+                <a 
+                  key={i} 
+                  href={social.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-brand hover:border-brand hover:bg-brand/5 transition-all shadow-sm"
+                >
+                  <social.icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
 
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm mb-4 md:mb-0">
-            © {new Date().getFullYear()} {footerData.company.name}{" "}
-            Technologies. All rights reserved.
-          </p>
-          <div className="flex space-x-6">
-            {footerData.legalLinks.map((link, index) => (
-              <Link
-                key={index}
+          {/* Column 2: Solutions */}
+          <div className="space-y-8">
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Solutions</h4>
+            <ul className="space-y-4">
+              {[
+                { name: "Web Development", slug: "web-development" },
+                { name: "Mobile App Dev", slug: "app-development" },
+                { name: "UI/UX Design", slug: "ui-ux-design" },
+                { name: "SEO Optimization", slug: "seo-optimization" },
+                { name: "Paid Media", slug: "ppc-campaigns" },
+                { name: "AI Automations", slug: "deployment-automations" }
+              ].map((service, i) => (
+                <li key={i}>
+                  <Link 
+                    href={`/services/${service.slug}`} 
+                    className="text-slate-600 hover:text-brand transition-colors text-sm font-bold flex items-center gap-2 group"
+                  >
+                    <span className="w-1 h-1 bg-slate-200 rounded-full group-hover:bg-brand transition-colors" />
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Ecosystem */}
+          <div className="space-y-8">
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Ecosystem</h4>
+            <ul className="space-y-4">
+              {[
+                { title: "ROI Calculator", href: "/saas-roi" },
+                { title: "Funnel Audit", href: "/funnel-audit" },
+                { title: "Our Portfolio", href: "/Portfolio" },
+                { title: "The Journal", href: "/blog" },
+                { title: "Success Stories", href: "/CaseStudies" }
+              ].map((link, i) => (
+                <li key={i}>
+                  <Link 
+                    href={link.href} 
+                    className="text-slate-600 hover:text-slate-950 transition-colors text-sm font-bold flex items-center justify-between group"
+                  >
+                    {link.title}
+                    <ExternalLink size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Presence */}
+          <div className="space-y-8">
+            <h4 className="text-xs font-black uppercase tracking-[0.3em] text-slate-400">Presence</h4>
+            <div className="space-y-6 text-left">
+              <div className="group">
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">HQ - Delaware</span>
+                <p className="text-sm font-bold text-slate-900 group-hover:text-brand transition-colors">8 The Green #6092, Dover, 19901</p>
+              </div>
+              <div className="group">
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 block mb-2">Eng - Lahore</span>
+                <p className="text-sm font-bold text-slate-900 group-hover:text-brand transition-colors">56-G, Gulberg III, Lahore PK</p>
+              </div>
+              <div className="pt-4 border-t border-slate-200 space-y-3">
+                <a href="mailto:info@nexflow.tech" className="flex items-center gap-3 text-slate-600 hover:text-brand text-sm font-bold transition-colors">
+                  <Mail size={16} /> info@nexflow.tech
+                </a>
+                <a href="tel:+16788256967" className="flex items-center gap-3 text-slate-600 hover:text-brand text-sm font-bold transition-colors">
+                  <Phone size={16} /> +1 (678) 825 6967
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Strip */}
+        <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-8 text-left">
+          <div className="text-slate-400 text-[10px] font-black uppercase tracking-[0.3em]">
+            © {currentYear} NEXFLOW TECHNOLOGIES. ALL RIGHTS RESERVED.
+          </div>
+          <div className="flex gap-8">
+            {footerData.legalLinks.map((link, i) => (
+              <Link 
+                key={i} 
                 href={link.url}
-                className="text-slate-400 hover:text-brand text-sm transition-colors duration-300"
+                className="text-slate-400 hover:text-slate-950 text-[10px] font-black uppercase tracking-widest transition-colors"
               >
                 {link.title}
               </Link>

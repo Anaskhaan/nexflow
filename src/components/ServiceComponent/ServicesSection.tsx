@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ServicesData } from "@/lib/data";
-import { Megaphone, Search, Smartphone, Zap, Palette, Code, Monitor, Layers, TrendingUp } from "lucide-react";
+import { Megaphone, Search, Smartphone, Zap, Palette, Code, Monitor, Layers, TrendingUp, ArrowUpRight, ShoppingCart } from "lucide-react";
 
 interface ServicesSectionProps {
   containerVariants: any;
@@ -11,180 +10,134 @@ interface ServicesSectionProps {
 }
 
 // Define service categories with their services
-const serviceCategories = [
+export const serviceCategories = [
   {
     name: "Marketing Services",
-    description: "Data-driven strategies to amplify your brand and drive growth",
+    id: "marketing-services",
+    description: "Data-driven strategies to amplify your brand and drive exponential growth.",
     services: [
-      {
-        slug: "seo-optimization",
-        title: "SEO Optimization",
-        description: "Boost your organic visibility and rank higher on search engines with strategic SEO",
-        icon: Search,
-      },
-      {
-        slug: "app-store-optimization",
-        title: "ASO Optimization",
-        description: "Maximize app downloads with optimized store presence and visibility",
-        icon: Smartphone,
-      },
-      {
-        slug: "social-media-marketing",
-        title: "Social Media Marketing",
-        description: "Grow your brand with engaging content and data-driven social strategies",
-        icon: Megaphone,
-      },
-      {
-        slug: "ppc-campaigns",
-        title: "PPC Campaigns",
-        description: "Drive targeted traffic and conversions with optimized paid advertising",
-        icon: Zap,
-      },
-      {
-        slug: "ai-image-processing",
-        title: "AI Image Processing",
-        description: "Transform visuals with cutting-edge AI-powered image enhancement",
-        icon: Layers,
-      },
-      {
-        slug: "affiliate-marketing",
-        title: "Affiliate Marketing",
-        description: "Scale your revenue with high-performance partner networks and publisher management",
-        icon: TrendingUp,
-      },
+      { slug: "seo-optimization", title: "SEO Optimization", description: "Boost organic visibility and dominate search results.", icon: Search, size: "large" },
+      { slug: "app-store-optimization", title: "ASO optimization", description: "Maximize app downloads and store presence.", icon: Smartphone, size: "small" },
+      { slug: "social-media-marketing", title: "Social Media Marketing", description: "Viral content and data-driven reach.", icon: Megaphone, size: "small" },
+      { slug: "ppc-campaigns", title: "PPC Campaigns", description: "High-intent traffic and conversion scaling.", icon: Zap, size: "small" },
+      { slug: "ai-image-processing", title: "AI Image Processing", description: "Next-gen enhancements at scale.", icon: Layers, size: "small" },
+      { slug: "affiliate-marketing", title: "Affiliate Marketing", description: "Elite level publisher network management.", icon: TrendingUp, size: "large" },
     ],
   },
   {
-    name: "Branding",
-    description: "Craft a memorable identity that resonates with your audience",
+    name: "Branding & Identity",
+    id: "branding",
+    description: "Crafting legendary identities that resonate globally.",
     services: [
-      {
-        slug: "branding",
-        title: "Branding",
-        description: "Build a powerful brand identity that stands out and connects with your audience",
-        icon: Palette,
-      },
+      { slug: "branding", title: "Branding", description: "Build a powerful brand identity that connects deeply.", icon: Palette, size: "full" },
     ],
   },
   {
-    name: "Development Services",
-    description: "Build robust, scalable digital solutions tailored to your needs",
+    name: "Engineering Solutions",
+    id: "development-services",
+    description: "Robust, scalable digital architecture built for the modern age.",
     services: [
-      {
-        slug: "web-development",
-        title: "Web Development",
-        description: "Create stunning, high-performance websites that drive results",
-        icon: Code,
-      },
-      {
-        slug: "app-development",
-        title: "App Development",
-        description: "Build powerful mobile applications for iOS and Android platforms",
-        icon: Monitor,
-      },
-      {
-        slug: "ui-ux-design",
-        title: "UI/UX Design",
-        description: "Design intuitive, beautiful user experiences that users love",
-        icon: Monitor,
-      },
+      { slug: "web-development", title: "Web Development", description: "High-performance apps that drive results.", icon: Code, size: "large" },
+      { slug: "app-development", title: "App Development", description: "Native mobile power for iOS and Android.", icon: Monitor, size: "small" },
+      { slug: "ui-ux-design", title: "UI/UX Design", description: "Intuitive, legendary user experiences.", icon: Monitor, size: "small" },
+      { slug: "deployment-automations", title: "Deployment & Automations", description: "Enterprise-grade CI/CD and cloud solutions.", icon: Zap, size: "large" },
+      { slug: "cms-ecommerce", title: "CMS & E-commerce", description: "Elite Shopify and WordPress experiences.", icon: ShoppingCart, size: "large" },
     ],
   },
 ];
 
 const ServicesSection = ({ containerVariants, itemVariants }: ServicesSectionProps) => {
   return (
-    <section className="py-20 bg-white relative px-6 md:px-12 lg:px-20">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-32 bg-white relative px-6 md:px-12 lg:px-20 overflow-hidden">
+      {/* Accent Blurs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[100px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-500/5 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2" />
+
+      <div className="max-w-[1600px] mx-auto relative z-10">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
+          className="mb-32 text-center"
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-black text-slate-900 mb-4 tracking-tighter">
-            Our <span className="text-brand">Core Services</span>
+          <span className="text-xs font-black tracking-[0.4em] uppercase text-brand mb-6 block">Our Expertise</span>
+          <h2 className="text-6xl md:text-8xl font-black text-slate-950 mb-8 tracking-tighter uppercase leading-[0.85]">
+            Engineered <br />
+            <span className="text-slate-400">For Dominance.</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
-            We provide strategic digital solutions designed to elevate your brand and drive sustainable growth in a competitive landscape.
+          <p className="text-xl text-slate-500 max-w-2xl mx-auto font-medium leading-relaxed italic">
+            Strategic digital solutions designed to obsolete your competition and scale your vision.
           </p>
         </motion.div>
 
-        {/* Service Categories */}
-        {serviceCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} id={category.name.toLowerCase().replace(/\s+/g, '-')} className="mb-20 last:mb-0 scroll-mt-32">
-            {/* Category Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
-              viewport={{ once: true }}
-              className="mb-12"
-            >
-              <div className="flex items-center gap-4 mb-3">
-                <div className="h-1 w-12 bg-brand rounded-full"></div>
-                <h3 className="text-2xl md:text-4xl font-black text-slate-900 uppercase tracking-tight">
+        {/* Bento Grid layout */}
+        <div className="space-y-40">
+          {serviceCategories.map((category, catIdx) => (
+            <div key={catIdx} id={category.id} className="scroll-mt-32">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="mb-16 border-l-4 border-brand pl-8"
+              >
+                <h3 className="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter mb-4">
                   {category.name}
                 </h3>
-              </div>
-              <p className="text-slate-500 text-lg ml-16 font-medium italic">
-                {category.description}
-              </p>
-            </motion.div>
+                <p className="text-xl text-slate-500 font-medium max-w-xl italic">
+                  {category.description}
+                </p>
+              </motion.div>
 
-            {/* Service Cards */}
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-            >
-              {category.services.map((service, index) => (
-                <Link key={index} href={`/services/${service.slug}`}>
-                  <motion.div
-                    variants={itemVariants}
-                    whileHover="hover"
-                    className="bg-white border border-slate-200 rounded-2xl p-8 hover:border-brand/30 transition-all cursor-pointer h-full flex flex-col shadow-sm hover:shadow-xl group"
-                  >
-                    <div className="w-16 h-16 bg-brand/10 rounded-xl flex items-center justify-center text-brand mb-6 group-hover:bg-brand group-hover:text-white transition-all shadow-sm">
-                      <service.icon size={32} />
-                    </div>
-                    <h4 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors">
-                      {service.title}
-                    </h4>
-                    <p className="text-slate-600 mb-8 flex-grow leading-relaxed font-medium">
-                      {service.description}
-                    </p>
-                    <div className="flex items-center text-brand font-bold text-sm uppercase tracking-widest">
-                      Learn More
-                      <motion.span
-                        initial={{ x: 0 }}
-                        animate={{ x: 5 }}
-                        transition={{ duration: 0.6, repeat: Infinity, repeatType: "reverse" }}
-                        className="ml-2"
-                      >
-                        →
-                      </motion.span>
-                    </div>
-                  </motion.div>
-                </Link>
-              ))}
-            </motion.div>
-
-            {/* Category Separator */}
-            {categoryIndex < serviceCategories.length - 1 && (
               <motion.div
-                initial={{ opacity: 0, scaleX: 0 }}
-                whileInView={{ opacity: 1, scaleX: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
                 viewport={{ once: true }}
-                className="mt-20 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent"
-              ></motion.div>
-            )}
-          </div>
-        ))}
+              >
+                {category.services.map((service, sIndex) => {
+                  const Icon = service.icon;
+                  return (
+                    <Link 
+                      key={sIndex} 
+                      href={`/services/${service.slug}`}
+                      className={`group relative overflow-hidden rounded-[2.5rem] bg-slate-50 border border-slate-100 p-10 h-[400px] transition-all duration-700 hover:shadow-2xl 
+                        ${service.size === 'large' ? 'lg:col-span-2' : service.size === 'full' ? 'lg:col-span-4' : 'col-span-1'}`}
+                    >
+                      {/* Background Reveal effect */}
+                      <div className="absolute inset-0 bg-slate-950 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]" />
+                      
+                      <div className="relative z-10 h-full flex flex-col justify-between">
+                        <div className="space-y-6">
+                          <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-slate-950 shadow-sm border border-slate-100 group-hover:scale-110 group-hover:bg-brand group-hover:text-white transition-all duration-500">
+                            <Icon size={32} />
+                          </div>
+                          <div>
+                            <h4 className="text-3xl font-black text-slate-900 uppercase tracking-tighter group-hover:text-white transition-colors duration-500 mb-2">
+                              {service.title}
+                            </h4>
+                            <p className="text-slate-500 text-lg font-medium group-hover:text-slate-400 transition-colors duration-500 max-w-[280px]">
+                              {service.description}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex items-center justify-between pointer-events-none">
+                           <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-300 group-hover:text-brand/50 transition-colors">Learn More</span>
+                           <div className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-brand/40 group-hover:bg-brand text-slate-950 group-hover:text-white transition-all duration-500">
+                             <ArrowUpRight size={20} className="group-hover:rotate-45 transition-transform duration-500" />
+                           </div>
+                        </div>
+                      </div>
+                    </Link>
+                  )
+                })}
+              </motion.div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

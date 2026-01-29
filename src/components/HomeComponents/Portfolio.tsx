@@ -15,8 +15,8 @@ const ProjectCard = ({ project }: any) => {
             transition={{ duration: 0.4 }}
         >
             <Image
-                src={project.image}
-                alt={project.title}
+                src={typeof project.image === 'string' ? project.image : project.image?.src || "/og-image.jpg"}
+                alt={project.title || "Project Image"}
                 fill
                 className="object-cover opacity-60 group-hover:opacity-40 group-hover:scale-110 transition-all duration-700"
             />
@@ -27,7 +27,7 @@ const ProjectCard = ({ project }: any) => {
                     <span className="text-xs font-black uppercase tracking-widest text-brand mb-2 block">{project.category}</span>
                     <h3 className="text-3xl font-black text-white mb-4 leading-tight">{project.title}</h3>
                     <div className="flex flex-wrap gap-2 mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                        {project.services.slice(0, 3).map((s: string, i: number) => (
+                        {project.services?.slice(0, 3).map((s: string, i: number) => (
                             <span key={i} className="text-[10px] font-bold uppercase tracking-wider text-slate-300 border border-slate-700 px-3 py-1 rounded-full">{s}</span>
                         ))}
                     </div>
@@ -35,14 +35,14 @@ const ProjectCard = ({ project }: any) => {
                 
                 <div className="flex justify-between items-center border-t border-white/10 pt-6">
                     <div className="flex gap-4">
-                         {project.results.slice(0, 1).map((r: any, i: number) => (
+                         {project.results?.slice(0, 1).map((r: any, i: number) => (
                              <div key={i}>
                                  <span className="block text-xl font-black text-white">{r.value}</span>
                                  <span className="block text-[10px] uppercase text-slate-400 font-bold">{r.label}</span>
                              </div>
                          ))}
                     </div>
-                    <Link href={`/Portfolio/${project.slug}`} className="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-brand hover:text-white transition-colors">
+                    <Link href={`/Portfolio/${project.slug || ""}`} className="w-10 h-10 rounded-full bg-white text-slate-900 flex items-center justify-center hover:bg-brand hover:text-white transition-colors">
                         <ArrowUpRight size={20} />
                     </Link>
                 </div>

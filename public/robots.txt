@@ -1,5 +1,0 @@
-# Allow all bots to crawl 
-User-agent: *
-
-# Sitemap location
-Sitemap: https://nexflow.tech/sitemap.xml

@@ -118,8 +118,8 @@ const ServiceShowcase = () => {
                          </div>
                          
                          <div>
-                             <h3 className={`text-sm font-black uppercase tracking-widest mb-2 ${item.color.replace('bg-', 'text-')}`}>{item.subtitle}</h3>
-                             <h2 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">{item.title}</h2>
+                             <span className={`text-sm font-black uppercase tracking-widest mb-2 block ${item.color.replace('bg-', 'text-')}`}>{item.subtitle}</span>
+                             <h3 className="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">{item.title}</h3>
                              <p className="text-xl text-slate-600 leading-relaxed font-medium">
                                  {item.description}
                              </p>

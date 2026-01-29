@@ -81,6 +81,8 @@ export const navLinks: NavLink[] = [
       { id: "s8", title: "App Development", href: "/services/app-development" },
       { id: "s9", title: "UI/UX Design", href: "/services/ui-ux-design" },
       { id: "s10", title: "Affiliate Marketing", href: "/services/affiliate-marketing" },
+      { id: "s11", title: "Deployment & Automations", href: "/services/deployment-automations" },
+      { id: "s12", title: "CMS & E-commerce", href: "/services/cms-ecommerce" },
     ],
   },
   { id: 4, title: "Portfolio", href: "/Portfolio" },
@@ -93,7 +95,8 @@ export const navLinks: NavLink[] = [
       { id: "c2", title: "Analyze Funnel", href: "/funnel-audit" },
     ],
   },
-  { id: 6, title: "Contact", href: "/contact" },
+  { id: 6, title: "Blog", href: "/blog" },
+  { id: 7, title: "Contact", href: "/contact" },
 ];
 
 export interface ContactInfo {
@@ -404,10 +407,11 @@ export const footerData = {
     { id: 1, title: "Home", href: "/" },
     { id: 2, title: "About", href: "/about" },
     { id: 3, title: "Services", href: "/services" },
-    { id: 4, title: "Contact", href: "/contact" },
-    { id: 5, title: "Resources", href: "/resources" },
+    { id: 4, title: "Blog", href: "/blog" },
+    { id: 5, title: "Contact", href: "/contact" },
+    { id: 6, title: "Resources", href: "/resources" },
   ],
-  services: ["SEO Optimization", "Social Media Marketing", "Content Creation", "Paid Advertising"],
+  services: ["SEO Optimization", "Social Media Marketing", "Content Creation", "Paid Advertising", "Deployment & Automations", "CMS & E-commerce"],
   contact: [
     { icon: React.createElement(Mail, { size: 18, className: "text-[var(--main-theme-color)]" }), text: "info@nexflow.tech" },
     { icon: React.createElement(Phone, { size: 18, className: "text-[var(--main-theme-color)]" }), text: "+1 (678) 825 6967" },
@@ -430,21 +434,43 @@ export const processSteps = [
 
 export const founderData = {
   name: "Anas Khan",
-  role: "Founder & CEO",
+  role: "Founder & Managing Director",
   bio: "Visionary leader with a passion for integrating cutting-edge technology into scalable business models. Anas is dedicated to powering growth through innovation and precision.",
   image: anas,
   socials: [
     { name: "LinkedIn", href: "https://linkedin.com/in/anaskhaan", icon: Linkedin },
     { name: "Twitter", href: "https://twitter.com/anaskhaan", icon: Twitter },
-    { name: "Facebook", href: "https://facebook.com/anaskhaan", icon: Facebook },
   ]
 };
 
 export const teamMembers = [
   {
     id: 1,
-    name: "Usman Ghani",
-    role: "Head of Engineering",
+    name: "Anas Khan",
+    role: "Founder & Cloud Infrastructure Lead",
+    category: "Infrastructure",
+    image: anas,
+    socials: [
+      { name: "LinkedIn", href: "https://linkedin.com/in/anaskhaan", icon: Linkedin },
+      { name: "Twitter", href: "https://twitter.com/anaskhaan", icon: Twitter },
+    ]
+  },
+  {
+    id: 2,
+    name: "Zain Ul Abedin",
+    role: "Chief Executive Officer (CEO)",
+    category: "Executive",
+    image: null,
+    socials: [
+      { name: "LinkedIn", href: "#", icon: Linkedin },
+      { name: "Twitter", href: "#", icon: Twitter },
+    ]
+  },
+  {
+    id: 3,
+    name: "Ali Hussain Khan",
+    role: "Chief Technology Officer (CTO)",
+    category: "Technology",
     image: null,
     socials: [
       { name: "LinkedIn", href: "#", icon: Linkedin },
@@ -452,23 +478,69 @@ export const teamMembers = [
     ]
   },
   {
-    id: 2,
-    name: "Ali Raza",
-    role: "Creative Director",
-    image: null,
-    socials: [
-      { name: "LinkedIn", href: "#", icon: Linkedin },
-      { name: "Instagram", href: "#", icon: Instagram },
-    ]
-  },
-  {
-    id: 3,
-    name: "Haris Jamil",
-    role: "Strategic Analyst",
+    id: 4,
+    name: "Muhammad Awais",
+    role: "Head of HR & Management",
+    category: "Operations",
     image: null,
     socials: [
       { name: "LinkedIn", href: "#", icon: Linkedin },
       { name: "Twitter", href: "#", icon: Twitter },
+    ]
+  },
+  {
+    id: 5,
+    name: "Sami Sharief",
+    role: "Direct Head Finance & Ads",
+    category: "Finance",
+    image: null,
+    socials: [
+      { name: "LinkedIn", href: "#", icon: Linkedin },
+      { name: "Twitter", href: "#", icon: Twitter },
+    ]
+  },
+  {
+    id: 6,
+    name: "Muhammad Musab",
+    role: "Head of SEO & SMM",
+    category: "Marketing",
+    image: null,
+    socials: [
+      { name: "LinkedIn", href: "#", icon: Linkedin },
+      { name: "Github", href: "#", icon: Github },
+    ]
+  },
+  {
+    id: 7,
+    name: "Mashhood Rehman",
+    role: "Web Guru / Team Lead",
+    category: "Engineering",
+    image: null,
+    socials: [
+      { name: "LinkedIn", href: "#", icon: Linkedin },
+      { name: "Twitter", href: "#", icon: Twitter },
+    ]
+  },
+  {
+    id: 8,
+    name: "Afaq Khalid",
+    role: "Backend Architect",
+    category: "Core Systems",
+    image: null,
+    socials: [
+      { name: "LinkedIn", href: "#", icon: Linkedin },
+      { name: "Github", href: "#", icon: Github },
+    ]
+  },
+  {
+    id: 9,
+    name: "Tufail Yousaf",
+    role: "Senior Graphic Designer",
+    category: "Creative",
+    image: null,
+    socials: [
+      { name: "LinkedIn", href: "#", icon: Linkedin },
+      { name: "Instagram", href: "#", icon: Instagram },
     ]
   },
 ];
@@ -1423,4 +1495,251 @@ export const ServicesData: ServiceDetail[] = [
     },
     guarantee: "First 50 Managed Sales Guarantee",
   },
+  {
+    id: 11,
+    slug: "deployment-automations",
+    title: "Deployment & Automations",
+    description: "Streamline your release cycles and automate repetitive tasks with enterprise-grade CI/CD and DevOps solutions",
+    metaTitle: "DevOps & Automation Services | High-Performance CI/CD Solutions",
+    metaDescription: "Accelerate your development with automated deployments, CI/CD pipelines, and infrastructure as code. Reduce errors and scale faster.",
+    icon: Zap,
+    color: "#2D847B",
+    hook: "Human Error is the #1 Cause of Downtime. Automate the Risk Away.",
+    painPoints: [
+      "Manual deployments are slow, risky, and prone to human error",
+      "Developers spend more time managing servers than writing code",
+      "Your infrastructure is a 'black box' that nobody knows how to scale",
+      "Lack of consistent staging and testing environments leads to production bugs"
+    ],
+    agitation: "High-performing DevOps teams successfully deploy 208x more frequently and have a 7x lower change failure rate. If you're still deploying manually, you're not just slow—you're dangerous to your own uptime and scalability.",
+    solution: "We architect 'Zero-Touch' deployment pipelines and automated infrastructure that scales with a single line of code. By implementing robust CI/CD, Infrastructure as Code (IaC), and automated testing, we empower your team to ship faster and sleep better.",
+    proof: [
+      { metric: "85%", description: "Reduction in manual deployment time and overhead" },
+      { metric: "<5 min", description: "Average time from code commit to staging deployment" },
+      { metric: "Zero", description: "Downtime achieved during major production migrations" }
+    ],
+    faqs: [
+      { question: "Do you support AWS/Google Cloud/Azure?", answer: "Yes, we are platform-agnostic and have deep expertise across all major cloud providers and local infrastructure." },
+      { question: "What is Infrastructure as Code (IaC)?", answer: "It's the process of managing and provisioning your servers through machine-readable definition files (like Terraform), rather than manual configuration." },
+      { question: "How does automation improve security?", answer: "Automation removes the chance of misconfigured security groups or 'shadow IT', ensuring every environment follows strict, audited policies." }
+    ],
+    domainExpertise: [
+      { name: "SaaS", icon: Monitor, description: "Scalable cloud-native architectures" },
+      { name: "Fintech", icon: DollarSign, description: "Secure, audited deployment pipelines" },
+      { name: "eCommerce", icon: ShoppingCart, description: "High-traffic auto-scaling systems" },
+      { name: "Enterprise", icon: Building, description: "Legacy system modernization and automation" },
+    ],
+    benefits: [
+      "Rapid release cycles that outpace your competition",
+      "Drastic reduction in production bugs and deployment failures",
+      "Auto-scaling infrastructure that handles traffic spikes gracefully",
+      "Lower operational costs through resource optimization",
+      "Audit-ready security and compliance by design",
+      "Consistent environments across Dev, Staging, and Production",
+      "Improved developer productivity and happiness",
+    ],
+    details: "Modern engineering requires more than just code—it requires a robust delivery engine. We help you transition from manual, fragile processes to automated, resilient systems. Whether you're looking to migrate to the cloud, implement CI/CD for the first time, or optimize your existing DevOps stack, our team provides the architectural expertise to make it happen.",
+    process: [
+      "Infrastructure audit and bottleneck identification",
+      "CI/CD pipeline design and security hardening",
+      "Infrastructure as Code (Terraform/CloudFormation) implementation",
+      "Automated testing and monitoring integration",
+      "Migration and zero-downtime deployment setup",
+      "Team training and documentation handoff",
+    ],
+    timeframe: "4-8 weeks for core infrastructure automation",
+    pricing: "Starting at $3,500/month or Project-based",
+    techStack: {
+      categories: ["Cloud", "CI/CD", "Automation", "Monitoring"],
+      technologies: {
+        Cloud: [
+          { name: "AWS", icon: "☁️", description: "Scalable cloud infrastructure" },
+          { name: "Google Cloud", icon: "🌐", description: "Advanced data and compute tools" },
+          { name: "Azure", icon: "💎", description: "Enterprise cloud solutions" },
+        ],
+        "CI/CD": [
+          { name: "GitHub Actions", icon: "🚀", description: "Automated test & deploy pipelines" },
+          { name: "GitLab CI", icon: "🦊", description: "Integrated DevOps lifecycle" },
+          { name: "Jenkins", icon: "👔", description: "Extensible automation server" },
+        ],
+        Automation: [
+          { name: "Terraform", icon: "🏗️", description: "Infrastructure as Code (IaC)" },
+          { name: "Docker & K8s", icon: "🐳", description: "Container orchestration" },
+          { name: "Ansible", icon: "🤖", description: "Configuration management" },
+        ],
+        Monitoring: [
+          { name: "Datadog", icon: "🐕", description: "Full-stack observability" },
+          { name: "Prometheus", icon: "🔥", description: "Metrics and alerting" },
+          { name: "New Relic", icon: "📈", description: "Application performance monitoring" },
+        ],
+      },
+    },
+    guarantee: "Unlimited Infrastructure Support for 90 Days",
+  },
+  {
+    id: 12,
+    slug: "cms-ecommerce",
+    title: "CMS & E-commerce",
+    description: "Launch high-converting Shopify and WordPress experiences with custom-crafted themes and elite performance optimization",
+    metaTitle: "Shopify & WordPress Experts | Custom Themes & E-commerce Solutions",
+    metaDescription: "Elevate your online presence with expert Shopify and WordPress development. Custom themes, deep customization, and speed optimization that drives sales.",
+    icon: ShoppingCart,
+    color: "#3FA69B",
+    hook: "Generic Templates Kill Conversion. Your Brand Deserves a Custom Engine.",
+    painPoints: [
+      "Your store looks exactly like your competitors' because of a generic theme",
+      "The site is slow, glitchy, and frustrating for mobile shoppers",
+      "You're limited by 'off-the-shelf' features that don't fit your workflow",
+      "Poor performance and SEO are costing you thousands in lost sales daily"
+    ],
+    agitation: "A 100ms delay in website load time can hurt conversion rates by 7%. If your Shopify or WordPress site is bogged down by heavy templates and redundant apps, you're not just losing speed—you're handing your customers to the competition.",
+    solution: "We build lightweight, high-performance 'Nex-Gen' engines for Shopify and WordPress. From bespoke Liquid/PHP theme development to surgical speed optimization and advanced API integrations, we turn CMS platforms into powerful growth machines tailored specifically to your brand.",
+    proof: [
+      { metric: "95+", description: "Average Google PageSpeed/Lighthouse score achieved" },
+      { metric: "2x", description: "Average increase in mobile conversion rates for refreshed stores" },
+      { metric: "300+", description: "Custom Shopify sections and WordPress blocks developed" }
+    ],
+    faqs: [
+      { question: "Can you migrate my existing store?", answer: "Yes, we handle seamless migrations from any platform to Shopify or WordPress while preserving all SEO juice and customer data." },
+      { question: "Do you build custom themes from scratch?", answer: "Absolutely. We avoid heavy bloated themes and build lightweight, custom-coded solutions that give you total creative control." },
+      { question: "How do you improve speed?", answer: "We use surgical optimization: image compression, code minification, app/plugin auditing, and advanced caching strategies to ensure sub-second loads." }
+    ],
+    domainExpertise: [
+      { name: "eCommerce", icon: ShoppingCart, description: "Shopify Plus and headless Shopify solutions" },
+      { name: "Publishing", icon: Layers, description: "High-traffic WordPress news and content hubs" },
+      { name: "Luxury Brands", icon: Palette, description: "Premium, pixel-perfect visual experiences" },
+      { name: "B2B", icon: Building, description: "Complex catalog management and wholesale portals" },
+    ],
+    benefits: [
+      "Bespoke theme design that commands attention and trust",
+      "Lightning-fast load times that satisfy both users and Google",
+      "Total control over features with custom plugins and apps",
+      "Mobile-first checkout experiences that maximize ROI",
+      "Scalable infrastructure that handles massive holiday traffic spikes",
+      "Deep SEO integration for better organic ranking and visibility",
+      "Intuitive admin controls customized for your internal team",
+    ],
+    details: "Shopify and WordPress are powerful, but only when used correctly. Most businesses get stuck with slow, generic themes that hinder growth. We break those limits by providing expert engineering on top of these world-class platforms. Whether you need a high-end Shopify Plus store or a lightning-fast WordPress experience, our focus is on performance, conversion, and surgical customization.",
+    process: [
+      "Platform audit and competitive UX research",
+      "Custom UI/UX design and interactive prototyping",
+      "Bespoke theme development (Shopify Liquid / WordPress PHP)",
+      "App/Plugin integration and automation setup",
+      "Surgical performance and SEO optimization",
+      "Final migration, QA, and high-impact launch",
+    ],
+    timeframe: "4-10 weeks for full custom implementations",
+    pricing: "Starting at $4,500",
+    techStack: {
+      categories: ["Platforms", "Frontend", "Optimization", "Integrations"],
+      technologies: {
+        Platforms: [
+          { name: "Shopify PLUS", icon: "🛍️", description: "Enterprise E-commerce power" },
+          { name: "WordPress", icon: "🌐", description: "World-leading CMS flexibility" },
+          { name: "WooCommerce", icon: "🛒", description: "Integrated WP commerce" },
+        ],
+        Frontend: [
+          { name: "Liquid", icon: "💧", description: "Shopify's powerful templating engine" },
+          { name: "PHP / Gutenberg", icon: "🐘", description: "Modern WordPress development" },
+          { name: "Tailwind CSS", icon: "🎨", description: "Utility-first performance styling" },
+        ],
+        Optimization: [
+          { name: "Core Web Vitals", icon: "⚡", description: "Google-aligned speed metrics" },
+          { name: "Cloudflare", icon: "☁️", description: "Advanced CDN and security" },
+          { name: "WP Rocket / Nitro", icon: "🚀", description: "Surgical caching solutions" },
+        ],
+        Integrations: [
+          { name: "Klaviyo", icon: "📧", description: "Retention marketing automation" },
+          { name: "Recharge", icon: "🔄", description: "Subscription revenue systems" },
+          { name: "Zapier", icon: "🔌", description: "Cross-platform data automation" },
+        ],
+      },
+    },
+    guarantee: "100% Speed & Mobile-Ready Guarantee",
+  },
+];
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  date: string;
+  author: {
+    name: string;
+    role: string;
+    image?: any;
+  };
+  category: string;
+  readTime: string;
+  image: string;
+  content: string[]; // Array of strings to handle paragraphs
+  tags: string[];
+}
+
+export const BlogData: BlogPost[] = [
+  {
+    id: 1,
+    slug: "scaling-your-saas-with-devops",
+    title: "How DevOps Can 10x Your SaaS Development Speed",
+    excerpt: "Discover the hidden bottlenecks in your development cycle and how automated CI/CD pipelines can transform your engineering velocity.",
+    date: "Jan 28, 2026",
+    author: {
+      name: "Anas",
+      role: "Lead Engineer",
+      image: anas
+    },
+    category: "Engineering",
+    readTime: "8 min read",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80&w=1200",
+    tags: ["DevOps", "CI/CD", "AWS", "Automation"],
+    content: [
+      "In the competitive world of SaaS, speed is your greatest asset. But for many companies, the deployment process is a manual, fragile mess that causes more downtime than innovation.",
+      "DevOps isn't just a set of tools—it's a culture of automation. By implementing robust CI/CD (Continuous Integration and Continuous Deployment) pipelines, we've seen teams go from weekly deployments to shipping 20+ times a day without breaking a sweat.",
+      "The first pillar of this transformation is Infrastructure as Code (IaC). Using tools like Terraform, we define your cloud environment in code, making it reproducible, version-controlled, and instantly scalable.",
+      "Combined with automated testing and monitoring, your team can focus on what matters: building features that your customers love, rather than babysitting servers."
+    ]
+  },
+  {
+    id: 2,
+    slug: "modern-seo-strategies-2026",
+    title: "SEO in 2026: Why Quality Content Wins Over Hacks",
+    excerpt: "Search engines have evolved. Learn why high-intent, strategic content is now the only way to dominate the search rankings.",
+    date: "Jan 25, 2026",
+    author: {
+      name: "Nexflow Team",
+      role: "Growth Strategy",
+    },
+    category: "Marketing",
+    readTime: "6 min read",
+    image: "https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&q=80&w=1200",
+    tags: ["SEO", "Content Marketing", "Strategy"],
+    content: [
+      "The days of keyword stuffing and backlink spam are long gone. Search engines now prioritize one thing above all else: User Intent.",
+      "Modern SEO is about creating content that actually solves a problem for your visitor. This means deeper research, better data, and more engaging storytelling.",
+      "We focus on 'Topical Authority'—building clusters of content that signal to search engines that you are the absolute expert in your niche. This approach not only drives traffic but builds trust before the user even clicks your CTA.",
+      "Technical SEO remains the foundation (speed, mobile-readiness, schema markup), but content is the engine that drives your organic growth."
+    ]
+  },
+  {
+    id: 3,
+    slug: "shopify-custom-themes-vs-market",
+    title: "Custom Shopify Themes: Why Templates Are Costing You Sales",
+    excerpt: "Find out why generic Shopify templates might be the silent killer of your e-commerce growth and how bespoke themes drive ROI.",
+    date: "Jan 22, 2026",
+    author: {
+      name: "Nexflow Design",
+      role: "UI/UX Specialist",
+    },
+    category: "E-commerce",
+    readTime: "10 min read",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1200",
+    tags: ["Shopify", "E-commerce", "Conversion", "UX"],
+    content: [
+      "Generic templates are built to be everything to everyone. The result? Massive code bloat that slows down your store and a visual identity that looks just like your competitors.",
+      "A custom Shopify theme is built with surgical precision. We code only what you need, ensuring lightning-fast load times and a user interface designed specifically for your target audience.",
+      "When we build bespoke themes, we focus on the checkout journey. Every pixel is optimized to reduce friction and encourage that final click. The result isn't just a better-looking store—it's a significant boost in your bottom line.",
+      "By leveraging Shopify Plus features and advanced Liquid customization, we empower your brand to scale without the technical limits of off-the-shelf themes."
+    ]
+  }
 ];

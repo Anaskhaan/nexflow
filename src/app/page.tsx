@@ -1,25 +1,11 @@
-"use client";
+import { Metadata } from "next";
+import HomeClient from "@/components/Home/HomeClient";
 
-import Hero from "@/components/HomeComponents/Hero";
-import ServiceShowcase from "@/components/HomeComponents/ServiceShowcase";
-import { About } from "@/components/HomeComponents/About";
-import WhyChooseUs from "@/components/HomeComponents/WhyChooseUs";
-import Portfolio from "@/components/HomeComponents/Portfolio";
-import Testimonials from "@/components/HomeComponents/Testimonials";
-import FAQs from "@/components/FAQs";
-import GetInTouch from "@/components/HomeComponents/GetTouch";
+export const metadata: Metadata = {
+  title: "Nexflow Technologies | Elite Digital Strategy & Innovation",
+  description: "Transform your digital footprint with Nexflow. We specialize in ROI-driven marketing, precision development, and elite growth strategies for SaaS and scaling businesses.",
+};
 
 export default function Home() {
-  return (
-    <main className="bg-white text-slate-900">
-      <Hero />
-      <ServiceShowcase />
-      <About />
-      <WhyChooseUs />
-      <Portfolio />
-      <Testimonials />
-      <FAQs />
-      <GetInTouch />
-    </main>
-  );
+  return <HomeClient />;
 }
